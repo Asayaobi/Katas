@@ -1,11 +1,10 @@
-let x = 0
 function displayMessage(x) {
-    if (x === 1) {
-        let message = 'Hello, this is a scope problem!'
+let message = 'Hello, this is a scope problem!'
+    if (x) {
         return message
     } else {
         message = 'Hello'
-        return message = 'Hello'
+        return message
     }
 }
 
