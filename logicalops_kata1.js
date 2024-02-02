@@ -1,9 +1,7 @@
 function checkCredentials(username, password) {
     if (username === 'admin' && password === '12345') {
         return 'granted'
-        } else {
-            return 'denied'
-        }
+        } 
         return 'denied'
     }
 console.log(checkCredentials('admin', '12345'))
