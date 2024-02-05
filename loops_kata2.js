@@ -3,10 +3,18 @@
 // Before returning the output array, convert it into a string.
 
 
-function extractAndSort(numbers,n) {
-let result = []
-    for (let i = n - 1; i >= 0; i = i - 1){
-        result.push(String(numbers[i]))
+// function extractAndSort(numbers,n) {
+// let result = []
+//     for (let i = n - 1; i >= 0; i = i - 1){
+//         result.push(String(numbers[i]))
+//     }
+//     return result
+// }
+
+function extractAndSort(numbers, n) {
+let result = ''
+    for (i = n -1; i <= 0; i - 1) {
+        result = result + String(numbers[i])
     }
     return result
 }
