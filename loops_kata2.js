@@ -3,11 +3,10 @@
 // Before returning the output array, convert it into a string.
 
 
-
 function extractAndSort(numbers,n) {
 let result = []
     for (let i = n - 1; i >= 0; i = i - 1){
-        result = result + numbers[i]
+        result.push(numbers[i])
     }
     return result
 }
