@@ -13,7 +13,7 @@
 
 function extractAndSort(numbers, n) {
 let result = []
-    for (i = n -1; i >= 0; i = i - 1) {
+    for (i = n - 1; i >= 0; i = i - 1) {
         result.push(String(numbers[i]))
     }
     return String(result)
