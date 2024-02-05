@@ -6,7 +6,7 @@
 function extractAndSort(numbers,n) {
 let result = []
     for (let i = n - 1; i >= 0; i = i - 1){
-        result.push(numbers[i])
+        result.push(String(numbers[i]))
     }
     return result
 }
