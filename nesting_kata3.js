@@ -15,6 +15,35 @@ let b = {
 }
 // sumPositiveNumbers(b) // 241
 
+// let sum = 0
+// for (let number of a.array1) {
+//     if (number >= 0) {
+//         sum = sum + number
+//     }
+// }
+// for (number of a.array2) {
+//     if (number >= 0) {
+//         sum = sum + number
+//     }
+// }
+
+// console.log(sum)
+ function sumPositiveTest(obj) {
+let sum = 0
+    for (let num of obj.array1) {
+        if (num >= 0) {
+            sum = sum + num
+        }
+    }
+    for (num of obj.array2) {
+        if (num >= 0) {
+            sum = sum + num
+        }
+    }
+    return sum
+ }
+ console.log(sumPositiveTest(a))
+ console.log(sumPositiveTest(b))
 //1. the array a properties
 // console.log(a)
 //2. get the value of array1 and array2
