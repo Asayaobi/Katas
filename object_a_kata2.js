@@ -17,6 +17,3 @@ let villa = {
 }
 
 console.log(villa.livingroom.doors)
-
-
-// this is a change
