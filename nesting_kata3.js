@@ -15,15 +15,55 @@ let b = {
 }
 // sumPositiveNumbers(b) // 241
 
+//1. the array a properties
+// console.log(a)
+//2. get the value of array1 and array2
+// console.log(a.array1)
+// console.log(a.array2)
+
+//3. loop the object to get the value of array1 and array2?
+
+
+// sum the positive in the array1
+
+// for (let number of a.array1) {
+//     let sumArray1 = 0
+//     if (number >= 0) {
+//         sumArray1 = sumArray1 + number
+//     }
+//     console.log(sumArray1)
+// }
+// // sum the positive in the array2
+// for (let number of a.array2) {
+// let sumArray2 = 0
+//     if (number >= 0) {
+//         sumArray2 = sumArray2 + number
+//     }
+//     console.log(sumArray2)
+// }
+// add sum of array1 and 2 together
+    
+    
 function sumPositiveNumbers(obj) {
-let sum = 0
-    for (let property of obj) {
-        for (let num of property.array1) {
-            if (num >= 0) {
-                sum = sum + num
-            }
+let totalSum = 0
+    for (let number of obj.array1) {
+        if (number >= 0) {
+            totalSum = totalSum + number
         }
-        return sum
     }
+    for (number of obj.array2) {
+        if (number >= 0) {
+            totalSum = totalSum + number
         }
+    }
+    return totalSum
+}
 console.log(sumPositiveNumbers(a))
+console.log(sumPositiveNumbers(b))
+
+
+
+
+
+
+
