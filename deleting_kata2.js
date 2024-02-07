@@ -6,9 +6,6 @@ function removePasswords(users) {
     for (let user of users) {
         if (!user.encrypted) {
             delete user.password
-            delete user.encrypted
-        } else {
-            delete user.encrypted
         }
     }
     return users
@@ -16,3 +13,17 @@ function removePasswords(users) {
 
 console.log(removePasswords([{'name':'Jack','age':45,'password':'123456'},{'name':'Bob','age':27,'password':'9!4%2!@','encrypted':true}]))
 console.log(removePasswords([{'name':'Alice','password':'Alice'}]));
+
+
+
+// function removePasswords(users) {
+//     for (let user of users) {
+//         if (!user.encrypted) {
+//             delete user.password
+//             delete user.encrypted
+//         } else {
+//             delete user.encrypted
+//         }
+//     }
+//     return users
+// }
