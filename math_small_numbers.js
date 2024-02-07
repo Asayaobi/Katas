@@ -20,7 +20,7 @@ let smallest
         smallest = Math.min(a, b, c, d)
         return smallest
     } else {
-        return 'please pass 2- 4 numbers'
+        return 'please pass 2 to 4 numbers'
     }
 }
 
