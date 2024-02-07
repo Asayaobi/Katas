@@ -7,6 +7,24 @@
 // convert all products inStock property to booleans ('yes' -> true, 'no' -> false) and add a default true if the property doesn't exist
 // then return the updated and properly formatted array
 
+// function formatData(arrays) {
+//     for (let array of arrays) {
+//         if (typeof array.price !== 'number') {
+//             array.price = Number(array.price)
+//         }
+//         if (array.inStock === 'yes') {
+//             array.inStock = true
+//         } 
+//         if (array.inStock === 'no') {
+//             array.inStock = false
+//         } 
+//         if (array.inStock !== 'boolean') {
+//             array.inStock = Boolean(array.inStock)
+//         }
+//     }
+//     return arrays
+// }
+
 function formatData(arrays) {
     for (let array of arrays) {
         if (typeof array.price !== 'number') {
@@ -14,11 +32,9 @@ function formatData(arrays) {
         }
         if (array.inStock === 'yes') {
             array.inStock = true
-        } 
-        if (array.inStock === 'no') {
+        } else if (array.inStock === 'no') {
             array.inStock = false
-        } 
-        if (array.inStock !== 'boolean') {
+        } else {
             array.inStock = Boolean(array.inStock)
         }
     }
