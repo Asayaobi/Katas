@@ -28,10 +28,12 @@ console.log(greeter.sayHello())
 
 let counter = {
     increase: function(counter) {
-        return counter.count = counter.count + 1
+        counter.count = counter.count + 1
+        return counter.count
     },
     decrease: function(counter) {
-        return counter.count = counter.count - 1
+        counter.count = counter.count - 1
+        return counter.count
     }
 }
 
