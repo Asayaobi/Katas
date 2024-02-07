@@ -8,6 +8,23 @@
 //     return smallest
 // }
 
+// This one hasn't add the case when a, b, c, d = 0
+// function findSmallestNumber(a, b, c, d) {
+// let smallest
+//     if (c === undefined && d === undefined) {
+//         smallest = Math.min(a, b)
+//         return smallest
+//     } else if (d === undefined) {
+//         smallest = Math.min(a, b, c)
+//         return smallest
+//     } else if (a && b && c && d) {
+//         smallest = Math.min(a, b, c, d)
+//         return smallest
+//     } else {
+//         return 'please pass 2 to 4 numbers'
+//     }
+// }
+
 function findSmallestNumber(a, b, c, d) {
 let smallest
     if (c === undefined && d === undefined) {
@@ -16,14 +33,13 @@ let smallest
     } else if (d === undefined) {
         smallest = Math.min(a, b, c)
         return smallest
-    } else if (a && b && c && d) {
+    } else {
         smallest = Math.min(a, b, c, d)
         return smallest
-    } else {
-        return 'please pass 2 to 4 numbers'
     }
 }
 
 console.log(findSmallestNumber(2,71,5,3.9));
 console.log(findSmallestNumber(20,80,-5.5));
 console.log(findSmallestNumber(8,1));
+console.log(findSmallestNumber(2,0,5,3.9));

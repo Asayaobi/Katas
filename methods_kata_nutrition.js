@@ -17,11 +17,11 @@
 
 let nutrition = {
     calculateCaloriesFromMacros: function(protein, carbs, fat) {
-    let totalCalories = (protein * 4) + (carbs * 4) + (fat * 9)
+        const totalCalories = (protein * 4) + (carbs * 4) + (fat * 9)
         return totalCalories
     },
     calculateBMI: function(weight, height) {
-    let BMI = weight / (height * height) * 10000
+        const BMI = weight / (height * height) * 10000
         return BMI
     },
     calculateBMR: function(weight, height, age, gender) {
@@ -34,10 +34,9 @@ let nutrition = {
         }
     },
     calculateWaterIntake: function(weight) {
-        let waterIntake = weight * 0.033
+        const waterIntake = weight * 0.033
         return waterIntake
     }
-
 }
 
 console.log(nutrition.calculateCaloriesFromMacros(150, 100, 50));
