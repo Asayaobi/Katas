@@ -35,7 +35,7 @@ function formatData(arrays) {
         } else if (array.inStock === 'no') {
             array.inStock = false
         } else {
-            array.inStock = Boolean(array.inStock)
+            array.inStock = true
         }
     }
     return arrays
