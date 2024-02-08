@@ -4,7 +4,7 @@
 
 
 function winTheLottery(array) {
-    const i = Math.ceil(Math.random() * 4)
+    const i = Math.floor(Math.random() * 4)
     return array[i]
 }
 
@@ -22,4 +22,4 @@ console.log(winTheLottery(['lose', 'lose', 'win', 'lose']));
     // console.log(i)
     // use that as an index to show the result in the array
 //     return array[i]
-// }
+// 
