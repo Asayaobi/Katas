@@ -90,16 +90,7 @@ console.log(greet(20,'Tokyo'));
 // }
 
 
-// const checkTime = t => { 
-//     return t < 12 ? 'morning' : 'evening'
-// }
 
-// const greetTime = time => {
-//     const checkTime = t => {
-//         return t < 12 ? 'morning' : 'evening'
-//     }
-//     return checkTime(time) === 'morning' ? `Good ${checkTime(t)}` : `Good ${checkTime(t)}`
-// }
 
 const greetTime = time => {
     const checkTime = time => {
