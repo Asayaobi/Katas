@@ -48,3 +48,24 @@ function stringRepeat(number, string) {
 
 console.log(stringRepeat(5, 'hi'));
 console.log(stringRepeat(2, 'hola')) // 'holahola');
+
+
+
+// Create a JavaScript function named splitStringIntoArray.
+// This function should take two parameters: a string and a delimiter. It should divide the string into an array of substrings, separated by the specified delimiter, and return the resulting array.
+// splitStringIntoArray('apple,banana,cherry',',')	['apple','banana','cherry']
+// splitStringIntoArray('Hello World',' ')	['Hello','World']
+// splitStringIntoArray('one-two-three','-')	['one','two','three']
+
+function splitStringIntoArray(string) {
+    let output
+    if (string.includes(',')){
+        output = string.split(',')
+    } else if (string.includes('-')) {
+        output = string.split('-')
+    }
+    return output
+}
+console.log(splitStringIntoArray('apple,banana,cherry',','));
+console.log(splitStringIntoArray('Hello World',' '));
+console.log(splitStringIntoArray('one-two-three','-'));
