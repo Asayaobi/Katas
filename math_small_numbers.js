@@ -26,18 +26,17 @@
 // }
 
 function findSmallestNumber(a, b, c, d) {
-let smallest
-    if (c === undefined && d === undefined) {
-        smallest = Math.min(a, b)
-        return smallest
-    } else if (d === undefined) {
-        smallest = Math.min(a, b, c)
-        return smallest
-    } else {
-        smallest = Math.min(a, b, c, d)
+    let smallest
+        if (c === undefined && d === undefined) {
+            smallest = Math.min(a, b)
+        } else if (d === undefined) {
+            smallest = Math.min(a, b, c)
+        } else {
+            smallest = Math.min(a, b, c, d)
+        }
         return smallest
     }
-}
+
 
 console.log(findSmallestNumber(2,71,5,3.9));
 console.log(findSmallestNumber(20,80,-5.5));
