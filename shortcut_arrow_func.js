@@ -48,3 +48,13 @@ const checkPositive = (n) => {
 
 console.log(checkPositive(20));
 console.log(checkPositive(-5));
+
+// Convert the following String Concatenation into a Template Literal.
+// function greet(age, city) {
+//     return 'Hello, I\'m ' + age + ' years old and I\'m from ' + city + '!'
+// }
+
+function greet(age, city) {
+    return `Hello, I'm ${age} years old and I'm from ${city}!`
+}
+console.log(greet(20,'Tokyo'));
