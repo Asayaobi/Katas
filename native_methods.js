@@ -188,3 +188,49 @@ function flipString(word) {
 console.log(flipString('Hello'));
 console.log(flipString(''));
 console.log(flipString('Haiku Academy'));
+
+// A list of phone numbers was entered in the database as plain numbers, without proper formatting.
+// Create a function formatPhoneNumber that takes a 12 digit number and formats it according to the tests.
+// Assume the phone numbers never start with a zero.
+// If the number is not a number, if it's falsy or if it's not 12 digits, return the error message.
+// function formatPhoneNumber(digit) {
+//     let digitString =digit.toString()
+//     if (digitString.length === 12) {
+//         console.log(digitString);
+//         let slice1 = digitString.slice(0,3)
+//         console.log(slice1);
+//         let slice2 = digitString.slice(3,6)
+//         console.log(slice2);
+//         let slice3 = digitString.slice(6,9)
+//         console.log(slice3);
+//         let slice4 = digitString.slice(9,12)
+//         console.log(slice4);
+//         return `${slice1}-${slice2}-${slice3}-${slice4}`
+//     } else {
+//         return'invalid number'
+//     }
+// }
+
+function formatPhoneNumber(digit) {
+    if (!digit) {
+        return 'invalid number'
+    } else {
+        let digitString = digit.toString()
+        if (digitString.length === 12) {
+            let slice1 = digitString.slice(0,3)
+            let slice2 = digitString.slice(3,6)
+            let slice3 = digitString.slice(6,9)
+            let slice4 = digitString.slice(9,12)
+            let format = `${slice1}-${slice2}-${slice3}-${slice4}`
+            return format
+        } else {
+            return 'invalid number'
+        }
+    }
+}
+
+console.log(formatPhoneNumber(123456789012));
+console.log(formatPhoneNumber(123));
+console.log(formatPhoneNumber(999999999999));
+console.log(formatPhoneNumber(783543777241));
+console.log(formatPhoneNumber(null));
