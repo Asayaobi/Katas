@@ -193,23 +193,6 @@ console.log(flipString('Haiku Academy'));
 // Create a function formatPhoneNumber that takes a 12 digit number and formats it according to the tests.
 // Assume the phone numbers never start with a zero.
 // If the number is not a number, if it's falsy or if it's not 12 digits, return the error message.
-// function formatPhoneNumber(digit) {
-//     let digitString =digit.toString()
-//     if (digitString.length === 12) {
-//         console.log(digitString);
-//         let slice1 = digitString.slice(0,3)
-//         console.log(slice1);
-//         let slice2 = digitString.slice(3,6)
-//         console.log(slice2);
-//         let slice3 = digitString.slice(6,9)
-//         console.log(slice3);
-//         let slice4 = digitString.slice(9,12)
-//         console.log(slice4);
-//         return `${slice1}-${slice2}-${slice3}-${slice4}`
-//     } else {
-//         return'invalid number'
-//     }
-// }
 
 function formatPhoneNumber(digit) {
     if (!digit) {
@@ -261,3 +244,45 @@ console.log(findAverage([1,1,1]))
 console.log(findAverage([1,2,3]));
 console.log(findAverage([]));
 
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+// Return True if you're better, else False!
+
+// Note:
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+
+//loop through the array
+//get number from array, then sum it
+//after the loop, sum / array.length to get the average
+//use if else statement to check if my score is greater than average
+
+function betterThanAverage(scores, myScore) {
+let sum = 0
+let average = 0
+for (let score of scores) {
+    sum += score
+}
+average = sum / scores.length
+return myScore > average
+}
+
+console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75));
+console.log(betterThanAverage([2, 3], 5));
+
+// A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+
+// Return true if yes, false otherwise :)
+
+// see if bullet / 2 >= dragons
+
+// function hero(bullet, dragon) {
+//     return bullet / 2 >= dragon
+// }
+const hero = (bullet, dragon) => bullet / 2 >= dragon
+
+console.log(hero(100, 40));
+console.log(hero(10, 5));
+console.log(hero(1500, 751));
