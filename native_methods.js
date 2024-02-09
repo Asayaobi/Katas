@@ -234,3 +234,9 @@ console.log(formatPhoneNumber(123));
 console.log(formatPhoneNumber(999999999999));
 console.log(formatPhoneNumber(783543777241));
 console.log(formatPhoneNumber(null));
+
+// const stringToNumber = function(str){
+//     return Number(str)
+//   }
+const stringToNumber = str => Number(str)
+  console.log(stringToNumber('123'));
