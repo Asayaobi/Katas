@@ -240,3 +240,24 @@ console.log(formatPhoneNumber(null));
 //   }
 const stringToNumber = str => Number(str)
   console.log(stringToNumber('123'));
+
+// Write a function which calculates the average of the numbers in a given list.
+// Note: Empty arrays should return 0.
+function findAverage(numbers) {
+    let sum = 0
+    let average = 0
+    if (numbers.length === 0) {
+        return 0
+    } else {
+        for (let number of numbers) {
+                sum += number
+        }
+    }
+    average = sum / numbers.length
+    return average
+}
+
+console.log(findAverage([1,1,1]))
+console.log(findAverage([1,2,3]));
+console.log(findAverage([]));
+
