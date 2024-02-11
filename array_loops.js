@@ -70,3 +70,47 @@ let allnumbers = [1,2,3,4,5,6]
 const filterEven = allnumbers.filter(n => n % 2 === 0)
 const filterAndSquareEvens = filterEven.map(even => even * even)
 console.log(filterAndSquareEvens);
+
+const people = [{'name':'Alice','age':25},{'name':'Alice','age':30}]
+const name = 'Alice'
+
+const findPerson = people.find(person => person.name === name)
+console.log(findPerson);
+
+// Write a JavaScript function named replaceProductPrice.
+// This function should take two parameters: an array of product objects and a product ID.
+// Each product object contains an id, a name, and a price.
+// The function should find the product with the given ID and increase its price by 10%.
+// The function should return a new array with the updated product objects.
+const productsA = [{'id':1,'price':100},{'id':2,'price':200}]
+let productID = 1
+// let replaceProductPrice = []
+// const replaceProductPrice = productsA.find(product => {
+//     if (product.id === productID) {
+//         product.price = product.price * 1.1
+//     }
+//     return replaceProductPrice
+// })
+
+// const findProductPriceA = productsA.find(pA => pA.id === productID)
+// const findProductPriceB = productsA.find( pB => pB.id !== productID)
+// findProductPriceA.price = findProductPriceA.price * 1.1
+// replaceProductPrice.push(findProductPriceA, findProductPriceB)
+
+// console.log(findProductPriceA);
+// console.log(findProductPriceB);
+// console.log(replaceProductPrice);
+//loop through productA
+//check the condition if product.id === productID
+// modify the price product.price = product.price * 1.1
+//return new array called replaceProductPrice with updated products
+
+function replaceProductPrice(products, productID) {
+    for (let product of products){
+        if (product.id === productID) {
+            product.price *= 1.1
+        }
+    }
+    return products
+}
+console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2));
