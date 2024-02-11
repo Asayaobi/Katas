@@ -84,13 +84,6 @@ console.log(findPerson);
 // The function should return a new array with the updated product objects.
 const productsA = [{'id':1,'price':100},{'id':2,'price':200}]
 let productID = 1
-// let replaceProductPrice = []
-// const replaceProductPrice = productsA.find(product => {
-//     if (product.id === productID) {
-//         product.price = product.price * 1.1
-//     }
-//     return replaceProductPrice
-// })
 
 // const findProductPriceA = productsA.find(pA => pA.id === productID)
 // const findProductPriceB = productsA.find( pB => pB.id !== productID)
