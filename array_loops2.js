@@ -151,3 +151,17 @@ function sortNames(names) {
 }
 console.log(sortNames(['Bob','Alice','David'])); //	['Alice','Bob','David']
 console.log(sortNames(['Xenia','Xander','Xavia'])) //['Xander','Xavia','Xenia'];
+
+// Create a function named filterAndSortBooks.
+// This function will take two parameters: an array of book objects and a minimum rating value.
+// Each book object contains a title, an author, and a rating. 
+// 1. The function should first use the filter() method to keep only the books with a rating greater than or equal to the minimum rating value.
+// 2. Then, it should use the sort() method to sort these filtered books in descending order of their ratings.
+// The function should return the sorted array of books.
+function filterAndSortBooks(books, rating) {
+    const filterBooks = books.filter(book => book.rating >= rating)
+    console.log(filterBooks);
+    const order = filterBooks.sort((a, b) => b.rating - a.rating)
+    return order
+}
+console.log(filterAndSortBooks([{'title':'T','author':'F.','rating':8.5},{'title':'1984','author':'G','rating':9},{'title':'To','author':'He','rating':8.3}],8.4));
