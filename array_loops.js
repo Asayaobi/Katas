@@ -10,28 +10,44 @@
 //     }
 //     return doubled;
 // }
-// console.log(doubleNumbers([1,2,3,4]));
 
-let numbers = [1,2,3,4]
-const doubleNumbers = numbers.map(number => number * 2)
-console.log(doubleNumbers);
+function doubleNumbers(arr) {
+    return double = arr.map(num => num * 2)
+}
+console.log(doubleNumbers([1,2,3,4]));
+console.log(doubleNumbers([10,10,10]));
+console.log(doubleNumbers([0,100]));
+console.log(doubleNumbers([]));
+
 
 // Create a JavaScript function named convertToFahrenheit.
 // This function will take an array of temperatures in Celsius and return a new array with these temperatures converted to Fahrenheit.
 // The conversion formula to use is Fahrenheit = Celsius * 9 / 5 + 32.
-let temperaturesC = [15,40,12,5]
-const temperaturesF = temperaturesC.map(temp => temp * 9 / 5 + 32)
-console.log(temperaturesF);
+
+function convertToFahrenheit(temperaturesC) {
+    return temperaturesF = temperaturesC.map(t => t * 9 / 5 + 32)
+}
+
+console.log(convertToFahrenheit([15,40,12,5]));
+console.log(convertToFahrenheit([42,0,-10]));
 
 // You are provided with a function that is intended to take an array of numbers and return a new array with each number squared.
 // However, there's an error in how the map() method is currently being used.
 // Your task is to identify the error and correct the code.
+// function squareNumbers(numbers) {
+//     numbers.map(number => {
+//         return number * number
+//     })
+// }
+
 function squareNumbers(numbers) {
     return numbers.map(number => {
         return number * number
     })
 }
+
 console.log(squareNumbers([1,2,3,4]));
+console.log(squareNumbers([9,0]));
 
 // filter
 const numbersA = [1, 2, 3, 4, 5, 6];
