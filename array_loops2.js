@@ -90,3 +90,64 @@ console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'lo
 console.log(searchHouses([{'price':100,'location':'Bali'},{'price':80,'location':'Koh Samui'}],90,'Bali'))//false
 
 
+// You are provided with a function that takes an array of numbers and calculates the sum of all the numbers.
+// Currently, the function uses a for loop to accomplish this.
+// Your task is to refactor this function to use the reduce() method instead, to make the code more concise and functional.
+// function sumNumbers(numbers) {
+//     let sum = 0
+//     for (let i = 0; i < numbers.length; i++) {
+//         sum += numbers[i]
+//     }
+//     return sum
+// }
+function sumNumbers(numbers) {
+    const sum = numbers.reduce((acc, number) => acc + number)
+    return sum
+}
+
+console.log(sumNumbers([1,2,3,4,5]));
+
+// Create a JavaScript function named sumOfEvenNumbers.
+// This function will take an array of numbers as its input.
+// It should first use the filter() method to keep only the even numbers from the array.
+// Then, use the reduce() method to calculate and return the sum of these even numbers.
+
+function sumOfEvenNumbersA(numbers) {
+    const evenNumbers = numbers.filter(n => n % 2 === 0)
+    const sum = evenNumbers.reduce((acc, evenNumber) => acc + evenNumber)
+    return sum
+}
+console.log(sumOfEvenNumbersA([1,2,3,4,5,6]));
+
+
+// You are given a function that takes an array of numbers and returns a new array with the numbers sorted in ascending order.
+// The current implementation sorts the array using a for loop.
+// Your task is to refactor this function to use the sort() method instead, for a more efficient and idiomatic approach.
+// function sortNumbers(numbers) {
+//     for (let i = 0; i < numbers.length; i++) {
+//         for (let j = i + 1; j < numbers.length; j++) {
+//             if (numbers[i] > numbers[j]) {
+//                 let temp = numbers[i];
+//                 numbers[i] = numbers[j];
+//                 numbers[j] = temp;
+//             }
+//         }
+//     }
+//     return numbers;
+// }
+
+function sortNumbers(numbers) {
+    const ascOrder = numbers.sort((a,b) => a - b)
+    return ascOrder
+}
+console.log(sortNumbers([6,5,4,1,2,3])); //[1,2,3,4,5,6]
+
+// Create a sortNames function that takes an array of strings (names) 
+// and returns the array sorted alphabetically.
+
+function sortNames(names) {
+    const order = names.sort()
+    return order
+}
+console.log(sortNames(['Bob','Alice','David'])); //	['Alice','Bob','David']
+console.log(sortNames(['Xenia','Xander','Xavia'])) //['Xander','Xavia','Xenia'];
