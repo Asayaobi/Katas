@@ -155,6 +155,22 @@ console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop
 console.log(findProductById([{'id':109,'name':'Keyboard'},{'id':107,'name':'Duck'}],109));
 console.log(findProductById([{'id':109,'name':'Keyboard'},{'id':107,'name':'Duck'}],20));
 
+// You are given a function that attempts to find and return a user object from an array of users by a given username.
+// However, the find() method is being used incorrectly in this function.
+// Your task is to identify the mistake and correct the function so that it properly uses find().
+// function findUserByUsername (users, username) {
+//     const findUser = users.find(user => user.username === username)
+//     return findUser
+// }
+//or
+function findUserByUsername(users, username) {
+    return users.find(user => {
+        return user.username === username
+    })
+}
+console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'username':'batman','password':'dark'}],'batman'));
+
+
 
 // const products = [
 //     { name: 'Apple', category: 'fruit' },
