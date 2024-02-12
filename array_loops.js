@@ -12,7 +12,8 @@
 // }
 
 function doubleNumbers(arr) {
-    return double = arr.map(num => num * 2)
+    const double = arr.map(num => num * 2)
+    return double
 }
 console.log(doubleNumbers([1,2,3,4]));
 console.log(doubleNumbers([10,10,10]));
@@ -25,7 +26,8 @@ console.log(doubleNumbers([]));
 // The conversion formula to use is Fahrenheit = Celsius * 9 / 5 + 32.
 
 function convertToFahrenheit(temperaturesC) {
-    return temperaturesF = temperaturesC.map(t => t * 9 / 5 + 32)
+    const temperaturesF = temperaturesC.map(t => t * 9 / 5 + 32)
+    return temperaturesF
 }
 
 console.log(convertToFahrenheit([15,40,12,5]));
@@ -50,6 +52,41 @@ console.log(squareNumbers([1,2,3,4]));
 console.log(squareNumbers([9,0]));
 
 // filter
+// You are given a function that takes an array of numbers and returns a new array containing only even numbers.
+// However, this function currently uses a for loop.
+// Your task is to refactor this function to use the filter() method instead.
+// function getEvenNumbers(numbers) {
+//     const evenNumbers = [];
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] % 2 === 0) {
+//             evenNumbers.push(numbers[i]);
+//         }
+//     }
+//     return evenNumbers;
+// }
+
+function getEvenNumbers(numbers) {
+    const evenNumbers = numbers.filter(number => number % 2 === 0)
+    return evenNumbers
+}
+
+console.log(getEvenNumbers([1,2,3,4,5,6]));
+console.log(getEvenNumbers([0,-10,11,-12,13]));
+console.log(getEvenNumbers([]));
+
+// Write a JavaScript function named filterOutNegativeNumbers.
+// This function should take an array of numbers and return a new array with all negative numbers filtered out, leaving only positive numbers and zeros.
+function filterOutNegativeNumbers(numbers) {
+    const positiveNumbers = numbers.filter(num => num >= 0)
+    return positiveNumbers
+}
+console.log(filterOutNegativeNumbers([1,2,3]));
+console.log(filterOutNegativeNumbers([1,-2,-3,4]));
+console.log(filterOutNegativeNumbers([-10,-20,-30,-40]));
+
+
+
+
 const numbersA = [1, 2, 3, 4, 5, 6];
 const evenNumbers = numbersA.filter(number => number % 2 === 0)
 console.log(evenNumbers);
