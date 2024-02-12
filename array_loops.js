@@ -170,6 +170,45 @@ function findUserByUsername(users, username) {
 }
 console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'username':'batman','password':'dark'}],'batman'));
 
+// Write a JavaScript function named replaceProductPrice.
+// This function should take two parameters: an array of product objects and a product ID.
+// Each product object contains an id, a name, and a price.
+// The function should find the product with the given ID and increase its price by 10%.
+// The function should return a new array with the updated product objects.
+// 1.  if find the id
+// 2. change with new price
+// 3. else return the same price
+
+// function replaceProductPrice(products, productID) {
+//     for (let product of products {
+//         if (product.id === productID){
+//             product.price *= 1.1
+//         }
+//     })
+//     return products
+// }
+
+function replaceProductPrice(products, productID) {
+    const replacePrice = products.map((p) => p.id === productID ? p.price = Math.round(p.price * 1.1) : p.price)
+    return products
+}
+
+
+console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],1)); // [{'id':1,'price':110},{'id':2,'price':200}]
+console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2));
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // const products = [
@@ -205,33 +244,3 @@ console.log(truthyValues);
 // const findPerson = people.find(person => person.name === name)
 // console.log(findPerson);
 
-// Write a JavaScript function named replaceProductPrice.
-// This function should take two parameters: an array of product objects and a product ID.
-// Each product object contains an id, a name, and a price.
-// The function should find the product with the given ID and increase its price by 10%.
-// The function should return a new array with the updated product objects.
-// const productsA = [{'id':1,'price':100},{'id':2,'price':200}]
-// let productID = 1
-
-// const findProductPriceA = productsA.find(pA => pA.id === productID)
-// const findProductPriceB = productsA.find( pB => pB.id !== productID)
-// findProductPriceA.price = findProductPriceA.price * 1.1
-// replaceProductPrice.push(findProductPriceA, findProductPriceB)
-
-// console.log(findProductPriceA);
-// console.log(findProductPriceB);
-// console.log(replaceProductPrice);
-//loop through productA
-//check the condition if product.id === productID
-// modify the price product.price = product.price * 1.1
-//return new array called replaceProductPrice with updated products
-
-// function replaceProductPrice(products, productID) {
-//     for (let product of products){
-//         if (product.id === productID) {
-//             product.price *= 1.1
-//         }
-//     }
-//     return products
-// }
-// console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2));
