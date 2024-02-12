@@ -41,12 +41,35 @@ console.log(containsHighValue([10,100,1000],2000)); // false
 // First, it should check if any number in the array is greater than the threshold.
 // If such a number exists, then use the map() method to double each number in the array.
 // The function should return the transformed array if there's a number greater than the threshold, or the original array otherwise.
+// function checkAndTransform(numbers, value) {
+//     const hasValue = numbers.some(n => n > value)
+//     console.log(hasValue);
+//     const output = numbers.map(n => hasValue ? n * 2 : n)
+//     return output
+// }
+// function checkAndTransform(numbers, value) {
+//     let transformNumbers = []
+//     const checkValue = numbers.some(n => n > value)
+//     console.log(checkValue);
+//     // if (checkValue) {
+//     //     const doubleNumber = numbers.map(n => n *= 2)
+//     //     transformNumbers.push(doubleNumber)
+//     //     return transformNumbers
+//     // } else {
+//     //     return numbers
+//     // }
+// }
+
 function checkAndTransform(numbers, value) {
-    const hasValue = numbers.some(n => n > value)
-    const output = numbers.map(n => hasValue ? n * 2 : n)
-    return output
-}
-console.log(checkAndTransform([1,4,6,8],5));
+    const checkNumber = numbers.some(number => number > value)
+        if (checkNumber) {
+            const transformNumbers = numbers.map(number => number * 2)
+            return transformNumbers
+        } else {
+            return numbers
+        }}
+
+console.log(checkAndTransform([1,4,6,8],5))//[2,8,12,16]
 console.log(checkAndTransform([2,3,4],10));
 
 // Create a JavaScript function named allPass.
@@ -72,18 +95,15 @@ console.log(allPass([10,7,8,10,10,9],5));
 
 // function searchHouses(houses, givenPrice, givenPlace) {
 //     const filterLocation = houses.every(house => house.location.includes(givenPlace))
-//     if (filterLocation) {
-//         const priceAndPlace = houses.every(p => p.price < givenPrice)
-//         return priceAndPlace
-//     } else {
-//         return false
-//     }
+//     const filterPrice = filterLocation ? houses.every(p => p.price < givenPrice) : false
+//     return filterPrice
 // }
-function searchHouses(houses, givenPrice, givenPlace) {
-    const filterLocation = houses.every(house => house.location.includes(givenPlace))
-    const filterPrice = filterLocation ? houses.every(p => p.price < givenPrice) : false
-    return filterPrice
+
+function searchHouses(array, price, location) {
+    const result = array.every(house => house.location.includes(location) && house.price < price)
+    return result
 }
+
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],150,'Koh'))//true
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],150,'Bali'))//false
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],90,'Koh'))//false
