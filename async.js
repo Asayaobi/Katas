@@ -102,6 +102,13 @@ const getTodo = async (number) => {
   return response.data;
 };
 
+const getTodo = async (num) => {
+  let response = await axios.get(
+  https://jsonplaceholder.typicode.com/todos/${num}
+  )
+  return response.data
+  }
+  
 getTodo(1) // { userId: 1, id: 1, title: 'delectus aut autem', completed: false }
 getTodo(2) // { userId: 1, id: 2, title: 'quis ut nam facilis et officia qui', completed: false }
 getTodo(3) // { userId: 1, id: 3, title: 'fu
@@ -118,3 +125,18 @@ const getComments = async () => {
   )
   return response.data
 }
+// One of the 2 functions getResults() and getPages() returns an error. You don't know which one. Collect any of the 2 errors and log them in the console.
+
+// const search = async () => {
+//   let results = await getResults()
+//   let pages = await getPages()
+// }
+
+const search = async () => {
+  try {
+  let results = await getResults()
+  let pages = await getPages()
+  } catch (err) {
+  console.log(err)
+  }
+  }
