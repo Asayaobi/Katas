@@ -179,23 +179,30 @@ console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'user
 // 2. change with new price
 // 3. else return the same price
 
-// function replaceProductPrice(products, productID) {
-//     for (let product of products {
-//         if (product.id === productID){
-//             product.price *= 1.1
-//         }
-//     })
-//     return products
-// }
 
 function replaceProductPrice(products, productID) {
-    const replacePrice = products.map((p) => p.id === productID ? p.price = Math.round(p.price * 1.1) : p.price)
-    return products
+    const replacePrice = products.map((p) => {
+        if (p.id === productID) {
+            p.price = Math.floor(p.price * 1.1)
+            return p
+            // return {
+            //     ...p,
+            //     price: Math.floor(p.price * 1.1)
+            // }
+        } else {
+            return p
+        }
+    })
+    return replacePrice
 }
 
-
-console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],1)); // [{'id':1,'price':110},{'id':2,'price':200}]
-console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2));
+const arr =  [{'id':1,'price':100},{'id':2,'price':200}]
+console.log(arr)
+console.log(replaceProductPrice(arr,1)); 
+console.log(arr[0].price)
+console.log(arr)
+// [{'id':1,'price':110},{'id':2,'price':200}]
+// console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2));
 
 
 
