@@ -1,24 +1,81 @@
-// Given an array of integers, remove the n smallest. 
-// If there are multiple elements with the same value, 
-// remove the ones with a lower index first. 
-// If n is greater than the length of the array/list, 
-// return an empty list/array. If n is zero or less, 
-// return the original array/list.
 
-// Don't change the order of the elements that are left.
-// removeSmallest (-10) [1,2,3,4,5] = [1,2,3,4,5]
-// removeSmallest 0 [1,2,3,4,5] = [1,2,3,4,5]
-// removeSmallest 2 [5,3,2,1,4] = [5,3,4]
-// removeSmallest 3 [5,3,2,1,4] = [5,4]
-// removeSmallest 3 [1,2,3,4,5] = [4,5]
-// removeSmallest 5 [1,2,3,4,5] = []
-// removeSmallest 9 [1,2,3,4,5] = []
+// Create a function checkVehicle that takes a parameter vehicle (a string).
+// The function should prevent 'car', 'truck' and 'motorbike' from accessing the park, returning 'not allowed', and should allow anyone else in, such as 'pedestrian', 'bicycle', and others, returning 'allowed'.
+// Use the NOT EQUAL operator.
+// function checkVehicle(vehicle){
+//     let output =''
+//     if (vehicle !== 'car' && vehicle !== 'truck' && vehicle !== 'motorbike'){
+//         output = 'allowed'
+//     } else {
+//         output = 'not allow'
+//     }
+// return output
+// }
 
-// removeSmallest 2 [1,2,1,2,1] = [2,2,1]
+const checkVehicle = vehicle => (vehicle !== 'car' && vehicle !== 'truck' && vehicle !== 'motorbike')? 'allowed' : 'not allow'
+console.log(checkVehicle('car')	);
+console.log(checkVehicle('truck'))
+console.log(checkVehicle('motorbike'))
+console.log(checkVehicle('pedestrian'));
+console.log(checkVehicle('bird'));
+checkVehicle('car')	//'not allowed'
+checkVehicle('truck')	//'not allowed'
+checkVehicle('motorbike')	//'not allowed'
+checkVehicle('pedestrian')	//'allowed'
+checkVehicle('bicycle')	//'allowed'
+checkVehicle('bird')	//'allowed'
 
-loop the Array to find the smallest to remove
-apply condition by comparing value with array's length
-v <= 0 -> original Array
-V > Array.lenght -> emtpy array
-else loop to remove v times
+// Vowels are "a", "e", "i", "o" and "u".
+// Create a function countVowels that takes an array of letters, 
+// and returns the number of vowels in the array.
 
+// countVowels(['h','a','i','k','u'])	3
+// countVowels(['a','c','a','d','e','m','y'])	3
+// countVowels(['c','o','d','e'])	2
+
+function countVowels(letters){
+    const vowels = ['a', 'e', 'i', 'o', 'u']
+    //if a similar letter from VOWELS is found from LETTER, it'll be true and it will pass that LETTER into the output array
+    const output = letters.filter(letter => vowels.includes(letter))
+    return output.length
+    // let count = 0
+    // for (let letter of letters) {
+    //     if (letter === 'a' || letter === 'e' || letter === 'i' || letter === 'o' || letter === 'u') {
+    //         count += 1
+    //     }
+    // }
+    // return count
+
+}
+console.log(countVowels(['h','a','i','k','u']));
+console.log(countVowels(['a','c','a','d','e','m','y']))
+console.log(countVowels(['c','o','d','e']));
+
+// KATAS FOR INCLUDES()
+// Kata 1: Remove Duplicates
+// Write a function removeDuplicates that takes an array of numbers as input 
+// and returns a new array with only unique elements. Use the includes method.
+
+// javascript
+// Copy code
+// removeDuplicates([1, 2, 3, 4, 4, 5, 6, 6]); // Output: [1, 2, 3, 4, 5, 6]
+
+function removeDuplicates(numbers) {
+    let result = []
+    for (let n of numbers) {
+        if (!result.includes(n)){
+            result.push(n)
+        }
+    }
+    return result
+}
+console.log(removeDuplicates([1, 2, 3, 4, 4, 5, 6, 6]));
+
+// Kata 2: Common Elements
+// Write a function commonElements that takes two arrays as input 
+// and returns a new array containing only the elements that are common between 
+// the two arrays. Use the includes method.
+
+// javascript
+// Copy code
+// commonElements([1, 2, 3, 4], [3, 4, 5, 6]); // Output: [3, 4]
