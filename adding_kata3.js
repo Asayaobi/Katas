@@ -7,6 +7,31 @@
 // convert all products inStock property to booleans ('yes' -> true, 'no' -> false) and add a default true if the property doesn't exist
 // then return the updated and properly formatted array
 
+function formatData(products) {
+    for (let i = 0; i < products.length; i++) {
+        if (typeof products[i].price !== 'number') {
+            products[i].price = Number(products[i].price)
+        }
+        if (typeof products[i].inStock !== 'boolean') {
+            if (products[i].inStock === 'no') {
+                products[i].inStock = false
+            } else {
+                products[i].inStock = true
+            }
+        }
+        }
+        return products
+    }
+
+
+
+console.log(formatData([{'name':'shoes','price':10,'inStock':true},{'name':'skirt','price':'50','inStock':'yes'}]))
+console.log(formatData([{'name':'jacket','price':'90.5','inStock':'no'}]))
+console.log(formatData([{'name':'keyboard','price':22.35}]));
+
+
+
+
 // function formatData(arrays) {
 //     for (let array of arrays) {
 //         if (typeof array.price !== 'number') {
@@ -14,33 +39,11 @@
 //         }
 //         if (array.inStock === 'yes') {
 //             array.inStock = true
-//         } 
-//         if (array.inStock === 'no') {
+//         } else if (array.inStock === 'no') {
 //             array.inStock = false
-//         } 
-//         if (array.inStock !== 'boolean') {
-//             array.inStock = Boolean(array.inStock)
+//         } else {
+//             array.inStock = true
 //         }
 //     }
 //     return arrays
 // }
-
-function formatData(arrays) {
-    for (let array of arrays) {
-        if (typeof array.price !== 'number') {
-            array.price = Number(array.price)
-        }
-        if (array.inStock === 'yes') {
-            array.inStock = true
-        } else if (array.inStock === 'no') {
-            array.inStock = false
-        } else {
-            array.inStock = true
-        }
-    }
-    return arrays
-}
-
-console.log(formatData([{'name':'shoes','price':10,'inStock':true},{'name':'skirt','price':'50','inStock':'yes'}]))
-console.log(formatData([{'name':'jacket','price':'90.5','inStock':'no'}]))
-console.log(formatData([{'name':'keyboard','price':22.35}]));
