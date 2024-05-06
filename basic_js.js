@@ -49,3 +49,21 @@ function checkTemperature(t) {
 console.log(checkTemperature(10))
 console.log(checkTemperature(15))
 console.log(checkTemperature(27))
+
+// Animal Classification
+// Create a function classifyAnimal that takes an animal name and returns 'Domestic' if it's either 'cat' or 'dog', 
+// and 'Wild' for any other animal.
+
+function classifyAnimal(animal) {
+    if (animal === 'cat') {
+        return 'Domestic'
+    }
+    if (animal === 'dog') {
+        return 'Domestic'
+    }
+    return 'Wild'
+}
+
+console.log(classifyAnimal('dog'))
+console.log(classifyAnimal('cat'))
+console.log(classifyAnimal('rat'))
