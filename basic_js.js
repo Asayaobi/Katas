@@ -228,6 +228,7 @@ function scoreBlackjack(playerscards,dealerscard) {
 console.log(scoreBlackjack([10,5],6))
 console.log(scoreBlackjack([8,3,4],10))
 console.log(scoreBlackjack([1],7))
+
 // Sum of Positives
 // During a competition, some scores were incorrectly saved as negative numbers.
 // Create a function sumPositives that takes an array of numbers as a parameter, 
@@ -235,3 +236,17 @@ console.log(scoreBlackjack([1],7))
 // The function should then return the sum of all numbers.
 // sumPositives([5,-10,15])	30
 // sumPositives([-10,-10,-10])	30
+
+function sumPositives(nums) {
+    let sum = 0
+    for (let n of nums) {
+        if (n < 0) {
+            n = n * -1
+        }
+        sum = sum + n
+    }
+    return sum
+}
+
+console.log(sumPositives([5,-10,15]))
+console.log(sumPositives([-10,-10,-10]))
