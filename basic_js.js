@@ -29,3 +29,23 @@ function assignGrade(score) {
 console.log(assignGrade(90))
 console.log(assignGrade(80))
 console.log(assignGrade(70))
+
+
+// Check Temperature
+// The function checkTemperature should return 'Cold' if the temperature is below 15, 
+// 'Warm' if it's between 15 and 25, and 'Hot' otherwise.
+
+function checkTemperature(t) {
+    if (t < 15) {
+        return 'cold'
+    }
+    if (t <= 25) {
+        return 'warm'
+    }
+    return 'hot'
+}
+
+
+console.log(checkTemperature(10))
+console.log(checkTemperature(15))
+console.log(checkTemperature(27))
