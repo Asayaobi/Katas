@@ -162,3 +162,49 @@ function sumPositives(n) {
 
 console.log(sumPositives([10,-5,20,-17]))
 console.log(sumPositives([1,-1,1,-1]))
+
+// The following loop is incorrect, can you fix it?
+// function sumNumbers(numbers) {
+//     let sum = 0
+//     for (const number in numbers) {
+//         sum = sum + number
+//     }
+//     return sum
+// }
+function sumNumbers(numbers) {
+    let sum = 0
+    for (const number of numbers) {
+        sum = sum + number
+    }
+    return sum
+}
+console.log(sumNumbers([1,2,3]))
+console.log(sumNumbers([10,9,8]))
+
+
+
+
+// Total of Receipt with Loop
+// Create a function calcTotalReceipt that takes an array prices as a parameter, with any number of prices in it, 
+// then returns the sum of all prices in the array.
+// calcTotalReceipt([10,20,15,45])	90
+// calcTotalReceipt([35,15])	50
+
+
+// Blackjack with Loop
+// Create a function scoreBlackjack that takes 2 parameters:
+// a) an array of numbers, representing the cards in the hand of the player, and
+// b) the card that the dealer just extracted
+// If the sum of the player's cards and the dealer's card is 21, return 'win', if it's over 21, return 'lose', otherwise return 'keep playing'.
+// scoreBlackjack([10,5],6)	'win'
+// scoreBlackjack([8,3,4],10)	'lose'
+// scoreBlackjack([1],7)	'keep playing'
+
+
+// Sum of Positives
+// During a competition, some scores were incorrectly saved as negative numbers.
+// Create a function sumPositives that takes an array of numbers as a parameter, 
+// if any of the numbers in the array is a negative number it should be converted into a positive number and added to the total.
+// The function should then return the sum of all numbers.
+// sumPositives([5,-10,15])	30
+// sumPositives([-10,-10,-10])	30
