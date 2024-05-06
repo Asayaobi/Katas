@@ -211,7 +211,23 @@ console.log(calcTotalReceipt([35,15]))
 // scoreBlackjack([8,3,4],10)	'lose'
 // scoreBlackjack([1],7)	'keep playing'
 
+function scoreBlackjack(playerscards,dealerscard) {
+    let player = 0
+    for (const card of playerscards) {
+        player = player + card
+    }
+    if (player + dealerscard === 21) {
+        return 'win'
+    }
+    if (player + dealerscard > 21) {
+        return 'lose'
+    }
+    return 'keep playing'
+}
 
+console.log(scoreBlackjack([10,5],6))
+console.log(scoreBlackjack([8,3,4],10))
+console.log(scoreBlackjack([1],7))
 // Sum of Positives
 // During a competition, some scores were incorrectly saved as negative numbers.
 // Create a function sumPositives that takes an array of numbers as a parameter, 
