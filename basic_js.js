@@ -98,3 +98,21 @@ function calcTotalReceipt(prices) {
 }
 
 console.log(calcTotalReceipt([1,2,3,4]))
+
+// Combine Total of Receipts
+// You received 2 receipts, one from the restaurant and one from the coffee shop, 
+// now you'd like to pay for them at the same time.
+// Create a function calcTotalReceipts that takes 2 arrays as parameters, each array contains 2 prices, 
+// then returns the sum of all prices in both arrays combined.
+
+function calcTotalReceipt2(restaurant, coffee) {
+    // sum restaurant
+    const sumRestaurant = restaurant[0] + restaurant[1]
+    // sum coffee
+    const sumCoffee = coffee[0] + coffee[1]
+    // sum both
+    const total = sumRestaurant + sumCoffee
+    return total
+}
+
+console.log(calcTotalReceipt2([11,3],[2.5,1.5]))
