@@ -67,3 +67,23 @@ function classifyAnimal(animal) {
 console.log(classifyAnimal('dog'))
 console.log(classifyAnimal('cat'))
 console.log(classifyAnimal('rat'))
+
+// Blackjack
+// Create a function scoreBlackjack that takes an array of 2 numbers, 
+// the first represents the total in the hand of the player, the second is the card that the dealer just extracted.
+// If the sum of the player's cards and the dealer's card is 21, return 'win', 
+// if it's over 21, return 'lose', otherwise return 'keep playing'.
+
+function scoreBlackjack(numbers) {
+    if (numbers[0] + numbers[1] === 21) {
+        return 'win'
+    }
+    if (numbers[0] + numbers[1] > 21) {
+        return 'lose'
+    }
+    return 'keep playing'
+}
+
+console.log(scoreBlackjack([10,11]))
+console.log(scoreBlackjack([10,10]))
+console.log(scoreBlackjack([10,12]))
