@@ -190,6 +190,17 @@ console.log(sumNumbers([10,9,8]))
 // calcTotalReceipt([10,20,15,45])	90
 // calcTotalReceipt([35,15])	50
 
+function calcTotalReceipt(prices) {
+    let sum = 0
+    for (const p of prices) {
+        sum = sum + p
+    }
+    return sum
+}
+
+console.log(calcTotalReceipt([10,20,15,45]))
+console.log(calcTotalReceipt([35,15]))
+
 
 // Blackjack with Loop
 // Create a function scoreBlackjack that takes 2 parameters:
