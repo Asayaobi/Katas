@@ -87,3 +87,14 @@ function scoreBlackjack(numbers) {
 console.log(scoreBlackjack([10,11]))
 console.log(scoreBlackjack([10,10]))
 console.log(scoreBlackjack([10,12]))
+
+// Total of Receipt
+// Create a function calcTotalReceipt that takes an array prices as a parameter, 
+// with 4 prices in it, then returns the sum of all prices in the array.
+
+function calcTotalReceipt(prices) {
+    const sum = prices[0] + prices[1] + prices[2] + prices[3]
+    return sum
+}
+
+console.log(calcTotalReceipt([1,2,3,4]))
