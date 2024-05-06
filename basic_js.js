@@ -139,3 +139,26 @@ function findYoungest(num) {
 
 console.log(findYoungest([50,12,45,32]))
 console.log(findYoungest([8,19,52,45]))
+
+// Create a sumPositives function that takes an array of 4 numbers as a parameter.
+// The array contains positive and negative numbers.
+// The function should return the sum of all positive numbers only.
+function sumPositives(n) {
+    let sum = 0
+    if (n[0] > 0) {
+        sum = sum + n[0]
+    }
+    if (n[1] > 0) {
+        sum = sum + n[1]
+    }
+    if (n[2] > 0) {
+        sum = sum + n[2]
+    }
+    if (n[3] > 0) {
+        sum = sum + n[3]
+    }
+    return sum
+}
+
+console.log(sumPositives([10,-5,20,-17]))
+console.log(sumPositives([1,-1,1,-1]))
