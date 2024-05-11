@@ -32,3 +32,24 @@ function checkRole(role) {
 console.log(checkRole('admin'))
 console.log(checkRole('editor'))
 console.log(checkRole('user'))
+
+// Deny Access to Park
+// Create a function checkVehicle that takes a parameter vehicle (a string).
+// The function should prevent 'car', 'truck' and 'motorbike' from accessing the park, returning 'not allowed',
+//  and should allow anyone else in, such as 'pedestrian', 'bicycle', and others, returning 'allowed'.
+// Use the NOT EQUAL operator.
+
+function checkVehicle(vehicle) {
+    if (vehicle === 'car' || vehicle === 'truck' || vehicle === 'motorbike') {
+        return 'not allowed'
+    } else {
+        return 'allowed'
+    }
+}
+
+console.log(checkVehicle('car'))
+console.log(checkVehicle('truck'))
+console.log(checkVehicle('motorbike'))
+console.log(checkVehicle('pedestrian'))
+console.log(checkVehicle('bicycle'))
+console.log(checkVehicle('bird'))
