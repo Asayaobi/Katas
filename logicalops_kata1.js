@@ -53,3 +53,25 @@ console.log(checkVehicle('motorbike'))
 console.log(checkVehicle('pedestrian'))
 console.log(checkVehicle('bicycle'))
 console.log(checkVehicle('bird'))
+
+// Active users with role
+// Create a function canAccess that takes 2 parameters: role (a string) and isActive (a boolean).
+// The function should return 'true' if the user's role is either 'admin' or 'editor' and their account is active.
+// For all other scenarios, the function should return 'false'.
+
+function canAccess(role, isActive) {
+    //if role = admin or editor and isActive true -> true
+    //else false
+    if (isActive === true && (role === 'admin' || role === 'editor')) {
+        return 'True'
+    } else {
+        return 'False'
+    }
+}
+
+console.log(canAccess('admin',true))
+console.log(canAccess('admin',false))
+console.log(canAccess('editor',true))
+console.log(canAccess('editor',false))
+console.log(canAccess('user',true))
+console.log(canAccess('user',false))
