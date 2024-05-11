@@ -75,3 +75,20 @@ console.log(canAccess('editor',true))
 console.log(canAccess('editor',false))
 console.log(canAccess('user',true))
 console.log(canAccess('user',false))
+
+// Vowels are "a", "e", "i", "o" and "u".
+// Create a function countVowels that takes an array of letters, and returns the number of vowels in the array.
+
+function countVowels(letters) {
+    let sum = 0
+    for (let l of letters) {
+        if (l === 'a' || l === 'e' || l === 'i' || l === 'o' || l === 'u') {
+            sum += 1
+        }
+    }
+    return sum
+}
+
+console.log(countVowels(['h','a','i','k','u']))
+console.log(countVowels(['a','c','a','d','e','m','y']))
+console.log(countVowels(['c','o','d','e']))
