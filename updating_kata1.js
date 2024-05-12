@@ -54,3 +54,18 @@ function updateNestedArray(obj, number, value) {
 }
 console.log(updateNestedArray(e, 1, "cherry"))
 console.log(updateNestedArray(f, 0, "kiwi"))
+
+
+// Reducing Product Prices by 10%
+// Write a function named reducePrices.
+// The function takes an array of objects as a parameter. Each object represents a product with a price property.
+// The task is to reduce the price property of each product by 10%.
+// Return the array with the updated product objects.
+function reducePrices(products) {
+    for (let i = 0; i < products.length; i++) {
+        products[i].price = products[i].price * 0.90
+    }
+    return products
+}
+console.log(reducePrices([{'name':'Laptop','price':1000},{'name':'Phone','price':500}]))
+console.log(reducePrices([{'name':'Camera','price':800},{'name':'Headphones','price':200}]))
