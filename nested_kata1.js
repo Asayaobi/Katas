@@ -60,3 +60,37 @@ console.log(calcArea(10, 10, "rectangle"))
 console.log(calcArea(10, 10, "triangle"))
 console.log(calcArea(30, 20))
 console.log(calcArea(30, 20, "cube"))
+
+// Sum of Even Numbers
+// Your task is to create a JavaScript function sumEvenNumbers that processes an array of numbers.
+// For each number in the array, the function should call an external function isEven to check if the number is even.
+// Then, it should sum all the even numbers and return the total sum.
+
+// Automatic tests are not available for this kata, please use the tests below in NodeJs.
+// sumEvenNumbers([1, 20, 5, 4]) // 24
+// sumEvenNumbers([0, 100, -20, 5.5, -10]) // 70
+// sumEvenNumbers([1, 2, 3, 4, 5, 6]) // 12
+
+function isEven(n) {
+    if (n % 2 === 0) {
+        return true
+    } else {
+        return false
+    }
+}
+console.log(isEven(2))
+console.log(isEven(3))
+
+function sumEvenNumbers(numbers) {
+    let sum = 0
+    for (i = 0; i < numbers.length; i++){
+        if (isEven(numbers[i])){
+            sum += numbers[i]
+        }
+    }
+    return sum
+}
+
+console.log(sumEvenNumbers([1, 20, 5, 4]))
+console.log(sumEvenNumbers([0, 100, -20, 5.5, -10]))
+console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6]))
