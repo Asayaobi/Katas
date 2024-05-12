@@ -19,9 +19,9 @@ console.log(markAsPaid(b))
 // The function should update the status property of the bill to value parameter, and then return the updated object.
 
 let c = {"total": "99", "status": "pending"}
-// markAsValue(a, "accepted") // {"total": "99", "status": "accepted"}
+// markAsValue(c, "accepted") // {"total": "99", "status": "accepted"}
 let d = {"total": "71.5", "status": "pending"}
-// markAsValue(b, "denied") // {"total": "71.5", "status": "denied"}
+// markAsValue(d, "denied") // {"total": "71.5", "status": "denied"}
 
 function markAsValue(bill, value) {
     bill.status = value
@@ -30,3 +30,27 @@ function markAsValue(bill, value) {
 
 console.log(markAsValue(c, "accepted"))
 console.log(markAsValue(d, 'pending'))
+
+// Updating a Nested Array in an Object
+// Create a JavaScript function named updateNestedArray.
+// This function should take three parameters:
+
+// an object
+// a number
+// and a string.
+
+// The object contains a nested array of strings. 
+// The function should update the element in the array at the index specified by the number parameter 
+// to the value provided by the string parameter.
+
+// After updating, the function should return the modified object.
+let e = {"fruits": ["apple", "banana"]}
+// updateNestedArray(e, 1, "cherry") // {"fruits": ["apple", "cherry"]}
+let f = {"fruits": ["pineapple", "strawberry"]}
+// updateNestedArray(f, 0, "kiwi") // {"fruits": ["kiwi", "strawberry"]}
+function updateNestedArray(obj, number, value) {
+    obj.fruits[number] = value
+    return obj
+}
+console.log(updateNestedArray(e, 1, "cherry"))
+console.log(updateNestedArray(f, 0, "kiwi"))
