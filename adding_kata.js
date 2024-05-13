@@ -35,7 +35,6 @@ console.log(addAges([{'name':'Tom'},{'name':'Tim'},{'name':'Tam'}],[30,31,32]));
 function formatData(products) {
     for (let i = 0; i < products.length; i++) {
         products[i].price = Number(products[i].price)
-        // products[i].inStock = Boolean(products[i].inStock)
         if (products[i].inStock === 'no'){
             products[i].inStock = false
         } else {
