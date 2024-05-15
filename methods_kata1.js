@@ -9,4 +9,4 @@ let greeter = {
     }
 }
 
-console.log(greeter.sayHello());
+console.log(greeter.sayHello())
