@@ -40,3 +40,17 @@ function checkSquareRoot(arr) {
 
 console.log(checkSquareRoot([{'value':100,'squareRoot':10},{'value':25,'squareRoot':6}]))
 console.log(checkSquareRoot([{'value':81,'squareRoot':9}])	)
+
+// Win the lottery
+// Create a function winTheLottery that takes an array of 4 strings, as per the tests below.
+// The function should generate a random number between 0 and 4 which will be used to extract one of the strings from the array.
+// The functions should then return the extracted string.
+// hint: if you use Math.ceil then it won't ever give you the i = 0.
+// console.log(winTheLottery(['lose', 'lose', 'win', 'lose'])) // sometimes 'win', sometimes 'lose'
+
+function winTheLottery(results) {
+    let i =Math.floor(Math.random()*4)
+    return results[i]
+}
+
+console.log(winTheLottery(['lose', 'lose', 'win', 'lose']))
