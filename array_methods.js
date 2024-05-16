@@ -111,3 +111,9 @@ const addSportsLengths = sports => {
 }
 console.log(addSportsLengths([{'name':'John','sports':['football']},{'name':'Alice','sports':['tennis','golf']}]))
 console.log(addSportsLengths([{'name':'Bob','sports':[]}]))
+
+// Reverse Array
+// Create a function reverseArray that takes an array and returns the array reversed.
+const reverseArray = array => array.reverse()
+console.log(reverseArray([1,2,3,4]))
+console.log(reverseArray(['a','b','c']))
