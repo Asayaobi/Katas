@@ -12,3 +12,11 @@ let score = 85
 let grade = score >= 90 ? 'A' : score > 75 ? 'B' : 'c'
 
 console.log(grade)
+
+//example with function
+
+function isEven(number) {
+    return number % 2 === 0 ? true : false
+}
+
+console.log(isEven(20))
