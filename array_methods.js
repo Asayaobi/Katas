@@ -66,7 +66,7 @@ console.log(Array.isArray(price))
 
 const names1 = ['Alice', 'Bob']
 names1.join() // 'AliceBob'
-console.log(names1.join())
+console.log(names1.join(''))
 
 const names2 = ['Alice', 'Bob']
 names2.join(' ') // 'Alice Bob'
@@ -122,14 +122,13 @@ console.log(reverseArray(['a','b','c']))
 // Create a function removeEmptySpots that takes an array as a parameter.
 // The array may have a falsy value at the beginning or at the end (or both).
 // The function should remove these falsy values and return the clean array.
-// removeEmptySpots([0,2,3,4,0])
+// hint: (else if) removes only the first empty spot if it exists, 
+//while two separate if statements removes both the first and last empty spots if they exist independently.
 const removeEmptySpots = array => {
-    if (!array[0] && !array[array.length - 1]) {
+    if (!array[0]) {
         array.shift()
-        array.pop()
-    } else if (!array[0]) {
-        array.shift()
-    } else if (!array[array.length - 1]) {
+    } 
+    if (!array[array.length - 1]) {
         array.pop()
     }
     return array
@@ -138,3 +137,17 @@ console.log(removeEmptySpots([0,2,3,4,0]))
 console.log(removeEmptySpots([null,'a','b','c']))
 console.log(removeEmptySpots([10,11,0,50,false]))
 console.log(removeEmptySpots([0,100,'a','b',50,null]))
+
+// String Repeat
+// Create a function stringRepeat that takes a number and a string, then returns the string repeated as many times as the number.
+// stringRepeat(5, 'hi') // 'hihihihihi'
+// stringRepeat(2, 'hola')
+const stringRepeat = (number,string) => {
+    let output = [] 
+        for (let i = 0; i < number; i++) {
+            output.push(string)
+        }
+        return output.join('')
+}
+console.log(stringRepeat(5, 'hi'))
+console.log(stringRepeat(2, 'hola'))
