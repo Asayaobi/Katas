@@ -1,3 +1,55 @@
+// Jenny has written a function that returns a greeting for a user. 
+// However, she's in love with Johnny, and would like to greet him slightly different. 
+// She added a special case to her function, but she made a mistake.
+// function greet(name){
+//     return "Hello, " + name + "!";
+//     if(name === "Johnny")
+//       return "Hello, my love!";
+//   }
+
+// answer 1
+// function greet(name) {
+//     if (name == 'Johnny') {
+//         return 'Hello, my love!'
+//     } else {
+//         return 'Hello, ' + name + "!"
+//     }
+// }
+
+// answer2
+const greet = name => name === 'Johnny' ? 'Hello, my love!' : `Hello, ${name}!`
+console.log(greet("Jim"))
+console.log(greet("Simon"))
+console.log(greet("Johnny"))
+
+// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+// invert([]) == []
+// You can assume that all values are integers. Do not mutate the input array/list.
+const invert = numbers => {
+    for (let i = 0; i < numbers.length; i++) {
+        numbers[i] = numbers[i] * -1
+    }
+    return numbers
+}
+console.log(invert([1,2,3,4,5]))
+console.log(invert([1,-2,3,-4,5]))
+console.log(invert([]))
+
+// Write a function which calculates the average of the numbers in a given list.
+// Note: Empty arrays should return 0.
+
+const findAverage = numbers => {
+    let sum = 0
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i]
+    }
+    return !numbers.length? 0 : sum / numbers.length
+}
+console.log(findAverage([]))
+console.log(findAverage([1,2,3]))
+console.log(findAverage([1,2,3,4]))
 
 // Create a function checkVehicle that takes a parameter vehicle (a string).
 // The function should prevent 'car', 'truck' and 'motorbike' from accessing the park, returning 'not allowed', and should allow anyone else in, such as 'pedestrian', 'bicycle', and others, returning 'allowed'.
