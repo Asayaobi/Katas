@@ -100,3 +100,10 @@ const search = (words, keyword) => {
 }
 console.log(search(['hello world','good morning'],'world'))
 console.log(search(['123456','911'],'9'))
+
+// Flip the String
+// Create a function flipString that takes a string and returns the string flipped.
+const flipString = word => word.split('').reverse().join('')
+console.log(flipString('Hello'))
+console.log(flipString(''))
+console.log(flipString('Haiku Academy'))
