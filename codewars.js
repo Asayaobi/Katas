@@ -41,11 +41,15 @@ console.log(invert([]))
 // Note: Empty arrays should return 0.
 
 const findAverage = numbers => {
+    if (numbers.length === 0) {
+        return 0
+    } else {
     let sum = 0
     for (let i = 0; i < numbers.length; i++) {
         sum += numbers[i]
     }
-    return !numbers.length? 0 : sum / numbers.length
+    return sum / numbers.length
+    }
 }
 console.log(findAverage([]))
 console.log(findAverage([1,2,3]))
