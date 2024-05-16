@@ -117,3 +117,24 @@ console.log(addSportsLengths([{'name':'Bob','sports':[]}]))
 const reverseArray = array => array.reverse()
 console.log(reverseArray([1,2,3,4]))
 console.log(reverseArray(['a','b','c']))
+
+// Remove Empty Spots
+// Create a function removeEmptySpots that takes an array as a parameter.
+// The array may have a falsy value at the beginning or at the end (or both).
+// The function should remove these falsy values and return the clean array.
+// removeEmptySpots([0,2,3,4,0])
+const removeEmptySpots = array => {
+    if (!array[0] && !array[array.length - 1]) {
+        array.shift()
+        array.pop()
+    } else if (!array[0]) {
+        array.shift()
+    } else if (!array[array.length - 1]) {
+        array.pop()
+    }
+    return array
+}
+console.log(removeEmptySpots([0,2,3,4,0]))
+console.log(removeEmptySpots([null,'a','b','c']))
+console.log(removeEmptySpots([10,11,0,50,false]))
+console.log(removeEmptySpots([0,100,'a','b',50,null]))
