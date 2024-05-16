@@ -42,3 +42,15 @@ fruits.split(',') // ['apple', 'orange', 'banana', 'mango']
 let cities = 'Bangkok-Tokyo-London'
 cities.split('-') // ['Bangkok', 'Tokyo', 'London'
 console.log(cities.split('-'))
+
+// 7. toLowerCase() / toUpperCase()
+// Converts a string to lowercase or uppercase.
+// Example
+'Hello World'.toLowerCase() // 'hello world'
+'Hello World'.toUpperCase() // 'HELLO WORLD'
+
+// 8. trim()
+// Removes whitespace from both ends of a string.
+// Example
+'  Hello World  '.trim() // 'Hello World'
+console.log('  Hello World  '.trim() )
