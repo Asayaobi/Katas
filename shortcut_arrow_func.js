@@ -1,13 +1,22 @@
-// Convert the following function into an arrow function.
-
+// 1. Basic Arrow Function
+// Traditional Function:
 // function add(a, b) {
-//     return a + b
+//    return a + b
 // }
 
 const add = (a, b) => a + b
+console.log(add(5,2))
+console.log(add(1,2))
 
-console.log(add(5,2));
-console.log(add(1,2));
+// 2. Arrow Function with One Parameter
+// Traditional Function:
+// function square(x) {
+//    return x * x
+// }
+
+const square = (x) => x * x
+console.log(square(4))
+
 
 // The following arrow function is broken. Can you fix it?
 // const subtract (a, b) => a - b
