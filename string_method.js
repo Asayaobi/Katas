@@ -11,3 +11,10 @@ console.log(greeting.length)
 // Example:
 'hello'.charAt(1) // 'e'
 console.log('first'.charAt(0))
+
+// 3.includes()
+// Checks if a string contains a specified substring.
+// Example:
+const sentence = 'The quick brown fox jumps over the lazy dog.'
+sentence.includes('fox') // true
+console.log(sentence.includes('quick'))
