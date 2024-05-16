@@ -78,6 +78,10 @@ console.log(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9))
 // Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, 
 // will he survive?
 // Return true if yes, false otherwise :)
+const hero = (bullets, dragons) => bullets >= dragons * 2 ? true : false
+console.log(hero(10, 5))
+console.log(hero(100, 40))
+console.log(hero(1500, 751))
 
 // Create a function checkVehicle that takes a parameter vehicle (a string).
 // The function should prevent 'car', 'truck' and 'motorbike' from accessing the park, returning 'not allowed', and should allow anyone else in, such as 'pedestrian', 'bicycle', and others, returning 'allowed'.
