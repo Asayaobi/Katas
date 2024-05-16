@@ -17,6 +17,18 @@ console.log(add(1,2))
 const square = (x) => x * x
 console.log(square(4))
 
+// 3. Arrow Function with Multiple Statements
+// Traditional Function:
+// function calculateArea(radius) {
+//    const pi = 3.14
+//    return pi * radius * radius
+// }
+
+const calculateArea = (radius) => {
+    const pi = 3.14
+    return pi * radius * radius
+}
+console.log(calculateArea(2))
 
 // The following arrow function is broken. Can you fix it?
 // const subtract (a, b) => a - b
