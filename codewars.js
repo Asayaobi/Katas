@@ -55,6 +55,30 @@ console.log(findAverage([]))
 console.log(findAverage([1,2,3]))
 console.log(findAverage([1,2,3,4]))
 
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+// Return true if you're better, else false!
+// Note:
+// Your points are not included in the array of your class's points. Do not forget them when calculating the average score!
+const betterThanAverage = (scores, yourScore) => {
+    let sum = 0
+    for (let i = 0; i < scores.length ; i++) {
+        sum += scores[i]
+    }
+    return yourScore > (sum / scores.length) ? true : false
+}
+console.log(betterThanAverage([2, 3], 5))
+console.log(betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))
+console.log(betterThanAverage([12, 23, 34, 45, 56, 67, 78, 89, 90], 9))
+
+// A hero is on his way to the castle to complete his mission. 
+// However, he's been told that the castle is surrounded with a couple of powerful dragons! 
+// each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. 
+// Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, 
+// will he survive?
+// Return true if yes, false otherwise :)
+
 // Create a function checkVehicle that takes a parameter vehicle (a string).
 // The function should prevent 'car', 'truck' and 'motorbike' from accessing the park, returning 'not allowed', and should allow anyone else in, such as 'pedestrian', 'bicycle', and others, returning 'allowed'.
 // Use the NOT EQUAL operator.
