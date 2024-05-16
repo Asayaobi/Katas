@@ -23,3 +23,21 @@ console.log(result) // 'The sum of 2 and 3 is 5.'
 const add = (a, b) => a + b
 const output = `The sum of 2 and 3 is ${add(2, 3)}.`
 console.log(output) 
+
+// Time Greet
+// Create an arrow function greetTime that takes a parameter time (a number).
+// Inside the function, create a second arrow function checkTime that takes a parameter t (a number).
+// Within the checkTime function, use a ternary operator to check if t is less than 12, if it is, return 'morning', 
+// otherwise return 'evening'.
+// Within the greetTime function, return a template literal that includes the invokation of the function checkTime, 
+// passing time as a parameter, to then return either of the following strings:
+// 'Good morning'
+// 'Good evening'
+const greetTime = t => {
+    const checktime = t => t < 12 ? 'morning' : 'evening'
+    return `Good ${checktime(t)}`
+}
+console.log(greetTime(10))
+console.log(greetTime(11))
+console.log(greetTime(12))
+console.log(greetTime(14))
