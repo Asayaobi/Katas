@@ -33,3 +33,12 @@ let str = 'The quick brown fox'
 str.slice(4, 9)
 console.log(str.slice(4, 9))
 
+// 6. split()
+// Splits a string into an array of substrings.
+// Example
+let fruits = 'apple,orange,banana,mango'
+fruits.split(',') // ['apple', 'orange', 'banana', 'mango']
+
+let cities = 'Bangkok-Tokyo-London'
+cities.split('-') // ['Bangkok', 'Tokyo', 'London'
+console.log(cities.split('-'))
