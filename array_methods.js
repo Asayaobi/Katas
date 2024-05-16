@@ -97,3 +97,17 @@ const returnLength = array => array.length === 0 ? 'the array is empty': array.l
 console.log(returnLength([1,2,3,4]))
 console.log(returnLength(['a']))
 console.log(returnLength([]))
+
+// Sports Lenghts
+// Create a function addSportsLengths that takes an array of objects.
+// Each object contains an array of sports.
+// The function should add a property sportsLength to each object, with the length of its sports array.
+// addSportsLengths([{'name':'John','sports':['football']},{'name':'Alice','sports':['tennis','golf']}])
+const addSportsLengths = sports => {
+    for (let i = 0; i < sports.length ; i++) {
+        sports[i].sportsLength = sports[i].sports.length
+    }
+    return sports
+}
+console.log(addSportsLengths([{'name':'John','sports':['football']},{'name':'Alice','sports':['tennis','golf']}]))
+console.log(addSportsLengths([{'name':'Bob','sports':[]}]))
