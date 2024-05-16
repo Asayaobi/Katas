@@ -25,3 +25,11 @@ console.log(sentence.includes('quick'))
 let sentence1 = 'Hello, world'
 sentence1.replace('world', 'JavaScript') // Output: 'Hello, JavaScript'
 console.log(sentence.replace('fox', 'puppy'))
+
+// 5. slice()
+// Extracts a part of a string and returns a new string.
+// Example
+let str = 'The quick brown fox'
+str.slice(4, 9)
+console.log(str.slice(4, 9))
+
