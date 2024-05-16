@@ -66,3 +66,13 @@ console.log(returnLength(''))
 console.log(returnLength(10))
 console.log(returnLength([1,2,3]))
 console.log(returnLength(true))
+
+// Is Longer Than
+// Create a JavaScript function called isLongerThan.
+// This function should take two parameters: a string and a number.
+// It should return true if the length of the string is greater than the given number, and false otherwise.
+const isLongerThan = (string, number) => string.length > number ? true : false
+console.log(isLongerThan('hello',3))
+console.log(isLongerThan('hello',5))
+console.log(isLongerThan('',-1))
+console.log(isLongerThan('',0))
