@@ -18,3 +18,10 @@ console.log('first'.charAt(0))
 const sentence = 'The quick brown fox jumps over the lazy dog.'
 sentence.includes('fox') // true
 console.log(sentence.includes('quick'))
+
+// 4. replace()
+// Replaces a specified value with another value in a string.
+// Example:
+let sentence1 = 'Hello, world'
+sentence1.replace('world', 'JavaScript') // Output: 'Hello, JavaScript'
+console.log(sentence.replace('fox', 'puppy'))
