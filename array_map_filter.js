@@ -145,3 +145,12 @@ console.log(fruits)
 const scores1 = [30, 45, 60, 80, 90]
 const passingScores = scores1.filter(score => score >= 60)
 console.log(passingScores) // [60, 80, 90]
+
+// Refactoring Filter
+// You are given a function that takes an array of numbers and returns a new array containing only even numbers.
+// However, this function currently uses a for loop.
+// Your task is to refactor this function to use the filter() method instead.
+const getEvenNumbers = numbers => numbers.filter(n => n % 2 === 0)
+console.log(getEvenNumbers([1,2,3,4,5,6]))
+console.log(getEvenNumbers([0,-10,11,-12,13]))
+console.log(getEvenNumbers([]))
