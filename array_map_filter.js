@@ -154,3 +154,12 @@ const getEvenNumbers = numbers => numbers.filter(n => n % 2 === 0)
 console.log(getEvenNumbers([1,2,3,4,5,6]))
 console.log(getEvenNumbers([0,-10,11,-12,13]))
 console.log(getEvenNumbers([]))
+
+// Filter Negatives
+// Write a JavaScript function named filterOutNegativeNumbers.
+// This function should take an array of numbers 
+// and return a new array with all negative numbers filtered out, leaving only positive numbers and zeros.
+const filterOutNegativeNumbers = numbers => numbers.filter(n => n >= 0)
+console.log(filterOutNegativeNumbers([1,2,3]))
+console.log(filterOutNegativeNumbers([1,-2,-3,4]))
+console.log(filterOutNegativeNumbers([-10,-20,-30,-40]))
