@@ -59,23 +59,13 @@ console.log(findPersonName([{'name':'Alice','age':25},{'name':'Alice','age':30}]
 console.log(findPersonName([{'name':'Alice','age':25},{'name':'Bob','age':37}],'Alice'))
 console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'Bob'))
 
-// You are provided with a function that is intended to take an array of numbers and return a new array with each number squared.
-// However, there's an error in how the map() method is currently being used.
-// Your task is to identify the error and correct the code.
-// function squareNumbers(numbers) {
-//     numbers.map(number => {
-//         return number * number
-//     })
-// }
-
-function squareNumbers(numbers) {
-    return numbers.map(number => {
-        return number * number
-    })
-}
-
-console.log(squareNumbers([1,2,3,4]));
-console.log(squareNumbers([9,0]));
+// Find Product By Id
+// Write a JavaScript function named findProductById.
+// This function will take an array of product objects and a specific product ID.
+// It should use the find() method to search through the array and return the product object that has the matching ID.
+// If no product with the given ID is found, the function should return null.
+const findProductById = (products, id) => products.find(p => p.id === id)
+console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2))
 
 // filter
 // You are given a function that takes an array of numbers and returns a new array containing only even numbers.
@@ -172,14 +162,14 @@ console.log(findPerson([{'name':'Bob','age':37},{'name':'Alice','age':25}],'Alic
 //     return null
 // }
 
-function findProductById(products, productID) {
-    const findProduct = products.find(products => products.id === productID)
-    const result = findProduct ? findProduct : null
-    return result
-}
-console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2));
-console.log(findProductById([{'id':109,'name':'Keyboard'},{'id':107,'name':'Duck'}],109));
-console.log(findProductById([{'id':109,'name':'Keyboard'},{'id':107,'name':'Duck'}],20));
+// function findProductById(products, productID) {
+//     const findProduct = products.find(products => products.id === productID)
+//     const result = findProduct ? findProduct : null
+//     return result
+// }
+// console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2));
+// console.log(findProductById([{'id':109,'name':'Keyboard'},{'id':107,'name':'Duck'}],109));
+// console.log(findProductById([{'id':109,'name':'Keyboard'},{'id':107,'name':'Duck'}],20));
 
 // You are given a function that attempts to find and return a user object from an array of users by a given username.
 // However, the find() method is being used incorrectly in this function.
@@ -189,91 +179,91 @@ console.log(findProductById([{'id':109,'name':'Keyboard'},{'id':107,'name':'Duck
 //     return findUser
 // }
 //or
-function findUserByUsername(users, username) {
-    return users.find(user => {
-        return user.username === username
-    })
-}
-console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'username':'batman','password':'dark'}],'batman'));
-
-// Write a JavaScript function named replaceProductPrice.
-// This function should take two parameters: an array of product objects and a product ID.
-// Each product object contains an id, a name, and a price.
-// The function should find the product with the given ID and increase its price by 10%.
-// The function should return a new array with the updated product objects.
-// 1.  if find the id
-// 2. change with new price
-// 3. else return the same price
-
-
-function replaceProductPrice(products, productID) {
-    const replacePrice = products.map((p) => {
-        if (p.id === productID) {
-            p.price = Math.floor(p.price * 1.1)
-            return p
-            // return {
-            //     ...p,
-            //     price: Math.floor(p.price * 1.1)
-            // }
-        } else {
-            return p
-        }
-    })
-    return replacePrice
-}
-
-const arr =  [{'id':1,'price':100},{'id':2,'price':200}]
-console.log(arr)
-console.log(replaceProductPrice(arr,1)); 
-console.log(arr[0].price)
-console.log(arr)
-// [{'id':1,'price':110},{'id':2,'price':200}]
-// console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const products = [
-//     { name: 'Apple', category: 'fruit' },
-//     { name: 'Carrot', category: 'vegetable' },
-//     { name: 'Banana', category: 'fruit' }
-//  ]
-//  const fruits = []
-//  for (i = 0; i < products.length ; i++) {
-//     if (products[i].category === 'fruit') {
-//         fruits.push(products[i].name)
-//     }
-//  }
-//  console.log(fruits);
-const fruits = products.filter(product => product.category === 'fruit')
-console.log(fruits);
-
-const values = [null, 'hello', undefined, 'world', false];
-const truthyValues = values.filter(word => Boolean(word))
-// const truthyValues = []
-// for (let word of values) {
-//     if (word){
-//         truthyValues.push(word)
-//     }
+// function findUserByUsername(users, username) {
+//     return users.find(user => {
+//         return user.username === username
+//     })
 // }
-console.log(truthyValues);
+// console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'username':'batman','password':'dark'}],'batman'));
+
+// // Write a JavaScript function named replaceProductPrice.
+// // This function should take two parameters: an array of product objects and a product ID.
+// // Each product object contains an id, a name, and a price.
+// // The function should find the product with the given ID and increase its price by 10%.
+// // The function should return a new array with the updated product objects.
+// // 1.  if find the id
+// // 2. change with new price
+// // 3. else return the same price
+
+
+// function replaceProductPrice(products, productID) {
+//     const replacePrice = products.map((p) => {
+//         if (p.id === productID) {
+//             p.price = Math.floor(p.price * 1.1)
+//             return p
+//             // return {
+//             //     ...p,
+//             //     price: Math.floor(p.price * 1.1)
+//             // }
+//         } else {
+//             return p
+//         }
+//     })
+//     return replacePrice
+// }
+
+// const arr =  [{'id':1,'price':100},{'id':2,'price':200}]
+// console.log(arr)
+// console.log(replaceProductPrice(arr,1)); 
+// console.log(arr[0].price)
+// console.log(arr)
+// // [{'id':1,'price':110},{'id':2,'price':200}]
+// // console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2));
 
 
 
-// const people = [{'name':'Alice','age':25},{'name':'Alice','age':30}]
-// const name = 'Alice'
 
-// const findPerson = people.find(person => person.name === name)
-// console.log(findPerson);
+
+
+
+
+
+
+
+
+
+
+
+// // const products = [
+// //     { name: 'Apple', category: 'fruit' },
+// //     { name: 'Carrot', category: 'vegetable' },
+// //     { name: 'Banana', category: 'fruit' }
+// //  ]
+// //  const fruits = []
+// //  for (i = 0; i < products.length ; i++) {
+// //     if (products[i].category === 'fruit') {
+// //         fruits.push(products[i].name)
+// //     }
+// //  }
+// //  console.log(fruits);
+// const fruits = products.filter(product => product.category === 'fruit')
+// console.log(fruits);
+
+// const values = [null, 'hello', undefined, 'world', false];
+// const truthyValues = values.filter(word => Boolean(word))
+// // const truthyValues = []
+// // for (let word of values) {
+// //     if (word){
+// //         truthyValues.push(word)
+// //     }
+// // }
+// console.log(truthyValues);
+
+
+
+// // const people = [{'name':'Alice','age':25},{'name':'Alice','age':30}]
+// // const name = 'Alice'
+
+// // const findPerson = people.find(person => person.name === name)
+// // console.log(findPerson);
 
