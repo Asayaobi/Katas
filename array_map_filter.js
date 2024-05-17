@@ -163,3 +163,12 @@ const filterOutNegativeNumbers = numbers => numbers.filter(n => n >= 0)
 console.log(filterOutNegativeNumbers([1,2,3]))
 console.log(filterOutNegativeNumbers([1,-2,-3,4]))
 console.log(filterOutNegativeNumbers([-10,-20,-30,-40]))
+
+// Long Strings Bug
+// You are given a function that is intended to return an array of strings that are longer than 4 characters.
+// However, there's a mistake in the implementation of the filter() method.
+// Your task is to identify and correct the error in the function.
+const getLongStrings = strings => strings.filter( string => string.length > 4)
+console.log(getLongStrings(['Hello','Hola','Ciao']))
+console.log(getLongStrings(['Grazie','Merci','Tak']))
+console.log(getLongStrings(['Grazie','Merci','Tak','Kop Khun']))
