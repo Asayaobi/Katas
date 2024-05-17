@@ -1,26 +1,54 @@
-// map
+// find() method
+//  search through an array and retrieve the first element that meets a certain condition set by a provided function. 
+//  It's an invaluable tool for quickly locating specific elements within an array.
+// Before find()
+// finding an element in an array typically involved a loop and a conditional statement.
 
-// You are provided with a function that takes an array of numbers and returns a new array with each number doubled.
-// However, this function currently uses a for loop.
-// Your task is to refactor this function to use the map() method instead.
-// function doubleNumbers(arr) {
-//     const doubled = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         doubled.push(arr[i] * 2);
-//     }
-//     return doubled;
+const products = [
+    { id: 1, name: 'Phone', category: 'Electronics' },
+    { id: 2, name: 'Blender', category: 'Home Appliances' },
+    { id: 3, name: 'Tablet', category: 'Electronics' }
+]
+
+// function findProduct(products) {
+//    for (let i=0; i < products.length; i++) {
+//         if (products[i].id === 2) {
+//             return products[i]
+//         }
+//    }
 // }
+const findProduct = products => products.find(p => p.id === 2)
+console.log(findProduct(products))
 
-function doubleNumbers(arr) {
-    const double = arr.map(num => num * 2)
-    return double
+// Find does not modifiy the original array, instead, it returns a new element.
+//Find always returns a single element, even if there are multiple elements that match the condition or none.
+const scores1 = [10, 20, 30]
+const foundScore = scores => scores.find(s => s > 10)
+console.log(scores1)
+console.log(foundScore(scores1))
+
+// Remember that find() yields a value, so, within a function you must return the output of find();
+// the return within the find() method only returns the matching element of the array
+function findLowScore(scores) {
+    return scores.find(s => {
+        return s < 20
+    })
 }
-console.log(doubleNumbers([1,2,3,4]));
-console.log(doubleNumbers([10,10,10]));
-console.log(doubleNumbers([0,100]));
-console.log(doubleNumbers([]));
+console.log(findLowScore(scores1))
 
+//find Bob
+const users = ['Alice', 'Bob', 'Charlie']
+const findBob = users.find(u => u === 'Bob')
+console.log(findBob)
 
+//find item in stock
+const inventory = [
+    { id: 1, name: 'Pencil', inStock: true },
+    { id: 2, name: 'Eraser', inStock: false }
+ ]
+ const findInventory = inventory.find(i => i.inStock === true)
+ console.log(findInventory)
+ 
 // Create a JavaScript function named convertToFahrenheit.
 // This function will take an array of temperatures in Celsius and return a new array with these temperatures converted to Fahrenheit.
 // The conversion formula to use is Fahrenheit = Celsius * 9 / 5 + 32.
