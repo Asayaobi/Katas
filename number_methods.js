@@ -52,10 +52,12 @@ console.log(floorNumber(4.5))
 // Modify the function to round up using Math.ceil().
 const ceilNumber = number => Math.ceil(number)
 console.log(ceilNumber(4.5))
-// Random Number Generation:
 
+// Random Number Generation:
 // Write a function that returns a random number between 0 and 1 using Math.random().
 // Extend this function to generate a random number between a given minimum and maximum value.
+const randomDice = () => Math.ceil(Math.random() * 6)
+console.log(randomDice())
 // Converting Strings to Numbers:
 
 // Write a function that converts a given string to a number using Number().
