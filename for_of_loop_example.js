@@ -19,7 +19,7 @@ function addBikeToStudent(student) {
 
 function addBikeToStudents(students) {
 let output = ''
-    for (student of students) {
+    for (let student of students) {
         output = output + addBikeToStudent(student) + '\n'
     }
     return output
