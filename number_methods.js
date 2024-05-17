@@ -39,3 +39,30 @@ console.log(Number(pi.toFixed(2)))
 // Example:
 Number.isInteger(4) // true
 Number.isInteger(4.5) // false
+
+// Basic Exercises
+// Rounding Numbers:
+
+// Write a function that takes a floating-point number and rounds it to the nearest integer using Math.round().
+const roundNumber = number => Math.round(number)
+console.log(roundNumber(4.5))
+// Modify the function to round down using Math.floor().
+const floorNumber = number => Math.floor(number)
+console.log(floorNumber(4.5))
+// Modify the function to round up using Math.ceil().
+const ceilNumber = number => Math.ceil(number)
+console.log(ceilNumber(4.5))
+// Random Number Generation:
+
+// Write a function that returns a random number between 0 and 1 using Math.random().
+// Extend this function to generate a random number between a given minimum and maximum value.
+// Converting Strings to Numbers:
+
+// Write a function that converts a given string to a number using Number().
+// Extend the function to handle cases where the string cannot be converted to a number, returning a default value or an error message.
+// Fixed-Point Notation:
+
+// Write a function that takes a number and returns it in fixed-point notation with 2 decimal places using toFixed(2).
+// Exponential Notation:
+
+// Write a function that converts a given number to exponential notation using toExponential().
