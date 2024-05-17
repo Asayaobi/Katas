@@ -131,7 +131,7 @@ const products = [
 //     let fruits = []
 //     for (let i = 0; i < products.length; i++) {
 //         if (products[i].category === 'fruit') {
-//             fruits.push(products[i].name)
+//             fruits.push(products[i])
 //         }
 //     }
 //     return fruits
@@ -139,3 +139,9 @@ const products = [
 //with filter
 const fruits = products.filter(p => p.category === 'fruit')
 console.log(fruits)
+
+// Filtering Based on Criteria:
+// Remove all values below a certain threshold.
+const scores1 = [30, 45, 60, 80, 90]
+const passingScores = scores1.filter(score => score >= 60)
+console.log(passingScores) // [60, 80, 90]
