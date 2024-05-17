@@ -73,5 +73,22 @@ console.log(convertStringToNumber(true))
 const fixPoint = number => number.toFixed(2)
 console.log(fixPoint(3.4586))
 
-// Exponential Notation:
-// Write a function that converts a given number to exponential notation using toExponential().
+// Prime Number Checker:
+// Write a function that checks whether a given number is prime.
+function isPrime(num) {
+    if (num <= 1) return false // Numbers less than or equal to 1 are not prime
+    if (num <= 3) return true  // 2 and 3 are prime numbers
+    if (num % 2 === 0 || num % 3 === 0) return false // Eliminate multiples of 2 and 3
+
+    // Check divisors from 5 to square root of num
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) {
+            return false
+        }
+    }
+    return true
+}
+console.log(isPrime(2))
+console.log(isPrime(4))
+console.log(isPrime(7))
+console.log(isPrime(10))
