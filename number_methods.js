@@ -56,14 +56,17 @@ console.log(ceilNumber(4.5))
 // Random Number Generation:
 // Write a function that returns a random number between 0 and 1 using Math.random().
 // Extend this function to generate a random number between a given minimum and maximum value.
-const randomDice = () => Math.ceil(Math.random() * 6)
-console.log(randomDice())
+const randomNumber = (min, max) => Math.ceil(Math.random() * ((max - min) + 1))
+console.log(randomNumber(1, 6))
 // Converting Strings to Numbers:
-
 // Write a function that converts a given string to a number using Number().
-// Extend the function to handle cases where the string cannot be converted to a number, returning a default value or an error message.
+// Extend the function to handle cases where the string cannot be converted to a number, 
+// returning a default value or an error message.
+const convertStringToNumber = string => typeof string != 'string' ? 'error value' : Number(string)
+console.log(convertStringToNumber('1'))
+console.log(convertStringToNumber('0'))
+console.log(convertStringToNumber(true))
 // Fixed-Point Notation:
-
 // Write a function that takes a number and returns it in fixed-point notation with 2 decimal places using toFixed(2).
 // Exponential Notation:
 
