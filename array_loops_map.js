@@ -43,11 +43,12 @@ console.log(getName(users))
 
 // Applying a mathematical function to each element in a number array.
 const numbersA = [1, 2, 3, 4]
-// const squares = []
-// for (let i = 0 ; i < numbersA.length ; i++) {
-//     squares.push(numbersA[i] ** 2)
+// const squares = numbersA => {
+//     let output = []
+//     for (let i = 0; i < numbersA.length; i++) {
+//         output.push(numbersA[i] ** 2 )
+//     }
+//     return output
 // }
-// console.log(squares);
-
-const squares = numbersA.map(number => number ** 2)
-console.log(squares);
+const squares = numbersA => numbersA.map(n => n ** 2)
+console.log(squares(numbersA));
