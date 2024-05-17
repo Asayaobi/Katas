@@ -72,3 +72,16 @@ console.log(doubledNumbers1([]))
 const convertToFahrenheit = temp => temp.map(t => t * 9 / 5 +32)
 console.log(convertToFahrenheit([15,40,12,5]))
 console.log(convertToFahrenheit([42,0,-10]))
+
+// Square Numbers Bug
+// You are provided with a function that is intended to take an array of numbers and return a new array with each number squared.
+// However, there's an error in how the map() method is currently being used.
+// Your task is to identify the error and correct the code.
+// function squareNumbers(numbers) {
+//     numbers.map(number => {
+//         return number * number
+//     })
+// }
+const squareNumbers = numbers => numbers.map(n => n ** 2)
+console.log(squareNumbers([1,2,3,4]))
+console.log(squareNumbers([9,0]))
