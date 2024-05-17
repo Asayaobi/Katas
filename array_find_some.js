@@ -67,6 +67,14 @@ console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'
 const findProductById = (products, id) => products.find(p => p.id === id)
 console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2))
 
+// Find User Bug
+// You are given a function that attempts to find and return a user object from an array of users by a given username.
+// However, the find() method is being used incorrectly in this function.
+// Your task is to identify the mistake and correct the function so that it properly uses find().
+const findUserByUsername = (users, username) => users.find(u => u.username === username)
+console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'username':'batman','password':'dark'}],'batman'))
+console.log(findUserByUsername([{'username':'wonderwoman','password':'amazon'},{'username':'superman','password':'krypto'}],'wonderwoman'))
+
 // filter
 // You are given a function that takes an array of numbers and returns a new array containing only even numbers.
 // However, this function currently uses a for loop.
