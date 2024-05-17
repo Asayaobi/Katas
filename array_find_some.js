@@ -48,18 +48,16 @@ const inventory = [
  ]
  const findInventory = inventory.find(i => i.inStock === true)
  console.log(findInventory)
- 
-// Create a JavaScript function named convertToFahrenheit.
-// This function will take an array of temperatures in Celsius and return a new array with these temperatures converted to Fahrenheit.
-// The conversion formula to use is Fahrenheit = Celsius * 9 / 5 + 32.
 
-function convertToFahrenheit(temperaturesC) {
-    const temperaturesF = temperaturesC.map(t => t * 9 / 5 + 32)
-    return temperaturesF
-}
-
-console.log(convertToFahrenheit([15,40,12,5]));
-console.log(convertToFahrenheit([42,0,-10]));
+// Find Refactoring
+// You are provided with a function that takes an array of objects (representing people) and a name (string).
+// The function returns the first person object whose name matches the provided name.
+// However, this function currently uses a for loop.
+// Your task is to refactor this function to use the find() method instead.
+const findPersonName = (persons, name) => persons.find(p => p.name === name)
+console.log(findPersonName([{'name':'Alice','age':25},{'name':'Alice','age':30}],'Alice'))
+console.log(findPersonName([{'name':'Alice','age':25},{'name':'Bob','age':37}],'Alice'))
+console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'Bob'))
 
 // You are provided with a function that is intended to take an array of numbers and return a new array with each number squared.
 // However, there's an error in how the map() method is currently being used.
