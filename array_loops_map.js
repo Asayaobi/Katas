@@ -17,27 +17,29 @@ const doubledNumbersMap = numbers => numbers.map( n => n * 2)
 console.log(doubledNumbersMap([1, 2, 3, 4, 5]))
 
 
-
 const names = ['Alice', 'Bob', 'Charlie']
-// const uppercasedNames = []
-// for (let i = 0; i < names.length ; i++){
-//     uppercasedNames.push(names[i].toUpperCase())
+// const uppercasedNames = names => {
+//     let output = []
+//     for (let n of names) {
+//         output.push(n.toUpperCase())
+//     }
+//     return output
 // }
-const uppercasedNames = names.map( name => name.toUpperCase())
-console.log(uppercasedNames)
+const uppercasedNames = names => names.map(n => n.toUpperCase())
+console.log(uppercasedNames(names))
 
-// Extract a specific property from an array of objects.
+// Extract a specific property from an array of objects. eg. array of only user's names.
 const users = [{name: 'Alice', age: 30}, {name: 'Bob', age: 25}]
-// const userNames = []
+// const getName = users => {
+//     let names = []
+//     for (let i = 0; i < users.length; i++) {
+//         names[i] = users[i].name
+//     }
+//     return names
+// }
+const getName = users => users.map(user => user.name)
+console.log(getName(users))
 
-// for (let i = 0 ; i < users.length ; i++) {
-//     userNames.push(users[i])
-// }
-// for (let user of users) {
-//     userNames.push(user.name)
-// }
-const userNames = users.map(user => user.name)
-console.log(userNames);
 
 // Applying a mathematical function to each element in a number array.
 const numbersA = [1, 2, 3, 4]
