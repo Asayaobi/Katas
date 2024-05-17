@@ -172,3 +172,31 @@ const getLongStrings = strings => strings.filter( string => string.length > 4)
 console.log(getLongStrings(['Hello','Hola','Ciao']))
 console.log(getLongStrings(['Grazie','Merci','Tak']))
 console.log(getLongStrings(['Grazie','Merci','Tak','Kop Khun']))
+
+// Filter and Square Evens
+// Create a JavaScript function named filterAndSquareEvens. This function should take an array of numbers as its input. 
+// It should first filter out all odd numbers, and then square each of the remaining even numbers. 
+// The function should return a new array with these squared even numbers.
+// function filterAndSquareEvens(numbers) {
+//     let output = []
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] % 2 === 0){
+//             output.push(numbers[i] ** 2)
+//         }
+//     }
+//     return output
+// }
+
+// function filterAndSquareEvens(numbers) {
+//     const filterEven = numbers.filter(n => n % 2 === 0)
+//     const filterSquare = filterEven.map(n => n **2)
+//     return filterSquare
+// }
+const filterAndSquareEvens = numbers => {
+    const filterEven = numbers.filter(n => n % 2 === 0)
+    const filterSquare = filterEven.map(n => n ** 2)
+    return filterSquare
+}
+console.log(filterAndSquareEvens([1,2,3,4,5,6]))
+console.log(filterAndSquareEvens([10,-10,20,-20]))
+console.log(filterAndSquareEvens([0,11,22,0]))
