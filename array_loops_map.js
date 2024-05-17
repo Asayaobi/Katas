@@ -52,3 +52,15 @@ const numbersA = [1, 2, 3, 4]
 // }
 const squares = numbersA => numbersA.map(n => n ** 2)
 console.log(squares(numbersA));
+
+// Refactoring Map
+// You are provided with a function that takes an array of numbers and returns a new array with each number doubled.
+// However, this function currently uses a for loop.
+// Your task is to refactor this function to use the map() method instead.
+const doubledNumbers1 = numbers => numbers.map(n => n * 2)
+console.log(doubledNumbers1([1, 2, 3, 4]))
+console.log(doubledNumbers1([10, 10, 10]))
+console.log(doubledNumbers1([0, 100]))
+console.log(doubledNumbers1([]))
+
+
