@@ -85,3 +85,57 @@ console.log(convertToFahrenheit([42,0,-10]))
 const squareNumbers = numbers => numbers.map(n => n ** 2)
 console.log(squareNumbers([1,2,3,4]))
 console.log(squareNumbers([9,0]))
+
+/////////////////////////////////////
+
+// 2. filter()
+// Traditionally, filtering an array involved using a for loop and a conditional statement.
+// Example Without filter():
+const numbers = [1, 2, 3, 4, 5, 6];
+// const evenNumbers = numbers => {
+//     let output = []
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] % 2 === 0) {
+//             output.push(numbers[i])
+//         }
+//     }
+//     return output
+// }
+
+//Example With filter():
+const evenNumbers = numbers.filter(n => n % 2 === 0)
+console.log(evenNumbers)
+// Filter does not modifiy the original array, instead, it returns a new array.
+console.log(numbers)
+
+console.log([1,2,3,4].filter(i => i > 2))
+//Remember that filter() yields an array, so, within a function you must "return the output" of filter(); 
+//the return within the filter() method only returns each element of the array
+const scores = [80,40,70,65,79,20]
+function findLowScores(scores) {
+   return scores.filter(score => {
+        return score < 50
+    })
+}
+// const findLowScores = scores.filter(score => score < 50)
+console.log(findLowScores(scores))
+
+// Filtering Objects in an Array:
+// Select objects based on a specific property value.
+const products = [
+   { name: 'Apple', category: 'fruit' },
+   { name: 'Carrot', category: 'vegetable' },
+   { name: 'Banana', category: 'fruit' }
+]
+// function findFruits(product) {
+//     let fruits = []
+//     for (let i = 0; i < products.length; i++) {
+//         if (products[i].category === 'fruit') {
+//             fruits.push(products[i].name)
+//         }
+//     }
+//     return fruits
+// }
+//with filter
+const fruits = products.filter(p => p.category === 'fruit')
+console.log(fruits)
