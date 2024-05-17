@@ -1,13 +1,22 @@
+// 1. map()
+//  transform each element of an array, you might use a for loop.
+// Example Without map():
+// const numbers = [1, 2, 3, 4, 5]
+const doubledNumbers = numbers => {
+    let result = []
+    for (let i = 0; i < numbers.length; i++) {
+        result.push(numbers[i] * 2) 
+    }
+    return result
+}
+console.log(doubledNumbers([1, 2, 3, 4, 5]))
+
+// Using map()
 // Examples of map()
+const doubledNumbersMap = numbers => numbers.map( n => n * 2)
+console.log(doubledNumbersMap([1, 2, 3, 4, 5]))
 
-const numbers = [1, 2, 3, 4, 5]
-// const doubledNumbers = []
-const doubledNumbers = numbers.map( number => number * 2)
-// for (let i = 0; i < numbers.length; i++) {
-//     doubledNumbers.push(numbers[i] * 2)
-// }
 
-console.log(doubledNumbers)
 
 const names = ['Alice', 'Bob', 'Charlie']
 // const uppercasedNames = []
