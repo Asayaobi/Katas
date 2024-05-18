@@ -76,6 +76,10 @@ const scoreWithReduce = originalScores.reduce((acc,e)=> acc - e)
 console.log(originalScores) //[10,20,30]
 console.log(scoreWithReduce) //-40
 
+//get total price
+const prices = [29.99, 19.99, 4.99]
+const totalPrice = prices => prices.reduce((acc, e) => acc + e)
+console.log(totalPrice(prices))// 54.97
 
 // Create a JavaScript function named sumOfEvenNumbers.
 // This function will take an array of numbers as its input.
