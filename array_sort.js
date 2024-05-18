@@ -46,3 +46,9 @@ console.log(products)
 const sortNumbers = numbers => numbers.sort((a, b) => a - b)
 console.log(sortNumbers([6,5,4,1,2,3]))//[1,2,3,4,5,6]
 console.log(sortNumbers([20,100,-20,0]))//[-20,0,20,100]
+
+// Sort Names
+// Create a sortNames function that takes an array of strings (names) and returns the array sorted alphabetically.
+const sortNames = names => names.sort()
+console.log(sortNames(['Bob','Alice','David']))//['Alice','Bob','David']
+console.log(sortNames(['Xenia','Xander','Xavia']))//['Xander','Xavia','Xenia']
