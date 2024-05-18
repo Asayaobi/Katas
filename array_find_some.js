@@ -122,3 +122,11 @@ console.log(hasEven([1, 3, 5, 7, 10]))
 let scores = [10, 20, 10]
 const findScore = scores => scores.some(score => score > 10)
 console.log(findScore(scores))
+
+// Checking for Any Out-of-Stock Products:
+const productsA = [
+    { id: 1, name: 'Pencil', inStock: true },
+    { id: 2, name: 'Eraser', inStock: false }
+ ]
+ let outOfStock = productsA => productsA.some(p => !p.inStock)
+ console.log(outOfStock(productsA))
