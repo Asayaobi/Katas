@@ -81,23 +81,44 @@ console.log(findUserByUsername([{'username':'wonderwoman','password':'amazon'},{
 // Each product object contains an id, a name, and a price.
 // The function should find the product with the given ID and increase its price by 10%.
 // The function should return a new array with the updated product objects.
-// function replaceProductPrice(products,id) {
-//     const updatedProducts = products.find(p => {
-//         if (p.id === id) {
-//             p.price *= 1.1
-//             return p.price = p.price.toFixed(2)
-//         }
-//     })
+// const replaceProductPrice = (products, id) => {
+//     products.map(p => p.id === id ? p.price *= 1.1 : p.price = p.price)
 //     return products
 // }
 const replaceProductPrice = (products, id) => {
-    products.find(p => {
-        if (p.id === id) {
-            p.price *= 1.1
-            p.price = p.price.toFixed(2)
+    products.find(product => {
+        if (product.id === id) {
+            product.price *= 1.1
+            product.price = product.price.toFixed(2)
         }
     })
     return products
 }
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],1))
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2))
+
+///////////////////////////////////////////
+
+
+// Some
+// JavaScript's some() method is a convenient way to check if at least one element in an array passes a test 
+// specified by a function. It's particularly useful for situations where you need to verify 
+// whether any elements in an array meet certain criteria.
+// Example Without some():
+const numbers = [1, 3, 5, 7, 9]
+// const hasEven = numbers => {
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] % 2 === 0) {
+//             return true
+//         }
+//     }
+// }
+//Some does not modifiy the original array, instead, it returns a boolean.
+// Example Without some():
+const hasEven = numbers => numbers.some(num => num % 2 === 0)
+console.log(hasEven(numbers))
+console.log(hasEven([1, 3, 5, 7, 10]))
+
+let scores = [10, 20, 10]
+const findScore = scores => scores.some(score => score > 10)
+console.log(findScore(scores))
