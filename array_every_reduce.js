@@ -167,3 +167,12 @@ const countLetters = letters => letters.reduce((count, letter) => {
 
 console.log(countLetters(letters))
 
+
+// Refactoring Reduce
+// Replace a function that takes an array of numbers and calculates the sum of all the numbers.
+// Currently, the function uses a for loop to accomplish this.
+// Your task is to refactor this function to use the reduce() method instead, to make the code more concise and functional.
+const sumNumbers = numbers => numbers.reduce((acc,n) => acc +n)
+console.log(sumNumbers([1,2,3,4,5])	) //15
+console.log(sumNumbers([10,10])) //2
+console.log(sumNumbers([-5,-3,8])) //0
