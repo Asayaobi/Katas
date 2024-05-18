@@ -176,3 +176,16 @@ const sumNumbers = numbers => numbers.reduce((acc,n) => acc +n)
 console.log(sumNumbers([1,2,3,4,5])	) //15
 console.log(sumNumbers([10,10])) //2
 console.log(sumNumbers([-5,-3,8])) //0
+
+// Sum of Even Numbers
+// Create a JavaScript function named sumOfEvenNumbers.
+// This function will take an array of numbers as its input.
+// It should first use the filter() method to keep only the even numbers from the array.
+// Then, use the reduce() method to calculate and return the sum of these even numbers.
+const sumOfEvenNumbers = nums => {
+    const evenNumbers = nums.filter(n => n % 2 === 0)
+    const sumTotal = evenNumbers.reduce((acc,n)=> acc + n)
+    return sumTotal
+}
+console.log(sumOfEvenNumbers([1,2,3,4,5,6])) //12
+console.log(sumOfEvenNumbers([20,1,20,1])) //40
