@@ -29,7 +29,7 @@ const ages = [22, 19, 24, 29, 30]
 //     }
 //     return adult
 //}
-let allAdults = ages => ages.every(age => age >= 18)
+const allAdults = ages => ages.every(age => age >= 18)
 console.log(allAdults(ages))
 
 // Create a JavaScript function named allPass.
@@ -45,22 +45,7 @@ console.log(allPass([10,7,8,10,10,9],5));
 // This function should take 3 parameters: an array of houses, a number (price) and a string (location).
 // It should return true of all the houses contain the location string in the name of their location 
 // and if they all below the price; otherwise return false.
-
-// 1. find location 
-// 2. if there's location found, search for the price
-// 3. if all of the prices below the given price, return true, else return false
-
-// function searchHouses(houses, givenPrice, givenPlace) {
-//     const filterLocation = houses.every(house => house.location.includes(givenPlace))
-//     const filterPrice = filterLocation ? houses.every(p => p.price < givenPrice) : false
-//     return filterPrice
-// }
-
-function searchHouses(array, price, location) {
-    const result = array.every(house => house.location.includes(location) && house.price < price)
-    return result
-}
-
+const searchHouses = (houses,price, location) => houses.every(house => house.price < price && house.location.includes(location))
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],150,'Koh'))//true
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],150,'Bali'))//false
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],90,'Koh'))//false
