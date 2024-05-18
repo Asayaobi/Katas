@@ -84,6 +84,7 @@ console.log(totalPrice(prices))// 54.97
 //Creating an Object Count
 const fruits = ['apple', 'banana', 'apple', 'orange', 'banana']
 const fruitsCount = fruits => {
+    //creat output[fruit] to set the count with the key fruit in the output
     let output = {}
     for (let fruit of fruits) {
         //Check if the fruit is already in output,  If output[fruit] is truthy 
@@ -92,70 +93,77 @@ const fruitsCount = fruits => {
             //when the fruit exists, the count of the fruit is incremented by 1.
             output[fruit]++
         } else {
-            //If the fruit key does not exist in the output object, this block executes. 
-            //It creates a new key in the output object with the name of the fruit and initializes its value to 1.
+            //If the fruit key does not exist (undefined) initializes count to 1.
             output[fruit] = 1
         }
     }
     return output
 }
+
+// const fruitsCount = (fruits) => {
+//     return fruits.reduce((output, fruit) => {
+//         if (output[fruit]) {
+//             output[fruit]++
+//         } else {
+//             output[fruit] = 1
+//         }
+//         return output
+//     }, {})
+// }
 console.log(fruitsCount(fruits)) // { apple: 2, banana: 2, orange: 1 }
 
-// Create a JavaScript function named sumOfEvenNumbers.
-// This function will take an array of numbers as its input.
-// It should first use the filter() method to keep only the even numbers from the array.
-// Then, use the reduce() method to calculate and return the sum of these even numbers.
-
-function sumOfEvenNumbersA(numbers) {
-    const evenNumbers = numbers.filter(n => n % 2 === 0)
-    const sum = evenNumbers.reduce((acc, evenNumber) => acc + evenNumber)
-    return sum
-}
-console.log(sumOfEvenNumbersA([1,2,3,4,5,6]));
-
-
-// You are given a function that takes an array of numbers and returns a new array with the numbers sorted in ascending order.
-// The current implementation sorts the array using a for loop.
-// Your task is to refactor this function to use the sort() method instead, for a more efficient and idiomatic approach.
-// function sortNumbers(numbers) {
-//     for (let i = 0; i < numbers.length; i++) {
-//         for (let j = i + 1; j < numbers.length; j++) {
-//             if (numbers[i] > numbers[j]) {
-//                 let temp = numbers[i];
-//                 numbers[i] = numbers[j];
-//                 numbers[j] = temp;
-//             }
-//         }
-//     }
-//     return numbers;
+// Count Word Frequencies
+// Write a function wordCount that takes a string 
+// and returns an object where the keys are the words and the values are the number of times each word appears.
+// const text = "hello world hello everyone in the world"
+// const wordCount = text => {
+//     let output = {}
+//     let textArray = text.split(' ')
+//     for (let t of textArray) {
+//         if (output[t]) {
+//             output[t]++
+//         } else {
+//             output[t] = 1
+//         }    } 
+//         return output
 // }
+// console.log(wordCount(text)) 
 
-function sortNumbers(numbers) {
-    const ascOrder = numbers.sort((a,b) => a - b)
-    return ascOrder
+const texts = ['hello', 'world',' hello', 'everyone', 'in', 'the', 'world']
+const wordCount1 = texts => texts.reduce((count, text) => {
+    if (count[text]) {
+        count[text]++
+    } else {
+        count[text] = 1
+    }
+    return count
+},{})
+console.log(wordCount1(texts)) 
+
+// Count Character Frequencies
+// Write a function charCount that takes a string and returns an object where the keys are the characters 
+// and the values are the number of times each character appears.
+const str = "apple"
+const charCount = str => {
+    const strArray = str.split('')
+    const countObj = {}
+    for (let s of strArray){
+        if (countObj[s]) {
+            countObj[s]++
+        } else {
+            countObj[s] = 1
+        }
+    }
+    return countObj
 }
-console.log(sortNumbers([6,5,4,1,2,3])); //[1,2,3,4,5,6]
+console.log(charCount(str))
+// Expected output: { a: 1, p: 2, l: 1, e: 1 }
 
-// Create a sortNames function that takes an array of strings (names) 
-// and returns the array sorted alphabetically.
+const letters = ['a', 'p', 'p', 'l', 'e']
+const countLetters = letters => letters.reduce((count, letter) => {
+    count[letter]? count[letter]++ : count[letter] = 1
+    return count
+}, {})
 
-function sortNames(names) {
-    const order = names.sort()
-    return order
-}
-console.log(sortNames(['Bob','Alice','David'])); //	['Alice','Bob','David']
-console.log(sortNames(['Xenia','Xander','Xavia'])) //['Xander','Xavia','Xenia'];
+console.log(countLetters(letters))
 
-// Create a function named filterAndSortBooks.
-// This function will take two parameters: an array of book objects and a minimum rating value.
-// Each book object contains a title, an author, and a rating. 
-// 1. The function should first use the filter() method to keep only the books with a rating greater than or equal to the minimum rating value.
-// 2. Then, it should use the sort() method to sort these filtered books in descending order of their ratings.
-// The function should return the sorted array of books.
-function filterAndSortBooks(books, rating) {
-    const filterBooks = books.filter(book => book.rating >= rating)
-    console.log(filterBooks);
-    const order = filterBooks.sort((a, b) => b.rating - a.rating)
-    return order
-}
-console.log(filterAndSortBooks([{'title':'T','author':'F.','rating':8.5},{'title':'1984','author':'G','rating':9},{'title':'To','author':'He','rating':8.3}],8.4));
