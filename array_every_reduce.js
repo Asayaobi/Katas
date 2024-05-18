@@ -1,3 +1,22 @@
+// Every
+// The every() method in JavaScript is a powerful array function that checks whether all elements in an array pass a test defined 
+// by a provided function. It’s incredibly useful for validating all elements of an array against a single condition.
+// Before every()
+// Before the advent of every(), checking every element in an array typically involved a loop with a conditional statement.
+const numbers = [2, 4, 6, 8, 10]
+// const allEven = numbers => {
+//     let even = true
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (numbers[i] % 2 !== 0) {
+//             even = false
+//             break
+//         }}
+//     return even
+// }
+
+const allEven = numbers => numbers.every(n => n % 2 === 0)
+console.log(allEven(numbers)) //true
+
 
 // Create a JavaScript function named allPass.
 // This function will take two parameters: an array of students scores and a numerical threshold.
