@@ -37,9 +37,9 @@ console.log(allAdults(ages))
 // It should check whether all numbers in the array are greater than the given threshold (all students have passed the exam).
 // The function should return true if all numbers meet this criterion, or false otherwise.
 const allPass = (scores,value) => scores.every(score => score > value)
-console.log(allPass([7,8,8,6,10],5));
-console.log(allPass([7,8,8,2],5));
-console.log(allPass([10,7,8,10,10,9],5));
+console.log(allPass([7,8,8,6,10],5)) //true
+console.log(allPass([7,8,8,2],5)) //false
+console.log(allPass([10,7,8,10,10,9],5)) //true
 
 // Create a JavaScript function called searchHouses.
 // This function should take 3 parameters: an array of houses, a number (price) and a string (location).
