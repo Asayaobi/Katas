@@ -51,23 +51,31 @@ console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'lo
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],90,'Koh'))//false
 console.log(searchHouses([{'price':100,'location':'Bali'},{'price':80,'location':'Koh Samui'}],90,'Bali'))//false
 
+////////////////////////////////////////
 
-// You are provided with a function that takes an array of numbers and calculates the sum of all the numbers.
-// Currently, the function uses a for loop to accomplish this.
-// Your task is to refactor this function to use the reduce() method instead, to make the code more concise and functional.
-// function sumNumbers(numbers) {
+// Reduce
+// The reduce() method in JavaScript is a versatile tool for processing and combining all the elements in an array. 
+// This method reduces an array to a single value by executing a reducer function provided by the user for each element in the array. 
+// It's particularly powerful for aggregating data or computing a cumulative result.
+// Before reduce()
+const nums = [1, 2, 3, 4, 5]
+// const sumNumber = nums => {
 //     let sum = 0
-//     for (let i = 0; i < numbers.length; i++) {
-//         sum += numbers[i]
+//     for (let i = 0; i < nums.length; i++) {
+//         sum += nums[i]
 //     }
 //     return sum
 // }
-function sumNumbers(numbers) {
-    const sum = numbers.reduce((acc, number) => acc + number)
-    return sum
-}
+//with reduce
+const sumNumber = nums => nums.reduce((accumulator, currentValue) => accumulator + currentValue)
+console.log(sumNumber(nums)) //15
+console.log([1,2,3].reduce((acc,cur) => acc + cur)) //6
+//Reduce does not modifiy the original array, instead, it returns a value.
+const originalScores = [10,20,30]
+const scoreWithReduce = originalScores.reduce((acc,e)=> acc - e)
+console.log(originalScores) //[10,20,30]
+console.log(scoreWithReduce) //-40
 
-console.log(sumNumbers([1,2,3,4,5]));
 
 // Create a JavaScript function named sumOfEvenNumbers.
 // This function will take an array of numbers as its input.
