@@ -81,6 +81,26 @@ const prices = [29.99, 19.99, 4.99]
 const totalPrice = prices => prices.reduce((acc, e) => acc + e)
 console.log(totalPrice(prices))// 54.97
 
+//Creating an Object Count
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana']
+const fruitsCount = fruits => {
+    let output = {}
+    for (let fruit of fruits) {
+        //Check if the fruit is already in output,  If output[fruit] is truthy 
+        //(i.e., the fruit exists and has a value greater than zero), the condition is true.
+        if (output[fruit]) {
+            //when the fruit exists, the count of the fruit is incremented by 1.
+            output[fruit]++
+        } else {
+            //If the fruit key does not exist in the output object, this block executes. 
+            //It creates a new key in the output object with the name of the fruit and initializes its value to 1.
+            output[fruit] = 1
+        }
+    }
+    return output
+}
+console.log(fruitsCount(fruits)) // { apple: 2, banana: 2, orange: 1 }
+
 // Create a JavaScript function named sumOfEvenNumbers.
 // This function will take an array of numbers as its input.
 // It should first use the filter() method to keep only the even numbers from the array.
