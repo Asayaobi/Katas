@@ -17,6 +17,20 @@ const numbers = [2, 4, 6, 8, 10]
 const allEven = numbers => numbers.every(n => n % 2 === 0)
 console.log(allEven(numbers)) //true
 
+//Check if everyone is an adult
+const ages = [22, 19, 24, 29, 30]
+// const allAdults = ages => {
+//     let adult = true
+//     for (let i =0; i < ages.length; i++){
+//         if (ages[i] < 18) {
+//             adult = false
+//             break
+//         }
+//     }
+//     return adult
+//}
+let allAdults = ages => ages.every(age => age >= 18)
+console.log(allAdults(ages))
 
 // Create a JavaScript function named allPass.
 // This function will take two parameters: an array of students scores and a numerical threshold.
