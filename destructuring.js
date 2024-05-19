@@ -26,3 +26,26 @@ const { nameA, ageA, country = 'Unknown' } = personA
 console.log(nameA) //'Alice'
 console.log(ageA)//25
 console.log(country) //'Unknown'
+
+// Without Destructuring
+// function addScores(scores) {
+//     let score1 = scores.score1
+//     let score2 = scores.score2
+//     if (!score1) {
+//         score1 = 1
+//     }
+//     if (!score2) {
+//         score2 = 1
+//     }
+//     return score1 + score2
+// }
+// addScores({ score1: 10, score2: 20 }) 
+
+// Without Destructuring
+const addScores = scores => {
+    let {score1 = 1, score2 = 1} = scores
+    return score1 + score2
+    }
+console.log(addScores({ score1: 10, score2: 20 }) ) //30
+console.log(addScores({ score1: 10}) ) //11
+
