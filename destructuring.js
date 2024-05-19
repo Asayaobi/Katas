@@ -60,3 +60,21 @@ const secondColor = colors[1]
 const [firstColour, ,thirdColour] = colors
 console.log(firstColour) //'red'
 console.log(thirdColour) //'blue'
+
+/////////////////////////////////////////////
+
+// Spread Operator
+// The spread operator is represented by three dots (...). It can be used in different contexts:
+
+// In function calls: myFunction(...iterableObj)
+// In array literals: [...iterableObj, 'newItem1', 'newItem2']
+// In object literals: {...obj, newProp: 'value'}
+// Using Spread Operator with Arrays
+// The spread operator can be used to combine or clone arrays in a more concise way.
+
+// Combining Arrays:
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const combinedArr = [...arr1, ...arr2];
+console.log(combinedArr); // Output: [1, 2, 3, 4, 5, 6]
