@@ -18,7 +18,7 @@ const products = [
 //    }
 // }
 const findProduct = products => products.find(p => p.id === 2)
-console.log(findProduct(products))
+console.log(findProduct(products)) //{ id: 2, name: 'Blender', category: 'Home Appliances' }
 
 // Find does not modifiy the original array, instead, it returns a new element.
 //Find always returns a single element, even if there are multiple elements that match the condition or none.
@@ -34,7 +34,7 @@ function findLowScore(scores) {
         return s < 20
     })
 }
-console.log(findLowScore(scores1))
+console.log(findLowScore(scores1))//10
 
 //find Bob
 const users = ['Alice', 'Bob', 'Charlie']
@@ -47,7 +47,7 @@ const inventory = [
     { id: 2, name: 'Eraser', inStock: false }
  ]
  const findInventory = inventory.find(i => i.inStock === true)
- console.log(findInventory)
+ console.log(findInventory)//{ id: 1, name: 'Pencil', inStock: true }
 
 // Find Refactoring
 // You are provided with a function that takes an array of objects (representing people) and a name (string).
@@ -55,9 +55,9 @@ const inventory = [
 // However, this function currently uses a for loop.
 // Your task is to refactor this function to use the find() method instead.
 const findPersonName = (persons, name) => persons.find(p => p.name === name)
-console.log(findPersonName([{'name':'Alice','age':25},{'name':'Alice','age':30}],'Alice'))
-console.log(findPersonName([{'name':'Alice','age':25},{'name':'Bob','age':37}],'Alice'))
-console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'Bob'))
+console.log(findPersonName([{'name':'Alice','age':25},{'name':'Alice','age':30}],'Alice')) //{'name':'Alice','age':25}
+console.log(findPersonName([{'name':'Alice','age':25},{'name':'Bob','age':37}],'Alice')) //{'name':'Alice','age':25}
+console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'Bob')) //{'name':'Bob','age':37}
 
 // Find Product By Id
 // Write a JavaScript function named findProductById.
@@ -65,7 +65,7 @@ console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'
 // It should use the find() method to search through the array and return the product object that has the matching ID.
 // If no product with the given ID is found, the function should return null.
 const findProductById = (products, id) => products.find(p => p.id === id)
-console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2))
+console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2))//{'id':2,'name':'Laptop'}
 
 // Find User Bug
 // You are given a function that attempts to find and return a user object from an array of users by a given username.
@@ -129,7 +129,7 @@ const productsA = [
     { id: 2, name: 'Eraser', inStock: false }
  ]
  let outOfStock = productsA => productsA.some(p => !p.inStock)
- console.log(outOfStock(productsA))
+ console.log(outOfStock(productsA)) //true
 
 // Contains High Value
 // Create a function called containsHighValue.
