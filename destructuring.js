@@ -115,8 +115,12 @@ console.log(mergedObj) // Output: { a: 1, b: 3, c: 4 }
 // Using Spread with Array Destructuring in sorting
 const [firstColor1, ...otherColors] = colors
 // Here, firstColor1 is 'red', and otherColors is an array containing the rest of the colors (['green', 'blue']).
-console.log(colors)
+console.log(colors) // ['red', 'green', 'blue']
+console.log(otherColors) // ['green', 'blue']
 
-const [, secondnum, ...othernums] = numbers
-console.log(numbers)//[1, 2, 3]
-console.log([secondnum, ...othernums]) //[2,3]
+//if you want grren first
+const getGreenFirst = ['green', ...colors.filter(c => c != 'green')]
+console.log(getGreenFirst)
+//get any color first
+const getFirstColor = value => [value, ...colors.filter(c => c != value)]
+console.log(getFirstColor('blue'))
