@@ -49,3 +49,14 @@ const addScores = scores => {
 console.log(addScores({ score1: 10, score2: 20 }) ) //30
 console.log(addScores({ score1: 10}) ) //11
 
+// Destructuring Arrays
+// Array destructuring works similarly, allowing you to unpack values from arrays.
+
+// Traditional Way Without Destructuring:
+const colors = ['red', 'green', 'blue']
+const firstColor = colors[0]
+const secondColor = colors[1]
+// With Destructuring: you can also skip over element
+const [firstColour, ,thirdColour] = colors
+console.log(firstColour) //'red'
+console.log(thirdColour) //'blue'
