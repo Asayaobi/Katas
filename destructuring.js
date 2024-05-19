@@ -75,6 +75,10 @@ console.log(thirdColour) //'blue'
 // Combining Arrays:
 const arr1 = [1, 2, 3];
 const arr2 = [4, 5, 6];
-
 const combinedArr = [...arr1, ...arr2];
 console.log(combinedArr); // Output: [1, 2, 3, 4, 5, 6]
+
+// Cloning Arrays:
+const originalArr = ['a', 'b', 'c'];
+const clonedArr = [...originalArr];
+console.log(clonedArr); // Output: ['a', 'b', 'c']
