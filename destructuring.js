@@ -112,3 +112,11 @@ const mergedObj = { ...obj1, ...obj2 }
 console.log(mergedObj) // Output: { a: 1, b: 3, c: 4 }
 //Note that properties in obj2 will overwrite properties in obj1 with the same key.
 
+// Using Spread with Array Destructuring in sorting
+const [firstColor1, ...otherColors] = colors
+// Here, firstColor1 is 'red', and otherColors is an array containing the rest of the colors (['green', 'blue']).
+console.log(colors)
+
+const [, secondnum, ...othernums] = numbers
+console.log(numbers)//[1, 2, 3]
+console.log([secondnum, ...othernums]) //[2,3]
