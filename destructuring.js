@@ -82,3 +82,11 @@ console.log(combinedArr); // Output: [1, 2, 3, 4, 5, 6]
 const originalArr = ['a', 'b', 'c'];
 const clonedArr = [...originalArr];
 console.log(clonedArr); // Output: ['a', 'b', 'c']
+
+// Spread Operator in Function Arguments
+// The spread operator can also be used to pass the elements of an array as arguments to a function.
+function sum(x, y, z) {
+    return x + y + z;
+}
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); // Output: 6
