@@ -98,3 +98,17 @@ function sum(x, y, z) {
 }
 const numbers = [1, 2, 3]
 console.log(sum(...numbers)) // Output: 6
+
+// Cloning Objects:
+const originalObj = { a: 1, b: 2 }
+const clonedObj = { ...originalObj }
+console.log(clonedObj) // Output: { a: 1, b: 2 }
+
+// Merging Objects:
+const obj1 = { a: 1, b: 2 }
+const obj2 = { b: 3, c: 4 }
+
+const mergedObj = { ...obj1, ...obj2 }
+console.log(mergedObj) // Output: { a: 1, b: 3, c: 4 }
+//Note that properties in obj2 will overwrite properties in obj1 with the same key.
+
