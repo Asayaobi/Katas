@@ -40,7 +40,6 @@ const users = [{name: 'Alice', age: 30}, {name: 'Bob', age: 25}]
 const getName = users => users.map(user => user.name)
 console.log(getName(users))
 
-
 // Applying a mathematical function to each element in a number array.
 const numbersA = [1, 2, 3, 4]
 // const squares = numbersA => {
@@ -101,6 +100,14 @@ const numbers = [1, 2, 3, 4, 5, 6];
 //     }
 //     return output
 // }
+
+
+//Query with map
+const foodids = [{food_id: 3}, {food_id: 24}, {food_id:25}]
+const getId = foodids => foodids.map(e => `food_id = ${e.food_id}`)
+console.log(getId(foodids))
+const getIdStrings = foodids => foodids.map(e => `food_id = ${e.food_id}`).join(' OR ')
+console.log(getIdStrings(foodids))
 
 //Example With filter():
 const evenNumbers = numbers.filter(n => n % 2 === 0)
