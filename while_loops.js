@@ -41,3 +41,28 @@ function beer() {
 }
 
 console.log(beer())
+
+//The Fibonacci Exercise
+//Create a function where you can call it by writing the code:fibonacciGenerator (n)
+
+// Where n is the number of items in the sequence. So I should be able to call: 
+// fibonacciGenerator(3) and get[0,1,1]as the output.
+
+
+function fibonacciGenerator(n) {
+  let output = [0]
+  if (n === 0) {
+    return []
+  } else if (n === 1) {
+    return output
+  } else {
+    output.push(1)
+    for(let i = 1; i < n - 1; i++){
+    let value = output[output.length - 2] + output[output.length - 1]
+    output.push(value)
+  }
+  }
+  return output
+}
+console.log(fibonacciGenerator(5))
+
