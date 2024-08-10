@@ -50,13 +50,12 @@ console.log(beer())
 
 
 function fibonacciGenerator(n) {
-  let output = [0]
+  let output = [0,1]
   if (n === 0) {
     return []
   } else if (n === 1) {
-    return output
+    return [0]
   } else {
-    output.push(1)
     for(let i = 1; i < n - 1; i++){
     let value = output[output.length - 2] + output[output.length - 1]
     output.push(value)
@@ -64,5 +63,5 @@ function fibonacciGenerator(n) {
   }
   return output
 }
-console.log(fibonacciGenerator(5))
+console.log(fibonacciGenerator(2))
 
