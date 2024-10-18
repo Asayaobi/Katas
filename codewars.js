@@ -303,3 +303,34 @@ console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],[121, 14641, 20736, 36100,
 // C          100
 // D          500
 // M          1,000
+
+
+function solution(roman) {
+    const romanToInt = {
+      'I': 1, 'V': 5, 'X': 10, 'L': 50,
+      'C': 100, 'D': 500, 'M': 1000,
+      'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90,
+      'CD': 400, 'CM': 900
+    };
+    
+    let total = 0;
+    
+    for (let i = 0; i < roman.length; i++) {
+      // Check if the next two characters form a special case like 'IV' or 'IX'
+      if (romanToInt[roman[i] + roman[i + 1]]) {
+        total += romanToInt[roman[i] + roman[i + 1]];
+        i++; // Skip the next character since it's already processed
+      } else {
+        total += romanToInt[roman[i]];
+      }
+    }
+    
+    return total;
+  }
+  
+  // Test cases:
+  console.log(solution("IX"));       // 9
+  console.log(solution("MCMXC"));    // 1990
+  console.log(solution("MMVIII"));   // 2008
+  console.log(solution("MDCLXVI"));  // 1666
+  
