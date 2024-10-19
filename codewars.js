@@ -304,33 +304,65 @@ console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],[121, 14641, 20736, 36100,
 // D          500
 // M          1,000
 
+function solution(number) {
+  const romanNums = [{ number:'I', value: 1}, {number:'V', value: 5}, {number:'X', value: 10 }, { number:'L', value: 50}, {number:'C', value: 100}, {number:'D', value: 500 }, {number:'M', value: 1000 }]
+  let romanArray = number.toString().split('')
 
-function solution(roman) {
-    const romanToInt = {
-      'I': 1, 'V': 5, 'X': 10, 'L': 50,
-      'C': 100, 'D': 500, 'M': 1000,
-      'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90,
-      'CD': 400, 'CM': 900
-    };
-    
-    let total = 0;
-    
-    for (let i = 0; i < roman.length; i++) {
-      // Check if the next two characters form a special case like 'IV' or 'IX'
-      if (romanToInt[roman[i] + roman[i + 1]]) {
-        total += romanToInt[roman[i] + roman[i + 1]];
-        i++; // Skip the next character since it's already processed
-      } else {
-        total += romanToInt[roman[i]];
-      }
+  //get the value of roman numbers
+  let numberArray = []
+  for ( let n = 0; n < romanArray.length; n++ ){
+    let find = romanNums.find(e => e.number === romanArray[n])
+    // Check if find is undefined (invalid Roman numeral)
+    if (!find) {
+      throw new Error(`Invalid Roman numeral: ${romanArray[n]}`);
     }
-    
-    return total;
+    numberArray.push(find.value);
   }
-  
-  // Test cases:
-  console.log(solution("IX"));       // 9
-  console.log(solution("MCMXC"));    // 1990
-  console.log(solution("MMVIII"));   // 2008
-  console.log(solution("MDCLXVI"));  // 1666
-  
+
+  //calculation
+  let sumArray = []
+  for ( let c = 0; c < numberArray.length; c++){
+    //1. filter out special case like 4, 9, 40, 90
+    if (numberArray[c] < numberArray[c+1]){
+      let specialValue = numberArray[c+1] - numberArray[c]
+      //add special value to sum array
+      sumArray.push(specialValue)
+      //skip the next c+1
+      c++
+    } else {
+      //2. calculate normal numbers
+      sumArray.push(numberArray[c])
+    }
+  }
+  const result = sumArray.reduce((acc,cur) => acc + cur)
+  return result
+}
+
+ // Test cases:
+ console.log(solution("IX"));       // 9
+ console.log(solution("MCMXC"));    // 1990
+ console.log(solution("MMVIII"));   // 2008
+ console.log(solution("MDCLXVI"));  // 1666
+
+
+//  function solution(roman)
+//  {
+//    var data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1};
+//    var numbers = roman.split('');
+//    var sum = 0, i;
+ 
+//    for(i = 0; i < numbers.length; i++)
+//    {
+//      if(data[numbers[i]] < data[numbers[i+1]])
+//      {
+//        sum += data[numbers[i+1]] - data[numbers[i]];
+//        i++;
+//      }
+//      else
+//      {
+//        sum += data[numbers[i]];
+//      }
+//    }
+   
+//    return sum;
+//  }
