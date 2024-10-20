@@ -337,7 +337,7 @@ console.log(calculateRoman("MDCLXVI"));  // 1666
 
 
 //with array
-function solution(number) {
+function altSolution(number) {
   const romanNums = [{ number:'I', value: 1}, {number:'V', value: 5}, {number:'X', value: 10 }, { number:'L', value: 50}, {number:'C', value: 100}, {number:'D', value: 500 }, {number:'M', value: 1000 }]
   let romanArray = number.toString().split('')
 
@@ -371,9 +371,71 @@ function solution(number) {
   return result
 }
 
- // Test cases:
- console.log(solution("IX"));       // 9
- console.log(solution("MCMXC"));    // 1990
- console.log(solution("MMVIII"));   // 2008
- console.log(solution("MDCLXVI"));  // 1666
+
+//  Create a function taking a positive integer between 1 and 3999 (both included) 
+//as its parameter and returning a string containing the Roman Numeral representation of that integer.
+
+//  Modern Roman numerals are written by expressing each digit separately starting 
+//with the leftmost digit and skipping any digit with a value of zero. There cannot be more than 3 identical symbols in a row.
+ 
+//  In Roman numerals:
+//  1990 is rendered: 1000=M + 900=CM + 90=XC; resulting in MCMXC.
+//  2008 is written as 2000=MM, 8=VIII; or MMVIII.
+//  1666 uses each Roman symbol in descending order: MDCLXVI.
+
+function solution(number){
+  const data = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
+
+
+}
+
+const data1 = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
+console.log(data1[100])//'C'
+//first digit 3
+let answer = []
+let number  = 10
+let digit = 1 //increase index *10
+let count = number / digit
+// for (let i = 0; i <number.length; i++){
+// }
+
+
+// let nArr= [1, 1, 0] //l3
+// let dGit = [100, 10, 1] 
+// let push = []
+
+// //find the length
+// //increase by 10
+// for (let c = 1; c < nArr.length; c*10){
+//   push.push(c)
+// }
+// console.log(push)
+
+if (count === 9 * digit){
+  answer.push(data1[digit])
+  answer.push(data1[digit*10])
+  number -= 9 * digit
+  count = number / digit
+}
+
+if (count >= 5 * digit){
+  number -= 5 * digit
+  count = number / digit
+  //push V
+  answer.push(data1[5 * digit])
+}
+
+if (count < (5 * digit-1)) {
+    for (let i=0; i < count ; i++){
+  //push III
+    answer.push(data1[digit])
+  }
+} else {
+  //push IV
+  answer.push(data1[digit])
+  answer.push(data1[5 * digit])
+}
+
+
+console.log(answer.toString())
 
