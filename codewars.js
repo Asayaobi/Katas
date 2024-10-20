@@ -384,72 +384,30 @@ function altSolution(number) {
 //  1666 uses each Roman symbol in descending order: MDCLXVI.
 
 
-function solution(number)
-{
-  var result   = '',
-      decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
-      roman    = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+function solution(number) {
+  var result = ''
+  
+  // A map of Roman numerals and their corresponding values.
+  var romanMap = {
+    M: 1000,CM: 900,D: 500,CD: 400,C: 100,XC: 90,L: 50,XL: 40,X: 10,IX: 9,V: 5,IV: 4,I: 1
+  }
 
-  decimals.map(function (value, index) {
+  // Loop through each Roman numeral key in the map.
+  for (var key in romanMap) {
+    // Get the value for the current Roman numeral.
+    var value = romanMap[key]
+
+    // While the number is larger than or equal to the current value,
+    // subtract the value from the number and add the Roman numeral to the result.
     while (number >= value) {
-      result += roman[index]
+      result += key
       number -= value
     }
-  })
-  
+  }
+
   return result
 }
 
-
-// let nums= [2,1] 
-// const rData = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
-// let answer = []
-// let count
-
-// //digit
-// let digits = []
-// let digit = 1
-//   for (let i = 0; i < nums.length; i++){
-//     digits.push(digit)
-//     digit = digit * 10
-//   }
-//   digits.reverse()
-
-// //loop nums
-// let number
-// for (let i = 0; i < nums.length; i++){
-//     number = nums[i] * digits[i]
-
-//     if (number === 9 * digits[i]){
-//         answer.push(rData[digits[i]])
-//         answer.push(rData[digits[i]*10])
-//         number -= 9 * digits[i]
-//     }
-
-//     if (number === 5 * digits[i]){
-//         answer.push(rData[5 * digits[i]])
-//         number -= 5 * digits[i]
-//     }
-
-//     if (number < 4 * digits[i]) {
-//         count = number/digits[i]
-//         console.log(count)
-//         for (let c = 0; c < count ; c++){
-//       //push III
-//               answer.push(rData[digits[i]])
-//             }
-//     } else {
-//       //push IV
-//         answer.push(rData[digits[i]])
-//         answer.push(rData[digits[i]*5])
-//     }
-// }
-
-// console.log(nums[0])
-// console.log(digits[0])
-// console.log(number)
-// console.log(answer) 
-// console.log(count)
 
 // function romanCal (n) {
 //   let nums= n.toString().split('')
@@ -496,7 +454,3 @@ function solution(number)
 // }
 // return answer.join('')
 // }
-
-// console.log(romanCal(7))
-
-// //2007 should, "MMVII": expected 'MMIV' to equal 'MMVII'
