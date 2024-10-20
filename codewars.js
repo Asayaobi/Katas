@@ -304,6 +304,39 @@ console.log(comp([121, 144, 19, 161, 19, 144, 19, 11],[121, 14641, 20736, 36100,
 // D          500
 // M          1,000
 
+
+
+//with js object
+var data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+console.log(data['M']) // 1000
+console.log(data.M)
+
+
+
+function calculateRoman(str){
+  const data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+  const romanArr = str.split('')
+  let value = 0
+  for (let n = 0; n < romanArr.length; n++){
+    if (data[romanArr[n]] < data[romanArr[n+1]]){
+      value +=  data[romanArr[n+1]] - data[romanArr[n]]
+      n++
+    } else {
+      value +=  data[romanArr[n]]
+    }
+  }
+  return value
+}
+
+console.log(calculateRoman('IV'))
+console.log(calculateRoman("IX"));       // 9
+console.log(calculateRoman("MCMXC"));    // 1990
+console.log(calculateRoman("MMVIII"));   // 2008
+console.log(calculateRoman("MDCLXVI"));  // 1666
+
+
+
+//with array
 function solution(number) {
   const romanNums = [{ number:'I', value: 1}, {number:'V', value: 5}, {number:'X', value: 10 }, { number:'L', value: 50}, {number:'C', value: 100}, {number:'D', value: 500 }, {number:'M', value: 1000 }]
   let romanArray = number.toString().split('')
@@ -344,46 +377,3 @@ function solution(number) {
  console.log(solution("MMVIII"));   // 2008
  console.log(solution("MDCLXVI"));  // 1666
 
-
-//  function solution(roman)
-//  {
-//    var data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1};
-//    var numbers = roman.split('');
-//    var sum = 0, i;
- 
-//    for(i = 0; i < numbers.length; i++)
-//    {
-//      if(data[numbers[i]] < data[numbers[i+1]])
-//      {
-//        sum += data[numbers[i+1]] - data[numbers[i]];
-//        i++;
-//      }
-//      else
-//      {
-//        sum += data[numbers[i]];
-//      }
-//    }
-   
-//    return sum;
-//  }
-
-var data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
-console.log(data['M'])
-
-
-function calculateRoman(str){
-  const data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
-  const romanArr = str.split()
-  let value = 0
-  for (let n = 0; n < romanArr; n++){
-    if (data[romanArr[n]] < data[romanArr[n+1]]){
-      value +=  data[romanArr[n+1]] - data[romanArr[n]]
-      n++
-    } else {
-      value +=  data[romanArr[n]]
-    }
-  }
-  return value
-}
-
-console.log(calculateRoman('IV'))
