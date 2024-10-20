@@ -383,59 +383,120 @@ function altSolution(number) {
 //  2008 is written as 2000=MM, 8=VIII; or MMVIII.
 //  1666 uses each Roman symbol in descending order: MDCLXVI.
 
-function solution(number){
-  const data = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
 
+function solution(number)
+{
+  var result   = '',
+      decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1],
+      roman    = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
 
+  decimals.map(function (value, index) {
+    while (number >= value) {
+      result += roman[index]
+      number -= value
+    }
+  })
+  
+  return result
 }
 
-const data1 = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
-console.log(data1[100])//'C'
-//first digit 3
-let answer = []
-let number  = 10
-let digit = 1 //increase index *10
-let count = number / digit
-// for (let i = 0; i <number.length; i++){
+
+// let nums= [2,1] 
+// const rData = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
+// let answer = []
+// let count
+
+// //digit
+// let digits = []
+// let digit = 1
+//   for (let i = 0; i < nums.length; i++){
+//     digits.push(digit)
+//     digit = digit * 10
+//   }
+//   digits.reverse()
+
+// //loop nums
+// let number
+// for (let i = 0; i < nums.length; i++){
+//     number = nums[i] * digits[i]
+
+//     if (number === 9 * digits[i]){
+//         answer.push(rData[digits[i]])
+//         answer.push(rData[digits[i]*10])
+//         number -= 9 * digits[i]
+//     }
+
+//     if (number === 5 * digits[i]){
+//         answer.push(rData[5 * digits[i]])
+//         number -= 5 * digits[i]
+//     }
+
+//     if (number < 4 * digits[i]) {
+//         count = number/digits[i]
+//         console.log(count)
+//         for (let c = 0; c < count ; c++){
+//       //push III
+//               answer.push(rData[digits[i]])
+//             }
+//     } else {
+//       //push IV
+//         answer.push(rData[digits[i]])
+//         answer.push(rData[digits[i]*5])
+//     }
 // }
 
+// console.log(nums[0])
+// console.log(digits[0])
+// console.log(number)
+// console.log(answer) 
+// console.log(count)
 
-// let nArr= [1, 1, 0] //l3
-// let dGit = [100, 10, 1] 
-// let push = []
+// function romanCal (n) {
+//   let nums= n.toString().split('')
+//   const rData = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
+//   let answer = []
+//   let count
 
-// //find the length
-// //increase by 10
-// for (let c = 1; c < nArr.length; c*10){
-//   push.push(c)
+// //digit
+// let digits = []
+// let digit = 1
+//   for (let i = 0; i < nums.length; i++){
+//     digits.push(digit)
+//     digit = digit * 10
+//   }
+//   digits.reverse()
+// //loop nums
+// let number
+// for (let i = 0; i < nums.length; i++){
+//     number = nums[i] * digits[i]
+
+//     if (number === 9 * digits[i]){
+//         answer.push(rData[digits[i]])
+//         answer.push(rData[digits[i]*10])
+//         number -= 9 * digits[i]
+//     }
+
+//     if (number >= 5 * digits[i]){
+//         answer.push(rData[5 * digits[i]])
+//         number -= 5 * digits[i]
+//     }
+
+//     if (number < 4 * digits[i]) {
+//         count = number/digits[i]
+//         console.log(count)
+//         for (let c = 0; c < count ; c++){
+//       //push III
+//               answer.push(rData[digits[i]])
+//             }
+//     } else {
+//       //push IV
+//         answer.push(rData[digits[i]])
+//         answer.push(rData[digits[i]*5])
+//     }
 // }
-// console.log(push)
+// return answer.join('')
+// }
 
-if (count === 9 * digit){
-  answer.push(data1[digit])
-  answer.push(data1[digit*10])
-  number -= 9 * digit
-  count = number / digit
-}
+// console.log(romanCal(7))
 
-if (count >= 5 * digit){
-  number -= 5 * digit
-  count = number / digit
-  //push V
-  answer.push(data1[5 * digit])
-}
-
-if (count < (5 * digit-1)) {
-    for (let i=0; i < count ; i++){
-  //push III
-    answer.push(data1[digit])
-  }
-} else {
-  //push IV
-  answer.push(data1[digit])
-  answer.push(data1[5 * digit])
-}
-
-
-console.log(answer.toString())
-
+// //2007 should, "MMVII": expected 'MMIV' to equal 'MMVII'
