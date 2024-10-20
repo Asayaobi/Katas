@@ -366,3 +366,24 @@ function solution(number) {
    
 //    return sum;
 //  }
+
+var data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+console.log(data['M'])
+
+
+function calculateRoman(str){
+  const data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1}
+  const romanArr = str.split()
+  let value = 0
+  for (let n = 0; n < romanArr; n++){
+    if (data[romanArr[n]] < data[romanArr[n+1]]){
+      value +=  data[romanArr[n+1]] - data[romanArr[n]]
+      n++
+    } else {
+      value +=  data[romanArr[n]]
+    }
+  }
+  return value
+}
+
+console.log(calculateRoman('IV'))
