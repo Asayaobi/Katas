@@ -1,5 +1,6 @@
 //FizzBuzz
-//Write a program that print Fizz when the number count is divisible by 3, print Buzz when the number is divisible by 5, print FizzBuzz when it can multiple by 3 and 5.
+//Write a program that print Fizz when the number count is divisible by 3, print Buzz when the number is divisible by 5, 
+//print FizzBuzz when it can multiple by 3 and 5.
 
 let i = 1
 let array = []
@@ -63,5 +64,52 @@ function fibonacciGenerator(n) {
   }
   return output
 }
-console.log(fibonacciGenerator(2))
+console.log(fibonacciGenerator(2))//0,1
 
+//for in loop
+const person = {fname:"John", lname:"Doe", age:25}
+
+let text = ""
+for(let key in person){
+  text += person[key]
+}
+
+console.log(text) //JohnDoe25
+
+ // Use a for...in loop to increase each grade by 5 points, then print the updated object.
+ let grades = {math: 85, english: 92, science: 88}
+ 
+for (let key in grades){
+  grades[key] += 5
+}
+console.log(grades)//{math: 90, english: 97, science: 93}
+
+// The goal is to loop through the outer object’s properties and,
+// if one of the properties is an object, loop through its properties as well.
+const user = {
+  name: "Sponge Bob",
+  age: 25,
+  address: {
+    street: "123 Main St",
+    city: "Bikini Bottom",
+    country: "Pacific Ocean"
+  },
+  preferences: {
+    theme: "dark",
+    notifications: true
+  }
+}
+
+let userText = ''
+for (let key in user){
+  if (typeof user[key] == 'object'){
+    let userObj = user[key]
+    for (let k in userObj){
+      userText += `${k}: ${userObj[k]}\n`
+    }
+  } else {
+    userText += `${key}: ${user[key]}\n`
+  }
+}
+
+console.log(userText)
