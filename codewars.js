@@ -409,48 +409,35 @@ function solution(number) {
 }
 
 
-// function romanCal (n) {
-//   let nums= n.toString().split('')
-//   const rData = {1000: 'M', 500: 'D', 100: 'C', 50: 'L', 10: 'X', 5: 'V', 1: 'I'}
-//   let answer = []
-//   let count
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, 
+// pictures or other items. We want to create the text that should be displayed next to such an item.
 
-// //digit
-// let digits = []
-// let digit = 1
-//   for (let i = 0; i < nums.length; i++){
-//     digits.push(digit)
-//     digit = digit * 10
-//   }
-//   digits.reverse()
-// //loop nums
-// let number
-// for (let i = 0; i < nums.length; i++){
-//     number = nums[i] * digits[i]
+// Implement the function which takes an array containing the names of people that like an item. 
+// It must return the display text as shown in the examples:
 
-//     if (number === 9 * digits[i]){
-//         answer.push(rData[digits[i]])
-//         answer.push(rData[digits[i]*10])
-//         number -= 9 * digits[i]
-//     }
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
 
-//     if (number >= 5 * digits[i]){
-//         answer.push(rData[5 * digits[i]])
-//         number -= 5 * digits[i]
-//     }
+// if (arr.length === 0 ) return "no one likes this"
+// if (arr.length === 1 ) return "arr[0] likes this"
+// if (arr.length === 2 ) return "arr[0] and arr[1] like this"
+// if (arr.length > 2 ) return "arr[0], arr[1] and 2 others like this"
 
-//     if (number < 4 * digits[i]) {
-//         count = number/digits[i]
-//         console.log(count)
-//         for (let c = 0; c < count ; c++){
-//       //push III
-//               answer.push(rData[digits[i]])
-//             }
-//     } else {
-//       //push IV
-//         answer.push(rData[digits[i]])
-//         answer.push(rData[digits[i]*5])
-//     }
-// }
-// return answer.join('')
-// }
+function likes(arr){
+  if (arr.length > 3) {
+    return `${arr[0]}, ${arr[1]} and ${arr.length - 2} others like this`
+  } else if (arr.length === 3 ) {
+    return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`
+  } else if (arr.length === 2 ) {
+    return `${arr[0]} and ${arr[1]} like this`
+  } else if (arr.length === 1) {
+    return `${arr[0]} likes this`
+  } else {
+    return "no one likes this"
+  }
+}
+console.log(likes([]))
+console.log(likes(['Peter']))
