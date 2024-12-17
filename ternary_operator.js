@@ -1,5 +1,11 @@
 // Ternary operator example
 
+//input age
+const age = 19
+const drink = age >= 18 ? 'wine' : 'water'
+console.log(drink)
+
+
 let score = 85
 // let grade
 //     if (score >= 90) {
