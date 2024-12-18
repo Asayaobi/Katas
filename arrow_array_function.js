@@ -37,3 +37,9 @@ const checkWinner = (avgDolphins, avgKoalas) => {
 }
 
 checkWinner(scoreDolphins,scoreKoalas)
+
+//2types of naming array
+const friends = ['Ross', 'Mathew', 'Monica']
+console.log(friends)
+const friendsCast = new Array('Ross', 'Mathew', 'Monica')
+console.log(friendsCast)
