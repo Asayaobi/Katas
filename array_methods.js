@@ -30,7 +30,7 @@ console.log(colors) // ['green', 'blue']
 
 const ages = [25, 30]
 ages.unshift(20)
-console.log(ages)
+console.log(ages) //[20,25,30]
 
 // IndexOf()
 // The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
@@ -39,10 +39,16 @@ console.log(ages)
 const fruits1 = ['apple', 'banana', 'orange']
 
 const orangeIndex = fruits1.indexOf('orange')
-console.log(orangeIndex) 
+console.log(orangeIndex)//2 
 
 const kiwiIndex = fruits1.indexOf('kiwi')
-console.log(kiwiIndex)
+console.log(kiwiIndex)//-1
+
+//includes
+//Check if there's that element in the array and return true or false
+const friends = ['Ross', 'Monica', 'Chandler']
+console.log(friends.includes('Toby')) //false
+console.log(friends.includes('Ross')) //true
 
 // isArray()
 // The Array.isArray() method determines if the argument is an array and returns a boolean.
@@ -151,3 +157,5 @@ const stringRepeat = (number,string) => {
 }
 console.log(stringRepeat(5, 'hi'))
 console.log(stringRepeat(2, 'hola'))
+
+
