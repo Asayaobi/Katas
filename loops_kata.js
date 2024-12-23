@@ -38,3 +38,28 @@ let result = String(output)
 console.log(extractAndSort([1,2,3,4,5,6],3)) //'3,2,1'
 console.log(extractAndSort([10,20,30,40,50,60],4)) //'40,30,20,10'
 console.log(extractAndSort([5,15,20],2))
+
+
+//using continue and break
+
+//print only STRING
+
+const jonas = [
+    'Jonas',
+    true,
+    1991,
+    'teacher',
+    'Germany'
+]
+
+//if it's not string, skip the loop with continue
+for (let i = 0; i < jonas.length; i++){
+    if (typeof jonas[i] !== 'string') continue
+    console.log(jonas[i], typeof jonas[i]) //['Jonas', 'string'], ['teacher', 'string'], ['Germany', 'string']
+}
+
+//break with number type
+for (let i = 0; i < jonas.length; i++){
+    if (typeof jonas[i] === 'number') break
+    console.log(jonas[i], typeof jonas[i]) //['Jonas', 'string'], ['true', 'boolean']
+}
