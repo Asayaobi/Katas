@@ -63,3 +63,26 @@ for (let i = 0; i < jonas.length; i++){
     if (typeof jonas[i] === 'number') break
     console.log(jonas[i], typeof jonas[i]) //['Jonas', 'string'], ['true', 'boolean']
 }
+
+//run the reverse loop
+for (let i = jonas.length - 1; i >= 0; i--){
+    console.log(jonas[i]) //'Germany', 'teacher', 1991, true, 'Jonas'
+}
+
+//while loop
+let rep = 1
+while (rep <=10){
+    console.log(`lifting weight repetition ${rep}`) //lifting weight repetition 1,....10
+    rep++
+}
+
+//keep rolling a dice until you get 6
+let dice = Math.trunc(Math.random()* 6) + 1
+
+while (dice !== 6){
+    console.log(dice) //1,3,2,4 "Loop is about to end.."
+    dice = Math.trunc(Math.random()* 6) + 1
+    if (dice === 6){
+        console.log('Loop is about to end..')
+    }
+}
