@@ -171,3 +171,24 @@ const findAmplitude = (tempertature1,tempertature2)  => {
 }
 
 console.log(findAmplitude(tempertature1, tempertature2)) //23
+
+/* Given an array of forecasted maximum temperatures, the thermometer displays a string with these temperatures.
+
+Example: [17, 21, 23] will print "... 17°C in 1 day ...21°C in 2 days ... 23°C in 3 days ..."
+
+Create a function 'printForecast' which takes in an array 'arr' and logs a string as the example on the console.
+
+TEST DATA1: [17, 21, 23] 
+TEST DATA2: [12, 5, -5, 0, 4] 
+
+*/
+
+const printForecast = arr => {
+    let string = ""
+    for (let i = 0; i < arr.length; i++) {
+        string += `... ${arr[i]}°C in ${i + 1} ${i+ 1 === 1 ? "day" : "days"}`
+    }
+    return string + " ..."
+}
+
+console.log(printForecast([12, 5, -5, 0, 4] ))
