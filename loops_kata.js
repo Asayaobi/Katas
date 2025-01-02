@@ -144,3 +144,24 @@ const calcAverage = arr => {
 
 console.log(calcAverage(bills))
 
+//Find the amplitude of the weather data with for loop
+// Amplitude = the different between the max and min tempertature
+
+const tempertature = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9 ,5]
+
+const findAmplitude = tempertature => {
+    let min = tempertature[0]
+    let max = tempertature[0]
+    for (let i = 0; i < tempertature.length; i++){
+        if (tempertature[i] < min){
+            min = tempertature[i]
+        }
+        if (tempertature[i] > max){
+            max = tempertature[i]
+        }
+    }
+    let amplitude = max - min
+    return amplitude
+}
+
+console.log(findAmplitude(tempertature)) //23
