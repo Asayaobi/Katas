@@ -147,9 +147,15 @@ console.log(calcAverage(bills))
 //Find the amplitude of the weather data with for loop
 // Amplitude = the different between the max and min tempertature
 
-const tempertature = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9 ,5]
+//combine 2 arrays data together
 
-const findAmplitude = tempertature => {
+const tempertature1 = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9 ,5]
+const tempertature2 = [3, -2, 5, 9 ,5]
+
+const findAmplitude = (tempertature1,tempertature2)  => {
+    const tempertature = tempertature1.concat(tempertature2)
+    console.log(tempertature) //[3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9 ,5, 3, -2, 5, 9 ,5]
+
     let min = tempertature[0]
     let max = tempertature[0]
     for (let i = 0; i < tempertature.length; i++){
@@ -164,4 +170,4 @@ const findAmplitude = tempertature => {
     return amplitude
 }
 
-console.log(findAmplitude(tempertature)) //23
+console.log(findAmplitude(tempertature1, tempertature2)) //23
