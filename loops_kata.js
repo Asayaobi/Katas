@@ -192,3 +192,42 @@ const printForecast = arr => {
 }
 
 console.log(printForecast([12, 5, -5, 0, 4] ))
+
+
+/*
+Let's say you're building a time tracking application for freelancers. 
+At some point in building this app, you need a function 
+that receives daily work hours for a certain week, and returns:
+1. Total hours worked
+2. Average daily hours
+3. The day with the most hours worked
+4. Number of days worked
+5. Whether the week was full-time (worked 35 hours or more)
+
+TEST DATA: [7.5, 8, 6.5, 0, 8.5, 4, 5]
+*/
+
+function freelanceSum (data) {
+    const totalHours = data.reduce((total, current) => total + current, 0)
+    const averageHours = Math.round(totalHours / data.length)
+
+    const findMax = Math.max(...data)
+    const findIndex = data.indexOf(findMax)
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    const maxDay = days[findIndex]
+
+    const dayCount = data.filter((num) => num > 0).length
+
+    const isFulltime = totalHours >= 35
+
+    const output =  {
+        totalHours,
+        averageHours,
+        maxDay,
+        dayCount,
+        isFulltime
+    }
+    return output
+}
+
+console.log(freelanceSum([7.5, 8, 6.5, 0, 8.5, 4, 5]))
