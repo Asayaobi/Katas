@@ -97,6 +97,18 @@ const replaceProductPrice = (products, id) => {
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],1))
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2))
 
+// Write a function that takes an array of objects and return an array of the objects 'name' property if the name property exist.
+function getNames(arr){
+    let output = []
+    arr.find(obj => {
+        if (obj.name){
+            output.push(obj.name)
+        }
+    })
+    return output
+}
+console.log(getNames([{a: 1},{name: 'Jane'}, {b: 2}, {name: 'Mark'}, {name: 'Jack'}])) // ['Jane','Mark','Jack']
+
 ///////////////////////////////////////////
 
 
