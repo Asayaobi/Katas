@@ -109,6 +109,19 @@ function getNames(arr){
 }
 console.log(getNames([{a: 1},{name: 'Jane'}, {b: 2}, {name: 'Mark'}, {name: 'Jack'}])) // ['Jane','Mark','Jack']
 
+//using hasOwnProperty
+function getNames1(arr){
+    let result = []
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i].hasOwnProperty('name')){
+            result.push(arr[i].name)
+        }
+    }
+    return result
+}
+
+console.log(getNames1([{a: 1},{name: 'Jane'}, {b: 2}, {name: 'Mark'}, {name: 'Jack'}])) // ['Jane','Mark','Jack']
+
 ///////////////////////////////////////////
 
 
