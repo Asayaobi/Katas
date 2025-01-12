@@ -43,3 +43,25 @@ const friends = ['Ross', 'Mathew', 'Monica']
 console.log(friends)
 const friendsCast = new Array('Ross', 'Mathew', 'Monica')
 console.log(friendsCast)
+
+
+//this keyword
+
+//case1: arrow function as a method
+const jonas = {
+    firstName: 'Jonas',
+    year: 1991,
+    calcAge: function() {
+        console.log(2025 - this.year) 
+    },
+    //using this in arrow function/ the function will look for this in the global scope (window object). 
+    // since there's no firstName varible in the global scope, it'll be undefined.   
+    // greet: () => {console.log(`Hey ${this.firstName}`)}
+
+    //solution -> use normal function that allows this keyword
+    greet: function() {
+        console.log(`Hey ${this.firstName}`)
+    }
+}
+
+jonas.greet()
