@@ -106,7 +106,8 @@ console.log(`${markMiller.fullName}'s BMI (${markMiller.calcBMI()}) is higher th
 // console.log(johnSmith.calcBMI())//24.19
 
 
-//heap concept
+///////////////////////////////////////////////////heap concept///////////////////////////////////////////////////////
+
 //when you modify the object, the value of the object changes
 
 const jenny = {
@@ -120,7 +121,7 @@ newJenny.lastName = 'Anthony'
 console.log('original jenny lastname:', jenny.lastName) //'Anthony'
 console.log('new jenny lastname:', newJenny.lastName) //'Anthony'
 
-//to keep the original object data, use spread operator
+//spread operator allows you to copy the entire object while keeping the original object data
 
 const kim = {
     firstName: 'Kim',
@@ -132,3 +133,32 @@ newKim.lastName = 'West'
 
 console.log('original Kim lastname:', kim.lastName) //'Kardashian'
 console.log('new Kim lastname:', newKim.lastName) //'West'
+
+//when you modify the function, the value of the function changes
+
+//shallow copy
+const kanye = {
+    name: 'Kanye West',
+    family: ['Kanye', 'Kim']
+}
+
+const newKanye = {...kanye}
+newKanye.family.push('North')
+newKanye.family.push('Saint')
+
+console.log('original Kanye family:', kanye.family)//['Kanye', 'Kim', 'North', 'Saint']
+console.log('new Kanye family:', newKanye.family)//['Kanye', 'Kim', 'North', 'Saint']
+
+//deep copy
+const kimK = {
+    name: 'Kim K.',
+    family: ['Kanye', 'Kim']
+}
+
+const newKimK = structuredClone(kimK)
+newKimK.family.push('North')
+newKimK.family.push('Saint')
+
+console.log('original kimK family:', kimK.family)//['Kanye', 'Kim']
+console.log('new kimK family:', newKimK.family)//['Kanye', 'Kim', 'North', 'Saint']
+
