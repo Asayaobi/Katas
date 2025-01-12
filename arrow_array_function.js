@@ -99,3 +99,12 @@ const jane = {
 }
 
 jane.calcAge()
+
+//argument keyword works with regular function but not with arrow function (in arrow function arguments => undefined)
+const addExpression = function (a,b){
+    output = arguments
+    return output
+}
+
+console.log(addExpression(1,2))
+console.log(addExpression(1,2,3,4))
