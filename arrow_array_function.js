@@ -54,7 +54,7 @@ const jonas = {
     calcAge: function() {
         console.log(2025 - this.year) 
     },
-    //using this in arrow function/ the function will look for this in the global scope (window object). 
+    //using this in arrow function/ the arrow function will look for this in the parent scope (window object). 
     // since there's no firstName varible in the global scope, it'll be undefined.   
     // greet: () => {console.log(`Hey ${this.firstName}`)}
 
@@ -65,3 +65,37 @@ const jonas = {
 }
 
 jonas.greet()
+
+//case2: this function as a function inside of a method
+const jane = {
+    firstName: 'Jane',
+    year: 1993,
+    calcAge: function() {
+        console.log(2025 - this.year)
+
+        //a regular function call has this keyword sets to undefined
+        // const isMillenial = function(){
+        //     console.log(this)
+        //     console.log(this.year >= 1981 && this.year <= 1996)
+        // }
+        // isMillenial()
+
+        //solution1
+        const self = this
+        const isMillenial = function(){
+            console.log(self)
+            console.log(self.year >= 1981 && self.year <= 1996)
+        }
+        isMillenial()
+
+        //solution 2 (Modern - ES6 solution)
+        //the arrow function will look for this in the parent scope
+        const printMilenial = () => {
+            console.log(this)
+            console.log(this.year >= 1981 && this.year <= 1996)
+        }
+        printMilenial()
+    }
+}
+
+jane.calcAge()
