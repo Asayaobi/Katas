@@ -104,3 +104,31 @@ const johnSmith = {
 console.log(`${markMiller.fullName}'s BMI (${markMiller.calcBMI()}) is higher than ${johnSmith.fullName}'s (${johnSmith.calcBMI()})!`)
 // console.log(markMiller.calcBMI())//27.30
 // console.log(johnSmith.calcBMI())//24.19
+
+
+//heap concept
+//when you modify the object, the value of the object changes
+
+const jenny = {
+    firstName: 'Jenny',
+    lastName: 'Lopez'
+}
+
+const newJenny = jenny
+newJenny.lastName = 'Anthony'
+
+console.log('original jenny lastname:', jenny.lastName) //'Anthony'
+console.log('new jenny lastname:', newJenny.lastName) //'Anthony'
+
+//to keep the original object data, use spread operator
+
+const kim = {
+    firstName: 'Kim',
+    lastName: 'Kardashian'
+}
+
+const newKim = {...kim}
+newKim.lastName = 'West'
+
+console.log('original Kim lastname:', kim.lastName) //'Kardashian'
+console.log('new Kim lastname:', newKim.lastName) //'West'
