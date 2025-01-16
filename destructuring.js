@@ -97,7 +97,9 @@ const nestedArr = ['log1', 2, [3, 'log4']]
 const [l1, ,[, l4]] = nestedArr
 console.log(l1, l4) //['log1','log4']
 
-
+//default value prevents undefined
+const [x = 1, y = 1, z = 1] = [9, 1]
+console.log(x,y,z) //[9,1,1]
 /////////////////////////////////////////////
 
 // Spread Operator
