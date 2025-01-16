@@ -67,6 +67,37 @@ const [firstColour, ,thirdColour] = colors
 console.log(firstColour) //'red'
 console.log(thirdColour) //'blue'
 
+const restaurant = {
+    name: 'Pizza Hut',
+    city: 'Jackson Ville',
+    categories: ['Italian', 'Pizzaria', 'Vegetarian', 'Vegan'],
+    crust : ['Italian Pan', 'Crispy Pan', 'Cheesy Pan'],
+    menu: ['Double Pepperoni', 'Four Cheese', 'BBQ', 'Sausage Lover'],
+    order: function(crustIdx, menuIdx){
+        return [this.crust[crustIdx], this.menu[menuIdx]]
+    }
+}
+
+let [, , c] = restaurant.categories
+console.log(c)//'Vegetarian'
+
+let [, b]= restaurant.categories
+console.log(b)//'Pizzaria'
+
+c = 'Children'
+console.log(c)//'Children'
+console.log(restaurant.categories)//['Italian', 'Pizzaria', 'Vegetarian', 'Vegan']
+
+console.log(restaurant.order(0,2))//['Italian Pan', 'BBQ']
+const [breadCrust, pizzaTopping] = restaurant.order(0,2)
+console.log(breadCrust, pizzaTopping)//['Italian Pan', 'BBQ']
+
+
+const nestedArr = ['log1', 2, [3, 'log4']]
+const [l1, ,[, l4]] = nestedArr
+console.log(l1, l4) //['log1','log4']
+
+
 /////////////////////////////////////////////
 
 // Spread Operator
