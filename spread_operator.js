@@ -142,3 +142,15 @@ const books = [
 
 const bookAuthors = [...books[0].author, ...books[1].author]
 console.log(bookAuthors)//['Robert Sedgewick', 'Kevin Wayne', 'Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)']
+
+/*
+2.Write a function called spellWord that accepts a single string as an argument. 
+This function should log to the console each letter of the argument separated by a space.
+Code: spellWord('JavaScript') 
+Expected output: "J a v a S c r i p t"
+*/
+
+function spellWord(word) {
+    console.log(...word)
+  }
+console.log(spellWord('JavaScript'))//[ 'J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't' ]
