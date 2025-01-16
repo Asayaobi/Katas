@@ -11,8 +11,8 @@ const person = {
 // const occupation = person.occupation
 
 //with Destructuring
-const {name, age, occupation} = person
-console.log(name) //'Alice'
+const {name: firstName, age, occupation} = person
+console.log(firstName) //'Alice'
 console.log(age)//25
 console.log(occupation) //'Developer'
 
@@ -55,6 +55,32 @@ const addScores = scores => {
 console.log(addScores({ score1: 10, score2: 20 }) ) //30
 console.log(addScores({ score1: 10}) ) //11
 
+const pizzaria = {
+    name: 'Pizzaria',
+    openingHours: {
+        friday: {
+            open: 12,
+            close:23
+        },
+        saturday: {
+            open: 14,
+            close:23
+        },
+        sunday: {
+            open: 18,
+            close:21
+        },
+    }
+}
+
+//nested object
+const {openingHours} = pizzaria
+// console.log(openingHours)
+const {friday: {open, close}} = openingHours
+console.log(open) //12
+console.log(close) //23
+
+
 // Destructuring Arrays
 // Array destructuring works similarly, allowing you to unpack values from arrays.
 
@@ -75,6 +101,11 @@ const restaurant = {
     menu: ['Double Pepperoni', 'Four Cheese', 'BBQ', 'Sausage Lover'],
     order: function(crustIdx, menuIdx){
         return [this.crust[crustIdx], this.menu[menuIdx]]
+    },
+    orderDelivery: function({crustIdx = 0, menuIdx = 0, address, time = '00:00'}){
+        return `Order receieved at ${time} 
+        for ${this.menu[menuIdx]} with ${this.crust[crustIdx]}
+        deliver to ${address}.`
     }
 }
 
@@ -92,6 +123,14 @@ console.log(restaurant.order(0,2))//['Italian Pan', 'BBQ']
 const [breadCrust, pizzaTopping] = restaurant.order(0,2)
 console.log(breadCrust, pizzaTopping)//['Italian Pan', 'BBQ']
 
+const {owner = [], crust} = restaurant
+console.log(owner) //[]
+console.log(crust)//['Italian Pan', 'Crispy Pan', 'Cheesy Pan']
+
+console.log(restaurant.orderDelivery({
+    address: 'Fifth Avenue 13-4',
+    time: '10:00'
+}))//Order received at 10:00 for Double Pepperoni with Italian Pan, deliver to Fifth Avenue 13-4
 
 const nestedArr = ['log1', 2, [3, 'log4']]
 const [l1, ,[, l4]] = nestedArr
@@ -100,6 +139,16 @@ console.log(l1, l4) //['log1','log4']
 //default value prevents undefined
 const [x = 1, y = 1, z = 1] = [9, 1]
 console.log(x,y,z) //[9,1,1]
+
+
+//Mutating Variable
+let value1 = 333
+let value2 = 666
+const obj = {value1: 111, value2: 222, value3: 333}
+({value1,value2} = obj)
+//value1 gets the value 111 from obj.value1 and value2 gets the value 222 from obj.value2
+console.log(value1,value2) // 111, 222
+
 /////////////////////////////////////////////
 
 // Spread Operator
