@@ -421,3 +421,16 @@ console.log(ISBN)//9780321573513
 // The tags variable should be assigned with the value of the keywords property.
 const {keywords:tags} = books[0]
 console.log(tags)
+
+//7.The seventh book from the books array is missing the programmingLanguage property. 
+// Destructure the seventh book object (books[6]) into variables called language and programmingLanguage.
+// Assign the programmingLanguage variable with a default value of 'unknown'.
+const {language , programmingLanguage = 'unknown'} = books[6]
+console.log(language)// English
+console.log(programmingLanguage)//'unknown'
+
+//8.Below are two variables called bookTitle and bookAuthor. 
+//Reassign them with the values of the title and author properties of the first book object from the books array.
+let bookTitle = 'unknown';
+let bookAuthor = 'unknown';
+({title: bookTitle, author: bookAuthor} = books[0])
