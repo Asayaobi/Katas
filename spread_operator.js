@@ -41,6 +41,7 @@ const mergedObj = { ...obj1, ...obj2 }
 console.log(mergedObj) // Output: { a: 1, b: 3, c: 4 }
 //Note that properties in obj2 will overwrite properties in obj1 with the same key.
 
+const colors = ['red', 'green', 'blue']
 // Using Spread with Array Destructuring in sorting
 const [firstColor1, ...otherColors] = colors
 // Here, firstColor1 is 'red', and otherColors is an array containing the rest of the colors (['green', 'blue']).
@@ -53,3 +54,27 @@ console.log(getGreenFirst)
 //get any color first
 const getFirstColor = value => [value, ...colors.filter(c => c != value)]
 console.log(getFirstColor('blue'))
+
+//Iterables: arrays, strings, maps, sets BUT NOT objects
+const firstname = 'Jonas'
+const fullName = [...firstname, '', 'J', '.']
+console.log(fullName)//['J','o','n','a','s','','J','.']
+
+//Notes: spread operator doesn't work on template literal ex. ${...firstname} because it doesn't expect multiple values
+
+const restaurant = {
+    name: 'Italian World',
+    city: 'Jackson Ville',
+    orderPasta: function(ingr1, ingr2, ingr3){
+        return `here is your pasta with ${ingr1}, ${ingr2}, ${ingr3}`
+    },
+}
+
+// const ingredients = [
+//     prompt('What kind of pasta would you like?'),
+//     prompt('What kind of meat would you like?'),
+//     prompt('What kind of topping would you like?')
+// ]
+const ingredients = ['spaghetti', 'beef', 'bolognese']
+console.log(restaurant.orderPasta(ingredients[0],ingredients[1],ingredients[2]))//'here is your pasta with spaghetti, beef, bolognese'
+console.log(restaurant.orderPasta(...ingredients))//'here is your pasta with spaghetti, beef, bolognese'
