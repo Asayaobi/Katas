@@ -142,12 +142,12 @@ console.log(x,y,z) //[9,1,1]
 
 
 //Mutating Variable
-let value1 = 333
-let value2 = 666
-const obj = {value1: 111, value2: 222, value3: 333}
-({value1,value2} = obj)
+// let value1 = 333
+// let value2 = 666
+// const obj = {value1: 111, value2: 222, value3: 333}
+// ({value1,value2} = obj)
 //value1 gets the value 111 from obj.value1 and value2 gets the value 222 from obj.value2
-console.log(value1,value2) // 111, 222
+// console.log(value1,value2) // 111, 222
 
 /////////////////////////////////////////////
 
@@ -411,3 +411,13 @@ console.log(ratingsCount)//144584
 const ratingStars = [63405, 1808];
 let [fiveStarRatings, oneStarRatings, threeStarRatings = 0] = ratingStars
 console.log(fiveStarRatings, oneStarRatings, threeStarRatings) //[63405, 1808,0]
+
+//5.Destructure the first book object from the books array into variables called title, author and ISBN.
+const {title, author , ISBN} = books[0]
+console.log(title)//Algorithms
+console.log(ISBN)//9780321573513
+
+//6.Each book object has the keywords property. Destructure the first book object from the books array into a variable called tags. 
+// The tags variable should be assigned with the value of the keywords property.
+const {keywords:tags} = books[0]
+console.log(tags)
