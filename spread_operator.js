@@ -213,6 +213,65 @@ const orderPizza = (mainIngrdient, ...otherIngredients) => `you've ordered ${mai
 console.log(orderPizza('mushroom', 'cheese', 'onion','chili'))//you've ordered mushroom pizza with cheese, onion, chili
 console.log(orderPizza('pepperoni', 'olive'))//you've ordered pepperoni pizza with olive
 
+/////////////////////////////////////
+/*Kata
 
+Destructure the keywords property (array) of the first book from the books array into variables called mainKeyword and rest. 
+The first keyword should be assigned to mainKeyword, 
+and the rest of the keywords should be assigned to the rest variable (it should be an array).
+*/
 
+const abooks = [
+  {
+    title: 'Algorithms',
+    author: ['Robert Sedgewick', 'Kevin Wayne'],
+    publisher: 'Addison-Wesley Professional',
+    publicationDate: '2011-03-24',
+    edition: 4,
+    keywords: ['computer science', 'programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering'],
+    pages: 976,
+    format: 'hardcover',
+    ISBN: '9780321573513',
+    language: 'English',
+    programmingLanguage: 'Java',
+    onlineContent: true,
+    thirdParty: {
+      goodreads: {
+        rating: 4.41,
+        ratingsCount: 1733,
+        reviewsCount: 63,
+        fiveStarRatingCount: 976,
+        oneStarRatingCount: 13
+      }
+    },
+    highlighted: true
+  },
+  {
+    title: 'Structure and Interpretation of Computer Programs',
+    author: ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'],
+    publisher: 'The MIT Press',
+    publicationDate: '2022-04-12',
+    edition: 2,
+    keywords: ['computer science', 'programming', 'javascript', 'software', 'engineering'],
+    pages: 640,
+    format: 'paperback',
+    ISBN: '9780262543231',
+    language: 'English',
+    programmingLanguage: 'JavaScript',
+    onlineContent: false,
+    thirdParty: {
+      goodreads: {
+        rating: 4.36,
+        ratingsCount: 14,
+        reviewsCount: 3,
+        fiveStarRatingCount: 8,
+        oneStarRatingCount: 0
+      }
+    },
+    highlighted: true
+  },
+]
 
+const [mainKeyword, ...rest] = abooks[0].keywords
+console.log(mainKeyword)//computer science
+console.log(rest)//['programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering']
