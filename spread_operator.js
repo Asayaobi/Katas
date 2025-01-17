@@ -282,3 +282,14 @@ Assign the rest of the properties to the restOfTheBook variable.*/
 const {publisher: bookPublisher,...restOfTheBook} = abooks[1]
 console.log(bookPublisher)//'The MIT Press'
 console.log(restOfTheBook)//publicationDate: '2022-04-12',edition: 2,keywords: ['computer science', 'programming', 'javascript', 'software', 'engineering'],...
+
+/*3. Write a function called printBookAuthorsCount that has two parameters called title and authors. 
+The authors parameter should accept any number of arguments. 
+This function should log to the console a string formatted like that: "The book "${title}" has ${authors.length} authors"
+Code: printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne');
+Expected Output: "The book "Algorithms" has 2 authors"*/
+
+function printBookAuthorsCount(title,...authors){
+  return `"The book "${title}" has ${authors.length} authors`
+}
+console.log(printBookAuthorsCount('Algorithms', 'Robert Sedgewick', 'Kevin Wayne'))//The book "Algorithms" has 2 authors
