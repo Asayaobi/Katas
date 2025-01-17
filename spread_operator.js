@@ -275,3 +275,10 @@ const abooks = [
 const [mainKeyword, ...rest] = abooks[0].keywords
 console.log(mainKeyword)//computer science
 console.log(rest)//['programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering']
+
+/*2. Destructure the second book from the books array into a variable called bookPublisher. 
+The bookPublisher variable should be assigned with the value of the publisher property of the book object. 
+Assign the rest of the properties to the restOfTheBook variable.*/
+const {publisher: bookPublisher,...restOfTheBook} = abooks[1]
+console.log(bookPublisher)//'The MIT Press'
+console.log(restOfTheBook)//publicationDate: '2022-04-12',edition: 2,keywords: ['computer science', 'programming', 'javascript', 'software', 'engineering'],...
