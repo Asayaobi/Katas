@@ -154,3 +154,65 @@ function spellWord(word) {
     console.log(...word)
   }
 console.log(spellWord('JavaScript'))//[ 'J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't' ]
+
+
+//////////////////////////////////////////////////////
+//Spread operator is on the left side of =
+//Rest operator is on the right side of =
+
+const [a, b, ...others] = [1, 2, 3, 4, 5]
+console.log(b)//2
+console.log(others)//[3, 4, 5]
+
+const burgerParadise = {
+  name: 'Burger Paradise',
+  mainMenu: ['Double Cheese Burger', 'Classic Burger', 'Fish Burger', 'Vegan Burger'],
+  sidedish: ['French Fries', 'Onion Rings'],
+  openingHours: {
+    fri: {
+      open: '10:00',
+      close: '24:00'
+    },
+    sat: {
+      open: '13:00',
+      close: '24:00'
+    },
+    sun: {
+      open: '13:00',
+      close: '22:00'
+    }
+  }
+}
+
+//...rest with array
+const [cheeseBurger,,fishBurger,...otherFood] = [...burgerParadise.mainMenu,...burgerParadise.sidedish]
+console.log(cheeseBurger)//'Double Cheese Burger'
+console.log(fishBurger)//'Fish Burger'
+console.log(otherFood)//['Vegan Burger', 'French Fries', 'Onion Rings']
+
+//...rest with object
+const {fri,...weekend} = burgerParadise.openingHours
+console.log(weekend)//{sat: { open: '13:00', close: '24:00' },sun: { open: '13:00', close: '22:00' }}
+
+//...rest with function
+const logNumbers = (...numbers) => numbers
+console.log(logNumbers(1,2))//[1,2]
+console.log(logNumbers(1,2,3,4))//[1,2,3,4]
+
+const addNumbers = (...numbers) => {
+  let sum = numbers.reduce((num,acc) => num + acc)
+  return sum
+}
+console.log(addNumbers(1,2))//3
+console.log(addNumbers(1,2,3,4))//10
+
+const x = [10,20,30]
+console.log(addNumbers(...x))//60
+
+const orderPizza = (mainIngrdient, ...otherIngredients) => `you've ordered ${mainIngrdient} pizza with ${otherIngredients}`
+console.log(orderPizza('mushroom', 'cheese', 'onion','chili'))//you've ordered mushroom pizza with cheese, onion, chili
+console.log(orderPizza('pepperoni', 'olive'))//you've ordered pepperoni pizza with olive
+
+
+
+
