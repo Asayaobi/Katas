@@ -257,10 +257,20 @@ const pizzaHut = {
 pizzaHut.guests = 0
 
 const withOr = pizzaHut.guests || 'no detail'
-console.log(withOr) //'no detail
+console.log(withOr) //'no detail (0 -> falsy||'no detail')
 
 const withNullish = pizzaHut.guests ?? 'no detail'
-console.log(withNullish) //0
+console.log(withNullish) //0 (0 -> truthy ||'no detail')
+
+/* Kata
+There are objects in the books array that don't have the onlineContent property at all. 
+Loop over the books array, 
+and log a string to the console in this format: "${title}" provides no data about its online content.
+*/
+for (let i = 0; i < books.length; i++){
+    books[i].onlineContent ?? console.log(`"${books[i].title}" provides no data about its online content. `)
+}
+ 
 
 // Simplifying Nested If Statements
 // You have a piece of JavaScript code that uses nested if statements. 
