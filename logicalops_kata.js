@@ -245,6 +245,23 @@ for (i = 0; i < books.length; i++){
     books[i].onlineContent && console.log(`"${books[i].title}" provides online content. `)
     }
 
+/////////////////////////////////////////////////////////////////
+//Nullish Value --> 0 and empty string are not falsy
+const pizzaHut = {
+    name: 'Pizza Hut',
+    city: 'Jackson Ville',
+    categories: ['Italian', 'Pizzaria', 'Vegetarian', 'Vegan'],
+    }
+
+//add current guests
+pizzaHut.guests = 0
+
+const withOr = pizzaHut.guests || 'no detail'
+console.log(withOr) //'no detail
+
+const withNullish = pizzaHut.guests ?? 'no detail'
+console.log(withNullish) //0
+
 // Simplifying Nested If Statements
 // You have a piece of JavaScript code that uses nested if statements. 
 // Your task is to refactor this code into a single if statement using the correct logical operator 
