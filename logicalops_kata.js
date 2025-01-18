@@ -5,7 +5,25 @@ console.log(undefined||null)//null
 console.log(undefined||0||null||'Hello'||3)//'Hello'
 
 
+//AND// runs until it meets falsy condition and stop
+console.log(0 && 'Joe')//'Joe'
+console.log(3 &&'Joe')//'Joe'
+console.log('Hello' && 3 && undefined && 0)//undefined
 
+const restaurant = {
+    name: 'Papa John',
+    orderPizza: function(...ingredients){
+        console.log(ingredients)
+        return `receive order: pizza with ${ingredients} `
+    }
+}
+//Practical example
+if (restaurant.orderPizza){
+    const result = restaurant.orderPizza('ham', 'pineapple')
+    console.log(result)//'receive order: pizza with cheese,pineapple '
+}
+
+restaurant.orderPizza && restaurant.orderPizza('cheese', 'onion')
 
 
 // Simplifying Nested If Statements
