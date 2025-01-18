@@ -1,3 +1,13 @@
+//OR// finds the first truthy condition
+console.log(0||'Joe')//'Joe'
+console.log(3||'Joe')//3
+console.log(undefined||null)//null
+console.log(undefined||0||null||'Hello'||3)//'Hello'
+
+
+
+
+
 // Simplifying Nested If Statements
 // You have a piece of JavaScript code that uses nested if statements. 
 // Your task is to refactor this code into a single if statement using the correct logical operator 
