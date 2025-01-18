@@ -246,7 +246,7 @@ for (i = 0; i < books.length; i++){
     }
 
 /////////////////////////////////////////////////////////////////
-//Nullish Value --> 0 and empty string are not falsy
+//Nullish Value is null and undefined --> 0 and '' empty string are not falsy value in this case
 const pizzaHut = {
     name: 'Pizza Hut',
     city: 'Jackson Ville',
