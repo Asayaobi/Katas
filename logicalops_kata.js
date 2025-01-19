@@ -271,6 +271,37 @@ for (let i = 0; i < books.length; i++){
     books[i].onlineContent ?? console.log(`"${books[i].title}" provides no data about its online content. `)
 }
  
+////////////////////////////////////////////////////////////
+//Logical Assignment Operators
+const restaurant1 = {
+  name: 'Jo Pizza',
+  currentGuests: 20,
+  since: '1994',
+  currentBooking: 0
+}
+
+const restaurant2 = {
+  name: 'Jane Pizza',
+  owner: 'Jane H.',
+  currentBooking: 0
+}
+
+restaurant1.currentGuests = restaurant1.currentGuests || 10
+restaurant2.currentGuests = restaurant2.currentGuests || 10
+console.log(restaurant1)//{ name: 'Jo Pizza', currentGuests: 20 }
+console.log(restaurant2)//{ name: 'Jane Pizza', owner: 'Jane H.', currentGuests: 10 }
+
+//with OR assignment operator -> assign the value if that value is currently falsy (this will not work with value 0 because it sees 0 as falsy)
+restaurant1.since ||= '2025'
+restaurant2.since ||= '2025'
+console.log(restaurant1)//{ name: 'Jo Pizza', currentGuests: 20, since: '1994', currentBooking: 0 }
+console.log(restaurant2)//{ name: 'Jane Pizza', owner: 'Jane H.', currentGuests: 10, since: '2025', currentBooking: 0  }
+restaurant1.currentBooking ||= 10
+console.log(restaurant1)//{ name: 'Jo Pizza', currentGuests: 20, since: '1994', currentBooking: 10 }
+
+//with Nullish operator --> 0 and '' are not falsy value
+restaurant2.currentBooking ??= 10
+console.log(restaurant2)//{ name: 'Jane Pizza', owner: 'Jane H.', currentGuests: 10, since: '2025', currentBooking: 0  }
 
 // Simplifying Nested If Statements
 // You have a piece of JavaScript code that uses nested if statements. 
