@@ -303,6 +303,18 @@ console.log(restaurant1)//{ name: 'Jo Pizza', currentGuests: 20, since: '1994', 
 restaurant2.currentBooking ??= 10
 console.log(restaurant2)//{ name: 'Jane Pizza', owner: 'Jane H.', currentGuests: 10, since: '2025', currentBooking: 0  }
 
+//with AND operator --> modify the truty value
+restaurant1.owner = restaurant1.owner && 'ANONYMOUS' //owner property doesn't exist -> falsy 
+restaurant2.owner = restaurant2.owner && 'ANONYMOUS'
+console.log(restaurant1.owner)//undefined
+console.log(restaurant2.owner)//'ANONYMOUS'
+
+restaurant1.name &&= 'ANONYMOUS'
+console.log(restaurant1.name)//'ANONYMOUS'
+restaurant2.location &&= 'ANONYMOUS'
+console.log(restaurant2.location)//undefined
+
+
 // Simplifying Nested If Statements
 // You have a piece of JavaScript code that uses nested if statements. 
 // Your task is to refactor this code into a single if statement using the correct logical operator 
