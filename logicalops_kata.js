@@ -245,6 +245,14 @@ for (i = 0; i < books.length; i++){
     books[i].onlineContent && console.log(`"${books[i].title}" provides online content. `)
     }
 
+/*Some of the book objects from the books array are missing the edition property. Loop over the books array, 
+and assign this property with a number 1 (if it doesn't already exist). Use logical assignment operators.*/
+books.map(b => {
+  b.edition ||= 1
+  return b
+})
+
+
 /////////////////////////////////////////////////////////////////
 //Nullish Value is null and undefined --> 0 and '' empty string are not falsy value in this case
 const pizzaHut = {
