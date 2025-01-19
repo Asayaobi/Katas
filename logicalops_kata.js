@@ -247,11 +247,21 @@ for (i = 0; i < books.length; i++){
 
 /*Some of the book objects from the books array are missing the edition property. Loop over the books array, 
 and assign this property with a number 1 (if it doesn't already exist). Use logical assignment operators.*/
-books.map(b => {
+const editions = books.map(b => {
   b.edition ||= 1
   return b
 })
+console.log(editions)
 
+/*Some of the book objects from the books array have the highlighted property, 
+which by default is set to true. Iterate over the books array, 
+and if the thirdParty.goodreads.rating property is less than 4.2, reassign it with false.
+Use the &&= operator (tip: you may also need the ! operator)*/
+
+books.forEach(book => 
+  book.highlighted &&= !(book.thirdParty.goodreads.rating < 4.2)
+)
+console.log(books)
 
 /////////////////////////////////////////////////////////////////
 //Nullish Value is null and undefined --> 0 and '' empty string are not falsy value in this case
