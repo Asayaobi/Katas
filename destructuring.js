@@ -483,3 +483,15 @@ const newBook = {
 }
 console.log(newBook)
 //{title: [ 'Computer Networking: A Top-Down Approach' ],author: [ [ 'James F. Kurose', 'Keith W. Ross' ] ],publisher: [ 'Addison Wesley' ]}
+
+//2.Below is the pages variable. Add it as a property of the newBook2 object. Use the shorter way.
+const pages = 880;
+
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  // ...
+  pages
+}
+console.log(newBook2)
+//{title: 'The C Programming Language',author: [ 'Brian W. Kernighan', 'Dennis M. Ritchie' ],pages: 880}
