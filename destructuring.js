@@ -540,3 +540,89 @@ for (const [date,{open, close}] of hoursArr){
   console.log(`on ${date}, we open at ${open} and close at ${close}`)
   //'on friday, we open at 12 and close at 23' 
 }
+
+///////////////////////////////////////
+// Coding Challenge #2
+
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number 
+2. Use a loop to calculate the average odd and log it to the console
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1. (Log Example: "Goal 1: Lewandowski")
+for (const [index,player] of game.scored.entries()){
+  console.log(`Goal ${index+1}: ${player}`)
+}
+
+//2. calculate the average odd
+const oddsArray = Object.values(game.odds)//[ 1.33, 3.25, 6.5 ]
+const totalOdd = oddsArray.reduce((acc,odd)=> acc += odd, 0) //11.08
+const averageOdd = totalOdd / oddsArray.length
+console.log(averageOdd) //3.693
+
+//3. log Odd of victory Bayern Munich: 1.33
+const entriesArr = Object.entries(game.odds)//[ [ 'team1', 1.33 ], [ 'x', 3.25 ], [ 'team2', 6.5 ] ]
+for (const [team,number] of entriesArr){
+  //console.log(team)//'team1' 'x' 'team2'
+  //console.log(number)//1.33 3.25 6.5
+  if (team === 'team1')console.log(`Odd of victory ${game.team1}: ${number}`)
+  if (team === 'team2')console.log(`Odd of victory ${game.team2}: ${number}`)
+    else console.log(`Odd of draw: ${number}`)
+}
