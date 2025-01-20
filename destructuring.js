@@ -47,13 +47,13 @@ console.log(`Hello ${firstname}`)
 // }
 // addScores({ score1: 10, score2: 20 }) 
 
-// Without Destructuring
+// With Destructuring
 const addScores = scores => {
     let {score1 = 1, score2 = 1} = scores
     return score1 + score2
     }
 console.log(addScores({ score1: 10, score2: 20 }) ) //30
-console.log(addScores({ score1: 10}) ) //11
+console.log(addScores({ score1: 30}) ) //31
 
 const pizzaria = {
     name: 'Pizzaria',
@@ -75,7 +75,8 @@ const pizzaria = {
 
 //nested object
 const {openingHours} = pizzaria
-// console.log(openingHours)
+console.log(openingHours)
+//{friday: { open: 12, close: 23 },saturday: { open: 14, close: 23 },sunday: { open: 18, close: 21 }}
 const {friday: {open, close}} = openingHours
 console.log(open) //12
 console.log(close) //23
@@ -368,7 +369,7 @@ console.log(tags)
 //7.The seventh book from the books array is missing the programmingLanguage property. 
 // Destructure the seventh book object (books[6]) into variables called language and programmingLanguage.
 // Assign the programmingLanguage variable with a default value of 'unknown'.
-const {language , programmingLanguage = 'unknown'} = books[6]
+const {language, programmingLanguage = 'unknown'} = books[6]
 console.log(language)// English
 console.log(programmingLanguage)//'unknown'
 
@@ -377,6 +378,8 @@ console.log(programmingLanguage)//'unknown'
 let bookTitle = 'unknown';
 let bookAuthor = 'unknown';
 ({title: bookTitle, author: bookAuthor} = books[0])
+console.log(bookTitle)// Algorithms
+console.log(bookAuthor)//[ 'Robert Sedgewick', 'Kevin Wayne' ]
 
 /*9.Each book object has a deeply nested rating property as illustrated below:
 {
@@ -417,7 +420,7 @@ function printBookInfo({title, author, year = 'year unknown'}){
 console.log(printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' }))//Algorithms by Robert Sedgewick, 2011
 console.log(printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' }))//"Algorithms by Robert Sedgewick, year unknown"
 
-///////ES6 Enhanced object literal 
+////////////////////////////ES6 Enhanced object literal ///////////////////////////////
 //if the name of the variable is the same as the property name, with ES6 you can use this shortcut
 const hours = {
   friday: {
