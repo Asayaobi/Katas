@@ -44,3 +44,71 @@ console.log(new Set(menu).size) //3
 //count unique letter in a string
 const letters = 'letters'
 console.log(new Set(letters).size)//5
+
+
+///////////////////////////////////////
+// New Operations to Make Sets Useful!
+// Set Intersection
+function setIntersection(setA, setB) {
+    return new Set([...setA].filter((item) => setB.has(item)));
+  }
+  
+  // Set Union
+  function setUnion(setA, setB) {
+    return new Set([...setA, ...setB]);
+  }
+  
+  // Set Difference
+  function setDifference(setA, setB) {
+    return new Set([...setA].filter((item) => !setB.has(item)));
+  }
+  
+  // Usage
+  const setA = new Set([1, 2, 3]);
+  const setB = new Set([2, 3, 4]);
+  
+  console.log(setIntersection(setA, setB)); // Set { 2, 3 }
+  console.log(setUnion(setA, setB));       // Set { 1, 2, 3, 4 }
+  console.log(setDifference(setA, setB)); // Set { 1 }
+  
+
+const italianFoods = new Set([
+    'pasta',
+    'gnocchi',
+    'tomatoes',
+    'olive oil',
+    'garlic',
+    'basil',
+  ]);
+  
+  const mexicanFoods = new Set([
+    'tortillas',
+    'beans',
+    'rice',
+    'tomatoes',
+    'avocado',
+    'garlic',
+  ]);
+
+//intersection shows similar items between 2 sets
+console.log(italianFoods.intersection(mexicanFoods))//{'tomatoes', 'garlic'}
+//log answer in an array
+const common = italianFoods.intersection(mexicanFoods)
+console.log([...common])//['tomatoes', 'garlic']
+
+
+//union join together 2 sets and only show unique value
+console.log(italianFoods.union(mexicanFoods))//{'pasta', 'gnocchi', 'tomatoes', 'olive oil', 'garlic', …}
+console.log(new Set([...italianFoods,...mexicanFoods]))// {'pasta', 'gnocchi', 'tomatoes', 'olive oil', 'garlic', …}
+console.log([...new Set([...italianFoods,...mexicanFoods])])
+//['pasta', 'gnocchi', 'tomatoes', 'olive oil', 'garlic', 'basil', 'tortillas', 'beans', 'rice', 'avocado']
+  
+//remove items that are common between the 2 sets
+console.log(italianFoods.difference(mexicanFoods))//{'pasta', 'gnocchi', 'olive oil', 'basil'}
+console.log(mexicanFoods.difference(italianFoods))//{'tortillas', 'beans', 'rice', 'avocado'}
+
+//show only unique element (remove the common element) of 2 sets
+console.log(italianFoods.symmetricDifference(mexicanFoods))//{'pasta', 'gnocchi', 'olive oil', 'basil', 'tortillas', "beans", "rice", "avocado"}
+
+//check if the first set is totally different from another set
+console.log(italianFoods.isDisjointFrom(mexicanFoods))//false
