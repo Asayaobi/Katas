@@ -626,3 +626,25 @@ for (const [team,number] of entriesArr){
   if (team === 'team2')console.log(`Odd of victory ${game.team2}: ${number}`)
     else console.log(`Odd of draw: ${number}`)
 }
+
+/*BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, 
+and the number of goals as the value. In this game, it will look like this:
+{
+  Gnarby: 1,
+  Hummels: 1,
+  Lewandowski: 2
+}
+*/
+const bonusGame = {
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+}
+let scorers = {}
+for (const player of bonusGame.scored){
+  // if(scorers[player]){
+  //   scorers[player] +=1
+  // } else {
+  //   scorers[player] = 1
+  // }
+  scorers[player] = (scorers[player] || 0)+1
+}
+console.log(scorers)//{ Lewandowski: 2, Gnarby: 1, Hummels: 1 }
