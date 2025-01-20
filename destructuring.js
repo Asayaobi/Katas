@@ -495,3 +495,48 @@ const newBook2 = {
 }
 console.log(newBook2)
 //{title: 'The C Programming Language',author: [ 'Brian W. Kernighan', 'Dennis M. Ritchie' ],pages: 880}
+
+
+///////////////////////////////////////////////////////////////////
+//Object.keys() returns an array of object's name
+const workingHours = {
+  friday: {
+      open: 12,
+      close:23
+  },
+  saturday: {
+      open: 14,
+      close:23
+  },
+  sunday: {
+      open: 18,
+      close:21
+  }
+}
+
+console.log(Object.keys(workingHours))//[ 'friday', 'saturday', 'sunday' ]
+
+const workingDays = Object.keys(workingHours)//[ 'friday', 'saturday', 'sunday' ]
+for (const day of workingDays){
+  console.log(day)//'friday', 'saturday', 'sunday'
+}
+
+//Object.values() returns an array of object's values
+console.log(Object.values(workingHours))
+//[{ open: 12, close: 23 }, { open: 14, close: 23 },{ open: 18, close: 21 }]
+
+//Object.entries() returns name + value together
+console.log(Object.entries(workingHours))
+//[[ 'friday', { open: 12, close: 23 } ],[ 'saturday', { open: 14, close: 23 } ],[ 'sunday', { open: 18, close: 21 } ]]
+
+const hoursArr = Object.entries(workingHours)
+for (const x of hoursArr){
+  console.log(x)//[ 'friday', { open: 12, close: 23 } ] 
+  console.log(`on ${x[0]}, we open at ${x[1].open} and close at ${x[1].close}`)
+  //'on friday, we open at 12 and close at 23
+}
+
+for (const [date,{open, close}] of hoursArr){
+  console.log(`on ${date}, we open at ${open} and close at ${close}`)
+  //'on friday, we open at 12 and close at 23' 
+}
