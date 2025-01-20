@@ -620,11 +620,9 @@ console.log(averageOdd) //3.693
 //3. log Odd of victory Bayern Munich: 1.33
 const entriesArr = Object.entries(game.odds)//[ [ 'team1', 1.33 ], [ 'x', 3.25 ], [ 'team2', 6.5 ] ]
 for (const [team,number] of entriesArr){
-  //console.log(team)//'team1' 'x' 'team2'
-  //console.log(number)//1.33 3.25 6.5
-  if (team === 'team1')console.log(`Odd of victory ${game.team1}: ${number}`)
-  if (team === 'team2')console.log(`Odd of victory ${game.team2}: ${number}`)
-    else console.log(`Odd of draw: ${number}`)
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`
+  console.log(`Odd of ${teamStr}: ${number}`)
+  //'Odd of victory Bayern Munich: 1.33' 'Odd of draw: 3.25' 'Odd of victory Borrussia Dortmund: 6.5'
 }
 
 /*BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, 
@@ -645,6 +643,6 @@ for (const player of bonusGame.scored){
   // } else {
   //   scorers[player] = 1
   // }
-  scorers[player] = (scorers[player] || 0)+1
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1)
 }
 console.log(scorers)//{ Lewandowski: 2, Gnarby: 1, Hummels: 1 }
