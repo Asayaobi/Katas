@@ -417,3 +417,52 @@ function printBookInfo({title, author, year = 'year unknown'}){
 console.log(printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' }))//Algorithms by Robert Sedgewick, 2011
 console.log(printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick' }))//"Algorithms by Robert Sedgewick, year unknown"
 
+///////ES6 Enhanced object literal 
+//if the name of the variable is the same as the property name, with ES6 you can use this shortcut
+const hours = {
+  friday: {
+      open: 12,
+      close:23
+  },
+  saturday: {
+      open: 14,
+      close:23
+  },
+  sunday: {
+      open: 18,
+      close:21
+  }
+}
+
+const PizzaCompany = {
+  name: 'Pizza Company',
+  location: 'St. Luis',
+  hours,
+  // hours: hours
+  order(...menu){
+    return `${menu}`
+},
+//   order: function(...menu){
+//     return `${menu}`
+// },
+}
+console.log(PizzaCompany)
+
+//deconstruct+ calculate properties
+const days = ['mon', 'tue', 'wed','thu','fri','sat','sun']
+const excercise = {
+  [days[0]]: {
+    start:'10.00',
+    finish: '11.00'
+  },
+  [days[3]]:{
+    start:'18.00',
+    finish: '19.00'
+  },
+  [days[1 + 1]]: {
+    start:'12.00',
+    finish: '13.00'
+  },
+}
+console.log(excercise)
+
