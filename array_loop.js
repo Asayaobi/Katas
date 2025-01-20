@@ -226,8 +226,8 @@ const books = [
       },
       highlighted: true
     }
-  ];
-  let pageSum = 0;
+  ]
+  let pageSum = 0
   for (const book of books){
     pageSum += book.pages
   }
@@ -235,3 +235,20 @@ const books = [
 
   const pages = books.reduce((acc, book) => acc += book.pages, 0)
   console.log(pages)//6380
+
+//2. Below is the allAuthors variable which stores an empty array. 
+// Use the for-of loop to fill allAuthors with the authors of each book from the books array.
+// Remember that each book object has the author property, which can be a string (if there is only a single author) or an array 
+// (if there are multiple authors). You may need to use the typeof operator. 
+// You can also use multiple loops if needed. The allAuthors array should have just one level (no nested arrays).
+const allAuthors = []
+for (const book of books){
+    if(typeof book.author === 'string'){
+        allAuthors.push(book.author)
+    } else {
+        allAuthors.push(...book.author)
+        // for (const author of book.author)
+        // allAuthors.push(author)
+    }
+}
+console.log(allAuthors)
