@@ -57,3 +57,94 @@ console.log(bookMap.size)//3
 
 //5.Check if bookMap has the author key. and if so, log "The author of the book is known" to the console.
 console.log(bookMap.has('author') && "The author of the book is known")//"The author of the book is known"
+
+
+///////////////////////////////////////
+// Maps: Iteration
+const question = new Map([
+    ['question', 'What is the best programming language in the world?'],
+    [1, 'C'],
+    [2, 'Java'],
+    [3, 'JavaScript'],
+    ['correct', 3],
+    [true, 'Correct 🎉'],
+    [false, 'Try again!'],
+  ]);
+  console.log(question)
+  /* Map {
+  'question': 'What is the best programming language in the world?',
+  1: 'C',
+  2: 'Java',
+  3: 'JavaScript',
+  'correct': 3,
+  true: 'Correct 🎉',
+  false: 'Try again!'
+}*/
+
+console.log([...question.keys()])//Array(7) [ 'question', 1, 2, 3, 'correct', true, false ]
+console.log([...question.values()])
+//Array(7) ['What is the best programming language in the world?', 'C', 'Java', 'JavaScript',3, 'Correct 🎉', 'Try again!']
+
+
+/////////convert object to Map with Object.entries()
+  const questionObject = {
+        'question': 'What is the best programming language in the world?',
+        1: 'C',
+        2: 'Java',
+        3: 'JavaScript',
+        'correct': 3,
+        true: 'Correct 🎉',
+        false: 'Try again!'
+  }
+//Step 1. Object.entries() will return the array
+console.log(Object.entries(questionObject))
+/*Array(7) [
+    [ '1', 'C' ],
+    [ '2', 'Java' ],
+    [ '3', 'JavaScript' ],
+    [ 'question', 'What is the best programming language in the world?' ],
+    [ 'correct', 3 ],
+    [ 'true', 'Correct 🎉' ],
+    [ 'false', 'Try again!' ]
+  ]
+  */
+//Step 2.put that array in to new Map(array)
+ const createMap = new Map(Object.entries(questionObject))
+ console.log(createMap)
+ /* Map {
+  '1': 'C',
+  '2': 'Java',
+  '3': 'JavaScript',
+  'question': 'What is the best programming language in the world?',
+  'correct': 3,
+  'true': 'Correct 🎉',
+  'false': 'Try again!'
+} */
+
+ //////convert map back to an array
+ console.log([...createMap])
+/*Array(7) [
+    [ '1', 'C' ],
+    [ '2', 'Java' ],
+    [ '3', 'JavaScript' ],
+    [ 'question', 'What is the best programming language in the world?' ],
+    [ 'correct', 3 ],
+    [ 'true', 'Correct 🎉' ],
+    [ 'false', 'Try again!' ]
+  ]
+  */
+ 
+ 
+  /////////////////////////////
+ //Quiz app
+ console.log(question.get('question'))//'What is the best programming language in the world?'
+ for (const [key,value] of question){
+    if (typeof key === 'number') console.log(`Answer ${key}: ${value}`)
+        //'Answer 1: C' 'Answer 2: Java' 'Answer 3: JavaScript'
+ }
+
+//  let answer = Number(prompt('type your answer'))
+let answer = 3
+
+console.log(question.get(answer === question.get('correct'))) //'Correct 🎉'
+
