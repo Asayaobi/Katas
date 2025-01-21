@@ -112,3 +112,68 @@ console.log(italianFoods.symmetricDifference(mexicanFoods))//{'pasta', 'gnocchi'
 
 //check if the first set is totally different from another set
 console.log(italianFoods.isDisjointFrom(mexicanFoods))//false
+
+///////////////////////Kata//////////////////////////
+//1. Below is the allKeywords variable, which stores an empty array. Loop over the books array, 
+// and fill the allKeywords array with the keywords coming from the keywords property of each book object. 
+// The allKeywords array should have just one level (no nested arrays).
+//allKeywords : ['computer science', 'programming', 'algorithms', 'data structures', ...].
+
+const books = [
+    {
+      title: 'Algorithms',
+      author: ['Robert Sedgewick', 'Kevin Wayne'],
+      publisher: 'Addison-Wesley Professional',
+      publicationDate: '2011-03-24',
+      edition: 4,
+      keywords: ['computer science', 'programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering'],
+      pages: 976,
+      format: 'hardcover',
+      ISBN: '9780321573513',
+      language: 'English',
+      programmingLanguage: 'Java',
+      onlineContent: true,
+      thirdParty: {
+        goodreads: {
+          rating: 4.41,
+          ratingsCount: 1733,
+          reviewsCount: 63,
+          fiveStarRatingCount: 976,
+          oneStarRatingCount: 13
+        }
+      },
+      highlighted: true
+    },
+    {
+      title: 'Structure and Interpretation of Computer Programs',
+      author: ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'],
+      publisher: 'The MIT Press',
+      publicationDate: '2022-04-12',
+      edition: 2,
+      keywords: ['computer science', 'programming', 'javascript', 'software', 'engineering'],
+      pages: 640,
+      format: 'paperback',
+      ISBN: '9780262543231',
+      language: 'English',
+      programmingLanguage: 'JavaScript',
+      onlineContent: false,
+      thirdParty: {
+        goodreads: {
+          rating: 4.36,
+          ratingsCount: 14,
+          reviewsCount: 3,
+          fiveStarRatingCount: 8,
+          oneStarRatingCount: 0
+        }
+      },
+      highlighted: true
+    },
+  ];
+
+  const allKeywords = []
+  for(const book of books){
+    allKeywords.push(...book.keywords)
+  }
+console.log(allKeywords)
+// ['computer science', 'programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering', 'computer science', 'programming', 'javascript', 'software', 'engineering']
+
