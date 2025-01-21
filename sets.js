@@ -177,3 +177,6 @@ const books = [
 console.log(allKeywords)
 // ['computer science', 'programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering', 'computer science', 'programming', 'javascript', 'software', 'engineering']
 
+//2.The allKeyword array contains duplicates. Remove them by creating a Set out of that array. Assign the newly created set to the uniqueKeywords variable.
+const uniqueKeywords = new Set(allKeywords)
+console.log(uniqueKeywords)//{'computer science', 'programming', 'algorithms', 'data structures', 'java', …}
