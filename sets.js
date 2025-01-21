@@ -184,3 +184,14 @@ console.log(uniqueKeywords)//{'computer science', 'programming', 'algorithms', '
 //3. Add two more keywords to the uniqueKeywords set, for example, 'coding' and 'science'.
 uniqueKeywords.add('coding')
 uniqueKeywords.add('science')
+
+//4.Delete 'business' from the uniqueKeywords set.
+uniqueKeywords.delete('business')
+
+//5. Create an array out of the uniqueKeywords set, and assign it to the uniqueKeywordsArr variable
+const uniqueKeywordsArr = [...uniqueKeywords]
+console.log(uniqueKeywordsArr)
+//['computer science', 'programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering', 'javascript', 'coding', 'science']
+
+//6.Delete all items from the uniqueKeywords set.
+uniqueKeywords.clear()
