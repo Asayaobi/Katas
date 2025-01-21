@@ -44,3 +44,7 @@ console.log(restaurant)//Map {}
 //[['title', 'Clean Code'], ['author', 'Robert C. Martin']]
 const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']])
 console.log(bookMap)//Map { 'title': 'Clean Code', 'author': 'Robert C. Martin' }
+
+//2.Set a new key in bookMap called pages, and assign it with a number 464.
+bookMap.set('pages', 464)
+console.log(bookMap)//Map {'title': 'Clean Code','author': 'Robert C. Martin','pages': 464}
