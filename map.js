@@ -36,3 +36,11 @@ console.log(restaurant.size) //4
 //remove all element from the map
 restaurant.clear()
 console.log(restaurant)//Map {}
+
+
+///////////////////////////////////////////////////////////////
+// Kata
+//1. Create a new book, but this time, as a Map. Assign it to the bookMap variable. Use this array as initial data:
+//[['title', 'Clean Code'], ['author', 'Robert C. Martin']]
+const bookMap = new Map([['title', 'Clean Code'], ['author', 'Robert C. Martin']])
+console.log(bookMap)//Map { 'title': 'Clean Code', 'author': 'Robert C. Martin' }
