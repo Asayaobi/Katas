@@ -54,3 +54,6 @@ console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`)//'Clean Code 
 
 //4.Get the size of bookMap, and log it to the console.
 console.log(bookMap.size)//3
+
+//5.Check if bookMap has the author key. and if so, log "The author of the book is known" to the console.
+console.log(bookMap.has('author') && "The author of the book is known")//"The author of the book is known"
