@@ -51,3 +51,6 @@ console.log(bookMap)//Map {'title': 'Clean Code','author': 'Robert C. Martin','p
 
 //3.Get the title and author values from bookMap, and log to the console a string formatted like that: "${title} by ${author}".
 console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`)//'Clean Code by Robert C. Martin'
+
+//4.Get the size of bookMap, and log it to the console.
+console.log(bookMap.size)//3
