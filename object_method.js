@@ -402,3 +402,8 @@ for (const [index,[key, value]] of goodreadsWithIndex){
 }
 console.log(output)
 //[ [ 1, 'rating', 4.41 ], [ 2, 'ratingsCount', 1733 ], [ 3, 'reviewsCount', 63 ], [ 4, 'fiveStarRating..]]
+
+//6. Use the Object.entries() method on the thirdParty.goodreads property of the first book from the books array. 
+// Assign the returned value to the variable called entries2.
+const entries2 = Object.entries(books[0].thirdParty.goodreads)
+console.log(entries2) //[[ 'rating', 4.41 ],[ 'ratingsCount', 1733 ],[ 'reviewsCount', 63 ],[ 'fiveStarRatingCount', 976 ],[ 'oneStarRatingCount', 13 ]]
