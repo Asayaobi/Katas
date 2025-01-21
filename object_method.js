@@ -377,3 +377,28 @@ for (const key of keysArr){
     entries.push([key])
 }
 console.log(entries)// [['rating'], ['ratingsCount'], ['reviewsCount'], ['fiveStartRatingCount'], ['oneStartRatingCount']]
+
+/* 5. The Object.values() method returns an array, which means you can call the Array's entries() method on it, 
+for example, Object.entries(books[0].thirdParty.goodreads).entries(). 
+The Array's entries() method returns [index, value] arrays for each element in the array.
+Use the for-of loop together with the Object.values() method and Array's entries() method 
+to loop over thirdParty.goodreads property of the first book from the books array.
+
+Push each value to the appropriate inner array in the entries array (use index from entries()).
+*/
+
+const output = []
+const goodreads = Object.entries(books[0].thirdParty.goodreads)
+const goodreadsWithIndex = Object.entries(goodreads)
+/*[
+  [ '0', [ 'rating', 4.41 ] ],
+  [ '1', [ 'ratingsCount', 1733 ] ],
+  [ '2', [ 'reviewsCount', 63 ] ],
+  [ '3', [ 'fiveStarRatingCount', 976 ] ],
+  [ '4', [ 'oneStarRatingCount', 13 ] ]
+]*/
+for (const [index,[key, value]] of goodreadsWithIndex){
+    output.push([Number(index) + 1, key, value])
+}
+console.log(output)
+//[ [ 1, 'rating', 4.41 ], [ 2, 'ratingsCount', 1733 ], [ 3, 'reviewsCount', 63 ], [ 4, 'fiveStarRating..]]
