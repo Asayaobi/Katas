@@ -263,6 +263,13 @@ books.forEach(book =>
 )
 console.log(books)
 
+//Write a function called getFirstKeyword that takes the book object as an argument. 
+// This function should return the first keyword from the book's keywords property (array) 
+// or undefined (if the keywords property doesn't exist). It shouldn't throw an error. Use optional chaining for that.
+const getFirstKeyword = book => book.keywords[0]
+console.log(getFirstKeyword(books[0]))//'computer science'
+
+
 /////////////////////////////////////////////////////////////////
 //Nullish Value is null and undefined --> 0 and '' empty string are not falsy value in this case
 const pizzaHut = {
