@@ -180,3 +180,7 @@ console.log(allKeywords)
 //2.The allKeyword array contains duplicates. Remove them by creating a Set out of that array. Assign the newly created set to the uniqueKeywords variable.
 const uniqueKeywords = new Set(allKeywords)
 console.log(uniqueKeywords)//{'computer science', 'programming', 'algorithms', 'data structures', 'java', …}
+
+//3. Add two more keywords to the uniqueKeywords set, for example, 'coding' and 'science'.
+uniqueKeywords.add('coding')
+uniqueKeywords.add('science')
