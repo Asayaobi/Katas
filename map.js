@@ -48,3 +48,6 @@ console.log(bookMap)//Map { 'title': 'Clean Code', 'author': 'Robert C. Martin' 
 //2.Set a new key in bookMap called pages, and assign it with a number 464.
 bookMap.set('pages', 464)
 console.log(bookMap)//Map {'title': 'Clean Code','author': 'Robert C. Martin','pages': 464}
+
+//3.Get the title and author values from bookMap, and log to the console a string formatted like that: "${title} by ${author}".
+console.log(`${bookMap.get('title')} by ${bookMap.get('author')}`)//'Clean Code by Robert C. Martin'
