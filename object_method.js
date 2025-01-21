@@ -312,3 +312,68 @@ const workingHours = {
   }
   console.log(scorers)//{ Lewandowski: 2, Gnarby: 1, Hummels: 1 }
   
+
+
+
+//4. Below is the entries variable that stores an empty array. Use the for-of loop together with the Object.keys() method 
+// to loop over the thirdParty.goodreads property (array) of the first book object from the books array. For each key, 
+// push a new array that contains that key to the entries array.
+// output entries: [['rating'], ['ratingsCount'], ['reviewsCount'], ['fiveStartRatingCount'], ['oneStartRatingCount']]
+
+const books = [
+    {
+      title: 'Algorithms',
+      author: ['Robert Sedgewick', 'Kevin Wayne'],
+      publisher: 'Addison-Wesley Professional',
+      publicationDate: '2011-03-24',
+      edition: 4,
+      keywords: ['computer science', 'programming', 'algorithms', 'data structures', 'java', 'math', 'software', 'engineering'],
+      pages: 976,
+      format: 'hardcover',
+      ISBN: '9780321573513',
+      language: 'English',
+      programmingLanguage: 'Java',
+      onlineContent: true,
+      thirdParty: {
+        goodreads: {
+          rating: 4.41,
+          ratingsCount: 1733,
+          reviewsCount: 63,
+          fiveStarRatingCount: 976,
+          oneStarRatingCount: 13
+        }
+      },
+      highlighted: true
+    },
+    {
+      title: 'Structure and Interpretation of Computer Programs',
+      author: ['Harold Abelson', 'Gerald Jay Sussman', 'Julie Sussman (Contributor)'],
+      publisher: 'The MIT Press',
+      publicationDate: '2022-04-12',
+      edition: 2,
+      keywords: ['computer science', 'programming', 'javascript', 'software', 'engineering'],
+      pages: 640,
+      format: 'paperback',
+      ISBN: '9780262543231',
+      language: 'English',
+      programmingLanguage: 'JavaScript',
+      onlineContent: false,
+      thirdParty: {
+        goodreads: {
+          rating: 4.36,
+          ratingsCount: 14,
+          reviewsCount: 3,
+          fiveStarRatingCount: 8,
+          oneStarRatingCount: 0
+        }
+      },
+      highlighted: true
+    },
+  ];
+
+const entries = []
+const keysArr = Object.keys(books[0].thirdParty.goodreads)// ['rating', 'ratingsCount', 'reviewsCount', 'fiveStarRatingCount', 'oneStarRatingCount']
+for (const key of keysArr){
+    entries.push([key])
+}
+console.log(entries)// [['rating'], ['ratingsCount'], ['reviewsCount'], ['fiveStartRatingCount'], ['oneStartRatingCount']]
