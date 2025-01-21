@@ -1,4 +1,4 @@
-//Sets doesn't log duplicate value/ set has to be unique
+//Unlike array, sets doesn't log duplicate value/ set has to be unique
 const orders = new Set(['pizza', 'risotto', 'pizza', 'pasta', 'pizza'])
 console.log(orders)//Set { 0: 'pizza', 1: 'risotto', 2: 'pasta' }
 
