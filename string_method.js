@@ -3,8 +3,9 @@
 // i.e., the number of characters it contains. Just like in an array.
 // Example:
 const greeting = 'Hello, world!'
-greeting.length // 13
-console.log(greeting.length)
+console.log(greeting.length) //13
+console.log(greeting[0])//'H'
+console.log(greeting[1])//'e'
 
 // 2.charAt()
 // Returns the character at a specified index. Index starts at 0.
@@ -32,6 +33,13 @@ console.log(sentence.replace('fox', 'puppy'))
 let str = 'The quick brown fox'
 str.slice(4, 9)
 console.log(str.slice(4, 9))
+console.log(str.slice(str.lastIndexOf(' ')))//'fox'
+console.log(str.slice(-3))//'fox'
+
+console.log(str.indexOf('b'))//10
+console.log(str.indexOf('n'))//14
+console.log(str.slice(10,14+1))//'brown'
+
 
 // 6. split()
 // Splits a string into an array of substrings.
@@ -54,6 +62,17 @@ console.log(cities.split('-'))
 // Example
 '  Hello World  '.trim() // 'Hello World'
 console.log('  Hello World  '.trim() )
+
+//9. indexOf
+console.log('Hello'.indexOf('o'))//4
+console.log('Hello'.indexOf('l'))//2
+console.log('Hello'.lastIndexOf('l'))//3
+
+console.log('Hi Hello'.indexOf('Hello')) //3
+console.log('Hi Hello'.indexOf('hello')) //-1 means that it is not found (because of the lowercase)
+
+
+
 
 // Return String Length
 // Create a returnLength function that takes a parameter and returns its length 
@@ -132,3 +151,16 @@ console.log(formatPhoneNumber(123))
 console.log(formatPhoneNumber(999999999999))
 console.log(formatPhoneNumber(783543777241))
 console.log(formatPhoneNumber(null))
+
+//check if your seat is the middle seat or not. Note: B and E are middle seat
+function checkMiddleSeat(seatnumber){
+    let letter = seatnumber.slice(-1)
+    if (letter === 'B' || letter === 'E') {
+        return `it's a middle seat`
+    } else {
+        return `it's not a middle seat`
+    }
+}
+
+console.log(checkMiddleSeat('1A'))
+
