@@ -414,17 +414,22 @@ console.log(isContributor('Robert Sedgewick'))//false
 //code: normalizeAuthorName('  JuliE sussMan (Contributor)')//"Julie Sussman"
 
 function normalizeAuthorName(str){
-//1. tolowercase
+  //1. tolowercase
 let string = str.trim().toLowerCase()
-//2. if there's a word Contributor, remove it
+  //2. if there's a word Contributor, remove it
 if (string.includes('contributor')){
   const index = (string.indexOf('('))//14
   string = string.slice(0,index-1)
 }
-//3. format upperCase + lowerCase
+  //3. format upperCase + lowerCase
 const spaceIdx = string.indexOf(' ')//5
 const formatName = string[0].toUpperCase() + string.slice(1,spaceIdx + 1) + string[spaceIdx+1].toUpperCase() +string.slice(spaceIdx+2)
-
 return formatName
 }
 console.log(normalizeAuthorName('  JuliE sussMan (Contributor)'))//"Julie Sussman"
+
+//6. Take the title of the second book (books[1]) from the books array, 
+// and replace the word "Programs" with "Software". Assign the new string to the newBookTitle variable.
+console.log(books[1].title)//'Structure and Interpretation of Computer Programs'
+const newBookTitle = books[1].title.replace("Programs","Software")
+console.log(newBookTitle)//'Structure and Interpretation of Computer Software'
