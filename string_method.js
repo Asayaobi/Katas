@@ -405,3 +405,26 @@ function isContributor(str){
 }
 console.log(isContributor('Julie Sussman (Contributor)'))//true
 console.log(isContributor('Robert Sedgewick'))//false
+
+//5. Write a function called normalizeAuthorName that takes an author's name (string) as an argument, 
+// and returns the same string, but the first name and last name are capitalized, and the "(Contributor)" part is removed (if exists).
+
+//You can be sure that the author's name always consists of two words separated by a space, 
+// and possibly ends with "(Contributor)". The string may also contain trailing spaces.
+//code: normalizeAuthorName('  JuliE sussMan (Contributor)')//"Julie Sussman"
+
+function normalizeAuthorName(str){
+//1. tolowercase
+let string = str.trim().toLowerCase()
+//2. if there's a word Contributor, remove it
+if (string.includes('contributor')){
+  const index = (string.indexOf('('))//14
+  string = string.slice(0,index-1)
+}
+//3. format upperCase + lowerCase
+const spaceIdx = string.indexOf(' ')//5
+const formatName = string[0].toUpperCase() + string.slice(1,spaceIdx + 1) + string[spaceIdx+1].toUpperCase() +string.slice(spaceIdx+2)
+
+return formatName
+}
+console.log(normalizeAuthorName('  JuliE sussMan (Contributor)'))//"Julie Sussman"
