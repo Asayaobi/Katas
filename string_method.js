@@ -20,12 +20,22 @@ const sentence = 'The quick brown fox jumps over the lazy dog.'
 sentence.includes('fox') // true
 console.log(sentence.includes('quick'))
 
-// 4. replace()
+// 4. replace() and replaceAll()
 // Replaces a specified value with another value in a string.
 // Example:
 let sentence1 = 'Hello, world'
 sentence1.replace('world', 'JavaScript') // Output: 'Hello, JavaScript'
 console.log(sentence.replace('fox', 'puppy'))
+
+const priceEuro = '€2,50'
+const priceUS = priceEuro.replace('€','$').replace(',','.')
+console.log(priceUS) //'$2.50'
+
+const announcement = 'Please board at door 12, door 12'
+console.log(announcement.replace('door','gate'))//'Please board at gate 12, door 12'
+console.log(announcement.replaceAll('door','gate'))//'Please board at gate 12, gate 12'
+//using regular expression
+console.log(announcement.replace(/door/g,'gate'))//'Please board at gate 12, gate 12'
 
 // 5. slice()
 // Extracts a part of a string and returns a new string.
@@ -56,12 +66,18 @@ console.log(cities.split('-'))
 // Example
 'Hello World'.toLowerCase() // 'hello world'
 'Hello World'.toUpperCase() // 'HELLO WORLD'
+const nameFormat = 'JoNaS'
+const lowercaseName = nameFormat.toLowerCase()
+const correctFormat = lowercaseName[0].toUpperCase()+lowercaseName.slice(1)
+console.log(correctFormat) //'Jonas'
+
 
 // 8. trim()
 // Removes whitespace from both ends of a string.
 // Example
 '  Hello World  '.trim() // 'Hello World'
-console.log('  Hello World  '.trim() )
+console.log('  Hello World  '.trim() )//'Hello World'
+console.log('  JonAs@gMAIL.Io   \n'.trim().toLocaleLowerCase())//'jonas@gmail.io'
 
 //9. indexOf
 console.log('Hello'.indexOf('o'))//4
@@ -71,7 +87,22 @@ console.log('Hello'.lastIndexOf('l'))//3
 console.log('Hi Hello'.indexOf('Hello')) //3
 console.log('Hi Hello'.indexOf('hello')) //-1 means that it is not found (because of the lowercase)
 
+//10. startsWith() endsWith()
+console.log('Airbus'.startsWith('Air'))//true
+console.log('Airbus'.endsWith('us'))//true
 
+
+//check baggage
+function checkBaggage(items){
+  const baggage = items.toLocaleLowerCase()
+  if (baggage.includes('knife') || baggage.includes('gun')){
+    return 'you are not allowed to board the plane'
+  } else {
+    return 'welcome on board'
+  }
+}
+console.log(checkBaggage('I have a Knife and some food.'))//'you are not allowed to board the plane'
+console.log(checkBaggage('I have some socks and a Laptop'))//'welcome on board'
 
 
 // Return String Length
@@ -80,11 +111,11 @@ console.log('Hi Hello'.indexOf('hello')) //-1 means that it is not found (becaus
 const returnLength = random => {
     return typeof random === 'string' ? random.length : typeof random
 }
-console.log(returnLength('hello'))
-console.log(returnLength(''))
-console.log(returnLength(10))
-console.log(returnLength([1,2,3]))
-console.log(returnLength(true))
+console.log(returnLength('hello'))//5
+console.log(returnLength(''))//0
+console.log(returnLength(10))//'number'
+console.log(returnLength([1,2,3]))//'object'
+console.log(returnLength(true))//'boolean'
 
 // Is Longer Than
 // Create a JavaScript function called isLongerThan.
