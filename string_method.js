@@ -91,7 +91,55 @@ console.log('Hi Hello'.indexOf('hello')) //-1 means that it is not found (becaus
 console.log('Airbus'.startsWith('Air'))//true
 console.log('Airbus'.endsWith('us'))//true
 
+//11. join() join the arrays to string
+const nameInput = 'Anthony Kings'
+console.log(nameInput.split(' '))//[ 'Anthony', 'Kings' ]
+const [firstName, lastName] = nameInput.split(' ')
+const newName = ['Mr.', firstName, lastName].join(' ')
+console.log(newName)//'Mr. Anthony Kings'
 
+//capitalizeName
+function capitalizedName(string){
+  const nameArr = string.split(' ')
+  const formatName = []
+  for (let name of nameArr){
+    name = name[0].toUpperCase() + name.slice(1)
+    // name = name.replace(name[0], name[0].toUpperCase())
+    formatName.push(name)
+  }
+  return formatName.join(' ')
+}
+
+console.log(capitalizedName('ana maria garcia'))////'Ana Maria Garcia'
+console.log(capitalizedName('mario kart')) //'Mario Kart'
+
+//12. padding
+//add the length of this message to 25 and fill the empty space with +
+const padding = 'go to gate23!'
+console.log(padding.padStart(25,'+'))//'++++++++++++go to gate23!'
+console.log(padding.padStart(25,'+').padEnd(35,"+"))//''++++++++++++go to gate23!++++++++++''
+
+//maskCreditCard
+function maskCreditCard(number){
+  //convert number to a string
+  //const string = String(number)
+  const string = number + ''
+  const lastDigits = string.slice(-4)
+  const mask = lastDigits.padStart(string.length, '*')
+  return mask
+}
+console.log(maskCreditCard(3417884598682343)) //'************2343'
+console.log(maskCreditCard(34178843))//'****8843'
+
+
+//13. repeat()
+const greetingMessage = 'Hello'
+console.log(greetingMessage.repeat(3)) //'HelloHelloHello'
+
+function addSmiley(number){
+  return '🙂'.repeat(number)
+}
+console.log(addSmiley(5))//'🙂🙂🙂🙂🙂'
 //check baggage
 function checkBaggage(items){
   const baggage = items.toLocaleLowerCase()
