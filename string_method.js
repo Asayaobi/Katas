@@ -433,3 +433,20 @@ console.log(normalizeAuthorName('  JuliE sussMan (Contributor)'))//"Julie Sussma
 console.log(books[1].title)//'Structure and Interpretation of Computer Programs'
 const newBookTitle = books[1].title.replace("Programs","Software")
 console.log(newBookTitle)//'Structure and Interpretation of Computer Software'
+
+//7. Write a function called logBookTheme that takes book's title (string), and logs to the console:
+//"This book is about computers" if the title starts with the word "computer",
+//"This book is about algorithms and data structures" if the title includes both the "algorithms" and "structures" words,
+//and, "This book is about some systems, but definitely not about operating systems" 
+// if the title ends with the word "system" or "systems", but doesn't include the word "operating".
+function logBookTheme(string){
+  if (string.toLowerCase().startsWith('computer')) {
+    return "This book is about computers"
+  } else if (string.toLowerCase().includes('algorithms')&& string.toLowerCase().includes('structures')) {
+    return "This book is about algorithms and data structures"
+  } else if ((string.toLowerCase().endsWith('system') || string.toLowerCase().endsWith('systems')) && !string.toLowerCase().includes('operating')) {
+    return "This book is about some systems, but definitely not about operating systems"
+  }
+}
+
+
