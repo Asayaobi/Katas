@@ -498,3 +498,19 @@ function logBookTheme(string){
 }
 
 
+//8. Below is the bookCategories variable that stores a string of categories. Each category is separated with a semicolon, 
+// for example, in a string "science;computing", 'science' and 'computing' are separate categories.
+//Write a function called logBookCategories that takes a string of categories separated with semicolons,
+//  and logs each category to the console (as separate strings).
+
+const bookCategories = 'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+//logBookCategories(bookCategories)//science computing computer science algorithms business operating systems networking electronics
+
+// const categoriesString = bookCategories => bookCategories.replaceAll(';', ' ')
+function logBookCategories (bookCategories){
+  const catArray = bookCategories.split(';')
+  for (const c of catArray){
+    console.log(c)
+  }
+}
+logBookCategories(bookCategories)
