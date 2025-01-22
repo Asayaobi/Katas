@@ -514,3 +514,25 @@ function logBookCategories (bookCategories){
   }
 }
 logBookCategories(bookCategories)
+
+//9. Now, the opposite. Each book from the books array has the keywords property.
+//Write a function called getKeywordsAsString that takes the books array as an argument, 
+// collects keywords from each book, removes duplicates, and then joins them to create a single string 
+// where keywords are separated by a semicolon.
+
+//Example getKeywordsAsString(books)//computer science;programming;algorithms;data structures;java;math;software;engineering;javascript;computer systems;C;operating systems;Java;mathematics;business;compilers;interpreters;work;focus;personal development
+function getKeywordsAsString(books){
+  //collects keywords from each book
+  const allKeys = []
+  for (const b of books){
+    const keywords = b.keywords
+    allKeys.push(...keywords)
+  }
+  //removes duplicates
+  const uniqueKeywords = new Set(allKeys)
+  const uniqueKeywordsArr = [...uniqueKeywords]
+  //joins them to create a single string separated by a semicolon.
+  return uniqueKeywordsArr.join(';')
+}
+console.log(getKeywordsAsString(books))
+//'computer science;programming;algorithms;data structures;java;math;software;engineering;javascript;computer systems;C;operating systems;Java;mathematics;business;compilers;interpreters;work;focus;personal development'
