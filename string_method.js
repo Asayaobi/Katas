@@ -589,13 +589,24 @@ HINT 4: This challenge is difficult on purpose, so start watching the solution i
 Afterwards, test with your own test data!
 
 GOOD LUCK 😀
+
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
 document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
-  const rows = text.split('\n')
-  })
+  const rows = text.split('\n');
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
 */
 
 
@@ -627,7 +638,7 @@ function toCamelCase(text){
     //console.log(camelCaseLetter)//'underscoreCase'
     // checked
     const checked = '✅'.repeat(i+1)
-    console.log(camelCaseLetter.padEnd(25,' ')+checked)
+    console.log(camelCaseLetter.padEnd(25)+checked)
   }
 }
 
@@ -636,3 +647,34 @@ toCamelCase(`underscore_case
 Some_Variable 
   calculate_AGE
 delayed_departure`)
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+//1.split the sentence
+const flightsArr = flights.split('+')
+//console.log(flightsArr)
+//['_Delayed_Departure;fao93766109;txl2133758440;11:25', '_Arrival;bru0943384722;fao93766109;11:45','_Delayed_Arrival;hel7439299980;fao93766109;12:05', '_Departure;fao93766109;lis2323639855;12:30']
+
+//2.loop the array of each flight and modify the format
+for (const flight of flightsArr){
+  //console.log(flight)//'_Delayed_Departure;fao93766109;txl2133758440;11:25' 
+  //3. split each part of the flight info
+  let [type,from,to,time] = flight.split(';')
+  type = type.replaceAll('_', ' ')
+
+  //format airportcode
+  const getCode = str => str.slice(0,3).toUpperCase()
+  // from = from.slice(0,3).toUpperCase()
+
+  time = time.replace(':', 'h')
+  const output = `${type.startsWith(' Delayed') ? '🔴' : ''}  ${type} from ${getCode(from)} to ${getCode(to)} (${time})`.padStart(36)
+  console.log(output)
+}
+
+
