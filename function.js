@@ -71,3 +71,61 @@ const transformWord = function(str, func){
 transformWord('Javascript is the best.',useUppercase)//calling useUppercase function'  'transform string:', 'JAVASCRIPT is the best.'
 transformWord('Javascript is the best.',joinToOneWord)//'calling joinToOneWord function'  'transform string:', 'javascriptisthebest.' 
 
+
+//////////////////////////////////////////////////////////////////////////////
+
+//function returning function
+const greet = function(greeting){
+    return function(name){
+        return `${greeting} ${name}`
+    }
+}
+
+const greetingWithHey = greet('Hey')
+console.log(greetingWithHey('Jane'))//'Hey Jane'
+
+console.log(greet('Hi')('Mario'))//'Hi Mario'
+
+/////////////////////////////////////////////////
+
+//using arrow function
+const greeting = greetingWord => name => `${greetingWord} ${name}`
+console.log(greeting('Hola')('Pedro'))//'Hola Pedro'
+
+///////////////////////////////////////////////////
+
+//function as method
+const lufthansa = {
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    bookings: [],
+    // book: function(){}
+    book(flightNumber, name){
+        this.bookings.push({flight: `${this.iataCode}${flightNumber}`, name})
+        return `${name} has booked a seat on ${this.airline} flight ${this.iataCode}${flightNumber}.`
+    }
+}
+
+console.log(lufthansa.book(114,'Karen Smiths'))//'Karen Smiths has booked a seat on Lufthansa flight LH114.'
+console.log(lufthansa.bookings)//[ { flight: 'LH114', name: 'Karen Smiths' } ]
+
+//if you want to reuse book function from lufthansa variable
+const eurowing = {
+    airline: 'Eurowing',
+    iataCode: 'EW',
+    bookings: [],
+}
+const book = lufthansa.book
+
+//DOES NOT WORK because of this keyword
+//console.log(book(123,"Joe Rogan"))
+
+//FIX IT by using :
+//CALL METHOD and point which variable of this keyword is pointing to.
+console.log(book.call(eurowing,123,"Joe Rogan"))//'Joe Rogan has booked a seat on Eurowing flight EW123.'
+console.log(eurowing)//{airline: 'Eurowing',iataCode: 'EW',bookings: [ { flight: 'EW123', name: 'Joe Rogan' } ]}
+
+//APPLY METHOD and point which variable of this keyword is pointing to, followed by an array
+const flightData = [444,'Jane Cooper']
+console.log(book.apply(lufthansa,flightData))//'Jane Cooper has booked a seat on Lufthansa flight LH444.'
+console.log(book.call(eurowing,...flightData))//'Jane Cooper has booked a seat on Eurowing flight EW444.'
