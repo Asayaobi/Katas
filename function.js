@@ -102,11 +102,11 @@ const lufthansa = {
     // book: function(){}
     book(flightNumber, name){
         this.bookings.push({flight: `${this.iataCode}${flightNumber}`, name})
-        return `${name} has booked a seat on ${this.airline} flight ${this.iataCode}${flightNumber}.`
+        return `${name} has booked ${this.airline} flight ${this.iataCode}${flightNumber}.`
     }
 }
 
-console.log(lufthansa.book(114,'Karen Smiths'))//'Karen Smiths has booked a seat on Lufthansa flight LH114.'
+console.log(lufthansa.book(114,'Karen Smiths'))//'Karen Smiths has booked Lufthansa flight LH114.'
 console.log(lufthansa.bookings)//[ { flight: 'LH114', name: 'Karen Smiths' } ]
 
 //if you want to reuse book function from lufthansa variable
@@ -121,11 +121,45 @@ const book = lufthansa.book
 //console.log(book(123,"Joe Rogan"))
 
 //FIX IT by using :
-//CALL METHOD and point which variable of this keyword is pointing to.
-console.log(book.call(eurowing,123,"Joe Rogan"))//'Joe Rogan has booked a seat on Eurowing flight EW123.'
+//CALL METHOD -- point which variable of this keyword is pointing to.
+console.log(book.call(eurowing,123,"Joe Rogan"))//'Joe Rogan has booked Eurowing flight EW123.'
 console.log(eurowing)//{airline: 'Eurowing',iataCode: 'EW',bookings: [ { flight: 'EW123', name: 'Joe Rogan' } ]}
 
-//APPLY METHOD and point which variable of this keyword is pointing to, followed by an array
+//APPLY METHOD -- point which variable of this keyword is pointing to, followed by an array
 const flightData = [444,'Jane Cooper']
-console.log(book.apply(lufthansa,flightData))//'Jane Cooper has booked a seat on Lufthansa flight LH444.'
-console.log(book.call(eurowing,...flightData))//'Jane Cooper has booked a seat on Eurowing flight EW444.'
+console.log(book.apply(lufthansa,flightData))//'Jane Cooper has booked Lufthansa flight LH444.'
+console.log(book.call(eurowing,...flightData))//'Jane Cooper has booked Eurowing flight EW444.'
+
+//BIND METHOD -- create a new function where this keyword always sets to a certain object
+const bookEurowing = book.bind(eurowing)
+console.log(bookEurowing(222,'Steven Williams'))//'Steven Williams has booked Eurowing flight EW222.'
+
+const bookEW111 = book.bind(eurowing,111)
+console.log(bookEW111('Jack Johnson'))//'Jack Johnson has booked Eurowing flight EW111.'
+
+/* With Event Listeners -- this will point to the clicked button, use bind method to create a new function and setting 'this' to 'lufthansa'
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+// lufthansa.buyPlane();
+
+document
+  .querySelector('.buybutton')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+*/
+
+//Partial application
+const taxPrice = (rate, value) => value + value * rate
+console.log(taxPrice(0.1,100))//110
+const portugalVAT = taxPrice.bind(null,0.23) //'null' -- since there's no 'this' keyword
+console.log(portugalVAT(100)) //123
+
+const taxCal = rate => value => value + value * rate
+console.log(taxCal(0.2)(100))//120
+
+const rateCal = taxCal(0.2)
+console.log(rateCal(100))//120
