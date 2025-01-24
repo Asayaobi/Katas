@@ -65,5 +65,8 @@ const poll = {
 
     
   //2.call registerNewAnswer()
-  document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll))
+  //document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll))
   
+//BONUS
+poll.displayResults.call({answers:[5, 2, 3]})
+poll.displayResults.call({answers:[1, 5, 3, 9, 6, 1]})
