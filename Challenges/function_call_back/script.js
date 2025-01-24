@@ -34,7 +34,7 @@ GOOD LUCK 😀
 
 
 
-const pollA = {
+const poll = {
     question: 'What is your favourite programming language?',
     options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
     // This generates [0, 0, 0, 0]. More in the next section 😃
@@ -42,18 +42,18 @@ const pollA = {
     //1. registerNewAnswer method
     registerNewAnswer() {
       //question
-      let answer = prompt(this.question + '\n'+`${this.options.map(answer => answer).join('\n')}`)
+      let answer = prompt(`${this.question}\n${this.options.join('\n')}\n(Write option number)`)
       //answer
-      if (answer < this.options.length){
-          this.answers[answer]++
-          console.log(this.answers)
+      if (Number(answer) < this.options.length){
+          this.answers[Number(answer)]++
+          this.displayResults(this.answers)
       } else {
           console.log('wrong answer')
       }
-    }
+    },
   };
+
     
   //2.call registerNewAnswer()
-  const clickAnswerPoll = pollA.registerNewAnswer.bind(pollA)
-  document.querySelector('.poll').addEventListener('click', clickAnswerPoll)
+  document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll))
   
