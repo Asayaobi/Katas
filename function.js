@@ -163,3 +163,22 @@ console.log(taxCal(0.2)(100))//120
 
 const rateCal = taxCal(0.2)
 console.log(rateCal(100))//120
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+//Immediety Invoke Function Expression
+
+//create a function that runs just once by putting it into an expression and call it right away
+(function(){
+    console.log('this will run just once.')
+})()
+
+(() => console.log('this will ALSO never run again.'))()
+
+//Data Privacy -- data inside of an expressiong (let and const) will not be accessed on the global scope. var does
+{
+    const isPrivate = 23
+    var isNotPrivate = 40
+}
+console.log(isPrivate)//undefined
+console.log(isNotPrivate) //40
