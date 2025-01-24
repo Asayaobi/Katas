@@ -34,9 +34,26 @@ GOOD LUCK 😀
 
 
 
-const poll = {
-  question: 'What is your favourite programming language?',
-  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
-  // This generates [0, 0, 0, 0]. More in the next section 😃
-  answers: new Array(4).fill(0),
-};
+const pollA = {
+    question: 'What is your favourite programming language?',
+    options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+    // This generates [0, 0, 0, 0]. More in the next section 😃
+    answers: new Array(4).fill(0),
+    //1. registerNewAnswer method
+    registerNewAnswer() {
+      //question
+      let answer = prompt(this.question + '\n'+`${this.options.map(answer => answer).join('\n')}`)
+      //answer
+      if (answer < this.options.length){
+          this.answers[answer]++
+          console.log(this.answers)
+      } else {
+          console.log('wrong answer')
+      }
+    }
+  };
+    
+  //2.call registerNewAnswer()
+  const clickAnswerPoll = pollA.registerNewAnswer.bind(pollA)
+  document.querySelector('.poll').addEventListener('click', clickAnswerPoll)
+  
