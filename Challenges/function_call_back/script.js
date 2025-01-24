@@ -46,11 +46,21 @@ const poll = {
       //answer
       if (Number(answer) < this.options.length){
           this.answers[Number(answer)]++
-          this.displayResults(this.answers)
+          //call step 3.
+          this.displayResults()
+          //this.displayResults(string)
       } else {
           console.log('wrong answer')
       }
     },
+    //3.
+    displayResults(type = 'array'){
+        if (type === 'array'){
+            console.log(this.answers)
+        } else if (type === 'string'){
+            console.log(`Poll results are ${this.answers.join(', ')}`)
+        }
+    }
   };
 
     
