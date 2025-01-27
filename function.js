@@ -1,5 +1,30 @@
 'use strict';
 
+//Closure
+//Closure: gives function access to variable of ots parent function, even after the parent function as returned. 
+//It makes sure that a function doesn't loose connection to variable that exists at the function's birthplace.
+//passengerCount was moved to heap and not garbage collected because of the closure
+
+const secureBooking = function(){
+    let passengerCount = 0
+    return function (){
+        passengerCount++
+        console.log(`${passengerCount} passengers`)
+    }
+}
+
+//because passengerCount isn't in global scope, in order to access to passengerCount, we have to access through closure (internal property of its function)
+const booker = secureBooking()
+booker()//'1 passengers' 
+booker()//'2 passengers' 
+booker()//'3 passengers'
+
+//console.dir(booker)//passengerCount is nested in its scopes
+
+//Note. booker is a function -> it has access to the variable environment (passengerCount) of the execution context
+//Closure: the variable attached in the function stays as it was at the time it was created
+
+
 const bookings = []
 //add default value
 const createBooking = function(flight,passenger = 1 ,price = 199 * passenger ){
