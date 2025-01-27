@@ -24,6 +24,25 @@ booker()//'3 passengers'
 //Note. booker is a function -> it has access to the variable environment (passengerCount) of the execution context
 //Closure: the variable attached in the function stays as it was at the time it was created
 
+// Example 2
+const boardPassengers = function (allPassenger, wait) {
+    const perGroup = allPassenger / 3
+  
+    setTimeout(function () {
+      console.log(`We are now boarding all ${allPassenger} passengers`)
+      console.log(`There are 3 groups, each with ${perGroup} passengers`)
+    }, wait * 1000) //waiting time is in second, so we have to *1000 to convert to milisecond
+  
+    console.log(`Will start boarding in ${wait} seconds`)
+  }
+  
+  //const perGroup = 1000 //if we update perGroup here, the scope chain will use perGroup = 1000 instead of perGroup = allPassenger / 3
+  boardPassengers(180, 3)//'Will start boarding in 3 seconds'
+  
+/////////////////////////////////////////////////////////////////////////////////////
+//Set Timeout function
+//after one second(1000 milisecond), call the function (log this word)
+setTimeout(function(){console.log('this is one second')}, 1000)
 
 const bookings = []
 //add default value
