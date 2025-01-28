@@ -17,3 +17,12 @@ console.log(arr1.splice(-1))//[ 'e' ]
 console.log(arr)//[ 'a', 'b', 'c' ,'d']
 console.log(arr.splice(1,2)) //delete the first 2 items after the 1st item in the array.//[ 'b', 'c' ]
 console.log(arr)//[ 'a', 'd' ]
+
+//REVERSE METHOD: modify the original array
+const arr2 = [1,2,3,4,5]
+console.log(arr2.reverse())//[ 5, 4, 3, 2, 1 ]
+console.log(arr2)//[ 5, 4, 3, 2, 1 ]
+
+//CONCAT METHOD
+console.log(arr.concat(arr2))//[ 'a', 'd', 5, 4, 3, 2, 1 ]
+console.log([...arr,...arr2])// [ 'a', 'd', 5, 4, 3, 2, 1 ]
