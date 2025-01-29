@@ -94,6 +94,36 @@ let namesA = ['Bob', 'Alice', 'John', 'Zelda']
 let newnames = namesA.reverse()
 console.log(newnames)
 
+
+//at method
+const arr = [1,2,3,4,5]
+
+console.log(arr[0])//1
+console.log(arr.at(0))//1
+
+//log the last element of an array
+console.log(arr[arr.length-1])//5
+console.log(arr.slice(-1))//[ 5 ]
+console.log(arr.slice(-1)[0])// 5 
+console.log(arr.at(-1))//5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Return Length
 // Create a function returnLength that takes an array as its only parameter, 
 // then returns the length of the array as a number, or 'the array is empty' if there are no elements in the array.
