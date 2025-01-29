@@ -98,6 +98,12 @@ const [firstName, lastName] = nameInput.split(' ')
 const newName = ['Mr.', firstName, lastName].join(' ')
 console.log(newName)//'Mr. Anthony Kings'
 
+
+//12. at()
+const banana = 'i love banana'
+console.log(banana.at(-1))//a
+console.log(banana.at(0))//i
+
 //capitalizeName
 function capitalizedName(string){
   const nameArr = string.split(' ')
