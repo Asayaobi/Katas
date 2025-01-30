@@ -39,3 +39,28 @@ for (const [index,element] of bankMovement.entries()){
         console.log(`Movement${index+1}: you have withdraw $${Math.abs(element)}`)
     }
 }
+
+
+//forEach with Map
+const currencies = new Map([
+    ['USD','United States Dollar'],
+    ['EUR','Euro'],
+    ['GBP','Pound Sterling']
+])
+
+currencies.forEach(function(value,key,map){
+    console.log(`${key}: ${value}`)
+})
+// USD: United States Dollar
+// EUR: Euro
+// GBP: Pound Sterling
+
+//forEach with Set -- Set doesn't have a key so you can us omit sign _ in the parameter
+const currenciesUnique = new Set(['USD','EUR','USD','GBP','GBP'])
+console.log(currenciesUnique)//{'USD','EUR','GBP'}
+currenciesUnique.forEach(function(value,_,map){
+    console.log(`${_}:${value}`)
+})
+//USD:USD
+//EUR:EUR
+//GBP:GBP
