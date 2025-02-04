@@ -71,6 +71,33 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
+//display the array of movements in the app (movement container)
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const displaymovement = function (movements){
+  //clear the hardcoded info on movement container
+  containerMovements.innerHTML=''
+  //loopthe movements array
+  movements.forEach((mov,i)=> {
+    const type = mov > 0 ? 'deposit' : 'withdrawal'
+    const html = `
+    <div class="movements__row">
+      <div class="movements__type movements__type--${type}">${i+1} ${type}</div>
+      <div class="movements__value">${mov}€</div>
+    </div>
+` 
+  //display it on the html with insertAdjacentHTML afterbegin to display order from newest to the oldest (beforeend will show the oldest to newest order)
+  containerMovements.insertAdjacentHTML('afterbegin',html)
+
+  //check the display html
+  //console.log(containerMovements.innerHTML)
+  })
+}
+
+//call the function
+// displaymovement(movements)
+
+//display movement from account1
+displaymovement(account1.movements)
 
 /////////////////////////////////////////////////
