@@ -207,3 +207,11 @@ const filterAndSquareEvens = numbers => {
 console.log(filterAndSquareEvens([1,2,3,4,5,6]))
 console.log(filterAndSquareEvens([10,-10,20,-20]))
 console.log(filterAndSquareEvens([0,11,22,0]))
+
+
+//////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+//change the currency using Map (map create a new array)
+const dollartoEur = 1.1
+const movementsEuro = movements.map(mov=> mov * dollartoEur)
+console.log(movementsEuro)//[ 220.00000000000003, 495.00000000000006, -440.00000000000006, 3300.0000000000005,-715.0000000000001, -143, 77, 1430.0000000000002]
