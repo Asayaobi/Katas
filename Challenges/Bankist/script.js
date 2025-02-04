@@ -100,4 +100,19 @@ const displaymovement = function (movements){
 //display movement from account1
 displaymovement(account1.movements)
 
+//create username with first letter initial and add it in the account detail
+// const fullname = 'Steven Thomas Williams'
+// const fullnameArr = fullname.toLowerCase().split(' ')
+// console.log(fullnameArr)//[ 'steven', 'thomas', 'williams' ]
+// const username = fullnameArr.map(letter => letter[0]).join('')
+// console.log(username)//'stw'
+
+const createUsername = accs => {
+  accs.forEach(function(acc){
+    acc.username = acc.owner.toLowerCase().split(' ').map(letter => letter[0]).join('')
+  })
+}
+createUsername(accounts)
+console.log(accounts)
+
 /////////////////////////////////////////////////
