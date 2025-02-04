@@ -215,3 +215,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const dollartoEur = 1.1
 const movementsEuro = movements.map(mov=> mov * dollartoEur)
 console.log(movementsEuro)//[ 220.00000000000003, 495.00000000000006, -440.00000000000006, 3300.0000000000005,-715.0000000000001, -143, 77, 1430.0000000000002]
+
+//create username with first letter initial
+const fullname = 'Steven Thomas Williams'
+const fullnameArr = fullname.toLowerCase().split(' ')
+console.log(fullnameArr)//[ 'steven', 'thomas', 'williams' ]
+
+const username = fullnameArr.map(letter => letter[0]).join('')
+console.log(username)//'stw'
+
