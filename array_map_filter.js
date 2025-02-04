@@ -209,8 +209,9 @@ console.log(filterAndSquareEvens([10,-10,20,-20]))
 console.log(filterAndSquareEvens([0,11,22,0]))
 
 
-//////
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+///////////////////////////////////////////////////////////////
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
+
 //change the currency using Map (map create a new array)
 const dollartoEur = 1.1
 const movementsEuro = movements.map(mov=> mov * dollartoEur)
@@ -233,3 +234,9 @@ const createUsername = user => {
   }
   console.log(createUsername('Steven Thomas Williams'))//'stw'
 
+//using filter to create an array of deposit value from movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
+const deposits = movements.filter(mov => {return mov > 0}) // will return only when mov > 0 is true
+console.log(deposits)//[ 200, 450, 3000, 70, 1300 ]
+
+const withdrawals = movements.filter(mov => mov < 0)
+console.log(withdrawals)//[ -400, -650, -130 ]
