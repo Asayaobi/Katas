@@ -106,8 +106,21 @@ const calDisplayBalance = function(movements){
   labelBalance.innerHTML = `${balance}€`
 }
 
-calDisplayBalance(account4.movements)
+calDisplayBalance(account1.movements)
 
+//calculate the summary in-out-interest
+const calDisplaySummary = function(movements){
+  const depositSum = movements
+    .filter(mov => mov > 0)
+    .reduce((acc,mov)=> acc+mov,0)
+  labelSumIn.textContent=`${depositSum}€`
+
+  const withdrawalSum = movements
+    .filter(mov => mov < 0)
+    .reduce((acc,mov)=> acc+mov,0)
+  labelSumOut.textContent=`${Math.abs(withdrawalSum)}€`
+}
+calDisplaySummary(account1.movements)
 ////////////////////////////
 //create username with first letter initial and add it in the account detail
 // const fullname = 'Steven Thomas Williams'
