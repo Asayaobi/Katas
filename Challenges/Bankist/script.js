@@ -96,10 +96,19 @@ const displaymovement = function (movements){
 
 //call the function
 // displaymovement(movements)
-
 //display movement from account1
 displaymovement(account1.movements)
+/////////////////////////
 
+//calculate the current balance
+const calDisplayBalance = function(movements){
+  const balance = movements.reduce((acc, mov)=> acc+mov, 0)
+  labelBalance.innerHTML = `${balance}€`
+}
+
+calDisplayBalance(account4.movements)
+
+////////////////////////////
 //create username with first letter initial and add it in the account detail
 // const fullname = 'Steven Thomas Williams'
 // const fullnameArr = fullname.toLowerCase().split(' ')
@@ -114,5 +123,7 @@ const createUsername = accs => {
 }
 createUsername(accounts)
 console.log(accounts)
+
+
 
 /////////////////////////////////////////////////
