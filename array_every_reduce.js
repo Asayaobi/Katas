@@ -189,3 +189,13 @@ const sumOfEvenNumbers = nums => {
 }
 console.log(sumOfEvenNumbers([1,2,3,4,5,6])) //12
 console.log(sumOfEvenNumbers([20,1,20,1])) //40
+
+
+///////////////////////////////////////////////////////////////
+//sum all of the account movement (starting with value 0)
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
+// const balance = movements.reduce(function(acc,currentValue,i,arr){
+//     return acc + currentValue
+// },0)
+const balance = movements.reduce((acc,currentValue)=> acc + currentValue,0)
+console.log(balance)//3840
