@@ -199,3 +199,10 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300]
 // },0)
 const balance = movements.reduce((acc,currentValue)=> acc + currentValue,0)
 console.log(balance)//3840
+
+//find maximum value of the movements
+const maxMovement = movements.reduce((acc,cur)=> {
+    if (acc > cur)return acc
+    else return cur
+},movements[0])
+console.log(maxMovement)
