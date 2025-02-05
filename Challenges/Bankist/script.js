@@ -112,13 +112,22 @@ calDisplayBalance(account1.movements)
 const calDisplaySummary = function(movements){
   const depositSum = movements
     .filter(mov => mov > 0)
-    .reduce((acc,mov)=> acc+mov,0)
-  labelSumIn.textContent=`${depositSum}€`
+    .reduce((acc,mov)=> acc + mov, 0)
+  labelSumIn.textContent = `${depositSum}€`
 
   const withdrawalSum = movements
     .filter(mov => mov < 0)
-    .reduce((acc,mov)=> acc+mov,0)
-  labelSumOut.textContent=`${Math.abs(withdrawalSum)}€`
+    .reduce((acc,mov)=> acc + mov, 0)
+  labelSumOut.textContent =`${Math.abs(withdrawalSum)}€`
+
+  //add 1.2interest to every deposit
+  const interest = movements
+  .filter(mov => mov>0)
+  .map(deposit => (deposit * 1.2)/100)
+  //exclude interest that is below 1€
+  .filter(interest => interest >= 1)
+  .reduce((acc,interest) => acc + interest, 0)
+  labelSumInterest.textContent = `${interest}€`
 }
 calDisplaySummary(account1.movements)
 ////////////////////////////
