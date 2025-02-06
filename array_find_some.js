@@ -124,6 +124,25 @@ console.log(getNames1([{a: 1},{name: 'Jane'}, {b: 2}, {name: 'Mark'}, {name: 'Ja
 
 ///////////////////////////////////////////
 
+//findLast
+//find() return the first element that matches the condition
+//findLast() return the last element that matches the condition
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movements.find(mov => mov < 0)) //-400
+console.log(movements.findLast(mov => mov < 0)) //-130
+
+//findLastIndex
+//assume that big movement is the amount that is more than 1000
+//find your latest big movement and show that it was x movements ago
+const latestBigMovementIndex = movements.findLastIndex(mov => Math.abs(mov) > 1000)
+console.log(latestBigMovementIndex) //7
+console.log(`your latest big movement was ${movements.length - latestBigMovementIndex} movements ago`)////'your latest big movement was 1 movements ago'
+
+const firstBigMovementIndex = movements.findIndex(mov => Math.abs(mov) > 1000)
+console.log(firstBigMovementIndex) //3
+
+
 
 // Some
 // JavaScript's some() method is a convenient way to check if at least one element in an array passes a test 
