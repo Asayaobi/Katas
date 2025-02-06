@@ -62,14 +62,6 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
 
 //display the array of movements in the app (movement container)
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
@@ -101,9 +93,10 @@ const displaymovement = function (movements){
 /////////////////////////
 
 //calculate the current balance
-const calDisplayBalance = function(movements){
-  const balance = movements.reduce((acc, mov)=> acc+mov, 0)
+const calDisplayBalance = function(acc){
+  const balance = acc.movements.reduce((acc, mov)=> acc+mov, 0)
   labelBalance.innerHTML = `${balance}€`
+  acc.balance = balance
 }
 
 // calDisplayBalance(account1.movements)
@@ -150,8 +143,8 @@ console.log(accounts)
 
 
 /////////////////////////////////////////////////
-let currentAccount
 //add function to log in button
+let currentAccount
 btnLogin.addEventListener('click', function(e){
   e.preventDefault() // prevent form from reload
 
@@ -174,9 +167,36 @@ btnLogin.addEventListener('click', function(e){
     displaymovement(currentAccount.movements)
 
     //Display balance
-    calDisplayBalance(currentAccount.movements)
+    calDisplayBalance(currentAccount)
 
     //Display summary
     calDisplaySummary(currentAccount)
   }
   } )
+
+
+  ////////////////////
+  //transfer money
+  btnTransfer.addEventListener('click', function(e){
+    e.preventDefault()
+    const amount = Number(inputTransferAmount.value)
+    const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value)
+    console.log(`transfer to ${receiverAcc.username}: ${amount}`)
+
+    //withdraw the amount out of the sender (check if sender has more money than the amount)
+
+    //deposit the amount to receiver
+    //update summary to ui
+  })
+
+
+
+
+  /////////////////////////////////////////////////
+// LECTURES
+
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
