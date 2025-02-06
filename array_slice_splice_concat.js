@@ -1,14 +1,14 @@
-const arr = ['a','b','c','d']
+const arr = ['a','b','c','d','e']
 
 //SLICE METHOD : doesn't change the original array
 //create some parts of the array using slice
-console.log(arr.slice(2))//[ 'c', 'd' ]
+console.log(arr.slice(2))//[ 'c', 'd','e' ]
 console.log(arr.slice(2,3))//[ 'c' ]
-console.log(arr.slice(-1))//[ 'd' ]
-console.log(arr.slice(-2))//[ 'c', 'd' ]
+console.log(arr.slice(-1))//[ 'e' ]
+console.log(arr.slice(-2))//[ 'd', 'e' ]
 //create a copy of any array
-console.log(arr.slice())//['a','b','c','d']
-console.log([...arr])//['a','b','c','d']
+console.log(arr.slice())//['a','b','c','d','e']
+console.log([...arr])//['a','b','c','d','e']
 
 //SPLICE METHOD: modify the original array by deleting the splice part out of the array
 const arr1 = ['a','b','c','d','e']
