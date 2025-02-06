@@ -143,6 +143,17 @@ console.log(accounts)
 
 
 /////////////////////////////////////////////////
+//Display UI movements/ summary
+const updateUI = function(acc){
+      //Display movements
+      displaymovement(acc.movements)
+      //Display balance
+      calDisplayBalance(acc)
+      //Display summary
+      calDisplaySummary(acc)
+}
+
+
 //add function to log in button
 let currentAccount
 btnLogin.addEventListener('click', function(e){
@@ -164,30 +175,13 @@ btnLogin.addEventListener('click', function(e){
     inputLoginPin.blur()
 
     //Display movements
-    displaymovement(currentAccount.movements)
-
-    //Display balance
-    calDisplayBalance(currentAccount)
-
-    //Display summary
-    calDisplaySummary(currentAccount)
+    updateUI(currentAccount)
   }
   } )
 
 
   ////////////////////
-  //transfer money
-  btnTransfer.addEventListener('click', function(e){
-    e.preventDefault()
-    const amount = Number(inputTransferAmount.value)
-    const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value)
-    console.log(`transfer to ${receiverAcc.username}: ${amount}`)
-
-    //withdraw the amount out of the sender (check if sender has more money than the amount)
-
-    //deposit the amount to receiver
-    //update summary to ui
-  })
+  
 
 
 
