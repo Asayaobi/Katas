@@ -97,7 +97,7 @@ const displaymovement = function (movements){
 //call the function
 // displaymovement(movements)
 //display movement from account1
-displaymovement(account1.movements)
+//displaymovement(account1.movements)
 /////////////////////////
 
 //calculate the current balance
@@ -106,7 +106,7 @@ const calDisplayBalance = function(movements){
   labelBalance.innerHTML = `${balance}€`
 }
 
-calDisplayBalance(account1.movements)
+// calDisplayBalance(account1.movements)
 
 //calculate the summary in-out-interest
 const calDisplaySummary = function(movements){
@@ -129,7 +129,8 @@ const calDisplaySummary = function(movements){
   .reduce((acc,interest) => acc + interest, 0)
   labelSumInterest.textContent = `${interest}€`
 }
-calDisplaySummary(account1.movements)
+// calDisplaySummary(account1.movements)
+
 ////////////////////////////
 //create username with first letter initial and add it in the account detail
 // const fullname = 'Steven Thomas Williams'
@@ -149,3 +150,31 @@ console.log(accounts)
 
 
 /////////////////////////////////////////////////
+let currentAccount
+//add function to log in button
+btnLogin.addEventListener('click', function(e){
+  e.preventDefault() // prevent form from reload
+
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value)
+  console.log(currentAccount)
+
+  //if the currentAccount exist
+  // if (currentAccount && currentAccount.pin === Number(inputLoginPin.value)){
+  //   console.log('LOGIN')
+  // }
+  if (currentAccount?.pin === Number(inputLoginPin.value)){
+    console.log('LOGIN')
+    //Display UI & Message
+    labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`
+    containerApp.style.opacity = 1
+
+    //Display movements
+    displaymovement(currentAccount.movements)
+
+    //Display balance
+    calDisplayBalance(currentAccount.movements)
+
+    //Display summary
+    calDisplaySummary(currentAccount.movements)
+  }
+  } )
