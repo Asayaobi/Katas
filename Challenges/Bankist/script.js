@@ -138,8 +138,6 @@ const createUsername = accs => {
   })
 }
 createUsername(accounts)
-console.log(accounts)
-
 
 
 /////////////////////////////////////////////////
@@ -181,7 +179,30 @@ btnLogin.addEventListener('click', function(e){
 
 
   ////////////////////
-  
+//transfer money
+btnTransfer.addEventListener('click', function(e){
+  e.preventDefault()
+  const amount = Number(inputTransferAmount.value)
+  const receiverAcc = accounts.find(acc => acc.username === inputTransferTo.value)
+//clear input field
+inputTransferAmount.value = inputTransferTo.value = ''
+
+//withdraw the amount out of the sender (check if sender has more money than the amount)
+  if (amount > 0 &&
+      currentAccount.balance >= amount &&
+    //if the receiver acc exist , receiver acc isn't the same as the sender acc
+    receiverAcc &&
+    // receiverAcc.username !== currentAccount.username
+    receiverAcc?.username !== currentAccount.username
+    ){
+    //deposit the amount to receiver + withdraw the amount from sender
+    currentAccount.movements.push(-amount)
+    receiverAcc.movements.push(amount)
+  }
+
+//update summary to ui
+  updateUI(currentAccount)
+  })
 
 
 
