@@ -109,21 +109,21 @@ const calDisplayBalance = function(movements){
 // calDisplayBalance(account1.movements)
 
 //calculate the summary in-out-interest
-const calDisplaySummary = function(movements){
-  const depositSum = movements
+const calDisplaySummary = function(acc){
+  const depositSum = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc,mov)=> acc + mov, 0)
   labelSumIn.textContent = `${depositSum}€`
 
-  const withdrawalSum = movements
+  const withdrawalSum = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc,mov)=> acc + mov, 0)
   labelSumOut.textContent =`${Math.abs(withdrawalSum)}€`
 
   //add 1.2interest to every deposit
-  const interest = movements
+  const interest = acc.movements
   .filter(mov => mov>0)
-  .map(deposit => (deposit * 1.2)/100)
+  .map(deposit => (deposit * acc.interestRate)/100)
   //exclude interest that is below 1€
   .filter(interest => interest >= 1)
   .reduce((acc,interest) => acc + interest, 0)
@@ -163,10 +163,12 @@ btnLogin.addEventListener('click', function(e){
   //   console.log('LOGIN')
   // }
   if (currentAccount?.pin === Number(inputLoginPin.value)){
-    console.log('LOGIN')
     //Display UI & Message
     labelWelcome.textContent = `Welcome back, ${currentAccount.owner.split(' ')[0]}`
     containerApp.style.opacity = 1
+    //Clear inout field
+    inputLoginUsername.value = inputLoginPin.value = ''
+    inputLoginPin.blur()
 
     //Display movements
     displaymovement(currentAccount.movements)
@@ -175,6 +177,6 @@ btnLogin.addEventListener('click', function(e){
     calDisplayBalance(currentAccount.movements)
 
     //Display summary
-    calDisplaySummary(currentAccount.movements)
+    calDisplaySummary(currentAccount)
   }
   } )
