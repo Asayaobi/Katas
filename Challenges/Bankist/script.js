@@ -218,6 +218,25 @@ btnClose.addEventListener('click', function(e){
   }
 })
 
+
+//loan feature
+btnLoan.addEventListener('click',function(e){
+  e.preventDefault()
+  //if there's any deposit more that 10% of the loan amount
+  const amount = Number(inputLoanAmount.value)
+  if (amount > 0 && 
+    currentAccount.movements.some(mov => mov >= amount * 0.1)){
+    //add the amount to the movement
+    currentAccount.movements.push(amount)
+    //update UI
+    updateUI(currentAccount)
+  } else {
+    console.log('loan denied')
+  }
+  //clear the input box
+  inputLoanAmount.value = ''
+})
+
   /////////////////////////////////////////////////
 // LECTURES
 
