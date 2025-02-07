@@ -151,7 +151,12 @@ console.log(movements.includes(-400))//true
 //returns true or false for a condition
 console.log(movements.some(mov => mov > 0)) //true
 
-// JavaScript's some() method is a convenient way to check if at least one element in an array passes a test 
+//Every()
+//returns true or false when all of the element meets that condition
+const deposits =  [430, 1000, 700, 50, 90]
+console.log(deposits.every(d => d > 0))//true
+
+// some() method is a convenient way to check if at least one element in an array passes a test 
 // specified by a function. It's particularly useful for situations where you need to verify 
 // whether any elements in an array meet certain criteria.
 // Example Without some():
