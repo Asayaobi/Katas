@@ -107,12 +107,61 @@ console.log(arr.slice(-1))//[ 5 ]
 console.log(arr.slice(-1)[0])// 5 
 console.log(arr.at(-1))//5
 
+//flat
+//the default for flat method is to lay out 1 level deep
+const nestedArr = [[1,2],3,4,[5,6,7],8]
+console.log(nestedArr.flat())//[ 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+const deepNested = [[1,2],3,4,[[5,6],7],8]
+console.log(deepNested.flat(2))//[ 1, 2, 3, 4, 5, 6, 7, 8 ]
 
 
+//flatmap (can go one level deep)
+const account1 = {
+    owner: 'Jonas Schmedtmann',
+    movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+    interestRate: 1.2, // %
+    pin: 1111,
+  };
+  
+  const account2 = {
+    owner: 'Jessica Davis',
+    movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+    interestRate: 1.5,
+    pin: 2222,
+  };
+  
+  const account3 = {
+    owner: 'Steven Thomas Williams',
+    movements: [200, -200, 340, -300, -20, 50, 400, -460],
+    interestRate: 0.7,
+    pin: 3333,
+  };
+  
+  const account4 = {
+    owner: 'Sarah Smith',
+    movements: [430, 1000, 700, 50, 90],
+    interestRate: 1,
+    pin: 4444,
+  };
+  const accounts = [account1, account2, account3, account4];
 
+//with flat
+//sum all of the money movement from all account
+const addmovements = accounts
+    .map(account => account.movements)
+//[ [ 200, 450, -400, 3000, -650, -130, 70, 1300 ],[ 5000, 3400, -150, -790, -3210, -1000, 8500, -30 ],[ 200, -200, 340, -300, -20, 50, 400, -460 ],[ 430, 1000, 700, 50, 90 ]]
+    .flat()
+//[200, 450, -400, 3000, -650, -130, 70, 1300, 5000, 3400, -150, -790, -3210, -1000,8500, -30, 200, -200, 340, -300, -20, 50, 400, -460, 430, 1000, 700, 50, 90]
+    .reduce((acc,mov) => acc+mov,0)
+console.log(addmovements)//17840
 
-
-
+//with flat map
+const addWithFlatMap = accounts
+    .flatMap(account => account.movements)
+//[200, 450, -400, 3000, -650, -130, 70, 1300, 5000, 3400, -150, -790, -3210, -1000,8500, -30, 200, -200, 340, -300, -20, 50, 400, -460, 430, 1000, 700, 50, 90]
+    .reduce((acc,mov) => acc+mov,0)
+    console.log(addWithFlatMap)//17840
 
 
 
