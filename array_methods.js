@@ -348,3 +348,12 @@ console.log(allActivities)
 const uniqueActivities = [...new Set(allActivities)]
 console.log(uniqueActivities)// [ 'fetch', 'swimming', 'running', 'agility', 'digging', 'sleeping' ]
 
+//5. Many dog breeds like to swim. What other activities do these dogs like? 
+// Store all the OTHER activities these breeds like to do, in a unique array called "swimmingAdjacent".
+const swimmingAdjacent = [...new Set(
+  breeds
+    .filter(dog => dog.activities.includes('swimming'))
+    .flatMap(dog => dog.activities)
+    .filter(activity => activity !== 'swimming')
+)]
+console.log(swimmingAdjacent)//[ 'fetch', 'running', 'agility' ]
