@@ -361,3 +361,6 @@ console.log(swimmingAdjacent)//[ 'fetch', 'running', 'agility' ]
 //6. Do all the breeds have an average weight of 10kg or more? Log to the console whether "true" or "false".
 console.log(breeds.every(dog => dog.averageWeight >= 10)) //true
 
+//7. Are there any breeds that are "active"? "Active" means that the dog has 3 or more activities. Log to the console whether "true" or "false".
+console.log(breeds.some(dog => dog.activities.length >= 3)) //true
+
