@@ -238,6 +238,11 @@ btnLoan.addEventListener('click',function(e){
   inputLoanAmount.value = ''
 })
 
+//sort feature
+btnSort.addEventListener('click', function(e){
+  e.preventDefault()
+  displaymovement(currentAccount.movements, true)
+})
   /////////////////////////////////////////////////
 // LECTURES
 
