@@ -239,9 +239,11 @@ btnLoan.addEventListener('click',function(e){
 })
 
 //sort feature
+let sorted = false
 btnSort.addEventListener('click', function(e){
   e.preventDefault()
-  displaymovement(currentAccount.movements, true)
+  displaymovement(currentAccount.movements, !sorted)
+  sorted = !sorted
 })
   /////////////////////////////////////////////////
 // LECTURES
