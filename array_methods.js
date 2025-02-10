@@ -364,3 +364,14 @@ console.log(breeds.every(dog => dog.averageWeight >= 10)) //true
 //7. Are there any breeds that are "active"? "Active" means that the dog has 3 or more activities. Log to the console whether "true" or "false".
 console.log(breeds.some(dog => dog.activities.length >= 3)) //true
 
+//What's the average weight of the heaviest breed that likes to fetch? HINT: Use the "Math.max" method along with the ... operator.
+const getFetchWeight = breeds
+  .filter(dog => dog.activities.includes('fetch'))
+  .map(dog => dog.averageWeight)
+console.log(getFetchWeight)//[ 32, 24, 28, 12, 18 ]
+const maxWeight = (Math.max(...getFetchWeight)) //32
+
+const heaviestBreed = breeds.find(dog => dog.averageWeight === maxWeight).breed
+console.log(heaviestBreed)//'German Shepherd'
+
+
