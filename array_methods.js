@@ -357,3 +357,7 @@ const swimmingAdjacent = [...new Set(
     .filter(activity => activity !== 'swimming')
 )]
 console.log(swimmingAdjacent)//[ 'fetch', 'running', 'agility' ]
+
+//6. Do all the breeds have an average weight of 10kg or more? Log to the console whether "true" or "false".
+console.log(breeds.every(dog => dog.averageWeight >= 10)) //true
+
