@@ -66,11 +66,12 @@ const inputClosePin = document.querySelector('.form__input--pin');
 //display the array of movements in the app (movement container)
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const displaymovement = function (movements){
+const displaymovement = function (movements, sort = false){
+  const movs = sort ? movements.slice().sort((a,b)=> a-b) : movements
   //clear the hardcoded info on movement container
   containerMovements.innerHTML=''
   //loopthe movements array
-  movements.forEach((mov,i)=> {
+  movs.forEach((mov,i)=> {
     const type = mov > 0 ? 'deposit' : 'withdrawal'
     const html = `
     <div class="movements__row">
