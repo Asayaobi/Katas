@@ -69,3 +69,22 @@ console.log(filterAndSortBooks([{'title':'The Great Gatsby','author':'F. Scott F
 //[{'title':'1984','author':'George Orwell','rating':9},{'title':'The Great Gatsby','author':'F. Scott Fitzgerald','rating':8.5}]
 console.log(filterAndSortBooks([{'title':'Atomic Habits','author':'James Clear','rating':9},{'title':'Mindset','author':'Carol Dwecks','rating':9},{'title':'Dare to Lead','author':'Brene Brown','rating':7.2}],7.3))
 //[{'title':'Atomic Habits','author':'James Clear','rating':9},{'title':'Mindset','author':'Carol Dwecks','rating':9}]
+
+
+const movements = [200,450,-400,3000,500]
+console.log(movements.sort()) //sort() works in strings order[ -400, 200, 3000, 450, 500 ]
+//ascending order
+// movements.sort((a,b) => {
+//     if (a > b) return 1
+//     if (a < b) return -1
+// })
+movements.sort((a,b) => a - b)
+console.log(movements)//[ -400, 200, 450, 500, 3000 ]
+
+//decending order
+// movements.sort((a,b)=> {
+//     if (a > b) return -1
+//     if (a < b) return 1
+// })
+movements.sort((a,b) => b - a)
+console.log(movements)//[ 3000, 500, 450, 200, -400 ]
