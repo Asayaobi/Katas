@@ -332,3 +332,9 @@ const breeds = [
 //1. Store the average weight of a "Husky" in a variable "huskyWeight"
 let huskyWeight = breeds.find(dog => dog.breed === 'Husky').averageWeight
 console.log(huskyWeight)//26
+
+//2. Find the name of the only breed that likes both "running" and "fetch" ("dogBothActivities" variable)
+let dogBothActivities  = breeds.find(dog => 
+  (dog.activities.includes('running') && dog.activities.includes('fetch')))
+  .breed
+console.log(dogBothActivities)//'Dalmatian'
