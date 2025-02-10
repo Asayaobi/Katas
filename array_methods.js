@@ -338,3 +338,13 @@ let dogBothActivities  = breeds.find(dog =>
   (dog.activities.includes('running') && dog.activities.includes('fetch')))
   .breed
 console.log(dogBothActivities)//'Dalmatian'
+
+//3. Create an array "allActivities" of all the activities of all the dog breeds
+const allActivities = breeds.flatMap(dog => dog.activities)
+console.log(allActivities)
+//['fetch', 'swimming', 'running', 'fetch', 'agility', 'swimming', 'fetch', 'digging','fetch', 'running', 'agility', 'swimming', 'sleeping', 'agility', 'fetch']
+
+//4. Create an array "uniqueActivities" that contains only the unique activities (no activity repetitions). HINT: Use a technique with a special data structure that we studied a few sections ago.
+const uniqueActivities = [...new Set(allActivities)]
+console.log(uniqueActivities)// [ 'fetch', 'swimming', 'running', 'agility', 'digging', 'sleeping' ]
+
