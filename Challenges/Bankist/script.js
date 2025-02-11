@@ -253,3 +253,26 @@ const currencies = new Map([
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
+
+//array from : create an array from the value on the frontend display <div class="movements__value">4000€</div>
+
+// labelBalance.addEventListener('click', function(){
+//   const movementsUI = [...document.querySelectorAll('.movements__value')]
+//   const arrayUI = movementsUI.map(element => element.textContent.replace('€',''))
+//   console.log(arrayUI)//['4000', '-378']
+// })
+
+// labelBalance.addEventListener('click', function(){
+//   const movementsUI = Array.from(document.querySelectorAll('.movements__value'))
+//   console.log(movementsUI)//[div.movements__value, div.movements__value]
+//   const arrayUI = movementsUI.map(element => element.textContent.replace('€',''))
+//   console.log(arrayUI)//['4000', '-378']
+// })
+
+labelBalance.addEventListener('click', function(){
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    element => element.textContent.replace('€','')
+  )
+  console.log(movementsUI)//['4000', '-378']
+})
