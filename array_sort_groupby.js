@@ -87,4 +87,58 @@ console.log(movements)//[ -400, 200, 450, 500, 3000 ]
 //     if (a < b) return 1
 // })
 movements.sort((a,b) => b - a)
-console.log(movements)//[ 3000, 500, 450, 200, -400 ]
+console.log(movements)//[ 3000, 500, 450, 200, 400 ]
+
+
+/////////////////////////////////////////////////////
+//group by
+const movementsA = [200,450,-400,3000,-500]
+const groupMovements = Object.groupBy(movementsA,
+    mov => 
+    mov > 0 ? 'deposit' : 'withdraw')
+console.log(groupMovements)
+//{"deposit": [200,450,3000],"withdraw": [ -400, -500]}
+
+// Data
+const account1 = {
+    owner: 'Jonas Schmedtmann',
+    movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+    type: 'premium'
+  };
+  
+  const account2 = {
+    owner: 'Jessica Davis',
+    movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+    type: 'standard'
+  };
+  
+  const account3 = {
+    owner: 'Steven Thomas Williams',
+    movements: [200, -200, 340, -300, -20, 50, 400, -460],
+    type: 'premium'
+  };
+  
+  const account4 = {
+    owner: 'Sarah Smith',
+    movements: [430, 1000, 700, 50, 90],
+    type: 'basic'
+  };
+  
+  const accounts = [account1, account2, account3, account4];
+  const groupType = Object.groupBy(accounts, 
+    acc => acc.type
+  )
+  console.log(groupType)
+  /*
+  {"premium": [
+    {"owner": "Jonas Schmedtmann","movements": [200,450,-400,3000,-650,-130,70,1300],"type": "premium"},
+    {"owner": "Steven Thomas Williams","movements": [200,-200,340,-300,-20,50, 400,-460],"type": "premium"}
+    ],
+    "standard": [
+        {"owner": "Jessica Davis","movements": [5000, 3400,-150, -790,-3210,-1000,8500,-30],"type": "standard"}
+    ],
+    "basic": [
+        {"owner": "Sarah Smith","movements": [430,1000, 700,50,90],"type": "basic"}
+    ]
+}
+    */
