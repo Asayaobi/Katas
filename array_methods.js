@@ -163,6 +163,26 @@ const addWithFlatMap = accounts
     .reduce((acc,mov) => acc+mov,0)
     console.log(addWithFlatMap)//17840
 
+//create an array
+//1. mannually
+const arr1 = [1, 2, 3, 4, 5, 6, 7]
+//2. woth new Array
+const arr2 = new Array(1,2,3)
+console.log(arr2)//[ 1, 2, 3 ]
+//Note. if you only pass one number to new Array eg.7, it will create an empty array 7 times
+const arr3 = new Array(7)
+console.log(arr3)
+//Array(7) [undefined, undefined, undefined, undefined, undefined, undefined, undefined]
+
+//fill()
+//fill modify the original arr by filling in the gap with the similar position as slice method
+arr3.fill(0)
+console.log(arr3)//Array(7) [ 0, 0, 0, 0, 0, 0, 0 ]
+arr3.fill(7,3,5)
+console.log(arr3)//Array(7) [ 0, 0, 0, 7, 7, 0, 0 ]
+arr3.fill(9,2)
+console.log(arr3)//Array(7) [ 0, 0, 9, 9, 9, 9, 9 ]
+
 
 
 
