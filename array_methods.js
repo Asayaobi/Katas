@@ -183,7 +183,14 @@ console.log(arr3)//Array(7) [ 0, 0, 0, 7, 7, 0, 0 ]
 arr3.fill(9,2)
 console.log(arr3)//Array(7) [ 0, 0, 9, 9, 9, 9, 9 ]
 
+//Array.from() 
+//create an array vy passing length object and a callback function
+const arr4 = Array.from({length: 7}, () => 1)
+console.log(arr4)//Array(7) [ 1, 1, 1, 1, 1, 1, 1 ]
 
+//const arr5 = Array.from({length:5}, (currentElement, index) => index + 1)
+const arr5 = Array.from({length:5}, (_, index) => index + 1)
+console.log(arr5)//[ 1, 2, 3, 4, 5 ]
 
 
 
