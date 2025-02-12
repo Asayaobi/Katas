@@ -92,8 +92,19 @@ console.log(newscore1)
 
 let namesA = ['Bob', 'Alice', 'John', 'Zelda']
 let newnames = namesA.reverse()
-console.log(newnames)
+console.log(newnames)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
+console.log(namesA)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
 
+//Note: reverse() modify the original array, you can avoid it by
+// 1.  adding slice() to create a copy of the original array first
+const namesB = ['Bob', 'Alice', 'John', 'Zelda']
+const namesC = namesB.slice().reverse()
+console.log(namesB)//[ 'Bob', 'Alice', 'John', 'Zelda' ]
+console.log(namesC)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
+// 2. use toReversed()
+const namesD = namesB.toReversed()
+console.log(namesB)//[ 'Bob', 'Alice', 'John', 'Zelda' ]
+console.log(namesD)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
 
 //at method
 const arr = [1,2,3,4,5]
