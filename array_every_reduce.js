@@ -66,15 +66,23 @@ const nums = [1, 2, 3, 4, 5]
 //     }
 //     return sum
 // }
+
 //with reduce
 const sumNumber = nums => nums.reduce((accumulator, currentValue) => accumulator + currentValue)
 console.log(sumNumber(nums)) //15
 console.log([1,2,3].reduce((acc,cur) => acc + cur)) //6
+
 //Reduce does not modifiy the original array, instead, it returns a value.
 const originalScores = [10,20,30]
 const scoreWithReduce = originalScores.reduce((acc,e)=> acc - e)
 console.log(originalScores) //[10,20,30]
 console.log(scoreWithReduce) //-40
+
+//reduce can be used as a counter
+//ex. count how many movement is over than 1000
+const allMovements = [20, 300, 1500, 30, 4000, 2000]
+const bigMovements = allMovements.reduce((acc, mov) => mov > 1000 ? acc + 1 : acc, 0)
+console.log(bigMovements)//3
 
 //get total price
 const prices = [29.99, 19.99, 4.99]
