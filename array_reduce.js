@@ -29,6 +29,19 @@ const allMovements = [20, 300, 1500, 30, 4000, 2000]
 const bigMovements = allMovements.reduce((acc, mov) => mov > 1000 ? acc + 1 : acc, 0)
 console.log(bigMovements)//3
 
+//with prefix ++ operator
+const bigMovementsA = allMovements.reduce((count, mov) => mov > 1000 ? ++count : count, 0)
+console.log(bigMovementsA)//3
+
+let a = 10
+console.log(a++)//10
+console.log(a)//11
+
+a = 10
+console.log(++a)//11
+console.log(a)//11
+
+
 //get total price
 const prices = [29.99, 19.99, 4.99]
 const totalPrice = prices => prices.reduce((acc, e) => acc + e)
