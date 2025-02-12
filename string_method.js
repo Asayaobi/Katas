@@ -684,3 +684,16 @@ for (const flight of flightsArr){
 }
 
 
+//convert to title case
+const convertToTitleCase = sentence => {
+  const exception = ['a','an','and', 'with','the','but','on','or', 'in']
+  const capitalizeFirstLetter = str => str[0].toUpperCase() + str.slice(1) //word.replace(word[0], word[0].toUpperCase())
+  const modify = sentence.toLowerCase().split(' ')
+ .map(word => exception.includes(word) ? word :
+  capitalizeFirstLetter(word)
+  )
+  .join(' ')
+ return capitalizeFirstLetter(modify)
+}
+console.log(convertToTitleCase('this is a title'))//'This Is a Title'
+console.log(convertToTitleCase('and it ALL begins'))//'And It All Begins'
