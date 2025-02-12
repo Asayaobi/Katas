@@ -25,7 +25,7 @@ console.log(scoreWithReduce) //-40
 
 //reduce can be used as a counter
 //ex. count how many movement is over than 1000
-const allMovements = [20, 300, 1500, 30, 4000, 2000]
+const allMovements = [20, -300, 1500, -30, 4000, 2000]
 const bigMovements = allMovements.reduce((acc, mov) => mov > 1000 ? acc + 1 : acc, 0)
 console.log(bigMovements)//3
 
@@ -40,6 +40,24 @@ console.log(a)//11
 a = 10
 console.log(++a)//11
 console.log(a)//11
+
+//use reduce accumulator as object
+//acc(sums) = {deposit: 0, withdrawal: 0}
+const depositAndWithdraw = [20, -300, 1500, -30, 4000, 2000]
+const sumObject = depositAndWithdraw.reduce((sums, mov) => {
+    mov > 0 ? sums.deposit += mov : sums.withdrawal += mov
+    return sums
+}, {deposit: 0, withdrawal: 0})
+console.log(sumObject)//{ deposit: 7520, withdrawal: -330 }
+
+//destucturing objects
+const {deposit, withdrawal} = depositAndWithdraw.reduce((sums, mov) => {
+    // mov > 0 ? sums.deposit += mov : sums.withdrawal += mov
+    sums[mov > 0 ? 'deposit' : 'withdrawal'] += mov
+    return sums
+}, {deposit: 0, withdrawal: 0})
+console.log(deposit)//7520
+console.log(withdrawal)//-330
 
 
 //get total price
