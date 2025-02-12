@@ -203,8 +203,12 @@ console.log(arr4)//Array(7) [ 1, 1, 1, 1, 1, 1, 1 ]
 const arr5 = Array.from({length:5}, (_, index) => index + 1)
 console.log(arr5)//[ 1, 2, 3, 4, 5 ]
 
-
-
+//with()
+//if you want to change an element without modify the original array
+const originalMovements = [1, 2, 3, 4, 5]
+const newMovement = originalMovements.with(3, 300) //position 3, change to 300
+console.log(newMovement)//[ 1, 2, 3, 300, 5 ]
+console.log(originalMovements)//[ 1, 2, 3, 4, 5 ]
 
 
 
