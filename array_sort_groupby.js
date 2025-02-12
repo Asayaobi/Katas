@@ -12,6 +12,15 @@ console.log(numbers) // [10, 25, 40, 5]
 numbers.sort((a, b) => a - b)
 console.log(numbers) // [5, 10, 25, 40]
 
+// Sort() modify the original array
+// toSorted creates a new copy of the original array
+const numbersA = [1, 5, 2, 4]
+const numbersB = numbersA.toSorted((a, b) => a - b)
+const numbersC = numbersA.toSorted((a, b) => b - a)
+console.log(numbersA)//[ 1, 2, 4, 5 ]
+console.log(numbersB)//[ 1, 2, 4, 5 ]
+console.log(numbersC)//[ 5, 4, 2, 1 ]
+
 // Sorting Objects by a Property:
 // You can also sort arrays of objects by a specific property using a comparison function.
 const products = [
