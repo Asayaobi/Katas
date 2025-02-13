@@ -475,3 +475,16 @@ const ownersTooLittle = dogs
   .flatMap(dog => dog.owners)
 console.log(ownersTooLittle)//[ 'Alice', 'Bob', 'Joe', 'Michael' ]
 
+//4. Log a string to the console for each array created in 3., like this: "Matilda and Alice and Bob's dogs eat too much!" and "Sarah and John and Michael's dogs eat too little!"
+console.log(`${ownersTooMuch.join(' and ')}'s dogs eat too much!`)//'Matilda and Sarah and John and Leo\'s dogs eat too much!'
+console.log(`${ownersTooLittle.join(' and ')}'s dogs eat too little!`)//'Alice and Bob and Joe and Michael\'s dogs eat too little!'
+
+const ownersToStrings = owners => {
+  let str = owners.slice()
+  str[str.length-2] = `${str[str.length-2]} and ${str[str.length-1]}`
+  str.splice(-1)
+  return str.join(', ')
+}
+console.log(`${ownersToStrings(ownersTooMuch)}'s dogs eat too much!`)//'Matilda, Sarah, John and Leo\'s dogs eat too much!'
+console.log(`${ownersToStrings(ownersTooLittle)}'s dogs eat too little!`)//'Alice, Bob and Michael\'s dogs eat too little!'
+
