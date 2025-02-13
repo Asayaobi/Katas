@@ -488,3 +488,9 @@ const ownersToStrings = owners => {
 console.log(`${ownersToStrings(ownersTooMuch)}'s dogs eat too much!`)//'Matilda, Sarah, John and Leo\'s dogs eat too much!'
 console.log(`${ownersToStrings(ownersTooLittle)}'s dogs eat too little!`)//'Alice, Bob and Michael\'s dogs eat too little!'
 
+//5. Log to the console whether there is ANY dog eating EXACTLY the amount of food that is recommended (just true or false)
+console.log(dogs.some(dog => dog.recommendedFood === dog.curFood)) //true
+
+//6. Log to the console whether ALL of the dogs are eating an OKAY amount of food (just true or false)
+console.log(dogs.every(dog => dog.curFood > (dog.recommendedFood * 0.90) && dog.curFood < (dog.recommendedFood * 1.10))) //false
+
