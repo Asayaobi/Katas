@@ -1,4 +1,5 @@
-// Sort
+// Sort()
+// Mutate original array
 // The sort() method in JavaScript is a built-in function used to sort the elements of an array in place. 
 
 // By default, sort() converts elements to strings and compares their UTF-16 character sequences. 
@@ -12,8 +13,8 @@ console.log(numbers) // [10, 25, 40, 5]
 numbers.sort((a, b) => a - b)
 console.log(numbers) // [5, 10, 25, 40]
 
-// Sort() modify the original array
-// toSorted creates a new copy of the original array
+// toSorted() 
+// creates a new copy of the original array
 const numbersA = [1, 5, 2, 4]
 const numbersB = numbersA.toSorted((a, b) => a - b)
 const numbersC = numbersA.toSorted((a, b) => b - a)
@@ -100,6 +101,38 @@ console.log(movements)//[ 3000, 500, 450, 200, 400 ]
 
 
 /////////////////////////////////////////////////////
+//Reverse()
+// Mutate original
+const arr2 = [1,2,3,4,5]
+console.log(arr2.reverse())//[ 5, 4, 3, 2, 1 ]
+console.log(arr2)//[ 5, 4, 3, 2, 1 ]
+
+let namesA = ['Bob', 'Alice', 'John', 'Zelda']
+let newnames = namesA.reverse()
+console.log(newnames)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
+console.log(namesA)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
+
+//Note: reverse() modify the original array, you can avoid it by
+// 1.  adding slice() to create a copy of the original array first
+const namesB = ['Bob', 'Alice', 'John', 'Zelda']
+const namesC = namesB.slice().reverse()
+console.log(namesB)//[ 'Bob', 'Alice', 'John', 'Zelda' ]
+console.log(namesC)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
+// 2. use toReversed()
+// create new array base on original
+const namesD = namesB.toReversed()
+console.log(namesB)//[ 'Bob', 'Alice', 'John', 'Zelda' ]
+console.log(namesD)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
+
+// Reverse Array
+// Create a function reverseArray that takes an array and returns the array reversed.
+const reverseArray = array => array.reverse()
+console.log(reverseArray([1,2,3,4]))
+console.log(reverseArray(['a','b','c']))
+
+
+
+//////////////////////////////////
 //group by
 const movementsA = [200,450,-400,3000,-500]
 const groupMovements = Object.groupBy(movementsA,
