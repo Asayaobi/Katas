@@ -1,5 +1,5 @@
 // 1. map()
-//  transform each element of an array, you might use a for loop.
+// Create new array based on original
 // Example Without map():
 // const numbers = [1, 2, 3, 4, 5]
 const doubledNumbers = numbers => {
@@ -88,6 +88,7 @@ console.log(squareNumbers([9,0]))
 /////////////////////////////////////
 
 // 2. filter()
+// Create new array based on original
 // Traditionally, filtering an array involved using a for loop and a conditional statement.
 // Example Without filter():
 const numbers = [1, 2, 3, 4, 5, 6];
