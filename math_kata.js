@@ -1,3 +1,35 @@
+//1. Squareroot
+console.log(Math.sqrt(25))//5
+console.log(25**(1/2)) //5
+
+//cubic root
+console.log(8**(1/3))//2
+
+//2. Math.max()
+console.log(Math.max(1,'30',2,3,4)) //30
+console.log(Math.max(1,2,30,4)) //30
+
+console.log(Math.min(1,2,30,4)) //1
+
+//3. Math.PI
+console.log(Math.PI)//3.141592653589793
+//calculate the radient of a circle
+console.log(Math.PI * Number.parseFloat('10px') ** 2)//314.1592653589793
+
+//4. Math.random()
+//returns value between 0 and 1
+console.log(Math.random())
+//generate number for rolling dice
+console.log(Math.trunc(Math.random() * 6) + 1)
+
+//generate random number between min and max value
+const generateNums = (min, max) => {
+   const gen =  Math.floor(Math.random() * (max - min + 1)) + min
+   return gen
+}
+console.log(generateNums(0,4))
+console.log(generateNums(1,3))
+
 // Create a JavaScript function called findSmallestNumber.
 // This function should take between 2 and 4 numbers as its parameters and return the smallest number.
 // Use the correct Math method.
