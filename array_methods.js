@@ -463,3 +463,15 @@ console.log(dogs)
 const sarahsDog = dogs.find(dog => dog.owners.includes('Sarah'))
 //{weight: 13,curFood: 275,owners: [ 'Sarah', 'John', 'Leo' ],recommendedFood: 191.69710117664528}
 console.log(sarahsDog.curFood > sarahsDog.recommendedFood ? 'too much' : 'too little')//'too much'
+
+//3. Create an array containing all owners of dogs who eat too much (ownersTooMuch) and an array with all owners of dogs who eat too little (ownersTooLittle).
+const ownersTooMuch = dogs
+  .filter(dog => dog.curFood > dog.recommendedFood)
+  .flatMap(dog => dog.owners)
+console.log(ownersTooMuch)//[ 'Matilda', 'Sarah', 'John', 'Leo' ]
+
+const ownersTooLittle = dogs
+  .filter(dog => dog.curFood < dog.recommendedFood)
+  .flatMap(dog => dog.owners)
+console.log(ownersTooLittle)//[ 'Alice', 'Bob', 'Joe', 'Michael' ]
+
