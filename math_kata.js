@@ -30,6 +30,25 @@ const generateNums = (min, max) => {
 console.log(generateNums(0,4))
 console.log(generateNums(1,3))
 
+//5. Rounding integer
+//Math.trunc() 
+console.log(Math.trunc('2.9'))//2
+console.log(Math.trunc(-20.3))//-20
+
+//Math.round()
+console.log(Math.round(2.3))//2
+console.log(Math.round('2.6'))//3
+
+//Math.ceil()
+console.log(Math.ceil(2.3))//3
+console.log(Math.ceil('2.6'))//3
+
+//Math.floor()
+console.log(Math.floor(2.3))//2
+console.log(Math.floor('2.6'))//2
+console.log(Math.floor(-20.3))//-21
+
+
 // Create a JavaScript function called findSmallestNumber.
 // This function should take between 2 and 4 numbers as its parameters and return the smallest number.
 // Use the correct Math method.
