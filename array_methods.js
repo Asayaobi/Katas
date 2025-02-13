@@ -504,3 +504,27 @@ console.log(dogsOkay)
 console.log(dogs.filter(eatingOkay))
 //[{weight: 18,curFood: 244,owners: [ 'Joe' ],recommendedFood: 244},{weight: 32,curFood: 340,owners: [ 'Michael' ],recommendedFood: 376}]
 
+/*8. Group the dogs into the following 3 groups: 'exact', 'too-much' and 'too-little', based on whether they are eating too much, too little or the exact amount of food, based on the recommended food portion.
+const dogsGroups = Object.groupBy(dogs, dog => {
+  if(dog.curFood > dog.recommendedFood){
+    return 'too-much'
+  } else if (dog.curFood < dog.recommendedFood){
+      return 'too-little'
+    } else {
+      return 'exact'
+    }
+  }
+)
+// console.log(dogsGroups)
+ {
+    "too little": [
+        {"weight": 22,"curFood": 250,"owners": ["Alice", "Bob"],"recommendedFood": 284},
+        {"weight": 18,"curFood": 244,"owners": ["Joe"],"recommendedFood": 244},
+        {"weight": 32,"curFood": 340,"owners": ["Michael"], "recommendedFood": 376}
+    ],
+    "too-much": [
+        {"weight": 8,"curFood": 200,"owners": ["Matilda"],"recommendedFood": 133},
+        {"weight": 13,"curFood": 275,"owners": ["Sarah","John","Leo"], "recommendedFood": 191}
+    ]
+}*/
+
