@@ -528,3 +528,20 @@ const dogsGroups = Object.groupBy(dogs, dog => {
     ]
 }*/
 
+/*9. Group the dogs by the number of owners they have
+const ownersGroup = Object.groupBy(dogsA,
+  dog => `${dog.owners.length} owners` 
+)
+console.log(ownersGroup)
+{
+  "2 owners": [
+      {"weight": 22,"curFood": 250,"owners": ["Alice","Bob"],"recommendedFood": 284}],
+  "1 owner": [
+      {"weight": 8,"curFood": 200,"owners": ["Matilda"],"recommendedFood": 133},
+      {"weight": 18,"curFood": 244,"owners": ["Joe"],"recommendedFood": 244.68785294049098},
+      {"weight": 32,"curFood": 340,"owners": ["Michael"],"recommendedFood": 376.72159403366413}
+  ],
+  "3owners": [
+      {"weight": 13, "curFood": 275, "owners": [ "Sarah", "John","Leo"],"recommendedFood": 191.69710117664528}
+  ]
+}*/
