@@ -6,8 +6,8 @@
 // Example:
 
 const num = 15
-num.toString() // '15'
-console.log(num.toString())
+num.toString() 
+console.log(num.toString())// '15'
 
 // Notice that, unlike the String() function that we saw in the "Type Conversion" lesson, .toString() only works for numbers.
 const a = null
@@ -39,6 +39,45 @@ console.log(Number(pi.toFixed(2)))
 // Example:
 Number.isInteger(4) // true
 Number.isInteger(4.5) // false
+
+//4. Number() and +
+// when Js sees +, it will do the type conversion to Number
+const strNumber = '23'
+console.log(Number(strNumber))//23
+console.log(+(strNumber)) //23
+console.log(+('30px'))//Nan
+
+//5. Parsing 
+//if the string starts with a number, it works
+console.log(Number.parseInt('30px'))//30
+console.log(Number.parseInt('px30'))//Nan
+
+//Number base
+//Base 10 -> 0 to 9
+//Binary base 2 -> 0 1
+console.log(Number.parseInt('30px',10)) //30
+console.log(Number.parseInt('30px',2)) //Nan
+
+console.log(Number.parseInt('2.5rem'))//2
+console.log(Number.parseFloat('2.5rem'))//2.5
+
+//6. isNan()
+//check if value is Not a Number
+console.log(Number.isNaN(+'30px'))//true
+console.log(Number.isNaN('20'))//false
+
+//7. isFinite()
+//check if value is  a number
+console.log(Number.isFinite(30))//true
+console.log(Number.isFinite('30'))//false
+console.log(Number.isFinite(30/0))//false because 30 / 0 = infitity
+
+//8. isInteger()
+//check if value is an integer
+console.log(Number.isInteger(9))//true
+console.log(Number.isInteger(-9))//true
+console.log(Number.isInteger('9'))//false
+
 
 // Basic Exercises
 // Rounding Numbers:
