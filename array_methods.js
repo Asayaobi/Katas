@@ -545,3 +545,8 @@ console.log(ownersGroup)
       {"weight": 13, "curFood": 275, "owners": [ "Sarah", "John","Leo"],"recommendedFood": 191.69710117664528}
   ]
 }*/
+
+//10. Sort the dogs array by recommended food portion in an ascending order. Make sure to NOT mutate the original array!
+const sortedDogsByFood = dogs.toSorted((a,b)=> a.recommendedFood - b.recommendedFood)
+console.log(sortedDogsByFood)
+//[{weight: 8,curFood: 200,owners: [ 'Matilda' ],recommendedFood: 133},{weight: 13,curFood: 275,owners: [ 'Sarah', 'John', 'Leo' ],recommendedFood: 191,{weight: 18,curFood: 244,owners: [ 'Joe' ],recommendedFood: 244},..
