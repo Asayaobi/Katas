@@ -453,8 +453,13 @@ const dogs = [
 
 //1. Loop over the array, calculate the recommended food portion (recFood) and add it to the object as a new property.
 dogs.forEach(dog => {
-  dog.recommendedFood = dog.weight ** 0.75 * 28
+  dog.recommendedFood = Math.floor(dog.weight ** 0.75 * 28)
 })
 console.log(dogs)
-// [{ weight: 22,curFood: 250,owners: [ 'Alice', 'Bob' ],recommendedFood: 284.4297646615672},{weight: 8,curFood: 200,owners: [ 'Matilda' ],recommendedFood: 133.19119688030474},..]
+// [{ weight: 22,curFood: 250,owners: [ 'Alice', 'Bob' ],recommendedFood: 284},{weight: 8,curFood: 200,owners: [ 'Matilda' ],recommendedFood: 133},..]
   
+//2. Find Sarah's dog and log to the console whether it's eating too much or too little. 
+// HINT: Some dogs have multiple users, so you first need to find Sarah in the owners array, and so this one is a bit tricky (on purpose) 🤓
+const sarahsDog = dogs.find(dog => dog.owners.includes('Sarah'))
+//{weight: 13,curFood: 275,owners: [ 'Sarah', 'John', 'Leo' ],recommendedFood: 191.69710117664528}
+console.log(sarahsDog.curFood > sarahsDog.recommendedFood ? 'too much' : 'too little')//'too much'
