@@ -1,4 +1,5 @@
 // Push
+// Mutate original
 // The .push() method adds an element to the end of an array.
 // Examples
 
@@ -7,6 +8,7 @@ fruits.push('orange')
 console.log(fruits) 
 
 // Pop
+// Mutate original
 // The .pop() methods removes the 'last' element from an array and returns that element.
 // Examples
 
@@ -16,6 +18,7 @@ console.log(lastNumber) // 3
 console.log(numbers) // [1, 2]
 
 // Shift
+// Mutate original
 // The .shift() method removes the 'first' element from an array and returns that element.
 // Examples
 
@@ -25,6 +28,7 @@ console.log(firstColor) // 'red'
 console.log(colors) // ['green', 'blue']
 
 // Unshift()
+// Mutate original
 // The unshift() method adds an element to the beginning of an array.
 // Examples
 
@@ -32,19 +36,7 @@ const ages = [25, 30]
 ages.unshift(20)
 console.log(ages) //[20,25,30]
 
-// IndexOf()
-// The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
-// Examples
-
-const fruits1 = ['apple', 'banana', 'orange']
-
-const orangeIndex = fruits1.indexOf('orange')
-console.log(orangeIndex)//2 
-
-const kiwiIndex = fruits1.indexOf('kiwi')
-console.log(kiwiIndex)//-1
-
-//includes
+//includes()
 //Check if there's that element in the array and return true or false
 const friends = ['Ross', 'Monica', 'Chandler']
 console.log(friends.includes('Toby')) //false
@@ -81,42 +73,6 @@ console.log(names2.join(' '))
 const scores = [190, 250, 320]
 scores.join('/') // '190/250/320'
 console.log(scores.join('/'))
-
-// reverse()
-// The .reverse() method reverses the order of the elements in an array.
-// Examples
-
-const scores1 = [100, 200, 300]
-const newscore1 = scores1.reverse() // [300, 200, 100]
-console.log(newscore1)
-
-let namesA = ['Bob', 'Alice', 'John', 'Zelda']
-let newnames = namesA.reverse()
-console.log(newnames)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
-console.log(namesA)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
-
-//Note: reverse() modify the original array, you can avoid it by
-// 1.  adding slice() to create a copy of the original array first
-const namesB = ['Bob', 'Alice', 'John', 'Zelda']
-const namesC = namesB.slice().reverse()
-console.log(namesB)//[ 'Bob', 'Alice', 'John', 'Zelda' ]
-console.log(namesC)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
-// 2. use toReversed()
-const namesD = namesB.toReversed()
-console.log(namesB)//[ 'Bob', 'Alice', 'John', 'Zelda' ]
-console.log(namesD)//[ 'Zelda', 'John', 'Alice', 'Bob' ]
-
-//at method
-const arr = [1,2,3,4,5]
-
-console.log(arr[0])//1
-console.log(arr.at(0))//1
-
-//log the last element of an array
-console.log(arr[arr.length-1])//5
-console.log(arr.slice(-1))//[ 5 ]
-console.log(arr.slice(-1)[0])// 5 
-console.log(arr.at(-1))//5
 
 //flat
 //the default for flat method is to lay out 1 level deep
@@ -158,6 +114,7 @@ const account1 = {
   const accounts = [account1, account2, account3, account4];
 
 //with flat
+// Create new array based on original
 //sum all of the money movement from all account
 const addmovements = accounts
     .map(account => account.movements)
@@ -168,6 +125,7 @@ const addmovements = accounts
 console.log(addmovements)//17840
 
 //with flat map
+// Create new array based on original
 const addWithFlatMap = accounts
     .flatMap(account => account.movements)
 //[200, 450, -400, 3000, -650, -130, 70, 1300, 5000, 3400, -150, -790, -3210, -1000,8500, -30, 200, -200, 340, -300, -20, 50, 400, -460, 430, 1000, 700, 50, 90]
@@ -186,7 +144,8 @@ console.log(arr3)
 //Array(7) [undefined, undefined, undefined, undefined, undefined, undefined, undefined]
 
 //fill()
-//fill modify the original arr by filling in the gap with the similar position as slice method
+// Mutate original
+//filling in the gap with the similar position as slice method
 arr3.fill(0)
 console.log(arr3)//Array(7) [ 0, 0, 0, 0, 0, 0, 0 ]
 arr3.fill(7,3,5)
@@ -204,6 +163,7 @@ const arr5 = Array.from({length:5}, (_, index) => index + 1)
 console.log(arr5)//[ 1, 2, 3, 4, 5 ]
 
 //with()
+//// Create new array based on original
 //if you want to change an element without modify the original array
 const originalMovements = [1, 2, 3, 4, 5]
 const newMovement = originalMovements.with(3, 300) //position 3, change to 300
@@ -239,11 +199,6 @@ const addSportsLengths = sports => {
 console.log(addSportsLengths([{'name':'John','sports':['football']},{'name':'Alice','sports':['tennis','golf']}]))
 console.log(addSportsLengths([{'name':'Bob','sports':[]}]))
 
-// Reverse Array
-// Create a function reverseArray that takes an array and returns the array reversed.
-const reverseArray = array => array.reverse()
-console.log(reverseArray([1,2,3,4]))
-console.log(reverseArray(['a','b','c']))
 
 // Remove Empty Spots
 // Create a function removeEmptySpots that takes an array as a parameter.

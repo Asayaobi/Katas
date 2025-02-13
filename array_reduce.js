@@ -1,7 +1,5 @@
-// Reduce
-// The reduce() method in JavaScript is a versatile tool for processing and combining all the elements in an array. 
-// This method reduces an array to a single value by executing a reducer function provided by the user for each element in the array. 
-// It's particularly powerful for aggregating data or computing a cumulative result.
+// Reduce()
+// reduces an array to a single value
 // Before reduce()
 const nums = [1, 2, 3, 4, 5]
 // const sumNumber = nums => {
