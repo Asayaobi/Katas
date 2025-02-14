@@ -78,6 +78,22 @@ console.log(Number.isInteger(9))//true
 console.log(Number.isInteger(-9))//true
 console.log(Number.isInteger('9'))//false
 
+//Note
+//number seperator
+const bigNumber = 1_000_000_000
+console.log(bigNumber)//1000000000
+
+//Js cannot store number that is bigger than this
+console.log(2** 53-1)//9007199254740991
+//in big numbers, we use BigInt() or 'n'
+console.log(47566768697799705686880n)//47566768697799705686880n
+console.log(BigInt(47566768697799705686880)) //47566768697799704838144n
+// if you want to do calculation, you have to convert all your numbers with BigInt() in order to use with BigInt() type
+console.log(20n === 20)//false
+console.log(20n === BigInt(20))//true
+//division
+console.log(10n / 3n)//3n
+console.log(10/3)// 3.33333
 
 // Basic Exercises
 // Rounding Numbers:
