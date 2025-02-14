@@ -251,3 +251,15 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+/*click the balance to make the movement rows turn gray and white
+labelBalance.addEventListener('click', function(){
+  //document.querySelectorAll('.movements__row') returns Note list so we have to spead it and turn it to an array
+  const rows = [...document.querySelectorAll('.movements__row')]
+  rows.forEach((row,i) => {
+    if (i % 2 === 0){
+      row.style.backgroundColor = 'lightgray'
+    }
+  })
+})
+  */
