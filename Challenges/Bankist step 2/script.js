@@ -89,19 +89,19 @@ const displayMovements = function (acc, sort = false) {
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
 
-  //Add current date to current balance
-  const now = new Date() //new Date('2040-11-19T22:55:00.000Z')
-  const day = `${now.getDate()}`.padStart(2,0) //to get 01 instead of 1
-  const month = `${now.getMonth() + 1}`.padStart(2,0)
-  const year = now.getFullYear()
-  labelDate.textContent = `${day}/${month}/${year}`
+  //Add movement date 
+  const date = new Date(acc.movementsDates[i])
+  const day = `${date.getDate()}`.padStart(2,0) //to get 01 instead of 1
+  const month = `${date.getMonth() + 1}`.padStart(2,0)
+  const year = date.getFullYear()
+  const displayDate = `${day}/${month}/${year}`
 
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-        <div class="movements__date">3 days ago</div>
+        <div class="movements__date">${displayDate}</div>
         <div class="movements__value">${mov.toFixed(2)}€</div>
       </div>
     `;
@@ -276,3 +276,12 @@ labelBalance.addEventListener('click', function(){
 currentAccount = account1
 updateUI(currentAccount)
 containerApp.style.opacity = 100
+
+//display current balance date
+// const now = new Date() //new Date('2040-11-19T22:55:00.000Z')
+// const day = `${now.getDate()}`.padStart(2,0) //to get 01 instead of 1
+// const month = `${now.getMonth() + 1}`.padStart(2,0)
+// const year = now.getFullYear()
+// const hour = now.getHours()
+// const mins = `${now.getMinutes()}`.padStart(2,0)
+// labelDate.textContent = `${day}/${month}/${year}, ${hour}:${mins}`
