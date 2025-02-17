@@ -81,10 +81,10 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
-const displayMovements = function (movements, sort = false) {
+const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
-  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+  const movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
 
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
@@ -142,7 +142,7 @@ createUsernames(accounts);
 
 const updateUI = function (acc) {
   // Display movements
-  displayMovements(acc.movements);
+  displayMovements(acc);
 
   // Display balance
   calcDisplayBalance(acc);
@@ -244,7 +244,7 @@ btnClose.addEventListener('click', function (e) {
 let sorted = false;
 btnSort.addEventListener('click', function (e) {
   e.preventDefault();
-  displayMovements(currentAccount.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
 
@@ -263,3 +263,17 @@ labelBalance.addEventListener('click', function(){
   })
 })
   */
+
+//Fake Log in
+currentAccount = account1
+updateUI(currentAccount)
+containerApp.style.opacity = 100
+
+//Add current date to current balance
+const now = new Date() //new Date('2040-11-19T22:55:00.000Z')
+const day = `${now.getDate()}`.padStart(2,0) //to get 01 instead of 1
+const month = `${now.getMonth() + 1}`.padStart(2,0)
+const year = now.getFullYear()
+const hour = now.getHours()
+const mins = `${now.getMinutes()}`.padStart(2,0)
+labelDate.textContent = `${day}/${month}/${year}, ${hour}:${mins}`
