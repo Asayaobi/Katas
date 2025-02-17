@@ -179,7 +179,7 @@ btnLogin.addEventListener('click', function (e) {
     }`;
     containerApp.style.opacity = 100;
 
-    //display current balance date
+    //create current date
     const now = new Date() //new Date('2040-11-19T22:55:00.000Z')
     const day = `${now.getDate()}`.padStart(2,0) //to get 01 instead of 1
     const month = `${now.getMonth() + 1}`.padStart(2,0)
@@ -211,9 +211,12 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.balance >= amount &&
     receiverAcc?.username !== currentAccount.username
   ) {
-    // Doing the transfer
+    // Add the transfer amount 
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
+    // Add the transfer date
+    currentAccount.movementsDates.push(new Date().toISOString())
+    receiverAcc.movementsDates.push(new Date().toISOString())
 
     // Update UI
     updateUI(currentAccount);
@@ -226,8 +229,10 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add movement
+    // Add loan amount
     currentAccount.movements.push(amount);
+    // Add loan date
+    currentAccount.movementsDates.push(new Date().toISOString())
 
     // Update UI
     updateUI(currentAccount);
