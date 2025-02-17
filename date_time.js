@@ -30,3 +30,10 @@ console.log(Date.now())//1739787283157
 //setFullYear()
 future.setFullYear(2040)
 console.log(future)//new Date('2040-11-19T22:55:00.000Z')
+
+//calculate differences
+const day1 = new Date(2024, 1, 14)
+const day2 = new Date(2024, 1, 16)
+//Math.abs() to avoid the case when day 1 is more than day 2 -> the result will be negative and it won't work
+const calcDayPass = (day1, day2) => Math.abs(day2 - day1) / (1000 * 60 *60 * 24) //if there's hr + mins then add Math.round() to round up to one day instead of x.xx
+console.log(calcDayPass(day1,day2))//2 days
