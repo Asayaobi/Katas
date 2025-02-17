@@ -84,13 +84,22 @@ const inputClosePin = document.querySelector('.form__input--pin');
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
-  const movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+  //combine movements array with movement dates array in an object
+  const combineMovements = acc.movements.map((mov,i) => (
+    { movement: mov, 
+      movementDate: acc.movementsDates.at(i)
+    }
+  ))
 
-  movs.forEach(function (mov, i) {
-    const type = mov > 0 ? 'deposit' : 'withdrawal';
+  //const movs = sort ? acc.movements.slice().sort((a, b) => a - b) : acc.movements;
+  if (sort) combineMovements.sort((a, b) => a.movement - b.movement)
+  
+    combineMovements.forEach(function(obj, i) {
+    const {movement, movementDate} = obj
+    const type = movement > 0 ? 'deposit' : 'withdrawal';
 
   //Add movement date 
-  const date = new Date(acc.movementsDates[i])
+  const date = new Date(movementDate)
   const day = `${date.getDate()}`.padStart(2,0) //to get 01 instead of 1
   const month = `${date.getMonth() + 1}`.padStart(2,0)
   const year = date.getFullYear()
@@ -102,7 +111,7 @@ const displayMovements = function (acc, sort = false) {
       i + 1
     } ${type}</div>
         <div class="movements__date">${displayDate}</div>
-        <div class="movements__value">${mov.toFixed(2)}€</div>
+        <div class="movements__value">${movement.toFixed(2)}€</div>
       </div>
     `;
 
@@ -287,6 +296,6 @@ labelBalance.addEventListener('click', function(){
   */
 
 //Fake Log in
-currentAccount = account1
-updateUI(currentAccount)
-containerApp.style.opacity = 100
+// currentAccount = account1
+// updateUI(currentAccount)
+// containerApp.style.opacity = 100
