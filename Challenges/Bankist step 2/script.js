@@ -179,6 +179,15 @@ btnLogin.addEventListener('click', function (e) {
     }`;
     containerApp.style.opacity = 100;
 
+    //display current balance date
+    const now = new Date() //new Date('2040-11-19T22:55:00.000Z')
+    const day = `${now.getDate()}`.padStart(2,0) //to get 01 instead of 1
+    const month = `${now.getMonth() + 1}`.padStart(2,0)
+    const year = now.getFullYear()
+    const hour = now.getHours()
+    const mins = `${now.getMinutes()}`.padStart(2,0)
+    labelDate.textContent = `${day}/${month}/${year}, ${hour}:${mins}`
+
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
@@ -276,12 +285,3 @@ labelBalance.addEventListener('click', function(){
 currentAccount = account1
 updateUI(currentAccount)
 containerApp.style.opacity = 100
-
-//display current balance date
-// const now = new Date() //new Date('2040-11-19T22:55:00.000Z')
-// const day = `${now.getDate()}`.padStart(2,0) //to get 01 instead of 1
-// const month = `${now.getMonth() + 1}`.padStart(2,0)
-// const year = now.getFullYear()
-// const hour = now.getHours()
-// const mins = `${now.getMinutes()}`.padStart(2,0)
-// labelDate.textContent = `${day}/${month}/${year}, ${hour}:${mins}`
