@@ -58,9 +58,10 @@ const options = {
 const locale = navigator.language//en-US
 console.log(new Intl.DateTimeFormat(locale,options).format(now))  //Tuesday, February 18, 2025 at 11:01 AM
 
-/////////////////////////////////////
+///////////////////////////////////////////////////////
 
-//after 3 second, call this function 
+//SetTimeout
+//after 3 second, call this function once
 setTimeout(() => console.log('Here is your pizza🍕')
 , 3000)
 console.log('waiting...')//while setTimer is running, waiting will show first because of async
@@ -79,3 +80,9 @@ const pizzaTimer = setTimeout(
     3000,
     ...ingredients)
 if (ingredients.includes('spinach')) clearTimeout(pizzaTimer)
+
+//SetInterval
+//calling the function over and over ever xx miliseconds
+//eg. log date and time in every second
+setInterval(() => console.log(`${new Date().getHours()}: ${new Date().getMinutes()} : ${new Date().getSeconds()}`),
+1000)
