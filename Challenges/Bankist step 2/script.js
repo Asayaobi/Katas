@@ -100,6 +100,13 @@ const formatDate = (date,locale) => {
     */
   }
 }
+
+//formatCurrency
+const formatCurrency = (value, locale, currency) => new Intl.NumberFormat(locale, {
+  style: 'currency',
+  currency: currency
+}).format(value)
+
 const displayMovements = function (acc, sort = false) {
   containerMovements.innerHTML = '';
 
@@ -121,13 +128,15 @@ const displayMovements = function (acc, sort = false) {
   const date = new Date(movementDate)
   const displayDate = formatDate(date, acc.locale)
 
+  //Add number format
+  const formatNumber = formatCurrency(movement, acc.locale, acc.currency)
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
         <div class="movements__date">${displayDate}</div>
-        <div class="movements__value">${movement.toFixed(2)}€</div>
+        <div class="movements__value">${formatNumber}</div>
       </div>
     `;
 
