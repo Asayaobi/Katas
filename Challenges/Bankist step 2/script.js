@@ -202,6 +202,16 @@ btnLogin.addEventListener('click', function (e) {
     containerApp.style.opacity = 100;
 
     //create current date
+    const now = new Date()
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      day: 'numeric',
+      month: 'numeric', 
+      year: 'numeric'
+    }
+    labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale,options).format(now) 
+    /*
     const now = new Date() //new Date('2040-11-19T22:55:00.000Z')
     const day = `${now.getDate()}`.padStart(2,0) //to get 01 instead of 1
     const month = `${now.getMonth() + 1}`.padStart(2,0)
@@ -209,6 +219,7 @@ btnLogin.addEventListener('click', function (e) {
     const hour = now.getHours()
     const mins = `${now.getMinutes()}`.padStart(2,0)
     labelDate.textContent = `${day}/${month}/${year}, ${hour}:${mins}`
+    */
 
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
@@ -306,7 +317,7 @@ labelBalance.addEventListener('click', function(){
     }
   })
 })
-  */
+  
 
 //Fake Log in
 currentAccount = account1
