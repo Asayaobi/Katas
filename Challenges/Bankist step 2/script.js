@@ -309,6 +309,28 @@ labelBalance.addEventListener('click', function(){
   */
 
 //Fake Log in
-// currentAccount = account1
-// updateUI(currentAccount)
-// containerApp.style.opacity = 100
+currentAccount = account1
+updateUI(currentAccount)
+containerApp.style.opacity = 100
+
+//Display Date 
+const now = new Date()
+//mannually define locale with ISO Language Code Table -> 'en-US'2/18/2025, 'en-GB'2/18/2025
+//labelDate.textContent = new Intl.DateTimeFormat('en-US').format(now) //2/18/2025
+
+//use options to display hours too
+const options = {
+  hour: 'numeric',
+  minute: 'numeric',
+  day: 'numeric',
+  month: 'long', //it can be numberic, 2-digit
+  year: 'numeric',
+  weekday: 'long'
+}
+//labelDate.textContent = new Intl.DateTimeFormat('en-GB',options).format(now) //Tuesday 18 February 2025 at 11:01 AM
+
+//getting user's locale
+const locale = navigator.language//en-US
+labelDate.textContent = new Intl.DateTimeFormat(locale,options).format(now) //Tuesday, February 18, 2025 at 11:01 AM
+
+*/
