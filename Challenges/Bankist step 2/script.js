@@ -82,7 +82,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 // Functions
 
 //format date
-const formatDate = date => {
+const formatDate = (date,locale) => {
   const calcDayPass = (day1, day2) => Math.round(Math.abs(day2 - day1) / (1000 * 60 *60 * 24))
   const daysPass = calcDayPass(new Date(),date)
   console.log(daysPass)
@@ -91,10 +91,13 @@ const formatDate = date => {
   if(daysPass === 1) return 'yesterday'
   if(daysPass <= 7) return `${daysPass} days ago`
   else {
+    return new Intl.DateTimeFormat(locale).format(date)
+    /*
     const day = `${date.getDate()}`.padStart(2,0) //to get 01 instead of 1
     const month = `${date.getMonth() + 1}`.padStart(2,0)
     const year = date.getFullYear()
     return `${day}/${month}/${year}`
+    */
   }
 }
 const displayMovements = function (acc, sort = false) {
@@ -116,7 +119,7 @@ const displayMovements = function (acc, sort = false) {
 
   //Add movement date 
   const date = new Date(movementDate)
-  const displayDate = formatDate(date)
+  const displayDate = formatDate(date, acc.locale)
 
     const html = `
       <div class="movements__row">
