@@ -57,3 +57,25 @@ const options = {
 //getting user's locale
 const locale = navigator.language//en-US
 console.log(new Intl.DateTimeFormat(locale,options).format(now))  //Tuesday, February 18, 2025 at 11:01 AM
+
+/////////////////////////////////////
+
+//after 3 second, call this function 
+setTimeout(() => console.log('Here is your pizza🍕')
+, 3000)
+console.log('waiting...')//while setTimer is running, waiting will show first because of async
+// ...waiting 
+// 'Here is your pizza🍕'
+
+//passing parameter in setTimeout
+setTimeout((ingr1, ingr2) => console.log(`Here is your pizza with ${ingr1} and ${ingr2}🍕`)
+    , 3000, 
+    'olive','spinach')
+
+//stop setTimeout eh. in case the ingredient has spinach, cancel the order
+const ingredients = ['spinach', 'olive']
+const pizzaTimer = setTimeout(
+    (ingr1, ingr2) => console.log(`Here is your pizza with ${ingr1} and ${ingr2}🍕`),
+    3000,
+    ...ingredients)
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer)
