@@ -147,3 +147,18 @@ console.log(isPrime(2))
 console.log(isPrime(4))
 console.log(isPrime(7))
 console.log(isPrime(10))
+
+//Format number with Intl API
+const number = 87000.99
+console.log(new Intl.NumberFormat('en-us').format(number))//'87,000.99'
+console.log(new Intl.NumberFormat('de-DE').format(number))//'87.000,99' Germany
+//const locale = navigator.language//en-US
+//console.log(new Intl.NumberFormat(locale).format(number))
+
+const options = {
+    style: 'unit', //style: cn be 'unit', 'percent', or 'currency'
+    unit: 'mile-per-hour', //unit: 'celcius', currency: 'EUR'
+    //useGrouping: 'false' -> no comma seperator
+}
+console.log(new Intl.NumberFormat('de-DE',options).format(number))//'87.000,99 mi/h'
+console.log(new Intl.NumberFormat('en-us',options).format(number))//'87,000.99 mph'
