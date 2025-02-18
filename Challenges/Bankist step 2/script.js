@@ -278,13 +278,16 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    //it will take 2500milisecond to approve the loan
+    setTimeout(function(){
     // Add loan amount
     currentAccount.movements.push(amount);
     // Add loan date
     currentAccount.movementsDates.push(new Date().toISOString())
-
     // Update UI
     updateUI(currentAccount);
+    },
+  2500)
   }
   inputLoanAmount.value = '';
 });
