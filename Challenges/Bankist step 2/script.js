@@ -213,8 +213,8 @@ let tick = function() {
   time-- //decrease time - 1 second
 }
 
-//1. set timer to 1 mins
-  let time = 60
+//1. set timer to 5 mins
+  let time = 5 * 60
 //2. call timer every second
 tick()
 const timer = setInterval(tick, 1000)
@@ -298,6 +298,9 @@ btnTransfer.addEventListener('click', function (e) {
     receiverAcc.movementsDates.push(new Date().toISOString())
     // Update UI
     updateUI(currentAccount);
+    //Resert timer
+    clearInterval(timer)
+    timer = startLogOutTimer()
   }
 });
 
@@ -315,6 +318,9 @@ btnLoan.addEventListener('click', function (e) {
     currentAccount.movementsDates.push(new Date().toISOString())
     // Update UI
     updateUI(currentAccount);
+    //Resert timer
+    clearInterval(timer)
+    timer = startLogOutTimer()
     },
   2500)
   }
