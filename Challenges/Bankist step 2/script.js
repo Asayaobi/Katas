@@ -197,6 +197,21 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+//Display timer
+const startLogOutTimer = function(){
+  //1. set timer to 2 mins
+let time = 120
+  //2. call timer every second
+setInterval(function() {
+  let min = String(Math.trunc(time / 60)).padStart(2, 0) 
+  let sec = String(time % 60).padStart(2,0)
+  //3. print the remaining time to the UI
+  labelTimer.textContent = `${min}:${sec}`
+  time-- //decrease time - 1 second
+  //4. when 0 second, stop the timer
+}, 1000)
+}
+
 ///////////////////////////////////////
 // Event handlers
 let currentAccount;
@@ -241,6 +256,9 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
+    //Log timer
+    startLogOutTimer()
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -266,7 +284,6 @@ btnTransfer.addEventListener('click', function (e) {
     // Add the transfer date
     currentAccount.movementsDates.push(new Date().toISOString())
     receiverAcc.movementsDates.push(new Date().toISOString())
-
     // Update UI
     updateUI(currentAccount);
   }
