@@ -199,22 +199,33 @@ const updateUI = function (acc) {
 
 //Display timer
 const startLogOutTimer = function(){
-  //1. set timer to 2 mins
-let time = 120
-  //2. call timer every second
-setInterval(function() {
+let tick = function() {
   let min = String(Math.trunc(time / 60)).padStart(2, 0) 
   let sec = String(time % 60).padStart(2,0)
   //3. print the remaining time to the UI
   labelTimer.textContent = `${min}:${sec}`
+  //4. when 0 second, stop the timer, log out the user
+  if (time === 0) {
+    clearInterval(timer)
+    labelWelcome.textContent = `Log in to get started`
+    containerApp.style.opacity = 0
+  }
   time-- //decrease time - 1 second
-  //4. when 0 second, stop the timer
-}, 1000)
+}
+
+//1. set timer to 1 mins
+  let time = 60
+//2. call timer every second
+tick()
+const timer = setInterval(tick, 1000)
+
+//return timer to the global variable to stop the timer feature in case it's still running from old login
+return timer
 }
 
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
@@ -256,8 +267,9 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    //Log timer
-    startLogOutTimer()
+    //Log timer (if there's timer from old acc running, stop it first)
+    if (timer) clearInterval(timer)
+    timer = startLogOutTimer()
 
     // Update UI
     updateUI(currentAccount);
