@@ -441,3 +441,32 @@ function likes(arr){
 }
 console.log(likes([]))
 console.log(likes(['Peter']))
+
+
+// Consider an array/list of sheep where some sheep may be missing from their place. 
+// We need a function that counts the number of sheep present in the array (true means present).
+// For example, 
+// [true,  true,  true,  false,
+//   true,  true,  true,  true ,
+//   true,  false, true,  false,
+//   true,  false, false, true ,
+//   true,  true,  true,  true ,
+//   false, false, true,  true]
+
+function countSheeps(sheep) {
+  let sum = 0
+ for (let s of sheep ){
+  if (s) {
+    sum++
+  }
+ }
+ return sum
+}
+
+function countSheeps1(arr) {
+  return arr.filter(Boolean).length;
+}
+console.log(countSheeps([[undefined], 0])) //1
+console.log(countSheeps1([true,  true,  true,  false, true,  true,  true,  true , true,  false, true,  false, true,  false, false, true , true,  true,  true,  true , false, false, true,  true])) //17
+
+
