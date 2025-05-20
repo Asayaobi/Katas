@@ -552,3 +552,8 @@ function printerError2(str) {
 
 console.log(printerError('aaabbbbhaijjjm'))
 console.log(printerError('aaaxbbbbyyhwawiwjjjwwm'))
+
+//Write a function which converts the input string to uppercase.
+const makeUpperCase = str => str.toUpperCase()
+console.log(makeUpperCase('abc'))//'ABC'
+console.log(makeUpperCase('Hello'))//'HELLO'
