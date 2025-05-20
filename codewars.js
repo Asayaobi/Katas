@@ -508,3 +508,74 @@ function busride(people){
 console.log(busride([[10,0],[3,5],[5,8]])) //5
 console.log(busride([[3,0],[9,1],[4,8],[12,2],[6,1],[7,8]]))  //21
 
+// In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which are named with letters from a to m.
+// The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+// Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+// You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+// The string has a length greater or equal to one and contains only letters from ato z.
+
+// Examples:
+// s="aaabbbbhaijjjm"
+// printer_error(s) => "0/14"
+
+// s="aaaxbbbbyyhwawiwjjjwwm"
+// printer_error(s) => "8/22"
+
+
+function printerError(str){
+  let error = 0
+  const allowed = 'abcdefghijklm'
+  const strArray = str.split('')
+  for (let i = 0; i < strArray.length; i++){
+    if (!allowed.includes(strArray[i])){
+      error++
+    }
+    }
+  return `${error}/${str.length}`
+}
+
+function printerError1(s) {
+  let count = 0
+  for (let i = 0; i < s.split('').length;i++){
+    if (s[i] > 'm'){
+      count++
+    }
+  }
+  return `${count}/${s.length}`
+}
+
+function printerError2(str) {
+  const allowed = 'abcdefghijklm'
+  const errorCount = str.split('').filter(letter => !allowed.includes(letter)).length
+  return `${errorCount}/${str.length}`
+}
+
+console.log(printerError('aaabbbbhaijjjm'))
+console.log(printerError('aaaxbbbbyyhwawiwjjjwwm'))
+
+//Write a function which converts the input string to uppercase.
+const makeUpperCase = str => str.toUpperCase()
+console.log(makeUpperCase('abc'))//'ABC'
+console.log(makeUpperCase('Hello'))//'HELLO'
+
+//Nathan loves cycling.
+//Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+//You get given the time in hours and you need to return the number of litres Nathan will drink, rounded down.
+
+//For example:
+// time = 3 ----> litres = 1
+// time = 6.7---> litres = 3
+// time = 11.8--> litres = 5
+
+function litres(time) {
+  const drinks = Math.floor(time * 0.5)
+  return drinks
+}
+console.log(litres(3)) //1
+console.log(litres(6.7)) //3
+console.log(litres(11.8)) //5
+
+//Code as fast as you can! You need to double the integer and return it.
+function doubleInteger(i) {
+  return i * 2
+}
