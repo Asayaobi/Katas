@@ -7,8 +7,8 @@ function maxNumber(a, b) {
     return a
 }
 
-console.log(maxNumber(1, 2))
-console.log(maxNumber(5, 20)) 
+console.log(maxNumber(1, 2))//1
+console.log(maxNumber(5, 20)) //5
 
 // Create a function assignGrade that takes a number score and returns a grade ('A', 'B', 'C') based on that score.
 // 'A' is for a score equal to or greater than 90.
@@ -26,9 +26,9 @@ function assignGrade(score) {
     return 'C'
 }
 
-console.log(assignGrade(90))
-console.log(assignGrade(80))
-console.log(assignGrade(70))
+console.log(assignGrade(90))//'A'
+console.log(assignGrade(80))//'B'
+console.log(assignGrade(70))//'C'
 
 
 // Check Temperature
@@ -44,15 +44,17 @@ function checkTemperature(t) {
     }
     return 'hot'
 }
-
-
-console.log(checkTemperature(10))
-console.log(checkTemperature(15))
-console.log(checkTemperature(27))
+console.log(checkTemperature(10))//'cold'
+console.log(checkTemperature(15))//'warm'
+console.log(checkTemperature(27))//'hot'
 
 // Animal Classification
 // Create a function classifyAnimal that takes an animal name and returns 'Domestic' if it's either 'cat' or 'dog', 
 // and 'Wild' for any other animal.
+
+const classAnimal = animal => (animal === 'cat' || animal ==='dog')? 'domestic' : 'wild'
+console.log(classAnimal('cat'))//'domestic'
+console.log(classAnimal('hippo'))//'wild'
 
 function classifyAnimal(animal) {
     if (animal === 'cat') {
@@ -97,7 +99,7 @@ function calcTotalReceipt(prices) {
     return sum
 }
 
-console.log(calcTotalReceipt([1,2,3,4]))
+console.log(calcTotalReceipt([1,2,3,4]))//10
 
 // Combine Total of Receipts
 // You received 2 receipts, one from the restaurant and one from the coffee shop, 
@@ -115,7 +117,7 @@ function calcTotalReceipt2(restaurant, coffee) {
     return total
 }
 
-console.log(calcTotalReceipt2([11,3],[2.5,1.5]))
+console.log(calcTotalReceipt2([11,3],[2.5,1.5]))//18
 
 // Create a function findYoungest that receives an array of 4 ages (numbers).
 // The function should find the youngest person (the lowest number in the array) and return it.
@@ -137,8 +139,8 @@ function findYoungest(num) {
     return youngest
 }
 
-console.log(findYoungest([50,12,45,32]))
-console.log(findYoungest([8,19,52,45]))
+console.log(findYoungest([50,12,45,32]))//12
+console.log(findYoungest([8,19,52,45]))//8
 
 // Create a sumPositives function that takes an array of 4 numbers as a parameter.
 // The array contains positive and negative numbers.
@@ -160,8 +162,8 @@ function sumPositives(n) {
     return sum
 }
 
-console.log(sumPositives([10,-5,20,-17]))
-console.log(sumPositives([1,-1,1,-1]))
+console.log(sumPositives([10,-5,20,-17]))//52
+console.log(sumPositives([1,-1,1,-1]))//4
 
 // The following loop is incorrect, can you fix it?
 // function sumNumbers(numbers) {
@@ -178,11 +180,8 @@ function sumNumbers(numbers) {
     }
     return sum
 }
-console.log(sumNumbers([1,2,3]))
-console.log(sumNumbers([10,9,8]))
-
-
-
+console.log(sumNumbers([1,2,3]))//6
+console.log(sumNumbers([10,9,8]))//27
 
 // Total of Receipt with Loop
 // Create a function calcTotalReceipt that takes an array prices as a parameter, with any number of prices in it, 
@@ -198,8 +197,8 @@ function calcTotalReceipt(prices) {
     return sum
 }
 
-console.log(calcTotalReceipt([10,20,15,45]))
-console.log(calcTotalReceipt([35,15]))
+console.log(calcTotalReceipt([10,20,15,45]))//90
+console.log(calcTotalReceipt([35,15]))//50
 
 
 // Blackjack with Loop
@@ -225,9 +224,9 @@ function scoreBlackjack(playerscards,dealerscard) {
     return 'keep playing'
 }
 
-console.log(scoreBlackjack([10,5],6))
-console.log(scoreBlackjack([8,3,4],10))
-console.log(scoreBlackjack([1],7))
+console.log(scoreBlackjack([10,5],6))//'win'
+console.log(scoreBlackjack([8,3,4],10))//'lose'
+console.log(scoreBlackjack([1],7))//'keep playing'
 
 // Sum of Positives
 // During a competition, some scores were incorrectly saved as negative numbers.
@@ -248,5 +247,5 @@ function sumPositives(nums) {
     return sum
 }
 
-console.log(sumPositives([5,-10,15]))
-console.log(sumPositives([-10,-10,-10]))
+console.log(sumPositives([5,-10,15]))//30
+console.log(sumPositives([-10,-10,-10]))//30
