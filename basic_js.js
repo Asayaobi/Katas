@@ -75,20 +75,23 @@ console.log(classifyAnimal('rat'))
 // the first represents the total in the hand of the player, the second is the card that the dealer just extracted.
 // If the sum of the player's cards and the dealer's card is 21, return 'win', 
 // if it's over 21, return 'lose', otherwise return 'keep playing'.
+const scoreBlack = scores => scores[0]+scores[1] > 21 ? 'lose' : scores[0]+scores[1] === 21 ? 'win' : 'keep playing'
+console.log(scoreBlack([10,11]))//'win'
+console.log(scoreBlack([11,11]))//'lose'
+console.log(scoreBlack([10,4]))//''keep playing''
 
-function scoreBlackjack(numbers) {
-    if (numbers[0] + numbers[1] === 21) {
-        return 'win'
-    }
-    if (numbers[0] + numbers[1] > 21) {
+function scoreBlackjackgame(scores){
+    if (scores[0]+scores[1] > 21){
         return 'lose'
+    } else if (scores[0]+scores[1]===21){
+        return 'win'
+    } else {
+        return 'keep playing'
     }
-    return 'keep playing'
 }
-
-console.log(scoreBlackjack([10,11]))
-console.log(scoreBlackjack([10,10]))
-console.log(scoreBlackjack([10,12]))
+console.log(scoreBlackjackgame([10,11]))//'win'
+console.log(scoreBlackjackgame([10,19]))//'lose')
+console.log(scoreBlackjackgame([10,1]))//'keep playing'
 
 // Total of Receipt
 // Create a function calcTotalReceipt that takes an array prices as a parameter, 
