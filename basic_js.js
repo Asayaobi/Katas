@@ -220,6 +220,21 @@ console.log(calTot([35,15,10]))//60
 // scoreBlackjack([10,5],6)	'win'
 // scoreBlackjack([8,3,4],10)	'lose'
 // scoreBlackjack([1],7)	'keep playing'
+const calBlackjack = (players, dealer) => {
+    const sum = players.reduce((acc, score) => acc + score, dealer)
+    if (sum > 21){
+        return 'lose'
+    }
+    else if (sum === 21) {
+        return 'win'
+    } 
+    else {
+        return 'keep playing'
+    }
+}
+console.log(calBlackjack([10,5],6))//'win'
+console.log(calBlackjack([8,3,4],10))//'lose'
+console.log(calBlackjack([1],7))//'keep playing'
 
 function scoreBlackjack(playerscards,dealerscard) {
     let player = 0
@@ -234,7 +249,6 @@ function scoreBlackjack(playerscards,dealerscard) {
     }
     return 'keep playing'
 }
-
 console.log(scoreBlackjack([10,5],6))//'win'
 console.log(scoreBlackjack([8,3,4],10))//'lose'
 console.log(scoreBlackjack([1],7))//'keep playing'
