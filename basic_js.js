@@ -112,6 +112,9 @@ console.log(calcTotalReceipt([1,2,3,4]))//10
 // now you'd like to pay for them at the same time.
 // Create a function calcTotalReceipts that takes 2 arrays as parameters, each array contains 2 prices, 
 // then returns the sum of all prices in both arrays combined.
+const combineBills = (restaurant,coffee) => restaurant.reduce((acc, bill)=> acc += bill) + coffee.reduce((acc, bill)=> acc += bill)
+console.log(combineBills([11,3],[2.5,1.5])) //18
+console.log(combineBills([11,2],[2.5,1])) //16.5
 
 function calcTotalReceipt2(restaurant, coffee) {
     // sum restaurant
@@ -122,7 +125,6 @@ function calcTotalReceipt2(restaurant, coffee) {
     const total = sumRestaurant + sumCoffee
     return total
 }
-
 console.log(calcTotalReceipt2([11,3],[2.5,1.5]))//18
 
 // Create a function findYoungest that receives an array of 4 ages (numbers).
