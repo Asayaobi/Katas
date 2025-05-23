@@ -96,7 +96,7 @@ console.log(scoreBlackjackgame([10,1]))//'keep playing'
 // Total of Receipt
 // Create a function calcTotalReceipt that takes an array prices as a parameter, 
 // with 4 prices in it, then returns the sum of all prices in the array.
-const calTotal = prices => prices.reduce((acc,p) => acc += p)
+const calTotal = prices => prices.reduce((acc,p) => acc + p, 0)
 console.log(calTotal([1,2,3,4])) //10
 console.log(calTotal([4,2,3,4])) //13
 
@@ -112,7 +112,7 @@ console.log(calcTotalReceipt([1,2,3,4]))//10
 // now you'd like to pay for them at the same time.
 // Create a function calcTotalReceipts that takes 2 arrays as parameters, each array contains 2 prices, 
 // then returns the sum of all prices in both arrays combined.
-const combineBills = (restaurant,coffee) => restaurant.reduce((acc, bill)=> acc += bill) + coffee.reduce((acc, bill)=> acc += bill)
+const combineBills = (restaurant,coffee) => restaurant.reduce((acc, bill)=> acc + bill, 0) + coffee.reduce((acc, bill)=> acc + bill, 0)
 console.log(combineBills([11,3],[2.5,1.5])) //18
 console.log(combineBills([11,2],[2.5,1])) //16.5
 
@@ -160,32 +160,19 @@ function findYoungest(num) {
     }
     return youngest
 }
-
 console.log(findYoungest([50,12,45,32]))//12
 console.log(findYoungest([8,19,52,45]))//8
 
 // Create a sumPositives function that takes an array of 4 numbers as a parameter.
 // The array contains positive and negative numbers.
 // The function should return the sum of all positive numbers only.
-function sumPositives(n) {
-    let sum = 0
-    if (n[0] > 0) {
-        sum = sum + n[0]
-    }
-    if (n[1] > 0) {
-        sum = sum + n[1]
-    }
-    if (n[2] > 0) {
-        sum = sum + n[2]
-    }
-    if (n[3] > 0) {
-        sum = sum + n[3]
-    }
-    return sum
-}
+const sumOnlyPositive = nums => nums.reduce((acc,n) => n > 0 ? acc + n : acc, 0)
+console.log(sumOnlyPositive([10,-5,20,-17]))//30
+console.log(sumOnlyPositive([20,-5,20,-17, 3])) //43
 
-console.log(sumPositives([10,-5,20,-17]))//52
-console.log(sumPositives([1,-1,1,-1]))//4
+const sumJustPositive = nums => nums.filter(n => n > 0).reduce((acc, n) => acc + n, 0)
+console.log(sumJustPositive([10,-5,20,-17]))//30
+console.log(sumJustPositive([10,-5,20,-7,-10,12]))//42
 
 // The following loop is incorrect, can you fix it?
 // function sumNumbers(numbers) {
@@ -218,10 +205,12 @@ function calcTotalReceipt(prices) {
     }
     return sum
 }
-
 console.log(calcTotalReceipt([10,20,15,45]))//90
 console.log(calcTotalReceipt([35,15]))//50
 
+const calTot = prices => prices.reduce((acc, p) => acc + p, 0)
+console.log(calTot([10,20,15,45]))//90
+console.log(calTot([35,15,10]))//60
 
 // Blackjack with Loop
 // Create a function scoreBlackjack that takes 2 parameters:
