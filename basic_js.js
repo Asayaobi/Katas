@@ -260,6 +260,13 @@ console.log(scoreBlackjack([1],7))//'keep playing'
 // The function should then return the sum of all numbers.
 // sumPositives([5,-10,15])	30
 // sumPositives([-10,-10,-10])	30
+const convertPositives = numbers => {
+    const allPositive = numbers.map(n => n < 0 ? n * -1 : n)
+    const sum = allPositive.reduce((acc, n) => acc + n, 0)
+    return sum
+}
+console.log(convertPositives([5,-10,15]))//30
+console.log(convertPositives([-10,-10,-10])) //30
 
 function sumPositives(nums) {
     let sum = 0
@@ -271,6 +278,5 @@ function sumPositives(nums) {
     }
     return sum
 }
-
 console.log(sumPositives([5,-10,15]))//30
 console.log(sumPositives([-10,-10,-10]))//30
