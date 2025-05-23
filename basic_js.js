@@ -129,6 +129,20 @@ console.log(calcTotalReceipt2([11,3],[2.5,1.5]))//18
 
 // Create a function findYoungest that receives an array of 4 ages (numbers).
 // The function should find the youngest person (the lowest number in the array) and return it.
+const findYounger = ages => Math.min(...ages)
+console.log(findYounger([18,15,1,19]))//1
+console.log(findYounger([18,15,19]))//15
+
+const findYoung = ages => {
+    let youngest = ages[0]
+    for (let i = 0; i < ages.length; i++){
+        if (ages[i] < youngest ){
+            youngest = ages[i]
+        }
+    }
+    return youngest
+}
+console.log(findYoung([18,15,10,19]))//10
 
 function findYoungest(num) {
     let youngest = num[0]
