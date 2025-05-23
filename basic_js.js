@@ -7,8 +7,8 @@ function maxNumber(a, b) {
     return a
 }
 
-console.log(maxNumber(1, 2))
-console.log(maxNumber(5, 20)) 
+console.log(maxNumber(1, 2))//1
+console.log(maxNumber(5, 20)) //5
 
 // Create a function assignGrade that takes a number score and returns a grade ('A', 'B', 'C') based on that score.
 // 'A' is for a score equal to or greater than 90.
@@ -26,9 +26,9 @@ function assignGrade(score) {
     return 'C'
 }
 
-console.log(assignGrade(90))
-console.log(assignGrade(80))
-console.log(assignGrade(70))
+console.log(assignGrade(90))//'A'
+console.log(assignGrade(80))//'B'
+console.log(assignGrade(70))//'C'
 
 
 // Check Temperature
@@ -44,15 +44,17 @@ function checkTemperature(t) {
     }
     return 'hot'
 }
-
-
-console.log(checkTemperature(10))
-console.log(checkTemperature(15))
-console.log(checkTemperature(27))
+console.log(checkTemperature(10))//'cold'
+console.log(checkTemperature(15))//'warm'
+console.log(checkTemperature(27))//'hot'
 
 // Animal Classification
 // Create a function classifyAnimal that takes an animal name and returns 'Domestic' if it's either 'cat' or 'dog', 
 // and 'Wild' for any other animal.
+
+const classAnimal = animal => (animal === 'cat' || animal ==='dog')? 'domestic' : 'wild'
+console.log(classAnimal('cat'))//'domestic'
+console.log(classAnimal('hippo'))//'wild'
 
 function classifyAnimal(animal) {
     if (animal === 'cat') {
@@ -73,37 +75,46 @@ console.log(classifyAnimal('rat'))
 // the first represents the total in the hand of the player, the second is the card that the dealer just extracted.
 // If the sum of the player's cards and the dealer's card is 21, return 'win', 
 // if it's over 21, return 'lose', otherwise return 'keep playing'.
+const scoreBlack = scores => scores[0]+scores[1] > 21 ? 'lose' : scores[0]+scores[1] === 21 ? 'win' : 'keep playing'
+console.log(scoreBlack([10,11]))//'win'
+console.log(scoreBlack([11,11]))//'lose'
+console.log(scoreBlack([10,4]))//''keep playing''
 
-function scoreBlackjack(numbers) {
-    if (numbers[0] + numbers[1] === 21) {
-        return 'win'
-    }
-    if (numbers[0] + numbers[1] > 21) {
+function scoreBlackjackgame(scores){
+    if (scores[0]+scores[1] > 21){
         return 'lose'
+    } else if (scores[0]+scores[1]===21){
+        return 'win'
+    } else {
+        return 'keep playing'
     }
-    return 'keep playing'
 }
-
-console.log(scoreBlackjack([10,11]))
-console.log(scoreBlackjack([10,10]))
-console.log(scoreBlackjack([10,12]))
+console.log(scoreBlackjackgame([10,11]))//'win'
+console.log(scoreBlackjackgame([10,19]))//'lose')
+console.log(scoreBlackjackgame([10,1]))//'keep playing'
 
 // Total of Receipt
 // Create a function calcTotalReceipt that takes an array prices as a parameter, 
 // with 4 prices in it, then returns the sum of all prices in the array.
+const calTotal = prices => prices.reduce((acc,p) => acc + p, 0)
+console.log(calTotal([1,2,3,4])) //10
+console.log(calTotal([4,2,3,4])) //13
 
 function calcTotalReceipt(prices) {
     const sum = prices[0] + prices[1] + prices[2] + prices[3]
     return sum
 }
 
-console.log(calcTotalReceipt([1,2,3,4]))
+console.log(calcTotalReceipt([1,2,3,4]))//10
 
 // Combine Total of Receipts
 // You received 2 receipts, one from the restaurant and one from the coffee shop, 
 // now you'd like to pay for them at the same time.
 // Create a function calcTotalReceipts that takes 2 arrays as parameters, each array contains 2 prices, 
 // then returns the sum of all prices in both arrays combined.
+const combineBills = (restaurant,coffee) => restaurant.reduce((acc, bill)=> acc + bill, 0) + coffee.reduce((acc, bill)=> acc + bill, 0)
+console.log(combineBills([11,3],[2.5,1.5])) //18
+console.log(combineBills([11,2],[2.5,1])) //16.5
 
 function calcTotalReceipt2(restaurant, coffee) {
     // sum restaurant
@@ -114,11 +125,24 @@ function calcTotalReceipt2(restaurant, coffee) {
     const total = sumRestaurant + sumCoffee
     return total
 }
-
-console.log(calcTotalReceipt2([11,3],[2.5,1.5]))
+console.log(calcTotalReceipt2([11,3],[2.5,1.5]))//18
 
 // Create a function findYoungest that receives an array of 4 ages (numbers).
 // The function should find the youngest person (the lowest number in the array) and return it.
+const findYounger = ages => Math.min(...ages)
+console.log(findYounger([18,15,1,19]))//1
+console.log(findYounger([18,15,19]))//15
+
+const findYoung = ages => {
+    let youngest = ages[0]
+    for (let i = 0; i < ages.length; i++){
+        if (ages[i] < youngest ){
+            youngest = ages[i]
+        }
+    }
+    return youngest
+}
+console.log(findYoung([18,15,10,19]))//10
 
 function findYoungest(num) {
     let youngest = num[0]
@@ -136,32 +160,19 @@ function findYoungest(num) {
     }
     return youngest
 }
-
-console.log(findYoungest([50,12,45,32]))
-console.log(findYoungest([8,19,52,45]))
+console.log(findYoungest([50,12,45,32]))//12
+console.log(findYoungest([8,19,52,45]))//8
 
 // Create a sumPositives function that takes an array of 4 numbers as a parameter.
 // The array contains positive and negative numbers.
 // The function should return the sum of all positive numbers only.
-function sumPositives(n) {
-    let sum = 0
-    if (n[0] > 0) {
-        sum = sum + n[0]
-    }
-    if (n[1] > 0) {
-        sum = sum + n[1]
-    }
-    if (n[2] > 0) {
-        sum = sum + n[2]
-    }
-    if (n[3] > 0) {
-        sum = sum + n[3]
-    }
-    return sum
-}
+const sumOnlyPositive = nums => nums.reduce((acc,n) => n > 0 ? acc + n : acc, 0)
+console.log(sumOnlyPositive([10,-5,20,-17]))//30
+console.log(sumOnlyPositive([20,-5,20,-17, 3])) //43
 
-console.log(sumPositives([10,-5,20,-17]))
-console.log(sumPositives([1,-1,1,-1]))
+const sumJustPositive = nums => nums.filter(n => n > 0).reduce((acc, n) => acc + n, 0)
+console.log(sumJustPositive([10,-5,20,-17]))//30
+console.log(sumJustPositive([10,-5,20,-7,-10,12]))//42
 
 // The following loop is incorrect, can you fix it?
 // function sumNumbers(numbers) {
@@ -178,11 +189,8 @@ function sumNumbers(numbers) {
     }
     return sum
 }
-console.log(sumNumbers([1,2,3]))
-console.log(sumNumbers([10,9,8]))
-
-
-
+console.log(sumNumbers([1,2,3]))//6
+console.log(sumNumbers([10,9,8]))//27
 
 // Total of Receipt with Loop
 // Create a function calcTotalReceipt that takes an array prices as a parameter, with any number of prices in it, 
@@ -197,10 +205,12 @@ function calcTotalReceipt(prices) {
     }
     return sum
 }
+console.log(calcTotalReceipt([10,20,15,45]))//90
+console.log(calcTotalReceipt([35,15]))//50
 
-console.log(calcTotalReceipt([10,20,15,45]))
-console.log(calcTotalReceipt([35,15]))
-
+const calTot = prices => prices.reduce((acc, p) => acc + p, 0)
+console.log(calTot([10,20,15,45]))//90
+console.log(calTot([35,15,10]))//60
 
 // Blackjack with Loop
 // Create a function scoreBlackjack that takes 2 parameters:
@@ -210,6 +220,21 @@ console.log(calcTotalReceipt([35,15]))
 // scoreBlackjack([10,5],6)	'win'
 // scoreBlackjack([8,3,4],10)	'lose'
 // scoreBlackjack([1],7)	'keep playing'
+const calBlackjack = (players, dealer) => {
+    const sum = players.reduce((acc, score) => acc + score, dealer)
+    if (sum > 21){
+        return 'lose'
+    }
+    else if (sum === 21) {
+        return 'win'
+    } 
+    else {
+        return 'keep playing'
+    }
+}
+console.log(calBlackjack([10,5],6))//'win'
+console.log(calBlackjack([8,3,4],10))//'lose'
+console.log(calBlackjack([1],7))//'keep playing'
 
 function scoreBlackjack(playerscards,dealerscard) {
     let player = 0
@@ -224,10 +249,9 @@ function scoreBlackjack(playerscards,dealerscard) {
     }
     return 'keep playing'
 }
-
-console.log(scoreBlackjack([10,5],6))
-console.log(scoreBlackjack([8,3,4],10))
-console.log(scoreBlackjack([1],7))
+console.log(scoreBlackjack([10,5],6))//'win'
+console.log(scoreBlackjack([8,3,4],10))//'lose'
+console.log(scoreBlackjack([1],7))//'keep playing'
 
 // Sum of Positives
 // During a competition, some scores were incorrectly saved as negative numbers.
@@ -236,6 +260,13 @@ console.log(scoreBlackjack([1],7))
 // The function should then return the sum of all numbers.
 // sumPositives([5,-10,15])	30
 // sumPositives([-10,-10,-10])	30
+const convertPositives = numbers => {
+    const allPositive = numbers.map(n => n < 0 ? n * -1 : n)
+    const sum = allPositive.reduce((acc, n) => acc + n, 0)
+    return sum
+}
+console.log(convertPositives([5,-10,15]))//30
+console.log(convertPositives([-10,-10,-10])) //30
 
 function sumPositives(nums) {
     let sum = 0
@@ -247,6 +278,5 @@ function sumPositives(nums) {
     }
     return sum
 }
-
-console.log(sumPositives([5,-10,15]))
-console.log(sumPositives([-10,-10,-10]))
+console.log(sumPositives([5,-10,15]))//30
+console.log(sumPositives([-10,-10,-10]))//30
