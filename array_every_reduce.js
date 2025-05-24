@@ -83,6 +83,32 @@ console.log(totalPrice(prices))// 54.97
 
 //Creating an Object Count
 const fruits = ['apple', 'banana', 'apple', 'orange', 'banana']
+const countFruits = fruits => {
+    let fruitsObj = {}
+    for (let i = 0; i < fruits.length; i++){
+        fruitsObj[fruits[i]] = fruits.filter(fruit => fruit === fruits[i]).length
+    }
+    return fruitsObj
+}
+console.log(countFruits(fruits))//{ apple: 2, banana: 2, orange: 1 }
+console.log(countFruits(['lemon', 'mango', 'mango', 'pineapple'])) //{ lemon: 1, mango: 2, pineapple: 1 }
+
+const countFruit = fruits => fruits.reduce((obj,fruit) => {
+    if (obj[fruit]){
+        obj[fruit]++
+    } else {
+        obj[fruit] = 1
+    }
+    return obj
+},{})
+console.log(countFruit(fruits))//{ apple: 2, banana: 2, orange: 1 }
+
+const countFruitsObj = fruits => fruits.reduce((acc, fruit) => {
+    acc[fruit] = (acc[fruit] || 0) + 1 //If the fruit doesn't exist yet, treat its count as 0. Then increment it by 1.
+    return acc
+},{})
+console.log(countFruitsObj(fruits))//{ apple: 2, banana: 2, orange: 1 }
+
 const fruitsCount = fruits => {
     //creat output[fruit] to set the count with the key fruit in the output
     let output = {}
@@ -99,17 +125,6 @@ const fruitsCount = fruits => {
     }
     return output
 }
-
-// const fruitsCount = (fruits) => {
-//     return fruits.reduce((output, fruit) => {
-//         if (output[fruit]) {
-//             output[fruit]++
-//         } else {
-//             output[fruit] = 1
-//         }
-//         return output
-//     }, {})
-// }
 console.log(fruitsCount(fruits)) // { apple: 2, banana: 2, orange: 1 }
 
 // Count Word Frequencies
