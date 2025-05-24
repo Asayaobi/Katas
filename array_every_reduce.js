@@ -130,30 +130,28 @@ console.log(fruitsCount(fruits)) // { apple: 2, banana: 2, orange: 1 }
 // Count Word Frequencies
 // Write a function wordCount that takes a string 
 // and returns an object where the keys are the words and the values are the number of times each word appears.
-// const text = "hello world hello everyone in the world"
-// const wordCount = text => {
-//     let output = {}
-//     let textArray = text.split(' ')
-//     for (let t of textArray) {
-//         if (output[t]) {
-//             output[t]++
-//         } else {
-//             output[t] = 1
-//         }    } 
-//         return output
-// }
-// console.log(wordCount(text)) 
+const text = "hello world hello everyone in the world"
+const countText = text => {
+    const words = text.split(' ').reduce((acc,w) => {
+        acc[w] = (acc[w] || 0 ) + 1
+        return acc
+    },{})
+    return words
+}
+console.log(countText(text))//{ hello: 2, world: 2, everyone: 1, in: 1, the: 1 }
 
-const texts = ['hello', 'world',' hello', 'everyone', 'in', 'the', 'world']
-const wordCount1 = texts => texts.reduce((count, text) => {
-    if (count[text]) {
-        count[text]++
-    } else {
-        count[text] = 1
-    }
-    return count
-},{})
-console.log(wordCount1(texts)) 
+const countTexts = text => {
+    const wordscount = text.split(' ').reduce((acc,w) => {
+        if (acc[w]){
+            acc[w]++
+        } else {
+            acc[w] = 1
+        }
+        return acc
+    }, {})
+    return wordscount
+}
+console.log(countTexts('dr. jones jones calling dr. jones'))//{ 'dr.': 2, jones: 3, calling: 1 }
 
 // Count Character Frequencies
 // Write a function charCount that takes a string and returns an object where the keys are the characters 
