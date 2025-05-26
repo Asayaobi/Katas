@@ -9,7 +9,6 @@ const products = [
     { id: 2, name: 'Blender', category: 'Home Appliances' },
     { id: 3, name: 'Tablet', category: 'Electronics' }
 ]
-
 // function findProduct(products) {
 //    for (let i=0; i < products.length; i++) {
 //         if (products[i].id === 2) {
@@ -55,9 +54,9 @@ const inventory = [
 // However, this function currently uses a for loop.
 // Your task is to refactor this function to use the find() method instead.
 const findPersonName = (persons, name) => persons.find(p => p.name === name)
-console.log(findPersonName([{'name':'Alice','age':25},{'name':'Alice','age':30}],'Alice')) //{'name':'Alice','age':25}
-console.log(findPersonName([{'name':'Alice','age':25},{'name':'Bob','age':37}],'Alice')) //{'name':'Alice','age':25}
-console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'Bob')) //{'name':'Bob','age':37}
+console.log(findPersonName([{name:'Alice','age':25},{name:'Alice','age':30}],'Alice')) //{'name':'Alice','age':25}
+console.log(findPersonName([{name:'Alice','age':25},{name:'Bob','age':37}],'Alice')) //{'name':'Alice','age':25}
+console.log(findPersonName([{name:'Bob','age':37},{name:'Alice','age':25}],'Bob')) //{'name':'Bob','age':37}
 
 // Find Product By Id
 // Write a JavaScript function named findProductById.
@@ -65,15 +64,15 @@ console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'
 // It should use the find() method to search through the array and return the product object that has the matching ID.
 // If no product with the given ID is found, the function should return null.
 const findProductById = (products, id) => products.find(p => p.id === id)
-console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2))//{'id':2,'name':'Laptop'}
+console.log(findProductById([{id:1,name:'Smartphone'},{id:2,name:'Laptop'},{id:3,name:'Tablet'}],2))//{'id':2,'name':'Laptop'}
 
 // Find User Bug
 // You are given a function that attempts to find and return a user object from an array of users by a given username.
 // However, the find() method is being used incorrectly in this function.
 // Your task is to identify the mistake and correct the function so that it properly uses find().
 const findUserByUsername = (users, username) => users.find(u => u.username === username)
-console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'username':'batman','password':'dark'}],'batman'))
-console.log(findUserByUsername([{'username':'wonderwoman','password':'amazon'},{'username':'superman','password':'krypto'}],'wonderwoman'))
+console.log(findUserByUsername([{username:'spiderman',password:'web'},{username:'batman',password:'dark'}],'batman'))
+console.log(findUserByUsername([{username:'wonderwoman',password:'amazon'},{username:'superman',password:'krypto'}],'wonderwoman'))
 
 // Replace Product Price
 // Write a JavaScript function named replaceProductPrice.
@@ -97,6 +96,7 @@ const replaceProductPrice = (products, id) => {
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],1))
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2))
 
+<<<<<<< HEAD:array_find_some_every.js
 // Write a function that takes an array of objects and return an array of the objects 'name' property if the name property exist.
 function getNames(arr){
     let output = []
@@ -108,6 +108,14 @@ function getNames(arr){
     return output
 }
 console.log(getNames([{a: 1},{name: 'Jane'}, {b: 2}, {name: 'Mark'}, {name: 'Jack'}])) // ['Jane','Mark','Jack']
+=======
+const replacePrice = (products,id) => {products.find(p => 
+    p.id === id ? p.price = Math.round(p.price * 1.1) : p.price
+)
+return products}
+console.log(replacePrice([{id:1,price:100},{id:2,price:200}],1))//[ { id: 1, price: 110 }, { id: 2, price: 200 } ]
+///////////////////////////////////////////
+>>>>>>> codewars:array_find_some.js
 
 //using hasOwnProperty
 function getNames1(arr){
@@ -159,8 +167,8 @@ const numbers = [1, 3, 5, 7, 9]
 //Some does not modifiy the original array, instead, it returns a boolean.
 // Example Without some():
 const hasEven = numbers => numbers.some(num => num % 2 === 0)
-console.log(hasEven(numbers))
-console.log(hasEven([1, 3, 5, 7, 10]))
+console.log(hasEven(numbers)) //false
+console.log(hasEven([1, 3, 5, 7, 10])) //true
 
 let scores = [10, 20, 10]
 const findScore = scores => scores.some(score => score > 10)
@@ -179,10 +187,10 @@ const productsA = [
 // This function will take an array of numbers and check if the array contains any number greater than a specified value.
 // The function should use the some() method to perform this check and return true if such a number exists, or false otherwise.
 const containsHighValue = (numbers, value) => numbers.some(n => n > value)
-console.log(containsHighValue([1,2,3,4,5],4))
-console.log(containsHighValue([10,100,1000],55))
-console.log(containsHighValue([10,100,1000],2000))
-console.log(containsHighValue([1,2,3],10))
+console.log(containsHighValue([1,2,3,4,5],4)) //true
+console.log(containsHighValue([10,100,1000],55))//true
+console.log(containsHighValue([10,100,1000],2000))//false
+console.log(containsHighValue([1,2,3],10))//false
 
 // Check And Transform
 // Create a JavaScript function named checkAndTransform.
@@ -198,6 +206,7 @@ const checkAndTransform = (numbers, value) => {
         return numbers
     }
 } 
+<<<<<<< HEAD:array_find_some_every.js
 console.log(checkAndTransform([1,4,6,8],5))
 console.log(checkAndTransform([2,3,4],10))
 
@@ -253,3 +262,11 @@ console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'lo
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],150,'Bali'))//false
 console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],90,'Koh'))//false
 console.log(searchHouses([{'price':100,'location':'Bali'},{'price':80,'location':'Koh Samui'}],90,'Bali'))//false
+=======
+console.log(checkAndTransform([1,4,6,8],5))//[ 2, 8, 12, 16 ]
+console.log(checkAndTransform([2,3,4],10))//[ 2, 3, 4 ]
+
+const transformNumber = (numbers, value) => numbers.some(n => n > value)? numbers.map(n => n * 2): numbers
+console.log(transformNumber([1,4,6,8],5))//[ 2, 8, 12, 16 ]
+console.log(transformNumber([2,3,4],10))//[ 2, 3, 4 ]
+>>>>>>> codewars:array_find_some.js
