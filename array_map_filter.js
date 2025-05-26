@@ -110,11 +110,11 @@ const numbers = [1, 2, 3, 4, 5, 6];
 
 //Example With filter():
 const evenNumbers = numbers.filter(n => n % 2 === 0)
-console.log(evenNumbers)
+console.log(evenNumbers)//Array(6) [ 1, 2, 3, 4, 5, 6 ]
 // Filter does not modifiy the original array, instead, it returns a new array.
-console.log(numbers)
+console.log(numbers)//Array(6) [ 1, 2, 3, 4, 5, 6 ]
 
-console.log([1,2,3,4].filter(i => i > 2))
+console.log([1,2,3,4].filter(i => i > 2))//[ 3, 4 ]
 //Remember that filter() yields an array, so, within a function you must "return the output" of filter(); 
 //the return within the filter() method only returns each element of the array
 const scores = [80,40,70,65,79,20]
@@ -124,7 +124,7 @@ function findLowScores(scores) {
     })
 }
 // const findLowScores = scores.filter(score => score < 50)
-console.log(findLowScores(scores))
+console.log(findLowScores(scores))//[ 40, 20 ]
 
 // Filtering Objects in an Array:
 // Select objects based on a specific property value.
@@ -144,7 +144,7 @@ const products = [
 // }
 //with filter
 const fruits = products.filter(p => p.category === 'fruit')
-console.log(fruits)
+console.log(fruits)//[{ name: 'Apple', category: 'fruit' },{ name: 'Banana', category: 'fruit' }]
 
 // Filtering Based on Criteria:
 // Remove all values below a certain threshold.
@@ -157,8 +157,8 @@ console.log(passingScores) // [60, 80, 90]
 // However, this function currently uses a for loop.
 // Your task is to refactor this function to use the filter() method instead.
 const getEvenNumbers = numbers => numbers.filter(n => n % 2 === 0)
-console.log(getEvenNumbers([1,2,3,4,5,6]))
-console.log(getEvenNumbers([0,-10,11,-12,13]))
+console.log(getEvenNumbers([1,2,3,4,5,6]))//[ 2, 4, 6 ]
+console.log(getEvenNumbers([0,-10,11,-12,13]))//[ 0, -10, -12 ]
 console.log(getEvenNumbers([]))
 
 // Filter Negatives
@@ -166,18 +166,18 @@ console.log(getEvenNumbers([]))
 // This function should take an array of numbers 
 // and return a new array with all negative numbers filtered out, leaving only positive numbers and zeros.
 const filterOutNegativeNumbers = numbers => numbers.filter(n => n >= 0)
-console.log(filterOutNegativeNumbers([1,2,3]))
-console.log(filterOutNegativeNumbers([1,-2,-3,4]))
-console.log(filterOutNegativeNumbers([-10,-20,-30,-40]))
+console.log(filterOutNegativeNumbers([1,2,3]))//[ 1, 2, 3 ]
+console.log(filterOutNegativeNumbers([1,-2,-3,4]))//[ 1, 4 ]
+console.log(filterOutNegativeNumbers([-10,-20,-30,-40]))//[]
 
 // Long Strings Bug
 // You are given a function that is intended to return an array of strings that are longer than 4 characters.
 // However, there's a mistake in the implementation of the filter() method.
 // Your task is to identify and correct the error in the function.
 const getLongStrings = strings => strings.filter( string => string.length > 4)
-console.log(getLongStrings(['Hello','Hola','Ciao']))
-console.log(getLongStrings(['Grazie','Merci','Tak']))
-console.log(getLongStrings(['Grazie','Merci','Tak','Kop Khun']))
+console.log(getLongStrings(['Hello','Hola','Ciao']))//[ 'Hello' ]
+console.log(getLongStrings(['Grazie','Merci','Tak']))//[ 'Grazie', 'Merci' ]
+console.log(getLongStrings(['Grazie','Merci','Tak','Kop Khun']))//[ 'Grazie', 'Merci', 'Kop Khun' ]
 
 // Filter and Square Evens
 // Create a JavaScript function named filterAndSquareEvens. This function should take an array of numbers as its input. 
@@ -203,6 +203,7 @@ const filterAndSquareEvens = numbers => {
     const filterSquare = filterEven.map(n => n ** 2)
     return filterSquare
 }
-console.log(filterAndSquareEvens([1,2,3,4,5,6]))
-console.log(filterAndSquareEvens([10,-10,20,-20]))
-console.log(filterAndSquareEvens([0,11,22,0]))
+console.log(filterAndSquareEvens([1,2,3,4,5,6]))//[ 4, 16, 36 ]
+console.log(filterAndSquareEvens([10,-10,20,-20]))//[ 100, 100, 400, 400 ]
+console.log(filterAndSquareEvens([0,11,22,0]))//[ 0, 484, 0 ]
+console.log([1,2,3,4,5,6].filter(n => n % 2 === 0).map(n => n ** 2))//[ 4, 16, 36 ]
