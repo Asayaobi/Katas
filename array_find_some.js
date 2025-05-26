@@ -120,8 +120,8 @@ const numbers = [1, 3, 5, 7, 9]
 //Some does not modifiy the original array, instead, it returns a boolean.
 // Example Without some():
 const hasEven = numbers => numbers.some(num => num % 2 === 0)
-console.log(hasEven(numbers))
-console.log(hasEven([1, 3, 5, 7, 10]))
+console.log(hasEven(numbers)) //false
+console.log(hasEven([1, 3, 5, 7, 10])) //true
 
 let scores = [10, 20, 10]
 const findScore = scores => scores.some(score => score > 10)
@@ -140,10 +140,10 @@ const productsA = [
 // This function will take an array of numbers and check if the array contains any number greater than a specified value.
 // The function should use the some() method to perform this check and return true if such a number exists, or false otherwise.
 const containsHighValue = (numbers, value) => numbers.some(n => n > value)
-console.log(containsHighValue([1,2,3,4,5],4))
-console.log(containsHighValue([10,100,1000],55))
-console.log(containsHighValue([10,100,1000],2000))
-console.log(containsHighValue([1,2,3],10))
+console.log(containsHighValue([1,2,3,4,5],4)) //true
+console.log(containsHighValue([10,100,1000],55))//true
+console.log(containsHighValue([10,100,1000],2000))//false
+console.log(containsHighValue([1,2,3],10))//false
 
 // Check And Transform
 // Create a JavaScript function named checkAndTransform.
@@ -159,5 +159,9 @@ const checkAndTransform = (numbers, value) => {
         return numbers
     }
 } 
-console.log(checkAndTransform([1,4,6,8],5))
-console.log(checkAndTransform([2,3,4],10))
+console.log(checkAndTransform([1,4,6,8],5))//[ 2, 8, 12, 16 ]
+console.log(checkAndTransform([2,3,4],10))//[ 2, 3, 4 ]
+
+const transformNumber = (numbers, value) => numbers.some(n => n > value)? numbers.map(n => n * 2): numbers
+console.log(transformNumber([1,4,6,8],5))//[ 2, 8, 12, 16 ]
+console.log(transformNumber([2,3,4],10))//[ 2, 3, 4 ]
