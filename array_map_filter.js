@@ -9,12 +9,12 @@ const doubledNumbers = numbers => {
     }
     return result
 }
-console.log(doubledNumbers([1, 2, 3, 4, 5]))
+console.log(doubledNumbers([1, 2, 3, 4, 5]))//[ 2, 4, 6, 8, 10 ]
 
 // Using map()
 // Examples of map()
 const doubledNumbersMap = numbers => numbers.map( n => n * 2)
-console.log(doubledNumbersMap([1, 2, 3, 4, 5]))
+console.log(doubledNumbersMap([1, 2, 3, 4, 5]))//[ 2, 4, 6, 8, 10 ]
 
 
 const names = ['Alice', 'Bob', 'Charlie']
@@ -26,7 +26,7 @@ const names = ['Alice', 'Bob', 'Charlie']
 //     return output
 // }
 const uppercasedNames = names => names.map(n => n.toUpperCase())
-console.log(uppercasedNames(names))
+console.log(uppercasedNames(names))//[ 'ALICE', 'BOB', 'CHARLIE' ]
 
 // Extract a specific property from an array of objects. eg. array of only user's names.
 const users = [{name: 'Alice', age: 30}, {name: 'Bob', age: 25}]
@@ -38,7 +38,7 @@ const users = [{name: 'Alice', age: 30}, {name: 'Bob', age: 25}]
 //     return names
 // }
 const getName = users => users.map(user => user.name)
-console.log(getName(users))
+console.log(getName(users))//[ 'Alice', 'Bob' ]
 
 // Applying a mathematical function to each element in a number array.
 const numbersA = [1, 2, 3, 4]
@@ -50,17 +50,16 @@ const numbersA = [1, 2, 3, 4]
 //     return output
 // }
 const squares = numbersA => numbersA.map(n => n ** 2)
-console.log(squares(numbersA));
+console.log(squares(numbersA))//[ 1, 4, 9, 16 ]
 
 // Refactoring Map
 // You are provided with a function that takes an array of numbers and returns a new array with each number doubled.
 // However, this function currently uses a for loop.
 // Your task is to refactor this function to use the map() method instead.
 const doubledNumbers1 = numbers => numbers.map(n => n * 2)
-console.log(doubledNumbers1([1, 2, 3, 4]))
-console.log(doubledNumbers1([10, 10, 10]))
-console.log(doubledNumbers1([0, 100]))
-console.log(doubledNumbers1([]))
+console.log(doubledNumbers1([1, 2, 3, 4]))//[ 2, 4, 6, 8 ]
+console.log(doubledNumbers1([10, 10, 10]))//[ 20, 20, 20 ]
+console.log(doubledNumbers1([0, 100]))//[ 0, 200 ]
 
 
 // To Fahrenheit
@@ -69,8 +68,8 @@ console.log(doubledNumbers1([]))
 // The conversion formula to use is Fahrenheit = Celsius * 9 / 5 + 32.
 // Use the map method.
 const convertToFahrenheit = temp => temp.map(t => t * 9 / 5 +32)
-console.log(convertToFahrenheit([15,40,12,5]))
-console.log(convertToFahrenheit([42,0,-10]))
+console.log(convertToFahrenheit([15,40,12,5]))//[ 59, 104, 53.6, 41 ]
+console.log(convertToFahrenheit([42,0,-10]))//[ 107.6, 32, 14 ]
 
 // Square Numbers Bug
 // You are provided with a function that is intended to take an array of numbers and return a new array with each number squared.
@@ -82,8 +81,16 @@ console.log(convertToFahrenheit([42,0,-10]))
 //     })
 // }
 const squareNumbers = numbers => numbers.map(n => n ** 2)
-console.log(squareNumbers([1,2,3,4]))
-console.log(squareNumbers([9,0]))
+console.log(squareNumbers([1,2,3,4]))//[ 1, 4, 9, 16 ]
+console.log(squareNumbers([9,0]))//[ 81, 0 ]
+
+
+//Query with map
+const foodids = [{food_id: 3}, {food_id: 24}, {food_id:25}]
+const getId = foodids => foodids.map(e => `food_id = ${e.food_id}`)
+console.log(getId(foodids)) //[ 'food_id = 3', 'food_id = 24', 'food_id = 25' ]
+const getIdStrings = foodids => foodids.map(e => `food_id = ${e.food_id}`).join(' OR ')
+console.log(getIdStrings(foodids))//'food_id = 3 OR food_id = 24 OR food_id = 25'
 
 /////////////////////////////////////
 
@@ -100,14 +107,6 @@ const numbers = [1, 2, 3, 4, 5, 6];
 //     }
 //     return output
 // }
-
-
-//Query with map
-const foodids = [{food_id: 3}, {food_id: 24}, {food_id:25}]
-const getId = foodids => foodids.map(e => `food_id = ${e.food_id}`)
-console.log(getId(foodids))
-const getIdStrings = foodids => foodids.map(e => `food_id = ${e.food_id}`).join(' OR ')
-console.log(getIdStrings(foodids))
 
 //Example With filter():
 const evenNumbers = numbers.filter(n => n % 2 === 0)
