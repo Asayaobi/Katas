@@ -9,7 +9,6 @@ const products = [
     { id: 2, name: 'Blender', category: 'Home Appliances' },
     { id: 3, name: 'Tablet', category: 'Electronics' }
 ]
-
 // function findProduct(products) {
 //    for (let i=0; i < products.length; i++) {
 //         if (products[i].id === 2) {
@@ -55,9 +54,9 @@ const inventory = [
 // However, this function currently uses a for loop.
 // Your task is to refactor this function to use the find() method instead.
 const findPersonName = (persons, name) => persons.find(p => p.name === name)
-console.log(findPersonName([{'name':'Alice','age':25},{'name':'Alice','age':30}],'Alice')) //{'name':'Alice','age':25}
-console.log(findPersonName([{'name':'Alice','age':25},{'name':'Bob','age':37}],'Alice')) //{'name':'Alice','age':25}
-console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'Bob')) //{'name':'Bob','age':37}
+console.log(findPersonName([{name:'Alice','age':25},{name:'Alice','age':30}],'Alice')) //{'name':'Alice','age':25}
+console.log(findPersonName([{name:'Alice','age':25},{name:'Bob','age':37}],'Alice')) //{'name':'Alice','age':25}
+console.log(findPersonName([{name:'Bob','age':37},{name:'Alice','age':25}],'Bob')) //{'name':'Bob','age':37}
 
 // Find Product By Id
 // Write a JavaScript function named findProductById.
@@ -65,15 +64,15 @@ console.log(findPersonName([{'name':'Bob','age':37},{'name':'Alice','age':25}],'
 // It should use the find() method to search through the array and return the product object that has the matching ID.
 // If no product with the given ID is found, the function should return null.
 const findProductById = (products, id) => products.find(p => p.id === id)
-console.log(findProductById([{'id':1,'name':'Smartphone'},{'id':2,'name':'Laptop'},{'id':3,'name':'Tablet'}],2))//{'id':2,'name':'Laptop'}
+console.log(findProductById([{id:1,name:'Smartphone'},{id:2,name:'Laptop'},{id:3,name:'Tablet'}],2))//{'id':2,'name':'Laptop'}
 
 // Find User Bug
 // You are given a function that attempts to find and return a user object from an array of users by a given username.
 // However, the find() method is being used incorrectly in this function.
 // Your task is to identify the mistake and correct the function so that it properly uses find().
 const findUserByUsername = (users, username) => users.find(u => u.username === username)
-console.log(findUserByUsername([{'username':'spiderman','password':'web'},{'username':'batman','password':'dark'}],'batman'))
-console.log(findUserByUsername([{'username':'wonderwoman','password':'amazon'},{'username':'superman','password':'krypto'}],'wonderwoman'))
+console.log(findUserByUsername([{username:'spiderman',password:'web'},{username:'batman',password:'dark'}],'batman'))
+console.log(findUserByUsername([{username:'wonderwoman',password:'amazon'},{username:'superman',password:'krypto'}],'wonderwoman'))
 
 // Replace Product Price
 // Write a JavaScript function named replaceProductPrice.
@@ -97,6 +96,11 @@ const replaceProductPrice = (products, id) => {
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],1))
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2))
 
+const replacePrice = (products,id) => {products.find(p => 
+    p.id === id ? p.price = Math.round(p.price * 1.1) : p.price
+)
+return products}
+console.log(replacePrice([{id:1,price:100},{id:2,price:200}],1))//[ { id: 1, price: 110 }, { id: 2, price: 200 } ]
 ///////////////////////////////////////////
 
 
