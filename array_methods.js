@@ -199,8 +199,8 @@ console.log(addSportLength([{name:'Bob',sports:[]}]))//[ { name: 'Bob', sports: 
 // Reverse Array
 // Create a function reverseArray that takes an array and returns the array reversed.
 const reverseArray = array => array.reverse()
-console.log(reverseArray([1,2,3,4]))
-console.log(reverseArray(['a','b','c']))
+console.log(reverseArray([1,2,3,4])) //[ 4, 3, 2, 1 ]
+console.log(reverseArray(['a','b','c'])) //[ 'c', 'b', 'a' ]
 
 // Remove Empty Spots
 // Create a function removeEmptySpots that takes an array as a parameter.
@@ -208,24 +208,29 @@ console.log(reverseArray(['a','b','c']))
 // The function should remove these falsy values and return the clean array.
 // hint: (else if) removes only the first empty spot if it exists, 
 //while two separate if statements removes both the first and last empty spots if they exist independently.
-const removeEmptySpots = array => {
-    if (!array[0]) {
-        array.shift()
-    } 
-    if (!array[array.length - 1]) {
-        array.pop()
-    }
-    return array
+const removeFalsy = array => {
+  const noFalsyArr = [...array] //avoid mutating the array
+  if (!noFalsyArr[0]) noFalsyArr.shift()
+  if (!noFalsyArr[noFalsyArr.length-1]) noFalsyArr.pop()
+  return noFalsyArr
 }
-console.log(removeEmptySpots([0,2,3,4,0]))
-console.log(removeEmptySpots([null,'a','b','c']))
-console.log(removeEmptySpots([10,11,0,50,false]))
-console.log(removeEmptySpots([0,100,'a','b',50,null]))
+console.log(removeFalsy([0,2,3,4,0]))//[ 2, 3, 4 ]
+console.log(removeFalsy([null,'a','b','c']))//[ 'a', 'b', 'c' ]
+console.log(removeFalsy([10,11,0,50,false]))//[ 10, 11, 0, 50 ]
+console.log(removeFalsy([0,100,'a','b',50,null]))//[ 100, 'a', 'b', 50 ]
 
 // String Repeat
 // Create a function stringRepeat that takes a number and a string, then returns the string repeated as many times as the number.
 // stringRepeat(5, 'hi') // 'hihihihihi'
 // stringRepeat(2, 'hola')
+const repeatStr = (times, str) => Array.from({length: times}, () => str).join('')
+console.log(repeatStr(5, 'hi')) //'hihihihihi'
+console.log(repeatStr(2, 'hola')) //'holahola'
+
+const repeatString = (times,str) => new Array(times).fill(str).join('')
+console.log(repeatString(5, 'hi'))//'hihihihihi'
+console.log(repeatString(3, 'hola'))//'holaholahola'
+
 const stringRepeat = (number,string) => {
     let output = [] 
         for (let i = 0; i < number; i++) {
@@ -233,5 +238,5 @@ const stringRepeat = (number,string) => {
         }
         return output.join('')
 }
-console.log(stringRepeat(5, 'hi'))
-console.log(stringRepeat(2, 'hola'))
+console.log(stringRepeat(5, 'hi'))//'hihihihihi'
+console.log(stringRepeat(2, 'hola'))//'holahola'
