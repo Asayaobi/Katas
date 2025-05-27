@@ -39,9 +39,32 @@ a = 10
 console.log(++a)//11
 console.log(a)//11
 
+let count = 5
+let result = ++count // count is incremented to 6, then result is assigned 6
+console.log(count)  // 6
+console.log(result) // 6
+
+let countA = 5;
+let resultA = countA++ // resultA is assigned 5, then countA is incremented to 6
+console.log(countA)  // 6
+console.log(resultA) // 5
+
 //use reduce accumulator as object
 //acc(sums) = {deposit: 0, withdrawal: 0}
 const depositAndWithdraw = [20, -300, 1500, -30, 4000, 2000]
+
+const organize = arr => {
+    return arr.reduce((acc,num)=> {
+        if (num >= 0){
+            acc.deposit += num
+        } else {
+            acc.withdrawal += num
+        }
+        return acc
+    }, {deposit:0, withdrawal:0})
+}
+console.log(organize(depositAndWithdraw))//{ deposit: 7520, withdrawal: -330 }
+
 const sumObject = depositAndWithdraw.reduce((sums, mov) => {
     mov > 0 ? sums.deposit += mov : sums.withdrawal += mov
     return sums
@@ -56,7 +79,6 @@ const {deposit, withdrawal} = depositAndWithdraw.reduce((sums, mov) => {
 }, {deposit: 0, withdrawal: 0})
 console.log(deposit)//7520
 console.log(withdrawal)//-330
-
 
 //get total price
 const prices = [29.99, 19.99, 4.99]
