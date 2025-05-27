@@ -134,6 +134,13 @@ const addWithFlatMap = accounts
     .reduce((acc,mov) => acc+mov,0)
     console.log(addWithFlatMap)//17840
 
+// Reverse Array
+// Create a function reverseArray that takes an array and returns the array reversed.
+const reverseArray = array => array.reverse()
+console.log(reverseArray([1,2,3,4])) //[ 4, 3, 2, 1 ]
+console.log(reverseArray(['a','b','c'])) //[ 'c', 'b', 'a' ]
+
+
 //create an array
 //1. mannually
 const arr1 = [1, 2, 3, 4, 5, 6, 7]
@@ -195,12 +202,15 @@ const addSportLength = data => data.map(d => {
 })
 console.log(addSportLength([{name:'John',sports:['football']},{name:'Alice',sports:['tennis','golf']}]))//[{ name: 'John', sports: [ 'football' ], sportsLength: 1 },{ name: 'Alice', sports: [ 'tennis', 'golf' ], sportsLength: 2 }]
 console.log(addSportLength([{name:'Bob',sports:[]}]))//[ { name: 'Bob', sports: [], sportsLength: 0 } ]
+<<<<<<< Updated upstream
 
 // Reverse Array
 // Create a function reverseArray that takes an array and returns the array reversed.
 const reverseArray = array => array.reverse()
 console.log(reverseArray([1,2,3,4])) //[ 4, 3, 2, 1 ]
 console.log(reverseArray(['a','b','c'])) //[ 'c', 'b', 'a' ]
+=======
+>>>>>>> Stashed changes
 
 // Remove Empty Spots
 // Create a function removeEmptySpots that takes an array as a parameter.
@@ -239,4 +249,8 @@ const stringRepeat = (number,string) => {
         return output.join('')
 }
 console.log(stringRepeat(5, 'hi'))//'hihihihihi'
+<<<<<<< Updated upstream
 console.log(stringRepeat(2, 'hola'))//'holahola'
+=======
+console.log(stringRepeat(2, 'hola'))//'holahola'
+>>>>>>> Stashed changes
