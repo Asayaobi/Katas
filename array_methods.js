@@ -76,19 +76,6 @@ const scores = [190, 250, 320]
 scores.join('/') // '190/250/320'
 console.log(scores.join('/'))
 
-<<<<<<< Updated upstream
-// reverse()
-// The .reverse() method reverses the order of the elements in an array.
-// Examples
-
-const scores1 = [100, 200, 300]
-const newscore1 = scores1.reverse() // [300, 200, 100]
-console.log(newscore1)
-
-let namesA = ['Bob', 'Alice', 'John', 'Zelda']
-let newnames = namesA.reverse()
-console.log(newnames)
-=======
 //flat
 //the default for flat method is to lay out 1 level deep
 const nestedArr = [[1,2],3,4,[5,6,7],8]
@@ -185,7 +172,6 @@ const originalMovements = [1, 2, 3, 4, 5]
 const newMovement = originalMovements.with(3, 300) //position 3, change to 300
 console.log(newMovement)//[ 1, 2, 3, 300, 5 ]
 console.log(originalMovements)//[ 1, 2, 3, 4, 5 ]
->>>>>>> Stashed changes
 
 // Return Length
 // Create a function returnLength that takes an array as its only parameter, 
@@ -203,29 +189,18 @@ console.log(returnLength([]))//'the array is empty'
 // Each object contains an array of sports.
 // The function should add a property sportsLength to each object, with the length of its sports array.
 // addSportsLengths([{'name':'John','sports':['football']},{'name':'Alice','sports':['tennis','golf']}])
-<<<<<<< Updated upstream
-const addSportsLengths = sports => {
-    for (let i = 0; i < sports.length ; i++) {
-        sports[i].sportsLength = sports[i].sports.length
-    }
-    return sports
-}
-console.log(addSportsLengths([{'name':'John','sports':['football']},{'name':'Alice','sports':['tennis','golf']}]))
-console.log(addSportsLengths([{'name':'Bob','sports':[]}]))
-
-// Reverse Array
-// Create a function reverseArray that takes an array and returns the array reversed.
-const reverseArray = array => array.reverse()
-console.log(reverseArray([1,2,3,4]))
-console.log(reverseArray(['a','b','c']))
-=======
 const addSportLength = data => data.map(d => {
   d.sportsLength = d.sports.length
   return d
 })
 console.log(addSportLength([{name:'John',sports:['football']},{name:'Alice',sports:['tennis','golf']}]))//[{ name: 'John', sports: [ 'football' ], sportsLength: 1 },{ name: 'Alice', sports: [ 'tennis', 'golf' ], sportsLength: 2 }]
 console.log(addSportLength([{name:'Bob',sports:[]}]))//[ { name: 'Bob', sports: [], sportsLength: 0 } ]
->>>>>>> Stashed changes
+
+// Reverse Array
+// Create a function reverseArray that takes an array and returns the array reversed.
+const reverseArray = array => array.reverse()
+console.log(reverseArray([1,2,3,4]))
+console.log(reverseArray(['a','b','c']))
 
 // Remove Empty Spots
 // Create a function removeEmptySpots that takes an array as a parameter.
