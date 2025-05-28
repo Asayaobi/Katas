@@ -96,26 +96,12 @@ const replaceProductPrice = (products, id) => {
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],1))
 console.log(replaceProductPrice([{'id':1,'price':100},{'id':2,'price':200}],2))
 
-<<<<<<< HEAD:array_find_some_every.js
-// Write a function that takes an array of objects and return an array of the objects 'name' property if the name property exist.
-function getNames(arr){
-    let output = []
-    arr.find(obj => {
-        if (obj.name){
-            output.push(obj.name)
-        }
-    })
-    return output
-}
-console.log(getNames([{a: 1},{name: 'Jane'}, {b: 2}, {name: 'Mark'}, {name: 'Jack'}])) // ['Jane','Mark','Jack']
-=======
 const replacePrice = (products,id) => {products.find(p => 
     p.id === id ? p.price = Math.round(p.price * 1.1) : p.price
 )
 return products}
 console.log(replacePrice([{id:1,price:100},{id:2,price:200}],1))//[ { id: 1, price: 110 }, { id: 2, price: 200 } ]
 ///////////////////////////////////////////
->>>>>>> codewars:array_find_some.js
 
 //using hasOwnProperty
 function getNames1(arr){
@@ -206,67 +192,9 @@ const checkAndTransform = (numbers, value) => {
         return numbers
     }
 } 
-<<<<<<< HEAD:array_find_some_every.js
-console.log(checkAndTransform([1,4,6,8],5))
-console.log(checkAndTransform([2,3,4],10))
-
-// Every
-// The every() method in JavaScript is a powerful array function that checks whether all elements in an array pass a test defined 
-// by a provided function. It’s incredibly useful for validating all elements of an array against a single condition.
-// Before every()
-// Before the advent of every(), checking every element in an array typically involved a loop with a conditional statement.
-const numbersZ = [2, 4, 6, 8, 10]
-// const allEven = numbers => {
-//     let even = true
-//     for (let i = 0; i < numbers.length; i++) {
-//         if (numbers[i] % 2 !== 0) {
-//             even = false
-//             break
-//         }}
-//     return even
-// }
-
-const allEven = numbersZ => numbersZ.every(n => n % 2 === 0)
-console.log(allEven(numbersZ)) //true
-
-//Check if everyone is an adult
-const ages = [22, 19, 24, 29, 30]
-// const allAdults = ages => {
-//     let adult = true
-//     for (let i =0; i < ages.length; i++){
-//         if (ages[i] < 18) {
-//             adult = false
-//             break
-//         }
-//     }
-//     return adult
-//}
-const allAdults = ages => ages.every(age => age >= 18)
-console.log(allAdults(ages))
-
-// Create a JavaScript function named allPass.
-// This function will take two parameters: an array of students scores and a numerical threshold.
-// It should check whether all numbers in the array are greater than the given threshold (all students have passed the exam).
-// The function should return true if all numbers meet this criterion, or false otherwise.
-const allPass = (scores,value) => scores.every(score => score > value)
-console.log(allPass([7,8,8,6,10],5)) //true
-console.log(allPass([7,8,8,2],5)) //false
-console.log(allPass([10,7,8,10,10,9],5)) //true
-
-// Create a JavaScript function called searchHouses.
-// This function should take 3 parameters: an array of houses, a number (price) and a string (location).
-// It should return true of all the houses contain the location string in the name of their location 
-// and if they all below the price; otherwise return false.
-const searchHouses = (houses,price, location) => houses.every(house => house.price < price && house.location.includes(location))
-console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],150,'Koh'))//true
-console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],150,'Bali'))//false
-console.log(searchHouses([{'price':100,'location':'Koh Phangan'},{'price':50,'location':'Koh Samui'}],90,'Koh'))//false
-console.log(searchHouses([{'price':100,'location':'Bali'},{'price':80,'location':'Koh Samui'}],90,'Bali'))//false
-=======
 console.log(checkAndTransform([1,4,6,8],5))//[ 2, 8, 12, 16 ]
 console.log(checkAndTransform([2,3,4],10))//[ 2, 3, 4 ]
 
 const transformNumber = (numbers, value) => numbers.some(n => n > value)? numbers.map(n => n * 2): numbers
 console.log(transformNumber([1,4,6,8],5))//[ 2, 8, 12, 16 ]
 console.log(transformNumber([2,3,4],10))//[ 2, 3, 4 ]
->>>>>>> codewars:array_find_some.js
