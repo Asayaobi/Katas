@@ -184,6 +184,13 @@ console.log(countTexts('dr. jones jones calling dr. jones'))//{ 'dr.': 2, jones:
 // Count Character Frequencies
 // Write a function charCount that takes a string and returns an object where the keys are the characters 
 // and the values are the number of times each character appears.
+const charCounter = str => str.split('').reduce((count,l) => {
+    count[l]? count[l]++ : count[l] = 1
+    return count
+},{})
+console.log(charCounter('apple'))//{ a: 1, p: 2, l: 1, e: 1 }
+console.log(charCounter('banana'))//{ b: 1, a: 3, n: 2 }
+
 const countStr = str => {
     return str.split('').reduce((acc,letter) => {
         if (acc[letter]){
@@ -195,13 +202,6 @@ const countStr = str => {
     },{})
 }
 console.log(countStr('banana'))//{ b: 1, a: 3, n: 2 }
-
-const charCount = letters => letters.split('').reduce((acc,l)=> {
-    acc[l] ? acc[l]++ : acc[l] = 1
-    return acc
-}, {})
-console.log(charCount('banana'))//{ b: 1, a: 3, n: 2 }
-
 
 // Refactoring Reduce
 // Replace a function that takes an array of numbers and calculates the sum of all the numbers.
