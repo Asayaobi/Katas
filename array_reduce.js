@@ -87,6 +87,18 @@ console.log(totalPrice(prices))// 54.97
 
 //Creating an Object Count
 const fruits = ['apple', 'banana', 'apple', 'orange', 'banana']
+const counter = arr => arr.reduce((count,item) => {
+    count[item] ? count[item]++ : count[item] = 1
+    return count
+}, {})
+console.log(counter(fruits))//{ apple: 2, banana: 2, orange: 1 }
+
+const counterFruits = items => items.reduce((count,item) => {
+    count[item] = items.filter(i => i === item).length
+    return count
+}, {})
+console.log(counterFruits(fruits))//{ apple: 2, banana: 2, orange: 1 }
+
 const countFruits = fruits => {
     let fruitsObj = {}
     for (let i = 0; i < fruits.length; i++){
