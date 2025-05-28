@@ -147,6 +147,18 @@ console.log(fruitsCount(fruits)) // { apple: 2, banana: 2, orange: 1 }
 // Write a function wordCount that takes a string 
 // and returns an object where the keys are the words and the values are the number of times each word appears.
 const text = "hello world hello everyone in the world"
+console.log(text.split(' '))
+
+const countW = text => {
+    let textObj =  text.split(' ').reduce((count,t) => {
+        count[t] ? count[t]++ : count[t] = 1
+        return count
+    }
+    , {})
+    return textObj
+}
+console.log(countW(text))//{ hello: 2, world: 2, everyone: 1, in: 1, the: 1 }
+
 const countText = text => {
     const words = text.split(' ').reduce((acc,w) => {
         acc[w] = (acc[w] || 0 ) + 1
