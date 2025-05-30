@@ -18,6 +18,8 @@ console.log(numbers) // [5, 10, 25, 40]
 const numbersA = [1, 5, 2, 4]
 const numbersB = numbersA.toSorted((a, b) => a - b)
 const numbersC = numbersA.toSorted((a, b) => b - a)
+console.log(numbersA.toSorted((a,b) => b - a))//[ 5, 4, 2, 1 ]
+
 console.log(numbersA)//[ 1, 2, 4, 5 ]
 console.log(numbersB)//[ 1, 2, 4, 5 ]
 console.log(numbersC)//[ 5, 4, 2, 1 ]
@@ -30,12 +32,8 @@ const products = [
    { name: 'Tablet', price: 750 }
 ]
 products.sort((a, b) => a.price - b.price)
-console.log(products)
-// [
-//   { name: 'Phone', price: 500 },
-//   { name: 'Tablet', price: 750 },
-//   { name: 'Laptop', price: 1000 }
-// ]
+console.log(products)//[{ name: 'Phone', price: 500 },{ name: 'Tablet', price: 750 },{ name: 'Laptop', price: 1000 }]
+console.log(products.toSorted((a,b) => b.price - a.price))//[{ name: 'Laptop', price: 1000 }, { name: 'Tablet', price: 750 },{ name: 'Phone', price: 500 }]
 
 // Refactor Sort
 // You are given a function that takes an array of numbers and returns a new array with the numbers sorted in ascending order.
