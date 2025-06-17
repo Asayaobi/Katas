@@ -593,3 +593,10 @@ function squareDigits(num){
 console.log(squareDigits(9119))//811181
 console.log(squareDigits(3212))//9414
 
+//BMI Calculator Challenge
+// Create a BMI calculator using JavaScript functions. 
+// The Body Mass Index (BMI) is a way of estimating the amount of body fat. It's used in medicine to calculate risk of heart disease.
+// You can calculate it using the formula below, where weight divided by height squared.
+// Your challenge is to create a function that takes weight and height as inputs and gives the calculated BMI value as an output. 
+// The output should be rounded to the nearest whole number.
+// The first parameter should be the weight and the second should be the height.
