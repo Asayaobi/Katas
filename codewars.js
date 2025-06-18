@@ -736,3 +736,22 @@ console.log(bottleOfBeer())
   // 'Take one down and pass it around, no more bottle of beer on the wall.\n' +
   // 'No more bottles of beer on the wall, no more bottles of beer.\n' +
   // 'Go to the store and buy some more, 99 bottles of beer on the wall.'
+
+  //create Fibonacci Generator
+  const fibonacciGenerator = (number) => {
+    if (number === 0){
+      return []
+    } else if (number === 1){
+      return [0]
+    } else {
+      let output = [0, 1]
+      for (let i = 2; i < number; i++){
+        let nextNumber = output[i-2] + output[i-1]
+        output.push(nextNumber)
+      }
+      return output
+    }
+  }
+  console.log(fibonacciGenerator(13)) //Array(13) [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ]
+  console.log(fibonacciGenerator(1)) //[0]
+  console.log(fibonacciGenerator(0)) //[]
