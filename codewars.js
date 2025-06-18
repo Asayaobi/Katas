@@ -695,3 +695,18 @@ console.log(fizzBuzz())
 //   83, 'Fizz', 'Buzz', 86, 'Fizz', 88, 89, 'FizzBuzz', 91, 92, 'Fizz', 94, 'Buzz',
 //   'Fizz', 97, 98, 'Fizz', 'Buzz'
 // ]
+
+// Who's Buying Lunch? Code Challenge
+// You are going to write a function which will select a random name from a list of names. 
+// The person selected will have to pay for everybody's food bill.
+
+// Example Input
+// ["Angela", "Ben", "Jenny", "Michael", "Chloe"]
+// Example Output
+// Michael is going to buy lunch today!
+
+const buyLunch = names => {
+  const randomNum = Math.floor(Math.random() * names.length)
+  return `${names[randomNum]} is going to buy lunch today!`
+}
+console.log(buyLunch(["Angela", "Ben", "Jenny", "Michael", "Chloe"]))
