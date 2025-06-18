@@ -652,3 +652,10 @@ console.log(bmiCalculatorAdvance(40, 1.8))//'Your BMI is 12, so you are underwei
 // 2100 ÷ 100 = 21 (Not Leap)
 // 2100 ÷ 400 = 5.25 (Not Leap)
 
+const isLeapYear = year => {
+  return (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0))
+}
+console.log(isLeapYear(2000)) //true
+console.log(isLeapYear(2010)) //false
+console.log(isLeapYear(2400)) //true
+console.log(isLeapYear(1989)) //false
