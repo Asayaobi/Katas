@@ -710,3 +710,20 @@ const buyLunch = names => {
   return `${names[randomNum]} is going to buy lunch today!`
 }
 console.log(buyLunch(["Angela", "Ben", "Jenny", "Michael", "Chloe"]))
+
+//Lyrics of the song 99 Bottles of Beer
+const bottleOfBeer = () => {
+  let lyrics = ['99 bottles of beer on the wall, 99 bottles of beer.']
+  for (let i = 98; i > 1; i--){
+      lyrics.push(`Take one down and pass it around, ${i} more bottles of beer on the wall.
+      ${i} bottles of beer on the wall, ${i} bottles of beer.`)
+    } 
+    lyrics.push(`Take one down and pass it around, 1 bottle of beer on the wall.
+      1 bottle of beer on the wall, 1 bottle of beer.
+      Take one down and pass it around, no more bottles of beer on the wall.
+      No more bottles of beer on the wall, no more bottles of beer.
+      Go to the store and buy some more, 99 bottles of beer on the wall.`)
+  return lyrics
+}
+
+console.log(bottleOfBeer())
