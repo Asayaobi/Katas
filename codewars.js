@@ -659,3 +659,9 @@ console.log(isLeapYear(2000)) //true
 console.log(isLeapYear(2010)) //false
 console.log(isLeapYear(2400)) //true
 console.log(isLeapYear(1989)) //false
+
+//FizzBuzz
+// Write a program that prints numbers from 1-100;
+// For multiple of Three, prints 'Fizz',
+// For multiple of Five, prints 'Buzz',
+// For number that can be multipled by three and five, print 'FizzBuzz'
