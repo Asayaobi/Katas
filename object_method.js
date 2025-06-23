@@ -427,3 +427,16 @@ console.log(bellBoy1)
 //   languages: [ 'English', 'Spanish' ]
 // }
 console.log(bellBoy2.name)  //'Jo'
+
+//Adding method to Constructor function
+function HouseKeeper(name, age, yearsOfExperience, area){
+  this.name = name
+  this.age = age
+  this.yearsOfExperience = yearsOfExperience
+  this.area = area
+  this.clean = function (){
+    console.log('cleaning in process')
+  }
+}
+const houseKeeper1 = new HouseKeeper('Jenny', 19, 1, ['lobby', 'bedroom'])
+console.log(houseKeeper1.clean())
