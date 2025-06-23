@@ -407,3 +407,23 @@ console.log(output)
 // Assign the returned value to the variable called entries2.
 const entries2 = Object.entries(books[0].thirdParty.goodreads)
 console.log(entries2) //[[ 'rating', 4.41 ],[ 'ratingsCount', 1733 ],[ 'reviewsCount', 63 ],[ 'fiveStarRatingCount', 976 ],[ 'oneStarRatingCount', 13 ]]
+
+//Constructor function
+function BellBoy(name, age, hasWorkPermit, languages){
+  this.name = name
+  this.age = age
+  this.hasWorkPermit = hasWorkPermit
+  this.languages = languages
+}
+
+const bellBoy1 = new BellBoy('Timmy', 20, true, ['English', 'Spanish'])
+const bellBoy2 = new BellBoy('Jo', 18, true, ['French', 'Spanish'])
+
+console.log(bellBoy1) 
+//BellBoy {
+//   name: 'Timmy',
+//   age: 20,
+//   hasWorkPermit: true,
+//   languages: [ 'English', 'Spanish' ]
+// }
+console.log(bellBoy2.name)  //'Jo'
