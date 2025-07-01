@@ -94,6 +94,12 @@ const [firstColour, ,thirdColour] = colors
 console.log(firstColour) //'red'
 console.log(thirdColour) //'blue'
 
+//ex. with rgb color
+//const rgb = [9, 132, 277]
+const [red, green, blue] = [9, 132, 277]
+console.log(red) //9
+console.log(green) //132
+
 const restaurant = {
     name: 'Pizza Hut',
     city: 'Jackson Ville',
